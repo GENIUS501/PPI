@@ -30,7 +30,6 @@
         {
             this.Txt_Usuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Txt_Cedula = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Txt_Cedula = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -67,13 +67,6 @@
             this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nombre de usuario";
-            // 
-            // Txt_Cedula
-            // 
-            this.Txt_Cedula.Location = new System.Drawing.Point(33, 40);
-            this.Txt_Cedula.Name = "Txt_Cedula";
-            this.Txt_Cedula.Size = new System.Drawing.Size(121, 20);
-            this.Txt_Cedula.TabIndex = 4;
             // 
             // label2
             // 
@@ -181,6 +174,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.Txt_Cedula);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.Txt_Apellido2);
             this.groupBox2.Controls.Add(this.label4);
@@ -188,7 +182,6 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.Txt_Nombre);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.Txt_Cedula);
             this.groupBox2.Location = new System.Drawing.Point(21, 194);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(680, 101);
@@ -216,6 +209,14 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
+            // 
+            // Txt_Cedula
+            // 
+            this.Txt_Cedula.Location = new System.Drawing.Point(33, 40);
+            this.Txt_Cedula.Mask = "000000000";
+            this.Txt_Cedula.Name = "Txt_Cedula";
+            this.Txt_Cedula.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Cedula.TabIndex = 12;
             // 
             // M_Usuarios
             // 
@@ -250,7 +251,6 @@
 
         private System.Windows.Forms.TextBox Txt_Usuario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Txt_Cedula;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Txt_Nombre;
         private System.Windows.Forms.Label label3;
@@ -266,5 +266,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MaskedTextBox Txt_Cedula;
     }
 }

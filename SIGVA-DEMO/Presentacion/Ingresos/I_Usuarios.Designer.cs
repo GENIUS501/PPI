@@ -30,7 +30,6 @@
         {
             this.Txt_Usuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Txt_Cedula = new System.Windows.Forms.TextBox();
             this.Txt_Apellido2 = new System.Windows.Forms.TextBox();
             this.Txt_Apellido1 = new System.Windows.Forms.TextBox();
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
@@ -48,6 +47,7 @@
             this.Cmd_Cancelar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Txt_Cedula = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -67,13 +67,6 @@
             this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nombre de usuario";
-            // 
-            // Txt_Cedula
-            // 
-            this.Txt_Cedula.Location = new System.Drawing.Point(24, 42);
-            this.Txt_Cedula.Name = "Txt_Cedula";
-            this.Txt_Cedula.Size = new System.Drawing.Size(127, 20);
-            this.Txt_Cedula.TabIndex = 4;
             // 
             // Txt_Apellido2
             // 
@@ -215,6 +208,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Txt_Cedula);
             this.groupBox1.Controls.Add(this.Cmd_Cancelar);
             this.groupBox1.Controls.Add(this.Cmd_Agregar);
             this.groupBox1.Controls.Add(this.label8);
@@ -230,7 +224,6 @@
             this.groupBox1.Controls.Add(this.Txt_Nombre);
             this.groupBox1.Controls.Add(this.Txt_Apellido1);
             this.groupBox1.Controls.Add(this.Txt_Apellido2);
-            this.groupBox1.Controls.Add(this.Txt_Cedula);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.Txt_Usuario);
             this.groupBox1.Location = new System.Drawing.Point(22, 77);
@@ -239,6 +232,14 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingreso de Usuarios";
+            // 
+            // Txt_Cedula
+            // 
+            this.Txt_Cedula.Location = new System.Drawing.Point(24, 42);
+            this.Txt_Cedula.Mask = "000000000";
+            this.Txt_Cedula.Name = "Txt_Cedula";
+            this.Txt_Cedula.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Cedula.TabIndex = 20;
             // 
             // I_Usuarios
             // 
@@ -263,7 +264,6 @@
 
         private System.Windows.Forms.TextBox Txt_Usuario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Txt_Cedula;
         private System.Windows.Forms.TextBox Txt_Apellido2;
         private System.Windows.Forms.TextBox Txt_Apellido1;
         private System.Windows.Forms.TextBox Txt_Nombre;
@@ -281,5 +281,6 @@
         private System.Windows.Forms.Button Cmd_Cancelar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.MaskedTextBox Txt_Cedula;
     }
 }
