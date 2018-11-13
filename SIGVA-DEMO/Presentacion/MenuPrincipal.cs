@@ -22,6 +22,10 @@ namespace Principal
             InitializeComponent();
         }
 
+        #region "Propiedades"
+        public Int32 Rol { get; set; }
+        #endregion
+
         private void ShowNewForm(object sender, EventArgs e)
         {
             Form childForm = new Form();
@@ -192,7 +196,7 @@ namespace Principal
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void reintegrarDiasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -258,8 +262,23 @@ namespace Principal
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            Login l = new Login();
-            l.Close();
+            if(Rol == 2)
+            {
+                archivoToolStripMenuItem.Visible = false;
+                procesosToolStripMenuItem.Visible = false;
+                reservarDiasToolStripMenuItem.Visible = false;
+                reintegrarDiasToolStripMenuItem.Visible = false;
+                auditoriaToolStripMenuItem1.Visible = false;
+                liquidacionToolStripMenuItem.Visible = false;
+            }
+            if(Rol == 3)
+            {
+                archivoToolStripMenuItem.Visible = false;
+                procesosToolStripMenuItem.Visible = false;
+                reservarDiasToolStripMenuItem.Visible = false;
+                reintegrarDiasToolStripMenuItem.Visible = false;
+                liquidacionToolStripMenuItem.Visible = false;
+            }
         }
 
         private void liquidacionToolStripMenuItem_Click(object sender, EventArgs e)

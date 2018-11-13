@@ -97,8 +97,8 @@ CREATE TABLE Usuarios(
 CREATE TABLE Sessiones(
 	Id_session	INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	Usuario	VARCHAR(13)NOT NULL,
-	Ingreso	DATE NOT NULL,
-	Salida	DATE,
+	Ingreso	DATETIME NOT NULL,
+	Salida	DATETIME,
 	CONSTRAINT FK_SES_USU FOREIGN KEY (Usuario) references Usuarios(Usuario)
 );
 

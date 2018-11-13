@@ -36,7 +36,7 @@ namespace Presentacion
 
                 var items = new[] { 
                                     new { Text = "Administrador", Value = "1" }, 
-                                    new { Text = "Raso", Value = "2" }, 
+                                    new { Text = "Consultor", Value = "2" }, 
                                     new { Text = "Auditor", Value = "3" }, 
                                     };
                 this.Cbo_Rol.DataSource = items;

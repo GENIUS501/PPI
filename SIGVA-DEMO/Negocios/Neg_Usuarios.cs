@@ -11,7 +11,7 @@ namespace Negocios
 {
      public class Neg_Usuarios
      {
-         #region "Insertar"
+        #region "Insertar"
          public Int32 Insertar(Ent_Usuarios Data)
          {
              Int32 FilasAfectadas = 0;
@@ -31,7 +31,7 @@ namespace Negocios
          }
         #endregion
 
-         #region "Actualizar"
+        #region "Actualizar"
          public Int32 Actualizar(Ent_Usuarios Data)
          {
              Int32 FilasAfectadas = 0;
@@ -51,7 +51,7 @@ namespace Negocios
          }
          #endregion
 
-         #region "Leer Especifico"
+        #region "Leer Especifico"
              public Ent_Usuarios LeerCodigoLlave(string pCodigo)
              {
                  AccesoDatos.AD_Usuarios IControlador;
@@ -67,7 +67,23 @@ namespace Negocios
              }
           #endregion
 
-         #region "Eliminar"
+        #region "Login"
+             public  Ent_Usuarios Login(string user, string pass)
+             {
+                 AccesoDatos.AD_Usuarios IControlador;
+                 try
+                 {
+                     IControlador = new AccesoDatos.AD_Usuarios();
+                     return IControlador.Login(user, pass);
+                 }
+                 catch (Exception ex)
+                 {
+                     throw new Exception("Usuario o contraseña no valido" + ex);
+                 }
+             }
+        #endregion
+
+        #region "Eliminar"
              public Int32 Eliminar(string user)
              {
                  Int32 FilasAfectadas = 0;

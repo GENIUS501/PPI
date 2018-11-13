@@ -26,13 +26,29 @@ namespace Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string usuario = Txt_Usuario.ToString();
-            string password = Txt_Clave.ToString();
+           try{
+            string usuario = Txt_Usuario.Text.ToString();
+            string password = Txt_Clave.Text.ToString();
             string hash = Helper.EncodePassword(string.Concat(usuario, password));
-            MessageBox.Show(hash);
+            Ent_Usuarios Euser = new Ent_Usuarios();
+            Neg_Usuarios Nuser = new Neg_Usuarios();
+            Euser = Nuser.Login(usuario,hash);
+            if(Euser.Cedula !=0)
+            {
             MenuPrincipal Ingresos = new MenuPrincipal();
+            Ingresos.Rol = Euser.Rol;
             Ingresos.Show();
-            
+            this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o Clave invalido");
+            }
+           }catch(Exception ex)
+           {
+               MessageBox.Show("Error al ingresar al sistema: " + ex);
+           }
+
         }
     }
 }

@@ -110,8 +110,33 @@ namespace AccesoDatos
             }
         }
         #endregion
+        #region "Login"
+        public  Ent_Usuarios Login(string usera, string pass)
+        {
+            Ent_Usuarios user = new Ent_Usuarios();
+            string sentencia;
+            DataSet data = null;
+            sentencia = "select * from Usuarios where Usuario = @Usuario and Clave = @Passwor";
+            Parameter[] parametros = { new Parameter("@Usuario", usera),
+                                       new Parameter("@Passwor",pass)                                     
+                                     };
+            data = Database.executeDataset(sentencia, parametros);
+            foreach (DataRow row in data.Tables[0].Rows)
+            {
+                user = new Ent_Usuarios();
+                user.Usuario = (String)row["Usuario"];
+                user.Cedula = (Int32)row["Cedula"];
+                user.Nombre = (String)row["Nombre"];
+                user.Apellido1 = (String)row["Apellido1"];
+                user.Apellido2 = (String)row["Apellido2"];
+                user.Clave = (String)row["Clave"];
+                user.Rol = (Int32)row["Rol"];
+            }
+            return user;
+        }
+        #endregion
         #region "Eliminar"
-       public  Int32 Eliminar(string user)
+        public  Int32 Eliminar(string user)
         {
             Int32 Filasafectadas = 0;
             string sentencia;
