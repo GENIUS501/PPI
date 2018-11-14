@@ -34,7 +34,7 @@ namespace Presentacion
             get { return vNombreBoton; }
             set { vNombreBoton = value; }
         }
-        public string Codigo { get; set; }
+        public int Codigo { get; set; }
 
 
         #endregion
@@ -45,6 +45,16 @@ namespace Presentacion
         private void M_Departamento_Evento_Salir(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void M_Departamentos_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Leer()
+        {
+
         }
     }
 }

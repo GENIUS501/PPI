@@ -104,6 +104,7 @@
             this.Text = "M_Departamentos";
             this.Evento_Aceptar += new System.EventHandler(this.M_Departamento_Evento_Aceptar);
             this.Evento_Salir += new System.EventHandler(this.M_Departamento_Evento_Salir);
+            this.Load += new System.EventHandler(this.M_Departamentos_Load);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.groupBox1.ResumeLayout(false);

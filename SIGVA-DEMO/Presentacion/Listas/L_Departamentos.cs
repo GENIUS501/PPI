@@ -13,6 +13,9 @@ namespace Presentacion
 {
     public partial class L_Departamentos : frmListaBase
     {
+        #region "Variables"
+        Int32 valorPrimerCelda = -1;
+        #endregion
         public L_Departamentos()
         {
             InitializeComponent();
@@ -64,21 +67,26 @@ namespace Presentacion
         {
             try
             {
-                /**if (this.lstDatos.SelectedItems.Count == 0)
+                if (valorPrimerCelda == -1)
                 {
                     MessageBox.Show("Favor de seleccionar los datos a modificar");
                     return;
-                }*/
-                M_Departamentos frm = new M_Departamentos();
-                frm.Modo = "M";
-                frm.titulo = "Mantenimiento de Departamentos";
-                frm.Descripcion = "Modificar Departamentos";
-                //frm.Codigo = this.lstDatos.SelectedItems[0].Text;
-                frm.MostrarAgregar = false;
-                frm.MostrarEliminar = false;
-                frm.MostrarConsultar = false;
-                frm.MostrarImprimir = false;
-                frm.ShowDialog();
+                }else
+                {
+                    M_Departamentos frm = new M_Departamentos();
+                    frm.Modo = "M";
+                    frm.titulo = "Mantenimiento de Departamentos";
+                    frm.Descripcion = "Modificar Departamentos";
+                    frm.Codigo = valorPrimerCelda;
+                    frm.MostrarAgregar = false;
+                    frm.MostrarEliminar = false;
+                    frm.MostrarConsultar = false;
+                    frm.MostrarImprimir = false;
+                    valorPrimerCelda = -1;
+                    frm.ShowDialog();
+                    L_Departamentos_Load(null, null);
+                }
+
             }
             catch (Exception ex)
             {
@@ -90,26 +98,44 @@ namespace Presentacion
         {
             try
             {
-                /* if (this.lstDatos.SelectedItems.Count == 0)
+                 if (valorPrimerCelda == -1)
                  {
                      MessageBox.Show("Favor de seleccionar los datos a consultar");
                      return;
-                 }*/
+                 }
+                 else
+                 {
+                     M_Departamentos frm = new M_Departamentos();
+                     frm.Modo = "C";
+                     frm.titulo = "Mantenimiento de Departamentos";
+                     frm.Descripcion = "Consultar Departamentos";
+                     frm.Codigo = valorPrimerCelda;
+                     frm.MostrarAgregar = false;
+                     frm.MostrarModificar = false;
+                     frm.MostrarEliminar = false;
+                     frm.MostrarImprimir = false;
+                     valorPrimerCelda = -1;
+                     frm.ShowDialog();
+                     L_Departamentos_Load(null, null);
+                 }
 
-                 M_Departamentos frm = new M_Departamentos();
-                 frm.Modo = "C";
-                 frm.titulo = "Mantenimiento de Departamentos";
-                 frm.Descripcion = "Consultar Departamentos";
-               //  frm.Codigo = this.lstDatos.SelectedItems[0].Text;
-                 frm.MostrarAgregar = false;
-                 frm.MostrarModificar = false;
-                 frm.MostrarEliminar = false;
-                 frm.MostrarImprimir = false;
-                 frm.ShowDialog();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                valorPrimerCelda = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
             }
         }
     }

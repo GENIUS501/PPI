@@ -52,6 +52,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(244, 239);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // idDepartamentoDataGridViewTextBoxColumn
             // 
@@ -88,14 +89,12 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "L_Departamentos";
             this.Text = "L_Departamentos";
-            this.Load += new System.EventHandler(this.L_Departamentos_Load);
-            #region "Eventos Heredados de la base"
             this.Evento_Agregar += new System.EventHandler(this.L_Departamentos_Evento_Agregar);
             this.Evento_Modificar += new System.EventHandler(this.L_Departamentos_Evento_Modificar);
             this.Evento_Borrar += new System.EventHandler(this.L_Departamentos_Evento_Borrar);
             this.Evento_Consultar += new System.EventHandler(this.L_Departamentos_Evento_Consultar);
             this.Evento_Cerrar += new System.EventHandler(this.L_Departamentos_Evento_Cerrar);
-            #endregion
+            this.Load += new System.EventHandler(this.L_Departamentos_Load);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).EndInit();
