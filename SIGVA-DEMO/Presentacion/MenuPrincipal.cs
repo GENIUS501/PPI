@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentacion;
 using Principal;
+using Negocios;
+using Entidades;
+
 
 namespace Principal
 {
@@ -24,6 +27,7 @@ namespace Principal
 
         #region "Propiedades"
         public Int32 Rol { get; set; }
+        public Int32 Id_session { get; set; }
         #endregion
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -196,6 +200,12 @@ namespace Principal
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Neg_Sessiones Nsessiones = new Neg_Sessiones();
+            Ent_Sessiones Esessiones = new Ent_Sessiones();
+            Int32 salida = 0;
+            Esessiones.Id_Session = Id_session;
+            Esessiones.Salida = DateTime.Now;
+            salida = Nsessiones.Salir(Esessiones);
             Application.Exit();
         }
 

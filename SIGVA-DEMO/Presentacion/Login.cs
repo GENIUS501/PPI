@@ -18,7 +18,7 @@ namespace Presentacion
 
     public partial class Login : Form
     {
-        
+        Int32 Ingreso = 0;
         public Login()
         {
             InitializeComponent();
@@ -32,18 +32,32 @@ namespace Presentacion
             string hash = Helper.EncodePassword(string.Concat(usuario, password));
             Ent_Usuarios Euser = new Ent_Usuarios();
             Neg_Usuarios Nuser = new Neg_Usuarios();
+            Ent_Sessiones Esessiones = new Ent_Sessiones();
+            Neg_Sessiones Nsessiones = new Neg_Sessiones();
             Euser = Nuser.Login(usuario,hash);
-            if(Euser.Cedula !=0)
-            {
-            MenuPrincipal Ingresos = new MenuPrincipal();
-            Ingresos.Rol = Euser.Rol;
-            Ingresos.Show();
-            this.Hide();
-            }
+            Esessiones.Usuario = Euser.Usuario;
+            Esessiones.Ingreso = DateTime.Now;
+            Ingreso = Nsessiones.Ingresar(Esessiones);
+            if(Ingreso > 0)
+             {
+                if(Euser.Cedula !=0)
+                {
+                MenuPrincipal Ingresos = new MenuPrincipal();
+                Ingresos.Rol = Euser.Rol;
+                Ingresos.Id_session = Ingreso;
+                Ingresos.Show();
+                this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o Clave invalido");
+                }
+             }
             else
             {
-                MessageBox.Show("Usuario o Clave invalido");
+                MessageBox.Show("Error desconocido");
             }
+
            }catch(Exception ex)
            {
                MessageBox.Show("Error al ingresar al sistema: " + ex);
