@@ -66,5 +66,24 @@ namespace Negocios
        }
        #endregion
 
+       #region "Eliminar"
+       public Int32 Eliminar(Int32 Id)
+       {
+           Int32 FilasAfectadas = 0;
+           AccesoDatos.AD_Departamentos IControlador;
+
+           try
+           {
+               IControlador = new AccesoDatos.AD_Departamentos();
+               FilasAfectadas = IControlador.Eliminar(Id);
+           }
+           catch (Exception ex)
+           {
+               throw new Exception(ex.Message, ex);
+           }
+
+           return FilasAfectadas;
+       }
+       #endregion
    }
 }

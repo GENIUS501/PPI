@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentacion;
+using Negocios;
+using Entidades;
 
 namespace Presentacion
 {
@@ -36,16 +38,6 @@ namespace Presentacion
         {
             try
             {
-                /* m_cliente frm = new m_cliente();
-                 frm.Modo = "A";
-                 frm.titulo = "Mantenimiento de Clientes";
-                 frm.Descripcion = "Agregar Clientes";
-                 frm.MostrarEliminar = false;
-                 frm.MostrarModificar = false;
-                 frm.MostrarConsultar = false;
-                 frm.MostrarImprimir = false;
-                 frm.ShowDialog();
-                 L_cliente_Load(null, null);*/
             }
             catch (Exception ex)
             {
@@ -55,7 +47,33 @@ namespace Presentacion
 
         private void L_Departamentos_Evento_Borrar(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (valorPrimerCelda == -1)
+                {
+                    MessageBox.Show("Favor de seleccionar los datos a eliminar");
+                    return;
+                }
+                else
+                {
+                    Int32 Eliminar = 0;
+                    Neg_Departamentos Ndepartamentos = new Neg_Departamentos();
+                    Eliminar = Ndepartamentos.Eliminar(valorPrimerCelda);
+                    if(Eliminar>0)
+                    {
+                        MessageBox.Show("Departamento Eliminado exitosamente");
+                        valorPrimerCelda = -1;
+                        L_Departamentos_Load(null,null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar los datos: ");
+                    }
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error al eliminar los datos: "+ex);
+            }
         }
 
         private void L_Departamentos_Evento_Cerrar(object sender, EventArgs e)

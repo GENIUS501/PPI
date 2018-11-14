@@ -97,5 +97,17 @@ namespace AccesoDatos
                 return FilasAfectadas;
         }
         #endregion
+
+        #region "Eliminar"
+         public Int32 Eliminar(Int32 id)
+         {
+             Int32 Filasafectadas = 0;
+             string sentencia;
+             sentencia = "delete from DEPARTAMENTOS  where Id_Departamento = @Id_Departamento";
+             Parameter[] parametros = { new Parameter("@Id_Departamento", id) };
+             Filasafectadas = Database.exectuteNonQuery(sentencia, parametros);
+             return Filasafectadas;
+         }
+        #endregion
     }
 }
