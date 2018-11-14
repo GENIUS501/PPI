@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Txt_Id_Departamento = new System.Windows.Forms.TextBox();
+            this.Txt_Nombre_Departamento = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -38,19 +38,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // Txt_Id_Departamento
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(45, 20);
-            this.textBox1.TabIndex = 2;
+            this.Txt_Id_Departamento.Location = new System.Drawing.Point(172, 50);
+            this.Txt_Id_Departamento.Name = "Txt_Id_Departamento";
+            this.Txt_Id_Departamento.Size = new System.Drawing.Size(45, 20);
+            this.Txt_Id_Departamento.TabIndex = 2;
             // 
-            // textBox2
+            // Txt_Nombre_Departamento
             // 
-            this.textBox2.Location = new System.Drawing.Point(172, 82);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(167, 20);
-            this.textBox2.TabIndex = 3;
+            this.Txt_Nombre_Departamento.Location = new System.Drawing.Point(172, 82);
+            this.Txt_Nombre_Departamento.Name = "Txt_Nombre_Departamento";
+            this.Txt_Nombre_Departamento.Size = new System.Drawing.Size(167, 20);
+            this.Txt_Nombre_Departamento.TabIndex = 3;
             // 
             // label1
             // 
@@ -74,8 +74,8 @@
             // 
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.Txt_Nombre_Departamento);
+            this.groupBox1.Controls.Add(this.Txt_Id_Departamento);
             this.groupBox1.Location = new System.Drawing.Point(24, 97);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(451, 151);
@@ -116,8 +116,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Txt_Id_Departamento;
+        private System.Windows.Forms.TextBox Txt_Nombre_Departamento;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;

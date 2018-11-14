@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentacion;
+using Negocios;
+using Entidades;
 
 namespace Presentacion
 {
     public partial class M_Departamentos : frmMantenimiento
     {
+        #region "Variables"
+        Ent_Departamentos Edepartamentos;
+        Neg_Departamentos Ndepartamentos;
         private string vModo;
         private string vNombreBoton;
+        #endregion
         public M_Departamentos()
         {
             InitializeComponent();
@@ -40,7 +46,34 @@ namespace Presentacion
         #endregion
         private void M_Departamento_Evento_Aceptar(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (Modo == "M")
+                {
+                    Int32 Actualizar = 0;
+                    Edepartamentos = new Ent_Departamentos();
+                    Ndepartamentos = new Neg_Departamentos();
+                    Edepartamentos.Id_Departamamento = Convert.ToInt32(this.Txt_Id_Departamento.Text.ToString());
+                    Edepartamentos.Nombre_Departamento = this.Txt_Nombre_Departamento.Text.ToString();
+                    Actualizar = Ndepartamentos.Actualizar(Edepartamentos);
+                    if (Actualizar > 0)
+                    {
+                        MessageBox.Show("Datos Actualizados");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al actualizar los datos");
+                    }
+                }
+                if (Modo == "C")
+                {
+                    this.Close();
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error al actualizar los datos: " + ex);
+            }
         }
         private void M_Departamento_Evento_Salir(object sender, EventArgs e)
         {
@@ -49,11 +82,31 @@ namespace Presentacion
 
         private void M_Departamentos_Load(object sender, EventArgs e)
         {
-            
+            Leer();
+            if(Modo =="C")
+            {
+                this.Txt_Id_Departamento.Enabled = false;
+                this.Txt_Nombre_Departamento.Enabled = false;
+            }
+            if(Modo == "M")
+            {
+                this.Txt_Id_Departamento.Enabled = false;
+            }
         }
 
         private void Leer()
         {
+            try
+            {
+                Ent_Departamentos Edepartamentos = new Ent_Departamentos();
+                Neg_Departamentos Ndepartamentos = new Neg_Departamentos();
+                Edepartamentos = Ndepartamentos.LeerCodigoLlave(Codigo);
+                this.Txt_Id_Departamento.Text = Edepartamentos.Id_Departamamento.ToString();
+                this.Txt_Nombre_Departamento.Text = Edepartamentos.Nombre_Departamento.ToString();
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos: "+ex);
+            }
 
         }
     }

@@ -73,5 +73,29 @@ namespace AccesoDatos
             }
         }
         #endregion
+
+        #region "Actualizar"
+         public Int32 Actualizar(Ent_Departamentos uRegistro)
+        {
+            Int32 FilasAfectadas = 0;
+
+            try
+            {
+                string sentencia;
+                sentencia = "UPDATE DEPARTAMENTOS SET Nombre_Departamento = @Nombre_Departamento WHERE Id_Departamento = @Id_Departamento";
+                Parameter[] parametros = {
+                                         new Parameter("@Id_Departamento",uRegistro.Id_Departamamento),
+                                         new Parameter("@Nombre_Departamento",uRegistro.Nombre_Departamento),
+                                      };
+               FilasAfectadas = Database.exectuteNonQuery(sentencia, parametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+                return FilasAfectadas;
+        }
+        #endregion
     }
 }

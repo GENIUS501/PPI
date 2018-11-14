@@ -29,5 +29,42 @@ namespace Negocios
            return FilasAfectadas;
        }
        #endregion
+
+       #region "Leer especifico"
+       public Ent_Departamentos LeerCodigoLlave(Int32 pCodigo)
+       {
+           AccesoDatos.AD_Departamentos IControlador;
+           try
+           {
+               IControlador = new AccesoDatos.AD_Departamentos();
+               return IControlador.LeerCodigoLlave(pCodigo);
+           }
+           catch (Exception ex)
+           {
+               throw new Exception(ex.Message, ex);
+           }
+       }
+       #endregion
+
+       #region "Actualizar"
+       public Int32 Actualizar(Ent_Departamentos Data)
+       {
+           Int32 FilasAfectadas = 0;
+           AccesoDatos.AD_Departamentos IControlador;
+
+           try
+           {
+               IControlador = new AccesoDatos.AD_Departamentos();
+               FilasAfectadas = IControlador.Actualizar(Data);
+           }
+           catch (Exception ex)
+           {
+               throw new Exception(ex.Message, ex);
+           }
+
+           return FilasAfectadas;
+       }
+       #endregion
+
    }
 }
