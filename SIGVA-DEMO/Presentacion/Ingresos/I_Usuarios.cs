@@ -53,10 +53,20 @@ namespace Presentacion
         {
             this.Close();
         }
-
+        private void LimpiarCampos()
+        {
+            Txt_Cedula.Text="";
+            Txt_Nombre.Text = "";
+            Txt_Apellido1.Text = "";
+            Txt_Apellido2.Text = "";
+            Txt_Usuario.Text = "";
+            Txt_Clave.Text="";
+            Txt_Clave1.Text = "";
+            Cbo_Rol.SelectedValue = "1";
+        }
         private void Cmd_Agregar_Click(object sender, EventArgs e)
         {
-            if (Txt_Cedula.Text==""||Txt_Nombre.Text == ""||Txt_Apellido1.Text == ""||Txt_Apellido2.Text == ""||Txt_Clave.Text==""||Txt_Clave1.Text == "")
+            if (Txt_Usuario.Text == ""||Txt_Cedula.Text==""||Txt_Nombre.Text == ""||Txt_Apellido1.Text == ""||Txt_Apellido2.Text == ""||Txt_Clave.Text==""||Txt_Clave1.Text == "")
             {
                 MessageBox.Show("No se ha llenado uno o varios campos");
             }
@@ -87,6 +97,7 @@ namespace Presentacion
                         int ejecutar = Nusuarios.Insertar(Eusuarios);
                         if (ejecutar > 0) {
                         MessageBox.Show("Datos ingresados satisfactoriamente", "Ingreso de Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarCampos();
                         }
                         else
                         {
@@ -109,6 +120,7 @@ namespace Presentacion
 
         private void I_Usuarios_Load(object sender, EventArgs e)
         {
+            Cbo_Rol.DropDownStyle = ComboBoxStyle.DropDownList;
             LlenarCombo();
         }
     }

@@ -110,3 +110,9 @@ CREATE TABLE Bitacora(
 	Usuario	VARCHAR(13) NOT NULL,
 	CONSTRAINT FK_BIT_USU FOREIGN KEY (Usuario) references Usuarios(Usuario)
 );
+
+INSERT INTO Usuarios (Cedula,Nombre,Apellido1,Apellido2,Usuario,Clave,Rol) values (123456789,'Administrador','Super','Usuario','Administrador','Cdf/BkY5HRrUeAvNSxTUQrEdX9E=',1)
+
+INSERT INTO Usuarios (Cedula,Nombre,Apellido1,Apellido2,Usuario,Clave,Rol) values (123456788,'Consultor','Desistema','Externo','Consultor','8WfVNiq29wB9gJCs2883NIDvkFI=',2)
+
+INSERT INTO Usuarios (Cedula,Nombre,Apellido1,Apellido2,Usuario,Clave,Rol) values (123456787,'Auditor','Desistema','Externo','Auditor','UlYr4oS4g+kFwwPw4me+YNarSA8=',3)

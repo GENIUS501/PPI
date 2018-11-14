@@ -123,7 +123,7 @@ namespace Presentacion
 
         private void M_Usuarios_Load(object sender, EventArgs e)
         {
-
+            Cbo_Rol.DropDownStyle = ComboBoxStyle.DropDownList;
             LlenarCombo();
             if (Modo == "M")
             {
