@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Txt_Departamento = new System.Windows.Forms.TextBox();
+            this.Btn_Agregar = new System.Windows.Forms.Button();
+            this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -43,47 +43,48 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Nombre del departamento";
             // 
-            // textBox1
+            // Txt_Departamento
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 91);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.Txt_Departamento.Location = new System.Drawing.Point(15, 91);
+            this.Txt_Departamento.Name = "Txt_Departamento";
+            this.Txt_Departamento.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Departamento.TabIndex = 3;
             // 
-            // button1
+            // Btn_Agregar
             // 
-            this.button1.Location = new System.Drawing.Point(242, 438);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_Agregar.Location = new System.Drawing.Point(242, 438);
+            this.Btn_Agregar.Name = "Btn_Agregar";
+            this.Btn_Agregar.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Agregar.TabIndex = 4;
+            this.Btn_Agregar.Text = "Agregar";
+            this.Btn_Agregar.UseVisualStyleBackColor = true;
+            this.Btn_Agregar.Click += new System.EventHandler(this.Btn_Agregar_Click);
             // 
-            // button2
+            // Btn_Cancelar
             // 
-            this.button2.Location = new System.Drawing.Point(385, 438);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Btn_Cancelar.Location = new System.Drawing.Point(385, 438);
+            this.Btn_Cancelar.Name = "Btn_Cancelar";
+            this.Btn_Cancelar.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Cancelar.TabIndex = 5;
+            this.Btn_Cancelar.Text = "Cancelar";
+            this.Btn_Cancelar.UseVisualStyleBackColor = true;
+            this.Btn_Cancelar.Click += new System.EventHandler(this.button2_Click);
             // 
             // I_Departamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 489);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Btn_Cancelar);
+            this.Controls.Add(this.Btn_Agregar);
+            this.Controls.Add(this.Txt_Departamento);
             this.Controls.Add(this.label1);
             this.Name = "I_Departamentos";
             this.Text = "I_Departamentos";
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.textBox1, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
-            this.Controls.SetChildIndex(this.button2, 0);
+            this.Controls.SetChildIndex(this.Txt_Departamento, 0);
+            this.Controls.SetChildIndex(this.Btn_Agregar, 0);
+            this.Controls.SetChildIndex(this.Btn_Cancelar, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,8 +93,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox Txt_Departamento;
+        private System.Windows.Forms.Button Btn_Agregar;
+        private System.Windows.Forms.Button Btn_Cancelar;
     }
 }

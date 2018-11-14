@@ -8,11 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentacion;
+using Negocios;
+using Entidades;
 
 namespace Presentacion
 {
     public partial class I_Departamentos : frmIngresos
     {
+        #region "Variables"
+        Neg_Departamentos Ndepartamentos;
+        Ent_Departamentos Edepartamentos;
+        #endregion
         public I_Departamentos()
         {
             InitializeComponent();
@@ -21,6 +27,29 @@ namespace Presentacion
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Btn_Agregar_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                Ndepartamentos = new Neg_Departamentos();
+                Edepartamentos = new Ent_Departamentos();
+                Edepartamentos.Nombre_Departamento = Txt_Departamento.Text.ToString();
+                Int32 Agregar = 0;
+                Agregar = Ndepartamentos.Insertar(Edepartamentos);
+                if(Agregar>0)
+                {
+                    MessageBox.Show("Departamento agregado exitosamente");
+                    this.Txt_Departamento.Text = "";
+                }else
+                {
+                    MessageBox.Show("Error al agregar Departamento");
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar Departamento: "+ex);
+            }          
         }
     }
 }

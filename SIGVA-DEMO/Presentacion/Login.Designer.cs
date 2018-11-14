@@ -74,6 +74,7 @@
             this.Txt_Clave.PasswordChar = '*';
             this.Txt_Clave.Size = new System.Drawing.Size(138, 20);
             this.Txt_Clave.TabIndex = 3;
+            this.Txt_Clave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Clave_KeyPress);
             // 
             // Cmd_Login
             // 

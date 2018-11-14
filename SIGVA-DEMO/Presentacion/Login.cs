@@ -26,7 +26,18 @@ namespace Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-           try{
+           try
+           {
+               Entrar();
+           }catch(Exception ex)
+           {
+               MessageBox.Show("Error al ingresar al sistema: " + ex);
+           }
+
+        }
+
+        private void Entrar()
+        {
             string usuario = Txt_Usuario.Text.ToString();
             string password = Txt_Clave.Text.ToString();
             string hash = Helper.EncodePassword(string.Concat(usuario, password));
@@ -34,35 +45,46 @@ namespace Presentacion
             Neg_Usuarios Nuser = new Neg_Usuarios();
             Ent_Sessiones Esessiones = new Ent_Sessiones();
             Neg_Sessiones Nsessiones = new Neg_Sessiones();
-            Euser = Nuser.Login(usuario,hash);
-            Esessiones.Usuario = Euser.Usuario;
-            Esessiones.Ingreso = DateTime.Now;
-            Ingreso = Nsessiones.Ingresar(Esessiones);
-            if(Ingreso > 0)
-             {
-                if(Euser.Cedula !=0)
+            Euser = Nuser.Login(usuario, hash);
+
+            if (Euser.Cedula != 0)
+            {
+                Esessiones.Usuario = Euser.Usuario;
+                Esessiones.Ingreso = DateTime.Now;
+                Ingreso = Nsessiones.Ingresar(Esessiones);
+                if (Ingreso > 0)
                 {
-                MenuPrincipal Ingresos = new MenuPrincipal();
-                Ingresos.Rol = Euser.Rol;
-                Ingresos.Id_session = Ingreso;
-                Ingresos.Show();
-                this.Hide();
+                    
+                    MenuPrincipal Ingresos = new MenuPrincipal();
+                    Ingresos.Rol = Euser.Rol;
+                    Ingresos.Id_session = Ingreso;
+                    Ingresos.Show();
+                    this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Usuario o Clave invalido");
+                    MessageBox.Show("Error desconocido");
                 }
-             }
+            }
             else
             {
-                MessageBox.Show("Error desconocido");
+                MessageBox.Show("Usuario o Clave invalido");
             }
+        }
 
-           }catch(Exception ex)
-           {
-               MessageBox.Show("Error al ingresar al sistema: " + ex);
-           }
-
+        private void Txt_Clave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                try
+                {
+                    Entrar();
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("Error al ingresar al sistema: " + ex);
+                }
+                
+            }
         }
     }
 }

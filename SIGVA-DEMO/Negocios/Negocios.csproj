@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Neg_Departamentos.cs" />
     <Compile Include="Neg_Sessiones.cs" />
     <Compile Include="Neg_Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
