@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ent_Departamentos.cs" />
+    <Compile Include="Ent_Puestos.cs" />
     <Compile Include="Ent_Sessiones.cs" />
     <Compile Include="Ent_Usuarios.cs" />
     <Compile Include="Helper.cs" />

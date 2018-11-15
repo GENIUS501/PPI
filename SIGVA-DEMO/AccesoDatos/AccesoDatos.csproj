@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AD_Departamentos.cs" />
+    <Compile Include="AD_Puestos.cs" />
     <Compile Include="AD_Sessiones.cs" />
     <Compile Include="AD_Usuarios.cs" />
     <Compile Include="Database.cs" />

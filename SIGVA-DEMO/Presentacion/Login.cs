@@ -54,7 +54,7 @@ namespace Presentacion
                 Ingreso = Nsessiones.Ingresar(Esessiones);
                 if (Ingreso > 0)
                 {
-                    
+                    MessageBox.Show("Bienvenido: "+Euser.Nombre+" "+Euser.Apellido1+" "+Euser.Apellido2);
                     MenuPrincipal Ingresos = new MenuPrincipal();
                     Ingresos.Rol = Euser.Rol;
                     Ingresos.Id_session = Ingreso;

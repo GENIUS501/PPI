@@ -28,18 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Txt_Nombre_Puestos = new System.Windows.Forms.TextBox();
+            this.Cbo_Departamento = new System.Windows.Forms.ComboBox();
+            this.dEPARTAMENTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sIGVADataSet1Departamentos = new Presentacion.SIGVADataSet1Departamentos();
+            this.Cmd_Agregar = new System.Windows.Forms.Button();
+            this.Cmd_Cancelar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Dat_Puestos = new System.Windows.Forms.DataGridView();
+            this.dEPARTAMENTOSTableAdapter = new Presentacion.SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dat_Puestos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -60,39 +66,53 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Departamento al que pertenece";
             // 
-            // textBox1
+            // Txt_Nombre_Puestos
             // 
-            this.textBox1.Location = new System.Drawing.Point(23, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 20);
-            this.textBox1.TabIndex = 4;
+            this.Txt_Nombre_Puestos.Location = new System.Drawing.Point(23, 47);
+            this.Txt_Nombre_Puestos.Name = "Txt_Nombre_Puestos";
+            this.Txt_Nombre_Puestos.Size = new System.Drawing.Size(164, 20);
+            this.Txt_Nombre_Puestos.TabIndex = 4;
             // 
-            // comboBox1
+            // Cbo_Departamento
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(23, 114);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(164, 21);
-            this.comboBox1.TabIndex = 5;
+            this.Cbo_Departamento.DataSource = this.dEPARTAMENTOSBindingSource;
+            this.Cbo_Departamento.DisplayMember = "Nombre_Departamento";
+            this.Cbo_Departamento.FormattingEnabled = true;
+            this.Cbo_Departamento.Location = new System.Drawing.Point(23, 114);
+            this.Cbo_Departamento.Name = "Cbo_Departamento";
+            this.Cbo_Departamento.Size = new System.Drawing.Size(164, 21);
+            this.Cbo_Departamento.TabIndex = 5;
+            this.Cbo_Departamento.ValueMember = "Id_Departamento";
             // 
-            // button1
+            // dEPARTAMENTOSBindingSource
             // 
-            this.button1.Location = new System.Drawing.Point(268, 363);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dEPARTAMENTOSBindingSource.DataMember = "DEPARTAMENTOS";
+            this.dEPARTAMENTOSBindingSource.DataSource = this.sIGVADataSet1Departamentos;
             // 
-            // button2
+            // sIGVADataSet1Departamentos
             // 
-            this.button2.Location = new System.Drawing.Point(365, 363);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.sIGVADataSet1Departamentos.DataSetName = "SIGVADataSet1Departamentos";
+            this.sIGVADataSet1Departamentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // Cmd_Agregar
+            // 
+            this.Cmd_Agregar.Location = new System.Drawing.Point(193, 359);
+            this.Cmd_Agregar.Name = "Cmd_Agregar";
+            this.Cmd_Agregar.Size = new System.Drawing.Size(75, 23);
+            this.Cmd_Agregar.TabIndex = 6;
+            this.Cmd_Agregar.Text = "Aceptar";
+            this.Cmd_Agregar.UseVisualStyleBackColor = true;
+            this.Cmd_Agregar.Click += new System.EventHandler(this.Cmd_Agregar_Click);
+            // 
+            // Cmd_Cancelar
+            // 
+            this.Cmd_Cancelar.Location = new System.Drawing.Point(290, 359);
+            this.Cmd_Cancelar.Name = "Cmd_Cancelar";
+            this.Cmd_Cancelar.Size = new System.Drawing.Size(75, 23);
+            this.Cmd_Cancelar.TabIndex = 7;
+            this.Cmd_Cancelar.Text = "Cancelar";
+            this.Cmd_Cancelar.UseVisualStyleBackColor = true;
+            this.Cmd_Cancelar.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -106,13 +126,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.Dat_Puestos);
+            this.groupBox1.Controls.Add(this.Cbo_Departamento);
+            this.groupBox1.Controls.Add(this.Txt_Nombre_Puestos);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.Cmd_Cancelar);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.Cmd_Agregar);
             this.groupBox1.Location = new System.Drawing.Point(37, 90);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(470, 407);
@@ -120,13 +140,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingreso de Puesto";
             // 
-            // dataGridView1
+            // Dat_Puestos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 157);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(417, 175);
-            this.dataGridView1.TabIndex = 8;
+            this.Dat_Puestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dat_Puestos.Location = new System.Drawing.Point(23, 157);
+            this.Dat_Puestos.Name = "Dat_Puestos";
+            this.Dat_Puestos.Size = new System.Drawing.Size(340, 175);
+            this.Dat_Puestos.TabIndex = 8;
+            // 
+            // dEPARTAMENTOSTableAdapter
+            // 
+            this.dEPARTAMENTOSTableAdapter.ClearBeforeFill = true;
             // 
             // I_Puestos
             // 
@@ -137,12 +161,15 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "I_Puestos";
             this.Text = "I_Puestos";
+            this.Load += new System.EventHandler(this.I_Puestos_Load);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dat_Puestos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -151,12 +178,15 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox Txt_Nombre_Puestos;
+        private System.Windows.Forms.ComboBox Cbo_Departamento;
+        private System.Windows.Forms.Button Cmd_Agregar;
+        private System.Windows.Forms.Button Cmd_Cancelar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Dat_Puestos;
+        private SIGVADataSet1Departamentos sIGVADataSet1Departamentos;
+        private System.Windows.Forms.BindingSource dEPARTAMENTOSBindingSource;
+        private SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter dEPARTAMENTOSTableAdapter;
     }
 }
