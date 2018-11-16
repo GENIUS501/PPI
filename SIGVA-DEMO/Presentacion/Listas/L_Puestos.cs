@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentacion;
+using Negocios;
 
 namespace Presentacion
 {
     public partial class L_Puestos : frmListaBase
     {
+        #region "Variables"
+        Int32 valorPrimerCelda = -1;
+        Neg_Puestos Npuestos;
+        #endregion
         public L_Puestos()
         {
             InitializeComponent();
@@ -22,8 +27,10 @@ namespace Presentacion
         {
             try 
             {
-            // TODO: esta línea de código carga datos en la tabla 'sIGVADataSet1.PUESTOS' Puede moverla o quitarla según sea necesario.
-            this.pUESTOSTableAdapter.Fill(this.sIGVADataSet1.PUESTOS);
+                Npuestos = new Neg_Puestos();
+                DataTable dt = new DataTable();
+                dt = Npuestos.Leer();
+                Dat_Puestos.DataSource = dt;
             }
             catch (Exception ex) 
             {
@@ -34,16 +41,7 @@ namespace Presentacion
         {
             try
             {
-                /* m_cliente frm = new m_cliente();
-                 frm.Modo = "A";
-                 frm.titulo = "Mantenimiento de Clientes";
-                 frm.Descripcion = "Agregar Clientes";
-                 frm.MostrarEliminar = false;
-                 frm.MostrarModificar = false;
-                 frm.MostrarConsultar = false;
-                 frm.MostrarImprimir = false;
-                 frm.ShowDialog();
-                 L_cliente_Load(null, null);*/
+
             }
             catch (Exception ex)
             {
@@ -53,7 +51,27 @@ namespace Presentacion
 
         private void L_Puestos_Evento_Borrar(object sender, EventArgs e)
         {
-
+            try
+            {
+                if(valorPrimerCelda == -1)
+                {
+                    MessageBox.Show("Favor de seleccionar los datos a eliminar");
+                }else
+                {
+                    Npuestos = new Neg_Puestos();
+                    Int32 Eliminar = 0;
+                    Eliminar = Npuestos.Eliminar(valorPrimerCelda);
+                    if(Eliminar>0)
+                    {
+                        MessageBox.Show("Datos eliminados exitosamente");
+                        valorPrimerCelda = -1;
+                        L_Puestos_Load(null,null);
+                    }
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error al eliminar: "+ex);
+            }
         }
 
         private void L_Puestos_Evento_Cerrar(object sender, EventArgs e)
@@ -65,22 +83,26 @@ namespace Presentacion
         {
             try
             {
-                /**if (this.lstDatos.SelectedItems.Count == 0)
+                if (valorPrimerCelda == -1)
                 {
                     MessageBox.Show("Favor de seleccionar los datos a modificar");
                     return;
-                }*/
-                M_Puestos frm = new M_Puestos();
-                frm.Modo = "M";
-                frm.titulo = "Mantenimiento de Puestos";
-                frm.Descripcion = "Modificar Puesto";
-               // frm.Codigo = this.lstDatos.SelectedItems[0].Text;
-                frm.MostrarAgregar = false;
-                frm.MostrarEliminar = false;
-                frm.MostrarConsultar = false;
-                frm.MostrarImprimir = false;
-                frm.ShowDialog();
-               // L_cliente_Load(null, null);*/
+                }
+                else
+                {
+                    M_Puestos frm = new M_Puestos();
+                    frm.Modo = "M";
+                    frm.titulo = "Mantenimiento de Puestos";
+                    frm.Descripcion = "Modificar Puesto";
+                    frm.Codigo = valorPrimerCelda;
+                    frm.MostrarAgregar = false;
+                    frm.MostrarEliminar = false;
+                    frm.MostrarConsultar = false;
+                    frm.MostrarImprimir = false;
+                    frm.ShowDialog();
+                    valorPrimerCelda = -1;
+                    L_Puestos_Load(null, null);
+                }
             }
             catch (Exception ex)
             {
@@ -92,26 +114,41 @@ namespace Presentacion
         {
             try
             {
-                /* if (this.lstDatos.SelectedItems.Count == 0)
+                 if (valorPrimerCelda == -1)
                  {
                      MessageBox.Show("Favor de seleccionar los datos a consultar");
                      return;
+                 }else
+                 {
+                     M_Puestos frm = new M_Puestos();
+                     frm.Modo = "C";
+                     frm.titulo = "Mantenimiento de Puestos";
+                     frm.Descripcion = "Consultar Puesto";
+                     frm.Codigo = valorPrimerCelda;
+                     frm.MostrarAgregar = false;
+                     frm.MostrarModificar = false;
+                     frm.MostrarEliminar = false;
+                     frm.MostrarImprimir = false;
+                     valorPrimerCelda = -1;
+                     frm.ShowDialog();
+                     L_Puestos_Load(null, null);
                  }
-
-                 m_cliente frm = new m_cliente();
-                 frm.Modo = "C";
-                 frm.titulo = "Mantenimiento de Clientes";
-                 frm.Descripcion = "Consultar Cliente";
-                 frm.Codigo = this.lstDatos.SelectedItems[0].Text;
-                 frm.MostrarAgregar = false;
-                 frm.MostrarModificar = false;
-                 frm.MostrarEliminar = false;
-                 frm.MostrarImprimir = false;
-                 frm.ShowDialog();*/
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void Dat_Puestos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                valorPrimerCelda = Convert.ToInt32(Dat_Puestos.Rows[e.RowIndex].Cells[0].Value.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
             }
         }
     }

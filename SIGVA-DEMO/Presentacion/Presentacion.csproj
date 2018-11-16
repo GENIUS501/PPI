@@ -222,11 +222,6 @@
     <Compile Include="Reportes\Rpt_Rango_Fechas.Designer.cs">
       <DependentUpon>Rpt_Rango_Fechas.cs</DependentUpon>
     </Compile>
-    <Compile Include="SIGVADataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SIGVADataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="SIGVADataSet1Departamentos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -377,17 +372,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SIGVADataSet1.xsc">
-      <DependentUpon>SIGVADataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="SIGVADataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SIGVADataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="SIGVADataSet1.xss">
-      <DependentUpon>SIGVADataSet1.xsd</DependentUpon>
-    </None>
     <None Include="SIGVADataSet1Departamentos.xsc">
       <DependentUpon>SIGVADataSet1Departamentos.xsd</DependentUpon>
     </None>

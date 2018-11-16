@@ -62,6 +62,7 @@ namespace Presentacion
                     MessageBox.Show("Puesto Agregado");
                     this.Txt_Nombre_Puestos.Text = "";
                     this.Cbo_Departamento.SelectedValue = 1;
+                    I_Puestos_Load(null,null);
                 }else
                 {
                     MessageBox.Show("Error al agregar datos");

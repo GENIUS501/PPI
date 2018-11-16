@@ -40,12 +40,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Dat_Puestos = new System.Windows.Forms.DataGridView();
+            this.sIGVADataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+  
             this.dEPARTAMENTOSTableAdapter = new Presentacion.SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dat_Puestos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -96,7 +99,7 @@
             // 
             // Cmd_Agregar
             // 
-            this.Cmd_Agregar.Location = new System.Drawing.Point(193, 359);
+            this.Cmd_Agregar.Location = new System.Drawing.Point(192, 350);
             this.Cmd_Agregar.Name = "Cmd_Agregar";
             this.Cmd_Agregar.Size = new System.Drawing.Size(75, 23);
             this.Cmd_Agregar.TabIndex = 6;
@@ -106,7 +109,7 @@
             // 
             // Cmd_Cancelar
             // 
-            this.Cmd_Cancelar.Location = new System.Drawing.Point(290, 359);
+            this.Cmd_Cancelar.Location = new System.Drawing.Point(289, 350);
             this.Cmd_Cancelar.Name = "Cmd_Cancelar";
             this.Cmd_Cancelar.Size = new System.Drawing.Size(75, 23);
             this.Cmd_Cancelar.TabIndex = 7;
@@ -142,10 +145,13 @@
             // 
             // Dat_Puestos
             // 
+            this.Dat_Puestos.AllowUserToAddRows = false;
+            this.Dat_Puestos.AllowUserToDeleteRows = false;
             this.Dat_Puestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dat_Puestos.Location = new System.Drawing.Point(23, 157);
             this.Dat_Puestos.Name = "Dat_Puestos";
-            this.Dat_Puestos.Size = new System.Drawing.Size(340, 175);
+            this.Dat_Puestos.ReadOnly = true;
+            this.Dat_Puestos.Size = new System.Drawing.Size(341, 175);
             this.Dat_Puestos.TabIndex = 8;
             // 
             // dEPARTAMENTOSTableAdapter
@@ -170,6 +176,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dat_Puestos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -188,5 +195,6 @@
         private SIGVADataSet1Departamentos sIGVADataSet1Departamentos;
         private System.Windows.Forms.BindingSource dEPARTAMENTOSBindingSource;
         private SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter dEPARTAMENTOSTableAdapter;
+        private System.Windows.Forms.BindingSource sIGVADataSetBindingSource;
     }
 }

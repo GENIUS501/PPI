@@ -70,5 +70,41 @@ namespace Negocios
            return dt;
        }
         #endregion
+
+       #region "Leer especifico"
+       public Ent_Puestos LeerCodigoLlave(Int32 pCodigo)
+       {
+           AccesoDatos.AD_Puestos IControlador;
+           try
+           {
+               IControlador = new AccesoDatos.AD_Puestos();
+               return IControlador.LeerCodigoLlave(pCodigo);
+           }
+           catch (Exception ex)
+           {
+               throw new Exception(ex.Message, ex);
+           }
+       }
+       #endregion
+
+       #region "Eliminar"
+       public Int32 Eliminar(Int32 Id)
+       {
+           Int32 FilasAfectadas = 0;
+           AccesoDatos.AD_Puestos IControlador;
+
+           try
+           {
+               IControlador = new AccesoDatos.AD_Puestos();
+               FilasAfectadas = IControlador.Eliminar(Id);
+           }
+           catch (Exception ex)
+           {
+               throw new Exception(ex.Message, ex);
+           }
+
+           return FilasAfectadas;
+       }
+       #endregion
     }
 }

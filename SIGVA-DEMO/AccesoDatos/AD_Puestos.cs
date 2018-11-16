@@ -73,7 +73,7 @@ namespace AccesoDatos
                using (SqlConnection cnx = new SqlConnection(vCadenaConexion))
                {
 
-                   string query = "SELECT * FROM PUESTOS";
+                   string query = "SELECT PUESTOS.Id_Puesto, PUESTOS.Nombre_Puesto, DEPARTAMENTOS.Nombre_Departamento FROM PUESTOS INNER JOIN DEPARTAMENTOS ON PUESTOS.Id_Departamento = DEPARTAMENTOS.Id_Departamento";
 
                    SqlCommand cmd = new SqlCommand(query, cnx);
                    SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
@@ -89,5 +89,54 @@ namespace AccesoDatos
            return dt;
        }
         #endregion
+
+       #region "Leer Especifico"
+       public Ent_Puestos LeerCodigoLlave(Int32 pCodigo)
+       {
+           try
+           {
+               DataTable dtConsulta = new DataTable();
+               Ent_Puestos vRegistro = new Ent_Puestos();
+
+               string commandText = "SELECT [Id_Departamento],[Nombre_Puesto],[Id_Puesto] FROM [dbo].[PUESTOS] WHERE [Id_Puesto] = " + pCodigo;
+               //string commandText = commandTexta;
+
+               using (SqlConnection connection = new SqlConnection(vCadenaConexion))
+               {
+                   SqlCommand command = new SqlCommand(commandText, connection);
+
+                   SqlDataAdapter DataAdapter = new SqlDataAdapter(command);
+                   DataAdapter.Fill(dtConsulta);
+               }
+
+               if (dtConsulta.Rows.Count != 0)
+               {
+                   vRegistro.Id_Departamento = Convert.ToInt32(dtConsulta.Rows[0]["Id_Departamento"]);
+                   vRegistro.Id_Puesto = Convert.ToInt32(dtConsulta.Rows[0]["Id_Puesto"]);
+                   vRegistro.Nombre_Puesto = dtConsulta.Rows[0]["Nombre_Puesto"].ToString();
+               }
+
+
+               return vRegistro;
+
+           }
+           catch (Exception ex)
+           {
+               throw ex;
+           }
+       }
+       #endregion
+
+       #region "Eliminar"
+       public Int32 Eliminar(Int32 id)
+       {
+           Int32 Filasafectadas = 0;
+           string sentencia;
+           sentencia = "delete from PUESTOS  where Id_Puesto = @Id_Puesto";
+           Parameter[] parametros = { new Parameter("@Id_Puesto", id) };
+           Filasafectadas = Database.exectuteNonQuery(sentencia, parametros);
+           return Filasafectadas;
+       }
+       #endregion
     }
 }

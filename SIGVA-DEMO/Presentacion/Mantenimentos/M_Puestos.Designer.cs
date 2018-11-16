@@ -28,35 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.components = new System.ComponentModel.Container();
+            this.Txt_Id_Puesto = new System.Windows.Forms.TextBox();
+            this.Txt_Nombre_Puesto = new System.Windows.Forms.TextBox();
+            this.Cbo_Departamento = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.sIGVADataSet1Departamentos = new Presentacion.SIGVADataSet1Departamentos();
+            this.dEPARTAMENTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dEPARTAMENTOSTableAdapter = new Presentacion.SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // Txt_Id_Puesto
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 171);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.Txt_Id_Puesto.Location = new System.Drawing.Point(12, 171);
+            this.Txt_Id_Puesto.Name = "Txt_Id_Puesto";
+            this.Txt_Id_Puesto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Id_Puesto.TabIndex = 2;
             // 
-            // textBox2
+            // Txt_Nombre_Puesto
             // 
-            this.textBox2.Location = new System.Drawing.Point(147, 171);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.Txt_Nombre_Puesto.Location = new System.Drawing.Point(147, 171);
+            this.Txt_Nombre_Puesto.Name = "Txt_Nombre_Puesto";
+            this.Txt_Nombre_Puesto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Nombre_Puesto.TabIndex = 3;
             // 
-            // comboBox1
+            // Cbo_Departamento
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 104);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
+            this.Cbo_Departamento.DataSource = this.dEPARTAMENTOSBindingSource;
+            this.Cbo_Departamento.DisplayMember = "Nombre_Departamento";
+            this.Cbo_Departamento.FormattingEnabled = true;
+            this.Cbo_Departamento.Location = new System.Drawing.Point(12, 104);
+            this.Cbo_Departamento.Name = "Cbo_Departamento";
+            this.Cbo_Departamento.Size = new System.Drawing.Size(121, 21);
+            this.Cbo_Departamento.TabIndex = 4;
+            this.Cbo_Departamento.ValueMember = "Id_Departamento";
             // 
             // label1
             // 
@@ -85,6 +94,20 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Departamento";
             // 
+            // sIGVADataSet1Departamentos
+            // 
+            this.sIGVADataSet1Departamentos.DataSetName = "SIGVADataSet1Departamentos";
+            this.sIGVADataSet1Departamentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dEPARTAMENTOSBindingSource
+            // 
+            this.dEPARTAMENTOSBindingSource.DataMember = "DEPARTAMENTOS";
+            this.dEPARTAMENTOSBindingSource.DataSource = this.sIGVADataSet1Departamentos;
+            // 
+            // dEPARTAMENTOSTableAdapter
+            // 
+            this.dEPARTAMENTOSTableAdapter.ClearBeforeFill = true;
+            // 
             // M_Puestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -93,21 +116,22 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Cbo_Departamento);
+            this.Controls.Add(this.Txt_Nombre_Puesto);
+            this.Controls.Add(this.Txt_Id_Puesto);
             this.Name = "M_Puestos";
             this.Text = "M_Puestos";
-            #region "Eventos Agregados"
             this.Evento_Aceptar += new System.EventHandler(this.M_Puestos_Evento_Aceptar);
             this.Evento_Salir += new System.EventHandler(this.M_Puestos_Evento_Salir);
-            #endregion
-            this.Controls.SetChildIndex(this.textBox1, 0);
-            this.Controls.SetChildIndex(this.textBox2, 0);
-            this.Controls.SetChildIndex(this.comboBox1, 0);
+            this.Load += new System.EventHandler(this.M_Puestos_Load);
+            this.Controls.SetChildIndex(this.Txt_Id_Puesto, 0);
+            this.Controls.SetChildIndex(this.Txt_Nombre_Puesto, 0);
+            this.Controls.SetChildIndex(this.Cbo_Departamento, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.label3, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,11 +139,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox Txt_Id_Puesto;
+        private System.Windows.Forms.TextBox Txt_Nombre_Puesto;
+        private System.Windows.Forms.ComboBox Cbo_Departamento;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private SIGVADataSet1Departamentos sIGVADataSet1Departamentos;
+        private System.Windows.Forms.BindingSource dEPARTAMENTOSBindingSource;
+        private SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter dEPARTAMENTOSTableAdapter;
     }
 }
