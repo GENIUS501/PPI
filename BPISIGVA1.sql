@@ -4,14 +4,17 @@ USE SIGVA
 GO
 
 CREATE TABLE DEPARTAMENTOS(
-	Id_Departamento INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	Nombre_Departamento VARCHAR(25) NOT NULL
+	Id_Departamento INT IDENTITY(1,1) PRIMARY KEY  NOT NULL,
+	Nombre_Departamento VARCHAR(25) NOT NULL,
+	CONSTRAINT AK_Nombre_Departamento UNIQUE(Nombre_Departamento)   
 );
 
 CREATE TABLE PUESTOS(
-	Id_Puesto INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	Nombre_Puesto VARCHAR(25) NOT NULL,
+	Id_Puesto INT IDENTITY(1,1)  NOT NULL,
+	Nombre_Puesto VARCHAR(25)  NOT NULL,
 	Id_Departamento INT NOT NULL,
+	PRIMARY KEY (Nombre_Puesto,Id_Departamento),
+	CONSTRAINT AK_Id_Puesto UNIQUE(Id_Puesto),
 	CONSTRAINT FK_PUE_DEP FOREIGN KEY (Id_Departamento) references DEPARTAMENTOS(Id_Departamento)
 );
 

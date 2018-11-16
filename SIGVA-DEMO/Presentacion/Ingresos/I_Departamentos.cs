@@ -42,6 +42,7 @@ namespace Presentacion
                 {
                     MessageBox.Show("Departamento agregado exitosamente");
                     this.Txt_Departamento.Text = "";
+                    I_Departamentos_Load(null, null);
                 }else
                 {
                     MessageBox.Show("Error al agregar Departamento");
@@ -50,6 +51,13 @@ namespace Presentacion
             {
                 MessageBox.Show("Error al agregar Departamento: "+ex);
             }          
+        }
+
+        private void I_Departamentos_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'sIGVADataSet1Departamentos.DEPARTAMENTOS' Puede moverla o quitarla según sea necesario.
+            this.dEPARTAMENTOSTableAdapter.Fill(this.sIGVADataSet1Departamentos.DEPARTAMENTOS);
+
         }
     }
 }
