@@ -111,6 +111,13 @@ CREATE TABLE Bitacora(
 	CONSTRAINT FK_BIT_USU FOREIGN KEY (Usuario) references Usuarios(Usuario)
 );
 
+CREATE TABLE Anos_Institucion
+(
+	Cedula INT PRIMARY KEY NOT NULL,
+	Cantidad_Anos INT NOT NULL,
+	CONSTRAINT FK_Ano_FUN FOREIGN KEY (Cedula) references FUNCIONARIOS(Cedula)
+);
+
 INSERT INTO Usuarios (Cedula,Nombre,Apellido1,Apellido2,Usuario,Clave,Rol) values (123456789,'Administrador','Super','Usuario','Administrador','Cdf/BkY5HRrUeAvNSxTUQrEdX9E=',1)
 
 INSERT INTO Usuarios (Cedula,Nombre,Apellido1,Apellido2,Usuario,Clave,Rol) values (123456788,'Consultor','Desistema','Externo','Consultor','8WfVNiq29wB9gJCs2883NIDvkFI=',2)
