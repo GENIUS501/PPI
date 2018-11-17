@@ -28,8 +28,8 @@ namespace AccesoDatos
                                          new Parameter("@Apellido1",uRegistro.Apellido1),
                                          new Parameter("@Apellido2",uRegistro.Apellido2),
                                          new Parameter("@Id_Puesto",uRegistro.Id_Puesto),
-                                         new Parameter("@clave",uRegistro.Clave),
-                                         new Parameter("@rol",uRegistro.Rol),
+                                         new Parameter("@Id_Departamento",uRegistro.Id_Departamento),
+                                         new Parameter("@Fecha_De_Ingreso",uRegistro.Fecha_De_Ingreso),
                                       };
                FilasAfectadas = Database.exectuteNonQuery(sentencia, parametros);
             }
