@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Ent_Departamentos.cs" />
     <Compile Include="Ent_Dias_Disponibles.cs" />
+    <Compile Include="Ent_Funcionarios.cs" />
     <Compile Include="Ent_Puestos.cs" />
     <Compile Include="Ent_Sessiones.cs" />
     <Compile Include="Ent_Usuarios.cs" />
