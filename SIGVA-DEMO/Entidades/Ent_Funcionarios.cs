@@ -9,6 +9,7 @@ namespace Entidades
     public class Ent_Funcionarios
     {
         #region "Propiedades"
+        public Int32 Cedula { get; set; }
         public string Nombre { get; set; }
         public string Apellido1 { get; set; }
         public string Apellido2 { get; set; }
@@ -26,6 +27,7 @@ namespace Entidades
         #region "Constructor sin parametros"
         public Ent_Funcionarios()
         {
+            Cedula = 0;
             Nombre = "";
             Apellido1 = "";
             Apellido2 = "";
@@ -40,8 +42,9 @@ namespace Entidades
         #endregion
 
         #region "Constructor con parametros"
-        public Ent_Funcionarios(string nombre,string apellido1,string apellido2,Int32 id_puesto,Int32 id_departamento,DateTime fecha_ingreso,string direccion,Int32 telefono,string email,DateTime fecha_anualidad,string estatus,Int32 anos_institucion_anterior)
+        public Ent_Funcionarios(Int32 cedula,string nombre,string apellido1,string apellido2,Int32 id_puesto,Int32 id_departamento,DateTime fecha_ingreso,string direccion,Int32 telefono,string email,DateTime fecha_anualidad,string estatus,Int32 anos_institucion_anterior)
         {
+            Cedula = cedula;
             Nombre = nombre;
             Apellido1 = apellido1;
             Apellido2 = Apellido2;
