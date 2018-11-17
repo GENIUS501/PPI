@@ -32,7 +32,8 @@ namespace Presentacion
         private void button1_Click(object sender, EventArgs e)
         {
             DateTime fechaInicio = Txt_Fecha_Ingreso.Value.Date;
-            DateTime fechaFinal = DateTime.Now; 
+            DateTime fechaFinal = DateTime.Now;
+            DateTime fecha_trabajo;
 
             TimeSpan tSpan = fechaFinal - fechaInicio;
 
@@ -46,9 +47,11 @@ namespace Presentacion
 
             if (fechaInicio < fechaFinal)
             {
-                for (int i = 0; i < 5; i++)
+                fecha_trabajo = fechaInicio;
+                for (int j = 0; fecha_trabajo > fechaFinal;j++ )
                 {
-                   // DateTime F = fechaInicio.AddMonths(12);
+                    fecha_trabajo = fecha_trabajo.AddYears(1);
+
                 }
                 
             }

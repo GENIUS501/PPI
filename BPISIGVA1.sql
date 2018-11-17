@@ -31,6 +31,7 @@ CREATE TABLE FUNCIONARIOS(
 	Email VARCHAR(25),
 	Fecha_de_Anualidad DATE NOT NULL,
 	Estatus VARCHAR(8) NOT NULL,
+	Anos_Institucion_anterior INT,
 	CONSTRAINT FK_FUN_PUE FOREIGN KEY (Id_Puesto) references Puestos(Id_Puesto),
 	CONSTRAINT FK_FUN_DEP FOREIGN KEY (Id_Departamento) references DEPARTAMENTOS(Id_Departamento)
 );
