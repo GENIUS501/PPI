@@ -10,8 +10,7 @@ namespace AccesoDatos
 {
     public class AD_Funcionarios
     {
-            public class AD_Usuarios
-    {
+
         string vCadenaConexion = ConfigurationManager.ConnectionStrings["Presentacion.Properties.Settings.SIGVAConnectionString"].ConnectionString;
         #region "Insertar"
         public Int32 Insertar(Ent_Funcionarios uRegistro)
@@ -30,6 +29,12 @@ namespace AccesoDatos
                                          new Parameter("@Id_Puesto",uRegistro.Id_Puesto),
                                          new Parameter("@Id_Departamento",uRegistro.Id_Departamento),
                                          new Parameter("@Fecha_De_Ingreso",uRegistro.Fecha_De_Ingreso),
+                                         new Parameter("@Direccion",uRegistro.Direccion),
+                                         new Parameter("@Telefono",uRegistro.Telefono),
+                                         new Parameter("@Email",uRegistro.Email),
+                                         new Parameter("@Fecha_de_Anualidad",uRegistro.Fecha_de_Anualidad),
+                                         new Parameter("@Estatus",uRegistro.Estatus),
+                                         new Parameter("@Anos_Institucion_anterior",uRegistro.Anos_Institucion_anterior),
                                       };
                FilasAfectadas = Database.exectuteNonQuery(sentencia, parametros);
             }
