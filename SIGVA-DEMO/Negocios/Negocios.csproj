@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Neg_Departamentos.cs" />
+    <Compile Include="Neg_Dias_Disponibles.cs" />
     <Compile Include="Neg_Funcionarios.cs" />
     <Compile Include="Neg_Puestos.cs" />
     <Compile Include="Neg_Sessiones.cs" />
