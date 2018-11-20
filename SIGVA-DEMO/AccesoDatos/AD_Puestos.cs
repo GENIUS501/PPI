@@ -127,6 +127,38 @@ namespace AccesoDatos
        }
        #endregion
 
+       #region "Llenar combobox"
+       public DataTable Llenarcombobox(Int32 pCodigo)
+       {
+           try
+           {
+               DataTable dtConsulta = new DataTable();
+               Ent_Puestos vRegistro = new Ent_Puestos();
+
+               string commandText = "SELECT [Nombre_Puesto],[Id_Puesto] FROM [dbo].[PUESTOS] WHERE [Id_Departamento] = " + pCodigo;
+               //string commandText = commandTexta;
+
+               using (SqlConnection connection = new SqlConnection(vCadenaConexion))
+               {
+                   SqlCommand command = new SqlCommand(commandText, connection);
+
+                   SqlDataAdapter DataAdapter = new SqlDataAdapter(command);
+                   DataAdapter.Fill(dtConsulta);
+               }
+
+               if (dtConsulta.Rows.Count != 0)
+               {
+               }
+               return dtConsulta;
+
+           }
+           catch (Exception ex)
+           {
+               throw ex;
+           }
+       }
+       #endregion
+
        #region "Eliminar"
        public Int32 Eliminar(Int32 id)
        {

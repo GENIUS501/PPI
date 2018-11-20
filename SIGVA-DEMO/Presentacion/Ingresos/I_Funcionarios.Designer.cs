@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Txt_Cedula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
@@ -60,8 +61,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.sIGVADataSet1Departamentos = new Presentacion.SIGVADataSet1Departamentos();
+            this.dEPARTAMENTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dEPARTAMENTOSTableAdapter = new Presentacion.SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Txt_Cedula
@@ -130,11 +136,14 @@
             // 
             // Cbo_Departamento
             // 
+            this.Cbo_Departamento.DataSource = this.dEPARTAMENTOSBindingSource;
+            this.Cbo_Departamento.DisplayMember = "Nombre_Departamento";
             this.Cbo_Departamento.FormattingEnabled = true;
             this.Cbo_Departamento.Location = new System.Drawing.Point(27, 144);
             this.Cbo_Departamento.Name = "Cbo_Departamento";
             this.Cbo_Departamento.Size = new System.Drawing.Size(121, 21);
             this.Cbo_Departamento.TabIndex = 10;
+            this.Cbo_Departamento.ValueMember = "Id_Departamento";
             this.Cbo_Departamento.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Cbo_Puesto
@@ -162,7 +171,6 @@
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 13;
             this.label6.Text = "Puesto";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // Rad_Posee
             // 
@@ -370,6 +378,20 @@
             this.label14.TabIndex = 31;
             this.label14.Text = "Años";
             // 
+            // sIGVADataSet1Departamentos
+            // 
+            this.sIGVADataSet1Departamentos.DataSetName = "SIGVADataSet1Departamentos";
+            this.sIGVADataSet1Departamentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dEPARTAMENTOSBindingSource
+            // 
+            this.dEPARTAMENTOSBindingSource.DataMember = "DEPARTAMENTOS";
+            this.dEPARTAMENTOSBindingSource.DataSource = this.sIGVADataSet1Departamentos;
+            // 
+            // dEPARTAMENTOSTableAdapter
+            // 
+            this.dEPARTAMENTOSTableAdapter.ClearBeforeFill = true;
+            // 
             // I_Funcionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,11 +401,14 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "I_Funcionarios";
             this.Text = "Ingresar Funcionarios";
+            this.Load += new System.EventHandler(this.I_Funcionarios_Load);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -422,5 +447,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label14;
+        private SIGVADataSet1Departamentos sIGVADataSet1Departamentos;
+        private System.Windows.Forms.BindingSource dEPARTAMENTOSBindingSource;
+        private SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter dEPARTAMENTOSTableAdapter;
     }
 }

@@ -87,6 +87,22 @@ namespace Negocios
        }
        #endregion
 
+       #region "Llenar combobox"
+       public DataTable Llenarcombobox(Int32 pCodigo)
+       {
+           AccesoDatos.AD_Puestos IControlador;
+           try
+           {
+               IControlador = new AccesoDatos.AD_Puestos();
+               return IControlador.Llenarcombobox(pCodigo);
+           }
+           catch (Exception ex)
+           {
+               throw new Exception(ex.Message, ex);
+           }
+       }
+       #endregion
+
        #region "Eliminar"
        public Int32 Eliminar(Int32 Id)
        {

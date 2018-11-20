@@ -25,10 +25,24 @@ namespace Presentacion
         {
             InitializeComponent();
         }
-
+        private void LlenarCombo()
+        {
+            try
+            {
+                Neg_Puestos Npuestos = new Neg_Puestos();
+                DataTable Dt = new DataTable();
+                Dt = Npuestos.Llenarcombobox(Convert.ToInt32(Cbo_Departamento.SelectedValue.ToString()));
+                Cbo_Puesto.DataSource = Dt;
+                Cbo_Puesto.DisplayMember = "Nombre_Puesto";
+                Cbo_Puesto.ValueMember = "Id_Puesto";
+            }catch(Exception ex)
+            {
+                 
+            }
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            LlenarCombo();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -45,6 +59,7 @@ namespace Presentacion
             Efuncionarios.Nombre = this.Txt_Nombre.Text.ToString();
             Efuncionarios.Apellido1 = this.Txt_Apellido1.Text.ToString();
             Efuncionarios.Apellido2 = this.Txt_Apellido2.Text.ToString();
+            Efuncionarios.Id_Departamento = Convert.ToInt32(this.Cbo_Departamento.SelectedValue.ToString());
 
             #endregion
             #region "Calculo de dias"
@@ -65,7 +80,7 @@ namespace Presentacion
 
             Decimal resa = dias * res;
 
-           // DateTime F  = fechaInicio.AddMonths(1);
+            DateTime F  = fechaInicio.AddMonths(1);
 
             if (fechaInicio < fechaFinal)
             {
@@ -94,8 +109,18 @@ namespace Presentacion
             #endregion
         }
 
-        private void label6_Click(object sender, EventArgs e)
+
+        private void I_Funcionarios_Load(object sender, EventArgs e)
         {
+            try
+            {
+                // TODO: esta línea de código carga datos en la tabla 'sIGVADataSet1Departamentos.DEPARTAMENTOS' Puede moverla o quitarla según sea necesario.
+                this.dEPARTAMENTOSTableAdapter.Fill(this.sIGVADataSet1Departamentos.DEPARTAMENTOS);
+                LlenarCombo();
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos: "+ex);
+            }
 
         }
     }
