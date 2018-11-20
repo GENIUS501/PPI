@@ -42,9 +42,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 144);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(294, 13);
+            this.label1.Size = new System.Drawing.Size(300, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Desarrolladores: Geiner Fallas Murillo  - Javier Arguedas Díaz";
+            this.label1.Text = "Desarrolladores:  Javier Arguedas Díaz -  Geiner Fallas Murillo ";
             // 
             // label2
             // 
