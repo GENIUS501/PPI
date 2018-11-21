@@ -30,6 +30,26 @@ namespace Negocios
         }
         #endregion
 
+        #region "Actualizar"
+        public Int32 Actualizar(Ent_Dias_Disponibles Data)
+        {
+            Int32 FilasAfectadas = 0;
+            AccesoDatos.AD_Dias_Disponibles IControlador;
+
+            try
+            {
+                IControlador = new AccesoDatos.AD_Dias_Disponibles();
+                FilasAfectadas = IControlador.Actualizar(Data);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return FilasAfectadas;
+        }
+        #endregion
+
         #region "Leer Dia"
         public Ent_Dias_Disponibles LeerDia(Int32 Cedula, Int32 Ano)
         {

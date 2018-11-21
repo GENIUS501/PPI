@@ -103,7 +103,7 @@ namespace Presentacion
 
                 TimeSpan tSpan = fechaFinal - fechaInicio;
 
-                int dias = tSpan.;
+                int dias = tSpan.Days;
                 
                 Int32 Ejecutar = 0;
 
@@ -123,19 +123,39 @@ namespace Presentacion
                         int Ano = 0;
                          
                         Ano = fecha_trabajo.Year;
-                        Edias.Ano = Ano;
-                        Edias.Cantidad_Dias = 1;
-                        Edias.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
-                        Ejecutar = Ndias.Insertar(Edias);
-                        if (Ejecutar > 0)
-                        {
 
-                            fecha_trabajo = fecha_trabajo.AddMonths(1);
-                          //  fecha_trabajo.AddYears(1);
-                        }
-                        else
+                        Edias = Ndias.LeerDia(Edias.Cedula,Ano);
+                        if(Edias.Cantidad_Dias>0)
                         {
+                            Edias.Ano = Ano;
+                            Edias.Cantidad_Dias = Edias.Cantidad_Dias+1;
+                            Edias.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
+                            Ejecutar = Ndias.Actualizar(Edias);
+                            if (Ejecutar > 0)
+                            {
 
+                                fecha_trabajo = fecha_trabajo.AddMonths(1);
+                              //  fecha_trabajo.AddYears(1);
+                            }
+                            else
+                            {
+
+                            }
+                        }else{
+                            Edias.Ano = Ano;
+                            Edias.Cantidad_Dias = 1;
+                            Edias.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
+                            Ejecutar = Ndias.Insertar(Edias);
+                            if (Ejecutar > 0)
+                            {
+
+                                fecha_trabajo = fecha_trabajo.AddMonths(1);
+                              //  fecha_trabajo.AddYears(1);
+                            }
+                            else
+                            {
+
+                            }
                         }
                     }
                 }
