@@ -7,12 +7,12 @@ C:\Users\Gollo\Desktop\SIGVA-DEMO\SIGVA-DEMO\Negocios\bin\Debug\Entidades.pdb
 C:\Users\Gollo\Desktop\SIGVA-DEMO\SIGVA-DEMO\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
 C:\Users\Gollo\Desktop\SIGVA-DEMO\SIGVA-DEMO\Negocios\obj\Debug\Negocios.dll
 C:\Users\Gollo\Desktop\SIGVA-DEMO\SIGVA-DEMO\Negocios\obj\Debug\Negocios.pdb
-C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Negocios\bin\Debug\Negocios.dll
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Negocios\bin\Debug\Negocios.pdb
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Negocios\bin\Debug\AccesoDatos.dll
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Negocios\bin\Debug\Entidades.dll
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Negocios\bin\Debug\AccesoDatos.pdb
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Negocios\bin\Debug\Entidades.pdb
+C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Negocios\obj\Debug\Negocios.csprojResolveAssemblyReference.cache
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Negocios\obj\Debug\Negocios.dll
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Negocios\obj\Debug\Negocios.pdb

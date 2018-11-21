@@ -20,6 +20,9 @@ namespace Presentacion
         Ent_Funcionarios Efuncionarios;
         Neg_Dias_Disponibles Ndias;
         Ent_Dias_Disponibles Edias;
+        DateTime fechaInicio;
+        DateTime fechaFinal;
+        DateTime fecha_trabajo;
         #endregion
         public I_Funcionarios()
         {
@@ -57,6 +60,8 @@ namespace Presentacion
                 Int32 Agregar = 0;
                 Efuncionarios = new Ent_Funcionarios();
                 Nfuncionarios = new Neg_Funcionarios();
+                Ndias = new Neg_Dias_Disponibles();
+                Edias = new Ent_Dias_Disponibles();
                 Efuncionarios.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
                 Efuncionarios.Nombre = this.Txt_Nombre.Text.ToString();
                 Efuncionarios.Apellido1 = this.Txt_Apellido1.Text.ToString();
@@ -92,46 +97,50 @@ namespace Presentacion
             {
                 Ndias = new Neg_Dias_Disponibles();
                 Edias = new Ent_Dias_Disponibles();
-                DateTime fechaInicio = Convert.ToDateTime(Txt_Fecha_Ingreso.Value.Date);
-                DateTime fechaFinal = DateTime.Now;
-               // DateTime fecha_trabajo;
+                fechaInicio = Convert.ToDateTime(Txt_Fecha_Ingreso.Value.Date);
+                fechaFinal = DateTime.Now;
+                //bool Salir = false;
 
                 TimeSpan tSpan = fechaFinal - fechaInicio;
 
-                int dias = tSpan.Days;
-                int Ano = 0;
-                bool Salir = false;
+                int dias = tSpan.;
+                
                 Int32 Ejecutar = 0;
 
                 Decimal res = 0.0333m;
 
                 Decimal resa = dias * res;
 
+                MessageBox.Show(""+resa);
+
                 DateTime F = fechaInicio.AddMonths(1);
 
                 if (fechaInicio < fechaFinal)
                 {
-                    for (DateTime fecha_trabajo = fechaInicio; fecha_trabajo >= fechaFinal; fecha_trabajo = fecha_trabajo.AddDays(1))
+                    fecha_trabajo = fechaInicio;
+                    while ( fecha_trabajo < fechaFinal)
                     {
-                        Ejecutar = 0;
-                       // fecha_trabajo = fechaInicio.AddYears(1);
+                        int Ano = 0;
+                         
                         Ano = fecha_trabajo.Year;
                         Edias.Ano = Ano;
-                        Edias.Cantidad_Dias = 12;
+                        Edias.Cantidad_Dias = 1;
                         Edias.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
                         Ejecutar = Ndias.Insertar(Edias);
                         if (Ejecutar > 0)
                         {
-                            MessageBox.Show("Dias Agregados");
+
+                            fecha_trabajo = fecha_trabajo.AddMonths(1);
+                          //  fecha_trabajo.AddYears(1);
                         }
                         else
                         {
-                            Salir = true;
+
                         }
                     }
-                    MessageBox.Show("Cantidad de dias:" + dias + " V: " + resa + "Ano despues:" + F);
                 }
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show("Erro: "+ex);
             }

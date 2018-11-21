@@ -29,5 +29,21 @@ namespace Negocios
             return FilasAfectadas;
         }
         #endregion
+
+        #region "Leer Dia"
+        public Ent_Dias_Disponibles LeerDia(Int32 Cedula, Int32 Ano)
+        {
+            AccesoDatos.AD_Dias_Disponibles IControlador;
+            try
+            {
+                IControlador = new AccesoDatos.AD_Dias_Disponibles();
+                return IControlador.LeerDia(Cedula,Ano);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+        #endregion
     }
 }

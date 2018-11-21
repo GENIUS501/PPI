@@ -142,6 +142,7 @@ C:\Users\Gollo\Desktop\SIGVA-DEMO\SIGVA-DEMO\Presentacion\bin\Debug\Entidades.dl
 C:\Users\Gollo\Desktop\SIGVA-DEMO\SIGVA-DEMO\Presentacion\bin\Debug\Negocios.dll
 C:\Users\Gollo\Desktop\SIGVA-DEMO\SIGVA-DEMO\Presentacion\bin\Debug\Entidades.pdb
 C:\Users\Gollo\Desktop\SIGVA-DEMO\SIGVA-DEMO\Presentacion\bin\Debug\Negocios.pdb
+C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.exe
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.Acerca_de.resources
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.A_Sessiones.resources
@@ -175,6 +176,7 @@ C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presenta
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.Rpt_Saldos_Disponibles.resources
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.Rpt_Rango_Fechas.resources
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
+C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.pdb
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\bin\Debug\Presentacion.exe.config
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\bin\Debug\Presentacion.exe
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\bin\Debug\Presentacion.pdb
@@ -184,5 +186,3 @@ C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\bin\Debug\AccesoDa
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\bin\Debug\Entidades.pdb
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\bin\Debug\Negocios.pdb
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\bin\Debug\AccesoDatos.pdb
-C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.exe
-C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.pdb
