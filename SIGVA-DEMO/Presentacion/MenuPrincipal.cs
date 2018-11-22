@@ -293,11 +293,12 @@ namespace Principal
 
         private void liquidacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            A_Personal A = new A_Personal();
+            /*A_Personal A = new A_Personal();
             A.titulo = "Accion de Personal";
             A.Descripcion = "SIGVA";
             A.MdiParent = this;
-            A.Show();
+            A.Show();*/
+            
         }
 
         private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)

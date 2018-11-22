@@ -139,6 +139,10 @@ namespace Presentacion
             }
 
         }
+        private void Calcular_Anualidad()
+        {
+
+        }
         private void Calcular_dias()
         {
             try
