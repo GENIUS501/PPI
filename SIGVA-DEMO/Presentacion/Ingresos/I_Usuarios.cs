@@ -74,42 +74,49 @@ namespace Presentacion
             {
                 try
                 {
-                    string c1 = Txt_Clave.Text.ToString();
-                    string c2 = Txt_Clave1.Text.ToString();
-                    if(c1==c2)
-                     {
-                       //Instanciacion
-                        Eusuarios = new Ent_Usuarios();
-                        Nusuarios = new Neg_Usuarios();
-                        //Encripcion de la clave
-                        string usuario = Txt_Usuario.Text.ToString();
-                        string password = Txt_Clave.Text.ToString();
-                        string hash = Helper.EncodePassword(string.Concat(usuario, password));
+                    if (this.Txt_Cedula.Text.Length > 7 && this.Txt_Cedula.Text.Length < 10)
+                    {
+                        string c1 = Txt_Clave.Text.ToString();
+                        string c2 = Txt_Clave1.Text.ToString();
+                        if (c1 == c2)
+                        {
+                            //Instanciacion
+                            Eusuarios = new Ent_Usuarios();
+                            Nusuarios = new Neg_Usuarios();
+                            //Encripcion de la clave
+                            string usuario = Txt_Usuario.Text.ToString();
+                            string password = Txt_Clave.Text.ToString();
+                            string hash = Helper.EncodePassword(string.Concat(usuario, password));
 
-                        //Llenado de la clase contenedora
-                        Eusuarios.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
-                        Eusuarios.Nombre = this.Txt_Nombre.Text;
-                        Eusuarios.Apellido1 = this.Txt_Apellido1.Text;
-                        Eusuarios.Apellido2 = this.Txt_Apellido2.Text;
-                        Eusuarios.Usuario = this.Txt_Usuario.Text;
-                        Eusuarios.Clave = hash;
-                        Eusuarios.Rol =Convert.ToInt32(this.Cbo_Rol.SelectedValue.ToString());
-                        int ejecutar = Nusuarios.Insertar(Eusuarios);
-                        if (ejecutar > 0) {
-                        MessageBox.Show("Datos ingresados satisfactoriamente", "Ingreso de Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LimpiarCampos();
+                            //Llenado de la clase contenedora
+                            Eusuarios.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
+                            Eusuarios.Nombre = this.Txt_Nombre.Text;
+                            Eusuarios.Apellido1 = this.Txt_Apellido1.Text;
+                            Eusuarios.Apellido2 = this.Txt_Apellido2.Text;
+                            Eusuarios.Usuario = this.Txt_Usuario.Text;
+                            Eusuarios.Clave = hash;
+                            Eusuarios.Rol = Convert.ToInt32(this.Cbo_Rol.SelectedValue.ToString());
+                            int ejecutar = Nusuarios.Insertar(Eusuarios);
+                            if (ejecutar > 0)
+                            {
+                                MessageBox.Show("Datos ingresados satisfactoriamente", "Ingreso de Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                LimpiarCampos();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error al ingresar datos");
+                            }
+
                         }
                         else
                         {
-                            MessageBox.Show("Error al ingresar datos");
+                            MessageBox.Show("Las claves no coinciden");
                         }
-                        
-
-                     }
+                    }
                     else
-                     {
-                         MessageBox.Show("Las claves no coinciden");
-                     }
+                    {
+                        MessageBox.Show("Formarto de cedula incorrecto");
+                    }
 
                 }catch(Exception ex)
                 {

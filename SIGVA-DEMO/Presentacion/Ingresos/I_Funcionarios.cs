@@ -57,40 +57,82 @@ namespace Presentacion
         {
             try
             {
-                Int32 Agregar = 0;
-                Efuncionarios = new Ent_Funcionarios();
-                Nfuncionarios = new Neg_Funcionarios();
-                Ndias = new Neg_Dias_Disponibles();
-                Edias = new Ent_Dias_Disponibles();
-                Efuncionarios.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
-                Efuncionarios.Nombre = this.Txt_Nombre.Text.ToString();
-                Efuncionarios.Apellido1 = this.Txt_Apellido1.Text.ToString();
-                Efuncionarios.Apellido2 = this.Txt_Apellido2.Text.ToString();
-                Efuncionarios.Id_Departamento = Convert.ToInt32(this.Cbo_Departamento.SelectedValue.ToString());
-                Efuncionarios.Id_Puesto = Convert.ToInt32(this.Cbo_Puesto.SelectedValue.ToString());
-                Efuncionarios.Direccion = this.Txt_Direccion.Text.ToString();
-                Efuncionarios.Email = this.Txt_Email.Text.ToString();
-                Efuncionarios.Telefono = Convert.ToInt32(this.Txt_Telefono.Text.ToString());
-                Efuncionarios.Fecha_De_Ingreso = Convert.ToDateTime(this.Txt_Fecha_Ingreso.Text);
-                Efuncionarios.Fecha_de_Anualidad = Convert.ToDateTime(this.Txt_Fecha_Anualidad.Text);
-                Efuncionarios.Anos_Institucion_anterior = Convert.ToInt32(this.Txt_Cantidad_Anos.Text.ToString());
-                Efuncionarios.Estatus = "Activo";
-                Agregar = Nfuncionarios.Insertar(Efuncionarios);
-                if (Agregar > 0)
+                if(this.Txt_Nombre.Text.ToString()==""||this.Txt_Apellido1.Text.ToString()==""||this.Txt_Apellido2.Text.ToString()==""||this.Txt_Cedula.Text.ToString()==""||this.Txt_Direccion.Text.ToString()==""||this.Txt_Cedula.Text.ToString()=="")
                 {
-                    Calcular_dias();
-                    MessageBox.Show("Funcionario Agregado");
-                }
-                else
+                    MessageBox.Show("Erro faltan campos por llenar");
+                }else
                 {
-                    MessageBox.Show("Error al agregar datos.");
+                    if(Txt_Email.Text.ToString()!="")
+                    {
+                        if(Txt_Email.Text.Contains("@"))
+                        {
+                            if(Txt_Email.Text.Contains(".com"))
+                            {
+                                Agregar_funcionario();
+                            }else
+                            {
+                                MessageBox.Show("Formato de correo incorrecto");
+                            }
+                        }else
+                        {
+                            MessageBox.Show("Formato de correo incorrecto");
+                        }
+                    }
+                    else
+                    {
+                        Agregar_funcionario();
+                    }
                 }
             }catch(Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
             }
         }
+        private void Agregar_funcionario()
+        {
+            try
+            {
+                if (this.Txt_Cedula.Text.Length > 7 && this.Txt_Cedula.Text.Length < 10)
+                {
+                    Int32 Agregar = 0;
+                    Efuncionarios = new Ent_Funcionarios();
+                    Nfuncionarios = new Neg_Funcionarios();
+                    Ndias = new Neg_Dias_Disponibles();
+                    Edias = new Ent_Dias_Disponibles();
+                    Efuncionarios.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
+                    Efuncionarios.Nombre = this.Txt_Nombre.Text.ToString();
+                    Efuncionarios.Apellido1 = this.Txt_Apellido1.Text.ToString();
+                    Efuncionarios.Apellido2 = this.Txt_Apellido2.Text.ToString();
+                    Efuncionarios.Id_Departamento = Convert.ToInt32(this.Cbo_Departamento.SelectedValue.ToString());
+                    Efuncionarios.Id_Puesto = Convert.ToInt32(this.Cbo_Puesto.SelectedValue.ToString());
+                    Efuncionarios.Direccion = this.Txt_Direccion.Text.ToString();
+                    Efuncionarios.Email = this.Txt_Email.Text.ToString();
+                    Efuncionarios.Telefono = Convert.ToInt32(this.Txt_Telefono.Text.ToString());
+                    Efuncionarios.Fecha_De_Ingreso = Convert.ToDateTime(this.Txt_Fecha_Ingreso.Text);
+                    Efuncionarios.Fecha_de_Anualidad = Convert.ToDateTime(this.Txt_Fecha_Anualidad.Text);
+                    Efuncionarios.Anos_Institucion_anterior = Convert.ToInt32(this.Txt_Cantidad_Anos.Text.ToString());
+                    Efuncionarios.Estatus = "Activo";
+                    Agregar = Nfuncionarios.Insertar(Efuncionarios);
+                    if (Agregar > 0)
+                    {
+                        Calcular_dias();
+                        MessageBox.Show("Funcionario Agregado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar datos.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Formato de cedula incorrecto");
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
 
+        }
         private void Calcular_dias()
         {
             try
@@ -111,18 +153,20 @@ namespace Presentacion
 
                 Decimal resa = dias * res;
 
-                MessageBox.Show(""+resa);
+             //   MessageBox.Show(""+resa);
 
                 DateTime F = fechaInicio.AddMonths(1);
 
                 if (fechaInicio < fechaFinal)
                 {
                     fecha_trabajo = fechaInicio;
-                    while ( fecha_trabajo < fechaFinal)
+                    while ( fecha_trabajo <= fechaFinal)
                     {
                         int Ano = 0;
                          
                         Ano = fecha_trabajo.Year;
+
+                        fecha_trabajo = fecha_trabajo.AddMonths(1);
 
                         Edias = Ndias.LeerDia(Edias.Cedula,Ano);
                         if(Edias.Cantidad_Dias>0)
@@ -134,7 +178,7 @@ namespace Presentacion
                             if (Ejecutar > 0)
                             {
 
-                                fecha_trabajo = fecha_trabajo.AddMonths(1);
+                               // fecha_trabajo = fecha_trabajo.AddMonths(1);
                               //  fecha_trabajo.AddYears(1);
                             }
                             else
@@ -149,7 +193,7 @@ namespace Presentacion
                             if (Ejecutar > 0)
                             {
 
-                                fecha_trabajo = fecha_trabajo.AddMonths(1);
+                             //   fecha_trabajo = fecha_trabajo.AddMonths(1);
                               //  fecha_trabajo.AddYears(1);
                             }
                             else

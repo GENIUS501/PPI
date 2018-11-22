@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Txt_Cedula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Txt_Apellido1 = new System.Windows.Forms.TextBox();
@@ -38,6 +37,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Cbo_Departamento = new System.Windows.Forms.ComboBox();
+            this.dEPARTAMENTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sIGVADataSet1Departamentos = new Presentacion.SIGVADataSet1Departamentos();
             this.Cbo_Puesto = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Txt_Fecha_Ingreso = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.Txt_Telefono = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.Txt_Direccion = new System.Windows.Forms.TextBox();
@@ -61,21 +61,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.sIGVADataSet1Departamentos = new Presentacion.SIGVADataSet1Departamentos();
-            this.dEPARTAMENTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dEPARTAMENTOSTableAdapter = new Presentacion.SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter();
+            this.Txt_Cedula = new System.Windows.Forms.MaskedTextBox();
+            this.Txt_Telefono = new System.Windows.Forms.MaskedTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Txt_Cedula
-            // 
-            this.Txt_Cedula.Location = new System.Drawing.Point(27, 34);
-            this.Txt_Cedula.Name = "Txt_Cedula";
-            this.Txt_Cedula.Size = new System.Drawing.Size(121, 20);
-            this.Txt_Cedula.TabIndex = 2;
             // 
             // label1
             // 
@@ -145,6 +138,16 @@
             this.Cbo_Departamento.TabIndex = 10;
             this.Cbo_Departamento.ValueMember = "Id_Departamento";
             this.Cbo_Departamento.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // dEPARTAMENTOSBindingSource
+            // 
+            this.dEPARTAMENTOSBindingSource.DataMember = "DEPARTAMENTOS";
+            this.dEPARTAMENTOSBindingSource.DataSource = this.sIGVADataSet1Departamentos;
+            // 
+            // sIGVADataSet1Departamentos
+            // 
+            this.sIGVADataSet1Departamentos.DataSetName = "SIGVADataSet1Departamentos";
+            this.sIGVADataSet1Departamentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Cbo_Puesto
             // 
@@ -234,13 +237,6 @@
             this.label9.Size = new System.Drawing.Size(90, 13);
             this.label9.TabIndex = 20;
             this.label9.Text = "Fecha de Ingreso";
-            // 
-            // Txt_Telefono
-            // 
-            this.Txt_Telefono.Location = new System.Drawing.Point(348, 145);
-            this.Txt_Telefono.Name = "Txt_Telefono";
-            this.Txt_Telefono.Size = new System.Drawing.Size(129, 20);
-            this.Txt_Telefono.TabIndex = 21;
             // 
             // label10
             // 
@@ -332,6 +328,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Txt_Telefono);
+            this.groupBox1.Controls.Add(this.Txt_Cedula);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.Txt_Fecha_Anualidad);
@@ -342,7 +340,6 @@
             this.groupBox1.Controls.Add(this.Txt_Email);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.Txt_Telefono);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.Txt_Fecha_Ingreso);
             this.groupBox1.Controls.Add(this.label8);
@@ -361,7 +358,6 @@
             this.groupBox1.Controls.Add(this.Txt_Apellido1);
             this.groupBox1.Controls.Add(this.Txt_Nombre);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.Txt_Cedula);
             this.groupBox1.Location = new System.Drawing.Point(5, 61);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(506, 455);
@@ -378,19 +374,25 @@
             this.label14.TabIndex = 31;
             this.label14.Text = "Años";
             // 
-            // sIGVADataSet1Departamentos
-            // 
-            this.sIGVADataSet1Departamentos.DataSetName = "SIGVADataSet1Departamentos";
-            this.sIGVADataSet1Departamentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dEPARTAMENTOSBindingSource
-            // 
-            this.dEPARTAMENTOSBindingSource.DataMember = "DEPARTAMENTOS";
-            this.dEPARTAMENTOSBindingSource.DataSource = this.sIGVADataSet1Departamentos;
-            // 
             // dEPARTAMENTOSTableAdapter
             // 
             this.dEPARTAMENTOSTableAdapter.ClearBeforeFill = true;
+            // 
+            // Txt_Cedula
+            // 
+            this.Txt_Cedula.Location = new System.Drawing.Point(27, 42);
+            this.Txt_Cedula.Mask = "000000000";
+            this.Txt_Cedula.Name = "Txt_Cedula";
+            this.Txt_Cedula.Size = new System.Drawing.Size(121, 20);
+            this.Txt_Cedula.TabIndex = 32;
+            // 
+            // Txt_Telefono
+            // 
+            this.Txt_Telefono.Location = new System.Drawing.Point(348, 145);
+            this.Txt_Telefono.Mask = "00000000";
+            this.Txt_Telefono.Name = "Txt_Telefono";
+            this.Txt_Telefono.Size = new System.Drawing.Size(129, 20);
+            this.Txt_Telefono.TabIndex = 33;
             // 
             // I_Funcionarios
             // 
@@ -404,18 +406,17 @@
             this.Load += new System.EventHandler(this.I_Funcionarios_Load);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox Txt_Cedula;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Txt_Nombre;
         private System.Windows.Forms.TextBox Txt_Apellido1;
@@ -434,7 +435,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker Txt_Fecha_Ingreso;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox Txt_Telefono;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox Txt_Direccion;
@@ -450,5 +450,7 @@
         private SIGVADataSet1Departamentos sIGVADataSet1Departamentos;
         private System.Windows.Forms.BindingSource dEPARTAMENTOSBindingSource;
         private SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter dEPARTAMENTOSTableAdapter;
+        private System.Windows.Forms.MaskedTextBox Txt_Telefono;
+        private System.Windows.Forms.MaskedTextBox Txt_Cedula;
     }
 }
