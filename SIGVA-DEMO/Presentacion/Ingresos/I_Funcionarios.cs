@@ -45,7 +45,13 @@ namespace Presentacion
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LlenarCombo();
+            try
+            {
+                LlenarCombo();
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos: "+ex);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -206,7 +212,7 @@ namespace Presentacion
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Erro: "+ex);
+                MessageBox.Show("Error: "+ex);
             }
         }
 
@@ -217,11 +223,30 @@ namespace Presentacion
                 // TODO: esta línea de código carga datos en la tabla 'sIGVADataSet1Departamentos.DEPARTAMENTOS' Puede moverla o quitarla según sea necesario.
                 this.dEPARTAMENTOSTableAdapter.Fill(this.sIGVADataSet1Departamentos.DEPARTAMENTOS);
                 LlenarCombo();
+                Rad_noposee.Checked = true;
+                if (Rad_noposee.Checked == true)
+                {
+                    Txt_Cantidad_Anos.Enabled = false;
+                    Txt_Cantidad_Anos.Text = Convert.ToString(0);
+                }
             }catch(Exception ex)
             {
                 MessageBox.Show("Error al cargar los datos: "+ex);
             }
 
+        }
+
+        private void Rad_noposee_Click(object sender, EventArgs e)
+        {
+            this.Rad_noposee.Checked = true;
+            Txt_Cantidad_Anos.Enabled = false;
+            Txt_Cantidad_Anos.Text = Convert.ToString(0);
+        }
+
+        private void Rad_Posee_Click(object sender, EventArgs e)
+        {
+            this.Rad_Posee.Checked = true;
+            Txt_Cantidad_Anos.Enabled = true;
         }
     }
 }

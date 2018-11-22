@@ -60,10 +60,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Txt_Telefono = new System.Windows.Forms.MaskedTextBox();
+            this.Txt_Cedula = new System.Windows.Forms.MaskedTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dEPARTAMENTOSTableAdapter = new Presentacion.SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter();
-            this.Txt_Cedula = new System.Windows.Forms.MaskedTextBox();
-            this.Txt_Telefono = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -185,6 +185,7 @@
             this.Rad_Posee.TabStop = true;
             this.Rad_Posee.Text = "Posee";
             this.Rad_Posee.UseVisualStyleBackColor = true;
+            this.Rad_Posee.Click += new System.EventHandler(this.Rad_Posee_Click);
             // 
             // Rad_noposee
             // 
@@ -196,6 +197,7 @@
             this.Rad_noposee.TabStop = true;
             this.Rad_noposee.Text = "No posee";
             this.Rad_noposee.UseVisualStyleBackColor = true;
+            this.Rad_noposee.Click += new System.EventHandler(this.Rad_noposee_Click);
             // 
             // label7
             // 
@@ -365,6 +367,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingreso de Funcionarios";
             // 
+            // Txt_Telefono
+            // 
+            this.Txt_Telefono.Location = new System.Drawing.Point(348, 145);
+            this.Txt_Telefono.Mask = "00000000";
+            this.Txt_Telefono.Name = "Txt_Telefono";
+            this.Txt_Telefono.Size = new System.Drawing.Size(129, 20);
+            this.Txt_Telefono.TabIndex = 33;
+            // 
+            // Txt_Cedula
+            // 
+            this.Txt_Cedula.Location = new System.Drawing.Point(27, 42);
+            this.Txt_Cedula.Mask = "000000000";
+            this.Txt_Cedula.Name = "Txt_Cedula";
+            this.Txt_Cedula.Size = new System.Drawing.Size(121, 20);
+            this.Txt_Cedula.TabIndex = 32;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -377,22 +395,6 @@
             // dEPARTAMENTOSTableAdapter
             // 
             this.dEPARTAMENTOSTableAdapter.ClearBeforeFill = true;
-            // 
-            // Txt_Cedula
-            // 
-            this.Txt_Cedula.Location = new System.Drawing.Point(27, 42);
-            this.Txt_Cedula.Mask = "000000000";
-            this.Txt_Cedula.Name = "Txt_Cedula";
-            this.Txt_Cedula.Size = new System.Drawing.Size(121, 20);
-            this.Txt_Cedula.TabIndex = 32;
-            // 
-            // Txt_Telefono
-            // 
-            this.Txt_Telefono.Location = new System.Drawing.Point(348, 145);
-            this.Txt_Telefono.Mask = "00000000";
-            this.Txt_Telefono.Name = "Txt_Telefono";
-            this.Txt_Telefono.Size = new System.Drawing.Size(129, 20);
-            this.Txt_Telefono.TabIndex = 33;
             // 
             // I_Funcionarios
             // 
