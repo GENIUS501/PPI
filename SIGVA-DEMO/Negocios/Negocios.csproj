@@ -45,6 +45,7 @@
     <Compile Include="Neg_Departamentos.cs" />
     <Compile Include="Neg_Dias_Devolucion.cs" />
     <Compile Include="Neg_Dias_Disponibles.cs" />
+    <Compile Include="Neg_Dias_Reservados.cs" />
     <Compile Include="Neg_Disponibles_Saldos.cs" />
     <Compile Include="Neg_Funcionarios.cs" />
     <Compile Include="Neg_Puestos.cs" />

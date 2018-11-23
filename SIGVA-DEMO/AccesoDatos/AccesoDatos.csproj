@@ -46,6 +46,7 @@
     <Compile Include="AD_Departamentos.cs" />
     <Compile Include="AD_Dias_Devolucion.cs" />
     <Compile Include="AD_Dias_Disponibles.cs" />
+    <Compile Include="AD_Dias_Reservados.cs" />
     <Compile Include="AD_Disponibles_Saldos.cs" />
     <Compile Include="AD_Funcionarios.cs" />
     <Compile Include="AD_Puestos.cs" />

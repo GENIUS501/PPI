@@ -20,6 +20,8 @@ namespace Presentacion
         Ent_Funcionarios Efuncionarios;
         Neg_Dias_Disponibles Ndias;
         Ent_Dias_Disponibles Edias;
+        Neg_Puestos Npuestos;
+        DataTable Dt;
         DateTime fechaInicio;
         DateTime fechaFinal;
         DateTime fecha_trabajo;
@@ -32,15 +34,15 @@ namespace Presentacion
         {
             try
             {
-                Neg_Puestos Npuestos = new Neg_Puestos();
-                DataTable Dt = new DataTable();
+                Npuestos = new Neg_Puestos();
+                Dt = new DataTable();
                 Dt = Npuestos.Llenarcombobox(Convert.ToInt32(Cbo_Departamento.SelectedValue.ToString()));
                 Cbo_Puesto.DataSource = Dt;
                 Cbo_Puesto.DisplayMember = "Nombre_Puesto";
                 Cbo_Puesto.ValueMember = "Id_Puesto";
             }catch(Exception ex)
             {
-                 
+                Console.WriteLine("Error: "+ex);
             }
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -128,6 +130,8 @@ namespace Presentacion
                             Calcular_Anteriores();
                         }
                         MessageBox.Show("Funcionario Agregado");
+                        Limpiar_Campos();
+                        
                     }
                     else
                     {
@@ -143,6 +147,19 @@ namespace Presentacion
                 MessageBox.Show("Error: " + ex);
             }
 
+        }
+        private void Limpiar_Campos()
+        {
+            this.Txt_Cedula.Text = "";
+            this.Txt_Nombre.Text = "";
+            this.Txt_Apellido1.Text = "";
+            this.Txt_Apellido2.Text = "";
+            this.Txt_Direccion.Text = "";
+            this.Txt_Email.Text = "";
+            this.Txt_Fecha_Anualidad.Text = "";
+            this.Txt_Fecha_Ingreso.Text = "";
+            this.Txt_Telefono.Text = "";
+            I_Funcionarios_Load(null, null);
         }
         private void Calcular_Anteriores()
         {

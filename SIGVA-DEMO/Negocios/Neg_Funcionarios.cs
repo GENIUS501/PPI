@@ -91,5 +91,25 @@ namespace Negocios
             return dt;
         }
         #endregion
+
+        #region "Eliminar"
+        public Int32 Eliminar(Int32 Cedula)
+        {
+            Int32 FilasAfectadas = 0;
+            AccesoDatos.AD_Funcionarios IControlador;
+
+            try
+            {
+                IControlador = new AccesoDatos.AD_Funcionarios();
+                FilasAfectadas = IControlador.Eliminar(Cedula);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return FilasAfectadas;
+        }
+        #endregion
     }
 }
