@@ -122,6 +122,7 @@ namespace Presentacion
                     if (Agregar > 0)
                     {
                         Calcular_dias();
+                        Calcular_Anualidad();
                         MessageBox.Show("Funcionario Agregado");
                     }
                     else
@@ -141,7 +142,56 @@ namespace Presentacion
         }
         private void Calcular_Anualidad()
         {
+            try
+            {
+                Ent_Anualidades Eanu = new Ent_Anualidades();
+                Neg_Anualidades Nanu = new Neg_Anualidades();
+                int contador = 1;
+                int Anualidad = 0;
+                int Ejecutar = 0;
+                DateTime fecha_Anualidad;
+                fecha_Anualidad = Convert.ToDateTime(this.Txt_Fecha_Anualidad.Text);
+                DateTime fecha_fin = DateTime.Now;
+                if (fecha_Anualidad.Year < fecha_fin.Year)
+                {
+                    while (fecha_Anualidad.Year == fecha_fin.Year)
+                    {
+                        
+                        if(contador<=4)
+                        {
+                            Anualidad = Anualidad + 3;
+                        }
+                        if(contador==5)
+                        {
+                            Anualidad = Anualidad + 5;
+                        }
+                        if(contador>=6 && contador<10)
+                        {
+                            Anualidad = Anualidad + 7;
+                        }
+                        if(contador>=10)
+                        {
+                            Anualidad = Anualidad + 15;
+                        }
+                        fecha_Anualidad.AddYears(1);
+                        contador++;
+                    }
+                }
+                Eanu.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
+                Eanu.Cantidad_Dias = Anualidad;
+                Ejecutar = Nanu.Insertar(Eanu);
+                if(Ejecutar>0)
+                {
 
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar las anualidades");
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error: "+ex);
+            }
         }
         private void Calcular_dias()
         {
@@ -193,7 +243,7 @@ namespace Presentacion
                             }
                             else
                             {
-
+                                MessageBox.Show("Error al agregar los dias calculados");
                             }
                         }else{
                             Edias.Ano = Ano;
