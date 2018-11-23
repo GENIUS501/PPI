@@ -49,6 +49,10 @@ namespace AccesoDatos
         }
         #endregion
 
+        #region "Consultar funcionario"
+
+        #endregion
+
         #region "Llenar datagrid0"
         public DataTable llenar_datagrid0()
         {

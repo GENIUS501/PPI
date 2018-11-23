@@ -153,22 +153,26 @@ namespace Presentacion
         {
             try
             {
-                /* if (this.lstDatos.SelectedItems.Count == 0)
-                 {
-                     MessageBox.Show("Favor de seleccionar los datos a consultar");
-                     return;
-                 }*/
-
-                 M_Funcionarios frm = new M_Funcionarios();
-                 frm.Modo = "C";
-                 frm.titulo = "Mantenimiento de Funcionarios";
-                 frm.Descripcion = "Consultar Funcionarios";
-                // frm.Codigo = this.lstDatos.SelectedItems[0].Text;
-                 frm.MostrarAgregar = false;
-                 frm.MostrarModificar = false;
-                 frm.MostrarEliminar = false;
-                 frm.MostrarImprimir = false;
-                 frm.ShowDialog();
+                if (valorPrimerCelda == -1)
+                {
+                    MessageBox.Show("Favor de seleccionar los datos a consultar");
+                    return;
+                }
+                else
+                {
+                    M_Funcionarios frm = new M_Funcionarios();
+                    frm.Modo = "C";
+                    frm.titulo = "Mantenimiento de Funcionarios";
+                    frm.Descripcion = "Consultar Funcionarios";
+                    frm.Codigo = valorPrimerCelda;
+                    frm.MostrarAgregar = false;
+                    frm.MostrarModificar = false;
+                    frm.MostrarEliminar = false;
+                    frm.MostrarImprimir = false;
+                    frm.ShowDialog();
+                    valorPrimerCelda = -1;
+                    L_Funcionarios_Load(null,null);
+                }
             }
             catch (Exception ex)
             {

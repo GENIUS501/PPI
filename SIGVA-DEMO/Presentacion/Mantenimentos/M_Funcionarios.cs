@@ -33,7 +33,7 @@ namespace Presentacion
             get { return vNombreBoton; }
             set { vNombreBoton = value; }
         }
-        public string Codigo { get; set; }
+        public Int32 Codigo { get; set; }
 
 
         #endregion
@@ -46,5 +46,39 @@ namespace Presentacion
         {
             this.Close();
         }
+
+        private void M_Funcionarios_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                    // TODO: esta línea de código carga datos en la tabla 'sIGVADataSet1Departamentos.DEPARTAMENTOS' Puede moverla o quitarla según sea necesario.
+                    this.dEPARTAMENTOSTableAdapter.Fill(this.sIGVADataSet1Departamentos.DEPARTAMENTOS);
+                    if(Modo == "C")
+                    {
+                        this.Txt_Cedula.Enabled = false;
+                        this.Txt_Nombre.Enabled = false;
+                        this.Txt_Apellido1.Enabled = false;
+                        this.Txt_Apellido2.Enabled = false;
+                        this.Txt_Telefono.Enabled = false;
+                        this.Txt_Email.Enabled = false;
+                        this.Txt_Direccion.Enabled = false;
+                        this.Cbo_Departamento.Enabled = false;
+                        this.Cbo_Puesto.Enabled = false;
+                        this.Cbo_Estatus.Enabled = false;
+                        this.Txt_Anos_Institucion.Enabled = false;
+                        this.Txt_Fecha_Ingreso.Enabled = false;
+                        this.Txt_Fecha_Anualidad.Enabled = false;
+                    }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos: "+ex);
+            }
+        }
+
+        private void Leer()
+        {
+
+        }
+
     }
 }

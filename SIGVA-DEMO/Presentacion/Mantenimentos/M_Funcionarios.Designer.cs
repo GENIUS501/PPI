@@ -28,41 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Txt_Cedula = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Txt_Apellido1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.Txt_Apellido2 = new System.Windows.Forms.TextBox();
+            this.Cbo_Departamento = new System.Windows.Forms.ComboBox();
+            this.Cbo_Puesto = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Txt_Fecha_Ingreso = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Txt_Anos_Institucion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.Txt_Direccion = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.Txt_Telefono = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.Cbo_Estatus = new System.Windows.Forms.ComboBox();
+            this.Txt_Fecha_Anualidad = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.Txt_Email = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.sIGVADataSet1Departamentos = new Presentacion.SIGVADataSet1Departamentos();
+            this.sIGVADataSet1DepartamentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dEPARTAMENTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dEPARTAMENTOSTableAdapter = new Presentacion.SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1DepartamentosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -74,12 +82,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Cedula";
             // 
-            // textBox1
+            // Txt_Cedula
             // 
-            this.textBox1.Location = new System.Drawing.Point(14, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 20);
-            this.textBox1.TabIndex = 3;
+            this.Txt_Cedula.Location = new System.Drawing.Point(14, 47);
+            this.Txt_Cedula.Name = "Txt_Cedula";
+            this.Txt_Cedula.Size = new System.Drawing.Size(140, 20);
+            this.Txt_Cedula.TabIndex = 3;
             // 
             // label2
             // 
@@ -90,12 +98,12 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Nombre";
             // 
-            // textBox2
+            // Txt_Nombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(184, 47);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 20);
-            this.textBox2.TabIndex = 5;
+            this.Txt_Nombre.Location = new System.Drawing.Point(184, 47);
+            this.Txt_Nombre.Name = "Txt_Nombre";
+            this.Txt_Nombre.Size = new System.Drawing.Size(140, 20);
+            this.Txt_Nombre.TabIndex = 5;
             // 
             // label3
             // 
@@ -106,12 +114,12 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Primer apellido";
             // 
-            // textBox3
+            // Txt_Apellido1
             // 
-            this.textBox3.Location = new System.Drawing.Point(344, 47);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(140, 20);
-            this.textBox3.TabIndex = 7;
+            this.Txt_Apellido1.Location = new System.Drawing.Point(344, 47);
+            this.Txt_Apellido1.Name = "Txt_Apellido1";
+            this.Txt_Apellido1.Size = new System.Drawing.Size(140, 20);
+            this.Txt_Apellido1.TabIndex = 7;
             // 
             // label4
             // 
@@ -122,28 +130,31 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Segundo apellido";
             // 
-            // textBox4
+            // Txt_Apellido2
             // 
-            this.textBox4.Location = new System.Drawing.Point(504, 47);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(140, 20);
-            this.textBox4.TabIndex = 9;
+            this.Txt_Apellido2.Location = new System.Drawing.Point(504, 47);
+            this.Txt_Apellido2.Name = "Txt_Apellido2";
+            this.Txt_Apellido2.Size = new System.Drawing.Size(140, 20);
+            this.Txt_Apellido2.TabIndex = 9;
             // 
-            // comboBox1
+            // Cbo_Departamento
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(210, 21);
-            this.comboBox1.TabIndex = 10;
+            this.Cbo_Departamento.DataSource = this.dEPARTAMENTOSBindingSource;
+            this.Cbo_Departamento.DisplayMember = "Nombre_Departamento";
+            this.Cbo_Departamento.FormattingEnabled = true;
+            this.Cbo_Departamento.Location = new System.Drawing.Point(6, 42);
+            this.Cbo_Departamento.Name = "Cbo_Departamento";
+            this.Cbo_Departamento.Size = new System.Drawing.Size(210, 21);
+            this.Cbo_Departamento.TabIndex = 10;
+            this.Cbo_Departamento.ValueMember = "Id_Departamento";
             // 
-            // comboBox2
+            // Cbo_Puesto
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 83);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(210, 21);
-            this.comboBox2.TabIndex = 11;
+            this.Cbo_Puesto.FormattingEnabled = true;
+            this.Cbo_Puesto.Location = new System.Drawing.Point(6, 83);
+            this.Cbo_Puesto.Name = "Cbo_Puesto";
+            this.Cbo_Puesto.Size = new System.Drawing.Size(210, 21);
+            this.Cbo_Puesto.TabIndex = 11;
             // 
             // label5
             // 
@@ -163,12 +174,12 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Departamento";
             // 
-            // dateTimePicker1
+            // Txt_Fecha_Ingreso
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 135);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(210, 20);
-            this.dateTimePicker1.TabIndex = 14;
+            this.Txt_Fecha_Ingreso.Location = new System.Drawing.Point(6, 135);
+            this.Txt_Fecha_Ingreso.Name = "Txt_Fecha_Ingreso";
+            this.Txt_Fecha_Ingreso.Size = new System.Drawing.Size(210, 20);
+            this.Txt_Fecha_Ingreso.TabIndex = 14;
             // 
             // label7
             // 
@@ -179,12 +190,12 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Fecha de Ingreso";
             // 
-            // textBox5
+            // Txt_Anos_Institucion
             // 
-            this.textBox5.Location = new System.Drawing.Point(229, 39);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(39, 20);
-            this.textBox5.TabIndex = 16;
+            this.Txt_Anos_Institucion.Location = new System.Drawing.Point(229, 39);
+            this.Txt_Anos_Institucion.Name = "Txt_Anos_Institucion";
+            this.Txt_Anos_Institucion.Size = new System.Drawing.Size(39, 20);
+            this.Txt_Anos_Institucion.TabIndex = 16;
             // 
             // label8
             // 
@@ -195,13 +206,13 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Años Institucion Anterior";
             // 
-            // textBox6
+            // Txt_Direccion
             // 
-            this.textBox6.Location = new System.Drawing.Point(15, 108);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(298, 99);
-            this.textBox6.TabIndex = 18;
+            this.Txt_Direccion.Location = new System.Drawing.Point(15, 108);
+            this.Txt_Direccion.Multiline = true;
+            this.Txt_Direccion.Name = "Txt_Direccion";
+            this.Txt_Direccion.Size = new System.Drawing.Size(298, 99);
+            this.Txt_Direccion.TabIndex = 18;
             // 
             // label9
             // 
@@ -212,12 +223,12 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Direccion";
             // 
-            // textBox7
+            // Txt_Telefono
             // 
-            this.textBox7.Location = new System.Drawing.Point(18, 43);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(115, 20);
-            this.textBox7.TabIndex = 20;
+            this.Txt_Telefono.Location = new System.Drawing.Point(18, 43);
+            this.Txt_Telefono.Name = "Txt_Telefono";
+            this.Txt_Telefono.Size = new System.Drawing.Size(115, 20);
+            this.Txt_Telefono.TabIndex = 20;
             // 
             // label10
             // 
@@ -237,20 +248,20 @@
             this.label11.TabIndex = 22;
             this.label11.Text = "Estatus";
             // 
-            // comboBox3
+            // Cbo_Estatus
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(229, 84);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 23;
+            this.Cbo_Estatus.FormattingEnabled = true;
+            this.Cbo_Estatus.Location = new System.Drawing.Point(229, 84);
+            this.Cbo_Estatus.Name = "Cbo_Estatus";
+            this.Cbo_Estatus.Size = new System.Drawing.Size(121, 21);
+            this.Cbo_Estatus.TabIndex = 23;
             // 
-            // dateTimePicker2
+            // Txt_Fecha_Anualidad
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(6, 187);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(210, 20);
-            this.dateTimePicker2.TabIndex = 24;
+            this.Txt_Fecha_Anualidad.Location = new System.Drawing.Point(6, 187);
+            this.Txt_Fecha_Anualidad.Name = "Txt_Fecha_Anualidad";
+            this.Txt_Fecha_Anualidad.Size = new System.Drawing.Size(210, 20);
+            this.Txt_Fecha_Anualidad.TabIndex = 24;
             // 
             // label12
             // 
@@ -270,12 +281,12 @@
             this.label13.TabIndex = 26;
             this.label13.Text = "Correo";
             // 
-            // textBox8
+            // Txt_Email
             // 
-            this.textBox8.Location = new System.Drawing.Point(139, 43);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(174, 20);
-            this.textBox8.TabIndex = 27;
+            this.Txt_Email.Location = new System.Drawing.Point(139, 43);
+            this.Txt_Email.Name = "Txt_Email";
+            this.Txt_Email.Size = new System.Drawing.Size(174, 20);
+            this.Txt_Email.TabIndex = 27;
             // 
             // pictureBox1
             // 
@@ -289,13 +300,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.Txt_Apellido2);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.Txt_Apellido1);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.Txt_Nombre);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.Txt_Cedula);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 95);
             this.groupBox1.Name = "groupBox1";
@@ -306,12 +317,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.Txt_Email);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.Txt_Telefono);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.Txt_Direccion);
             this.groupBox2.Location = new System.Drawing.Point(12, 208);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(325, 223);
@@ -323,18 +334,18 @@
             // 
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.dateTimePicker2);
-            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Controls.Add(this.Txt_Fecha_Anualidad);
+            this.groupBox3.Controls.Add(this.Cbo_Estatus);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.pictureBox1);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.Txt_Anos_Institucion);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.Txt_Fecha_Ingreso);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.comboBox2);
-            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.Cbo_Puesto);
+            this.groupBox3.Controls.Add(this.Cbo_Departamento);
             this.groupBox3.Location = new System.Drawing.Point(351, 208);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(366, 223);
@@ -351,6 +362,25 @@
             this.label14.TabIndex = 26;
             this.label14.Text = "Años";
             // 
+            // sIGVADataSet1Departamentos
+            // 
+            this.sIGVADataSet1Departamentos.DataSetName = "SIGVADataSet1Departamentos";
+            this.sIGVADataSet1Departamentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sIGVADataSet1DepartamentosBindingSource
+            // 
+            this.sIGVADataSet1DepartamentosBindingSource.DataSource = this.sIGVADataSet1Departamentos;
+            this.sIGVADataSet1DepartamentosBindingSource.Position = 0;
+            // 
+            // dEPARTAMENTOSBindingSource
+            // 
+            this.dEPARTAMENTOSBindingSource.DataMember = "DEPARTAMENTOS";
+            this.dEPARTAMENTOSBindingSource.DataSource = this.sIGVADataSet1DepartamentosBindingSource;
+            // 
+            // dEPARTAMENTOSTableAdapter
+            // 
+            this.dEPARTAMENTOSTableAdapter.ClearBeforeFill = true;
+            // 
             // M_Funcionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,6 +393,7 @@
             this.Text = "M_Funcionarios";
             this.Evento_Aceptar += new System.EventHandler(this.M_Funcionarios_Evento_Aceptar);
             this.Evento_Salir += new System.EventHandler(this.M_Funcionarios_Evento_Salir);
+            this.Load += new System.EventHandler(this.M_Funcionarios_Load);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
             this.Controls.SetChildIndex(this.groupBox3, 0);
@@ -373,6 +404,9 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1DepartamentosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -380,35 +414,39 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Txt_Cedula;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Txt_Nombre;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Txt_Apellido1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox Txt_Apellido2;
+        private System.Windows.Forms.ComboBox Cbo_Departamento;
+        private System.Windows.Forms.ComboBox Cbo_Puesto;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker Txt_Fecha_Ingreso;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Txt_Anos_Institucion;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox Txt_Direccion;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox Txt_Telefono;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ComboBox Cbo_Estatus;
+        private System.Windows.Forms.DateTimePicker Txt_Fecha_Anualidad;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox Txt_Email;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.BindingSource sIGVADataSet1DepartamentosBindingSource;
+        private SIGVADataSet1Departamentos sIGVADataSet1Departamentos;
+        private System.Windows.Forms.BindingSource dEPARTAMENTOSBindingSource;
+        private SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter dEPARTAMENTOSTableAdapter;
     }
 }
