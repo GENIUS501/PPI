@@ -53,24 +53,28 @@ namespace Presentacion
 
         private void L_cliente_Evento_Borrar(object sender, EventArgs e)
         {
-            if (valorPrimerCelda == null)
+            DialogResult dr = MessageBox.Show("Realmente desea eliminar el Usuario", "Eliminar el Usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr == DialogResult.Yes)
             {
-                MessageBox.Show("Favor de seleccionar los datos a Eliminar");
-                return;
-            }
-            else
-            {
-                Nusuarios = new Neg_Usuarios();
-                Int32 Filasafectadas = 0;
-                Filasafectadas = Nusuarios.Eliminar(valorPrimerCelda);
-                if (Filasafectadas > 0)
+                if (valorPrimerCelda == null)
                 {
-                    L_cliente_Load(null, null);
-                    MessageBox.Show("Datos eliminados exitosamente", "Eliminacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Favor de seleccionar los datos a Eliminar");
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Error al Eliminar datos");
+                    Nusuarios = new Neg_Usuarios();
+                    Int32 Filasafectadas = 0;
+                    Filasafectadas = Nusuarios.Eliminar(valorPrimerCelda);
+                    if (Filasafectadas > 0)
+                    {
+                        L_cliente_Load(null, null);
+                        MessageBox.Show("Datos eliminados exitosamente", "Eliminacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al Eliminar datos");
+                    }
                 }
             }
         }

@@ -54,7 +54,7 @@
             this.ClientSize = new System.Drawing.Size(874, 348);
             this.Controls.Add(this.Dat_Puestos);
             this.Name = "L_Puestos";
-            this.Text = "L_Puestos";
+            this.Text = "Lista de puestos";
             this.Evento_Agregar += new System.EventHandler(this.L_Puestos_Evento_Agregar);
             this.Evento_Modificar += new System.EventHandler(this.L_Puestos_Evento_Modificar);
             this.Evento_Borrar += new System.EventHandler(this.L_Puestos_Evento_Borrar);

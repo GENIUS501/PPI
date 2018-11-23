@@ -61,7 +61,11 @@ namespace Presentacion
 
         private void L_Funcionarios_Evento_Borrar(object sender, EventArgs e)
         {
-
+            DialogResult dr = MessageBox.Show("Realmente desea eliminar el funcionario", "Eliminar el funcionario", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(dr == DialogResult.Yes)
+            {
+                
+            }
         }
 
         private void L_Funcionarios_Evento_Cerrar(object sender, EventArgs e)

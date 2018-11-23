@@ -49,25 +49,29 @@ namespace Presentacion
         {
             try
             {
-                if (valorPrimerCelda == -1)
+                DialogResult dr = MessageBox.Show("Realmente desea eliminar el Departamento", "Eliminar Departamento", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dr == DialogResult.Yes)
                 {
-                    MessageBox.Show("Favor de seleccionar los datos a eliminar");
-                    return;
-                }
-                else
-                {
-                    Int32 Eliminar = 0;
-                    Neg_Departamentos Ndepartamentos = new Neg_Departamentos();
-                    Eliminar = Ndepartamentos.Eliminar(valorPrimerCelda);
-                    if(Eliminar>0)
+                    if (valorPrimerCelda == -1)
                     {
-                        MessageBox.Show("Departamento Eliminado exitosamente");
-                        valorPrimerCelda = -1;
-                        L_Departamentos_Load(null,null);
+                        MessageBox.Show("Favor de seleccionar los datos a eliminar");
+                        return;
                     }
                     else
                     {
-                        MessageBox.Show("Error al eliminar los datos: ");
+                        Int32 Eliminar = 0;
+                        Neg_Departamentos Ndepartamentos = new Neg_Departamentos();
+                        Eliminar = Ndepartamentos.Eliminar(valorPrimerCelda);
+                        if (Eliminar > 0)
+                        {
+                            MessageBox.Show("Departamento Eliminado exitosamente");
+                            valorPrimerCelda = -1;
+                            L_Departamentos_Load(null, null);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al eliminar los datos: ");
+                        }
                     }
                 }
             }catch(Exception ex)

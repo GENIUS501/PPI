@@ -144,7 +144,7 @@
             this.Controls.Add(this.Cbo_Departamentos);
             this.Controls.Add(this.label2);
             this.Name = "L_Funcionarios";
-            this.Text = "L_Funcionarios";
+            this.Text = "Lista de funcionarios";
             this.Evento_Agregar += new System.EventHandler(this.L_Funcionarios_Evento_Agregar);
             this.Evento_Modificar += new System.EventHandler(this.L_Funcionarios_Evento_Modificar);
             this.Evento_Borrar += new System.EventHandler(this.L_Funcionarios_Evento_Borrar);

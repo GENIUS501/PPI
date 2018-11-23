@@ -88,7 +88,7 @@
             this.ClientSize = new System.Drawing.Size(874, 348);
             this.Controls.Add(this.dataGridView1);
             this.Name = "L_Departamentos";
-            this.Text = "L_Departamentos";
+            this.Text = "Lista de departamentos";
             this.Evento_Agregar += new System.EventHandler(this.L_Departamentos_Evento_Agregar);
             this.Evento_Modificar += new System.EventHandler(this.L_Departamentos_Evento_Modificar);
             this.Evento_Borrar += new System.EventHandler(this.L_Departamentos_Evento_Borrar);

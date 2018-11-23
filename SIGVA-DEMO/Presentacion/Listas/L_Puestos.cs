@@ -53,19 +53,24 @@ namespace Presentacion
         {
             try
             {
-                if(valorPrimerCelda == -1)
+                DialogResult dr = MessageBox.Show("Realmente desea eliminar el puesto", "Eliminar el puesto", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dr == DialogResult.Yes)
                 {
-                    MessageBox.Show("Favor de seleccionar los datos a eliminar");
-                }else
-                {
-                    Npuestos = new Neg_Puestos();
-                    Int32 Eliminar = 0;
-                    Eliminar = Npuestos.Eliminar(valorPrimerCelda);
-                    if(Eliminar>0)
+                    if (valorPrimerCelda == -1)
                     {
-                        MessageBox.Show("Datos eliminados exitosamente");
-                        valorPrimerCelda = -1;
-                        L_Puestos_Load(null,null);
+                        MessageBox.Show("Favor de seleccionar los datos a eliminar");
+                    }
+                    else
+                    {
+                        Npuestos = new Neg_Puestos();
+                        Int32 Eliminar = 0;
+                        Eliminar = Npuestos.Eliminar(valorPrimerCelda);
+                        if (Eliminar > 0)
+                        {
+                            MessageBox.Show("Datos eliminados exitosamente");
+                            valorPrimerCelda = -1;
+                            L_Puestos_Load(null, null);
+                        }
                     }
                 }
             }catch(Exception ex)

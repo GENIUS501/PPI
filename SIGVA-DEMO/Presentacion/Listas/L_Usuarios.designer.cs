@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Dat_Usuarios = new System.Windows.Forms.DataGridView();
-            this.sIGVADataSetUsuarios = new Presentacion.SIGVADataSetUsuarios();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuariosTableAdapter = new Presentacion.SIGVADataSetUsuariosTableAdapters.UsuariosTableAdapter();
             this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sIGVADataSetUsuarios = new Presentacion.SIGVADataSetUsuarios();
+            this.usuariosTableAdapter = new Presentacion.SIGVADataSetUsuariosTableAdapters.UsuariosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.Dat_Usuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // Dat_Usuarios
@@ -64,20 +64,6 @@
             this.Dat_Usuarios.Size = new System.Drawing.Size(643, 230);
             this.Dat_Usuarios.TabIndex = 5;
             this.Dat_Usuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dat_Usuarios_CellClick);
-            // 
-            // sIGVADataSetUsuarios
-            // 
-            this.sIGVADataSetUsuarios.DataSetName = "SIGVADataSetUsuarios";
-            this.sIGVADataSetUsuarios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "Usuarios";
-            this.usuariosBindingSource.DataSource = this.sIGVADataSetUsuarios;
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
             // 
             // cedulaDataGridViewTextBoxColumn
             // 
@@ -121,6 +107,20 @@
             this.rolDataGridViewTextBoxColumn.Name = "rolDataGridViewTextBoxColumn";
             this.rolDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "Usuarios";
+            this.usuariosBindingSource.DataSource = this.sIGVADataSetUsuarios;
+            // 
+            // sIGVADataSetUsuarios
+            // 
+            this.sIGVADataSetUsuarios.DataSetName = "SIGVADataSetUsuarios";
+            this.sIGVADataSetUsuarios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
+            // 
             // L_cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,7 +128,7 @@
             this.ClientSize = new System.Drawing.Size(874, 348);
             this.Controls.Add(this.Dat_Usuarios);
             this.Name = "L_cliente";
-            this.Text = "L_cliente";
+            this.Text = "Lista de usuarios";
             this.Evento_Agregar += new System.EventHandler(this.L_cliente_Evento_Agregar);
             this.Evento_Modificar += new System.EventHandler(this.L_cliente_Evento_Modificar);
             this.Evento_Borrar += new System.EventHandler(this.L_cliente_Evento_Borrar);
@@ -137,8 +137,8 @@
             this.Load += new System.EventHandler(this.L_cliente_Load);
             this.Controls.SetChildIndex(this.Dat_Usuarios, 0);
             ((System.ComponentModel.ISupportInitialize)(this.Dat_Usuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
