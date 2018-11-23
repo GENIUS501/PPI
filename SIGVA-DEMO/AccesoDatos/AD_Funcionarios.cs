@@ -49,8 +49,51 @@ namespace AccesoDatos
         }
         #endregion
 
-        #region "Consultar funcionario"
+        #region "Leer Especifico"
+        public Ent_Funcionarios LeerCodigoLlave(Int32 pCodigo)
+        {
+            try
+            {
+                DataTable dtConsulta = new DataTable();
+                Ent_Funcionarios vRegistro = new Ent_Funcionarios();
 
+                string commandText = "SELECT * FROM [dbo].[FUNCIONARIOS] WHERE [Cedula] =  " + pCodigo;
+                //string commandText = commandTexta;
+
+                using (SqlConnection connection = new SqlConnection(vCadenaConexion))
+                {
+                    SqlCommand command = new SqlCommand(commandText, connection);
+
+                    SqlDataAdapter DataAdapter = new SqlDataAdapter(command);
+                    DataAdapter.Fill(dtConsulta);
+                }
+
+                if (dtConsulta.Rows.Count != 0)
+                {
+                    vRegistro.Cedula = Convert.ToInt32(dtConsulta.Rows[0]["Cedula"]);
+                    vRegistro.Nombre = dtConsulta.Rows[0]["Nombre"].ToString();
+                    vRegistro.Apellido1 = dtConsulta.Rows[0]["Apellido1"].ToString();
+                    vRegistro.Apellido2 = dtConsulta.Rows[0]["Apellido2"].ToString();
+                    vRegistro.Id_Puesto = Convert.ToInt32(dtConsulta.Rows[0]["Id_Puesto"].ToString());
+                    vRegistro.Id_Departamento= Convert.ToInt32(dtConsulta.Rows[0]["Id_Departamento"].ToString());
+                    vRegistro.Fecha_De_Ingreso = Convert.ToDateTime(dtConsulta.Rows[0]["Fecha_De_Ingreso"]);
+                    vRegistro.Direccion = dtConsulta.Rows[0]["Direccion"].ToString();
+                    vRegistro.Telefono = Convert.ToInt32(dtConsulta.Rows[0]["Telefono"].ToString());
+                    vRegistro.Email = dtConsulta.Rows[0]["Email"].ToString();
+                    vRegistro.Fecha_de_Anualidad = Convert.ToDateTime(dtConsulta.Rows[0]["Fecha_de_Anualidad"].ToString());
+                    vRegistro.Estatus = dtConsulta.Rows[0]["Estatus"].ToString();
+                    vRegistro.Anos_Institucion_anterior = Convert.ToInt32(dtConsulta.Rows[0]["Anos_Institucion_anterior"].ToString());
+                }
+
+
+                return vRegistro;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
 
         #region "Llenar datagrid0"

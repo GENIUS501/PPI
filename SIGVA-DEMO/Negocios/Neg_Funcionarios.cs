@@ -32,6 +32,8 @@ namespace Negocios
         }
         #endregion
 
+
+
         #region "Llenar datagrid0"
         public DataTable Llenar_data_grid0()
         {
