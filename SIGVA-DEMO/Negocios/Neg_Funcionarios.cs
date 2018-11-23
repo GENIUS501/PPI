@@ -32,7 +32,21 @@ namespace Negocios
         }
         #endregion
 
-
+        #region "Leer Especifico"
+        public Ent_Funcionarios LeerCodigoLlave(Int32 pCodigo)
+        {
+            AccesoDatos.AD_Funcionarios IControlador;
+            try
+            {
+                IControlador = new AccesoDatos.AD_Funcionarios();
+                return IControlador.LeerCodigoLlave(pCodigo);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+        #endregion
 
         #region "Llenar datagrid0"
         public DataTable Llenar_data_grid0()
