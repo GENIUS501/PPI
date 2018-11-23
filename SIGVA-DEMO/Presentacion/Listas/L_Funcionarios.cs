@@ -17,6 +17,9 @@ namespace Presentacion
 {
     public partial class L_Funcionarios : frmListaBase
     {
+        #region "Variables"
+        Int32 valorPrimerCelda = -1;
+        #endregion
         public L_Funcionarios()
         {
             InitializeComponent();
@@ -182,6 +185,18 @@ namespace Presentacion
             }catch(Exception ex)
             {
                 MessageBox.Show("Error al buscar los datos: "+ex);
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                valorPrimerCelda = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            }
+            catch (Exception)
+            {
+
             }
         }
     }

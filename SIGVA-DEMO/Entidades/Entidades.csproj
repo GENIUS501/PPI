@@ -42,6 +42,7 @@
     <Compile Include="Ent_Anos_Institucion_Anterior.cs" />
     <Compile Include="Ent_Anualidades.cs" />
     <Compile Include="Ent_Departamentos.cs" />
+    <Compile Include="Ent_Dias_Devolucion.cs" />
     <Compile Include="Ent_Dias_Disponibles.cs" />
     <Compile Include="Ent_Funcionarios.cs" />
     <Compile Include="Ent_Puestos.cs" />
