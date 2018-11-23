@@ -44,8 +44,11 @@
     <Compile Include="Ent_Departamentos.cs" />
     <Compile Include="Ent_Dias_Devolucion.cs" />
     <Compile Include="Ent_Dias_Disponibles.cs" />
+    <Compile Include="Ent_Dias_Reservados.cs" />
+    <Compile Include="Ent_Disponibles_Saldos.cs" />
     <Compile Include="Ent_Funcionarios.cs" />
     <Compile Include="Ent_Puestos.cs" />
+    <Compile Include="Ent_Saldos_Disponibles.cs" />
     <Compile Include="Ent_Sessiones.cs" />
     <Compile Include="Ent_Usuarios.cs" />
     <Compile Include="Helper.cs" />

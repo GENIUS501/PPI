@@ -44,13 +44,16 @@
     <Compile Include="AD_Anos_Institucion_Anterior.cs" />
     <Compile Include="AD_Anualidades.cs" />
     <Compile Include="AD_Departamentos.cs" />
+    <Compile Include="AD_Dias_Devolucion.cs" />
     <Compile Include="AD_Dias_Disponibles.cs" />
+    <Compile Include="AD_Disponibles_Saldos.cs" />
     <Compile Include="AD_Funcionarios.cs" />
     <Compile Include="AD_Puestos.cs" />
     <Compile Include="AD_Sessiones.cs" />
     <Compile Include="AD_Usuarios.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="AD_Saldos_Disponibles.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Parameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

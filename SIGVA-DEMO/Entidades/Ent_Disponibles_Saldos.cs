@@ -34,5 +34,6 @@ namespace Entidades
             Cedula = cedula;
         }
         #endregion
+
     }
 }
