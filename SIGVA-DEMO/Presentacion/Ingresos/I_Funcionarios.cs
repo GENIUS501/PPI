@@ -125,7 +125,7 @@ namespace Presentacion
                         Calcular_Anualidad();
                         if (Rad_Posee.Checked == true)
                         {
-
+                            Calcular_Anteriores();
                         }
                         MessageBox.Show("Funcionario Agregado");
                     }
@@ -143,6 +143,29 @@ namespace Presentacion
                 MessageBox.Show("Error: " + ex);
             }
 
+        }
+        private void Calcular_Anteriores()
+        {
+            try
+            {
+                int Ejecutar = 0;
+                Ent_Anos_Institucion_Anterior Eano = new Ent_Anos_Institucion_Anterior();
+                Neg_Anos_Institucion_Anterior Nano = new Neg_Anos_Institucion_Anterior();
+                Eano.Cantidad_Dias = Convert.ToInt32(this.Txt_Cantidad_Anos.Text.ToString()) * 12;
+                Eano.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
+                Ejecutar = Nano.Insertar(Eano);
+                if (Ejecutar > 0)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Error al calcular los años anteriores");
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error : " + ex);
+            }
         }
         private void Calcular_Anualidad()
         {
