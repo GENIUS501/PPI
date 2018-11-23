@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using Negocios;
+using Entidades;
 using Presentacion;
 
 namespace Presentacion
@@ -22,41 +24,13 @@ namespace Presentacion
 
         private void L_Funcionarios_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'sIGVADataSet1Departamentos.DEPARTAMENTOS' Puede moverla o quitarla según sea necesario.
-            this.dEPARTAMENTOSTableAdapter.Fill(this.sIGVADataSet1Departamentos.DEPARTAMENTOS);
-
-           /* 
-                using (SqlConnection cnx = new SqlConnection("connection string")) {
-
-		        string query = "SELECT * FROM NombreTabla WHERE CUENTA_CLI LIKE @param + '%'";
-
-
-		        SqlCommand cmd = new SqlCommand(query, cnx);
-		        cmd.Parameters.AddWithValue("@param", TextBox1.Text.Trim);
-
-		        SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
-		        DataTable dt = new DataTable();
-		        adaptador.Fill(dt);
-
-		        dataGridView1.DataSource = dt;
-            */
             try
                {
-                    #region "Prueba"
-                   string vCadenaConexion = ConfigurationManager.ConnectionStrings["Presentacion.Properties.Settings.SIGVAConnectionString"].ConnectionString;
-                    using (SqlConnection cnx = new SqlConnection(vCadenaConexion))
-                    {
-
-                        string query = "SELECT FUNCIONARIOS.Cedula, FUNCIONARIOS.Nombre, FUNCIONARIOS.Apellido1, FUNCIONARIOS.Apellido2, FUNCIONARIOS.Fecha_De_Ingreso, FUNCIONARIOS.Direccion, FUNCIONARIOS.Telefono, FUNCIONARIOS.Email, PUESTOS.Nombre_Puesto, DEPARTAMENTOS.Nombre_Departamento, SUM(Dias_Disponibles.Cantidad_Dias) AS saldos FROM FUNCIONARIOS INNER JOIN Dias_Disponibles ON FUNCIONARIOS.Cedula = Dias_Disponibles.Cedula INNER JOIN DEPARTAMENTOS ON FUNCIONARIOS.Id_Departamento = DEPARTAMENTOS.Id_Departamento INNER JOIN PUESTOS ON FUNCIONARIOS.Id_Puesto = PUESTOS.Id_Puesto AND DEPARTAMENTOS.Id_Departamento = PUESTOS.Id_Departamento GROUP BY FUNCIONARIOS.Cedula, FUNCIONARIOS.Nombre, FUNCIONARIOS.Apellido1, FUNCIONARIOS.Apellido2, FUNCIONARIOS.Fecha_De_Ingreso, FUNCIONARIOS.Direccion, FUNCIONARIOS.Telefono, FUNCIONARIOS.Email, PUESTOS.Nombre_Puesto, DEPARTAMENTOS.Nombre_Departamento";
-
-                        SqlCommand cmd = new SqlCommand(query, cnx);
-                        SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
-                        DataTable dt = new DataTable();
-                        adaptador.Fill(dt);
-
-                        dataGridView1.DataSource = dt;
-                    }
-                    #endregion
+                   this.dEPARTAMENTOSTableAdapter.Fill(this.sIGVADataSet1Departamentos.DEPARTAMENTOS);
+                   Neg_Funcionarios Nfuncionaros =new Neg_Funcionarios();
+                   DataTable dt = new DataTable();
+                   dt = Nfuncionaros.Llenar_data_grid0();
+                   dataGridView1.DataSource = dt;
                }
             catch(Exception ex)
                {
@@ -153,22 +127,57 @@ namespace Presentacion
         {
             try
             {
-                string vCadenaConexion = ConfigurationManager.ConnectionStrings["Presentacion.Properties.Settings.SIGVAConnectionString"].ConnectionString;
-                using (SqlConnection cnx = new SqlConnection(vCadenaConexion))
-                {
-
-                    string query = "SELECT FUNCIONARIOS.Cedula, FUNCIONARIOS.Nombre, FUNCIONARIOS.Apellido1, FUNCIONARIOS.Apellido2, FUNCIONARIOS.Fecha_De_Ingreso, FUNCIONARIOS.Direccion, FUNCIONARIOS.Telefono, FUNCIONARIOS.Email, PUESTOS.Nombre_Puesto, DEPARTAMENTOS.Nombre_Departamento, ISNULL(SUM(Dias_Disponibles.Cantidad_Dias),0) AS saldos FROM FUNCIONARIOS INNER JOIN Dias_Disponibles ON FUNCIONARIOS.Cedula = Dias_Disponibles.Cedula INNER JOIN DEPARTAMENTOS ON FUNCIONARIOS.Id_Departamento = DEPARTAMENTOS.Id_Departamento INNER JOIN PUESTOS ON FUNCIONARIOS.Id_Puesto = PUESTOS.Id_Puesto AND DEPARTAMENTOS.Id_Departamento = PUESTOS.Id_Departamento  AND DEPARTAMENTOS.Id_Departamento = @param GROUP BY FUNCIONARIOS.Cedula, FUNCIONARIOS.Nombre, FUNCIONARIOS.Apellido1, FUNCIONARIOS.Apellido2, FUNCIONARIOS.Fecha_De_Ingreso, FUNCIONARIOS.Direccion, FUNCIONARIOS.Telefono, FUNCIONARIOS.Email, PUESTOS.Nombre_Puesto, DEPARTAMENTOS.Nombre_Departamento";
-
-                    SqlCommand cmd = new SqlCommand(query, cnx);
-                    cmd.Parameters.AddWithValue("@param", Convert.ToInt32(comboBox1.SelectedValue));
-                    SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adaptador.Fill(dt);
-                    dataGridView1.DataSource = dt;
-                }
+                Neg_Funcionarios Nfuncionarios = new Neg_Funcionarios();
+                DataTable dt = new DataTable();
+                dt = Nfuncionarios.Llenar_data_grid1(Convert.ToInt32(this.Cbo_Departamentos.SelectedValue.ToString()));
+                dataGridView1.DataSource = dt;
+                
             }
             catch (Exception ex) {
-                MessageBox.Show("ERROR: "+ex.ToString());
+                //MessageBox.Show("ERROR: "+ex.ToString());
+            }
+        }
+
+        private void Txt_Cedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if ((int)e.KeyChar == (int)Keys.Enter)
+                {
+                    Buscar();
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error al buscar los datos: "+ex);
+            }
+        }
+
+        private void Buscar()
+        {
+            try
+            {
+                Neg_Funcionarios Nfuncionarios = new Neg_Funcionarios();
+                dataGridView1.DataSource = Nfuncionarios.Llenar_data_grid2(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error al buscar los datos: " + ex);
+            }
+        }
+
+        private void Cmd_Buscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(this.Txt_Cedula.Text.ToString() != "")
+                {
+                    Buscar();
+                }else
+                {
+                    MessageBox.Show("Debe llenar el campo de cedula");
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error al buscar los datos: "+ex);
             }
         }
     }

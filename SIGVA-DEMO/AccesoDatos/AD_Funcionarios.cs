@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using Entidades;
 
 namespace AccesoDatos
@@ -44,6 +46,77 @@ namespace AccesoDatos
             }
 
                 return FilasAfectadas;
+        }
+        #endregion
+
+        #region "Llenar datagrid0"
+        public DataTable llenar_datagrid0()
+        {
+            try
+            {
+                using (SqlConnection cnx = new SqlConnection(vCadenaConexion))
+                {
+
+                    string query = "SELECT FUNCIONARIOS.Cedula, FUNCIONARIOS.Nombre, FUNCIONARIOS.Apellido1, FUNCIONARIOS.Apellido2, FUNCIONARIOS.Fecha_De_Ingreso, FUNCIONARIOS.Direccion, FUNCIONARIOS.Telefono, FUNCIONARIOS.Email, PUESTOS.Nombre_Puesto, DEPARTAMENTOS.Nombre_Departamento, SUM(Dias_Disponibles.Cantidad_Dias) AS saldos FROM FUNCIONARIOS INNER JOIN Dias_Disponibles ON FUNCIONARIOS.Cedula = Dias_Disponibles.Cedula INNER JOIN DEPARTAMENTOS ON FUNCIONARIOS.Id_Departamento = DEPARTAMENTOS.Id_Departamento INNER JOIN PUESTOS ON FUNCIONARIOS.Id_Puesto = PUESTOS.Id_Puesto AND DEPARTAMENTOS.Id_Departamento = PUESTOS.Id_Departamento GROUP BY FUNCIONARIOS.Cedula, FUNCIONARIOS.Nombre, FUNCIONARIOS.Apellido1, FUNCIONARIOS.Apellido2, FUNCIONARIOS.Fecha_De_Ingreso, FUNCIONARIOS.Direccion, FUNCIONARIOS.Telefono, FUNCIONARIOS.Email, PUESTOS.Nombre_Puesto, DEPARTAMENTOS.Nombre_Departamento";
+                    SqlCommand cmd = new SqlCommand(query, cnx);
+                    SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adaptador.Fill(dt);
+                    return dt;
+                }
+            }catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region "Llenar datagrid1"
+        public DataTable llenar_datagrid1(Int32 Parametro)
+        {
+            try
+            {
+                using (SqlConnection cnx = new SqlConnection(vCadenaConexion))
+                {
+
+                    string query = "SELECT FUNCIONARIOS.Cedula, FUNCIONARIOS.Nombre, FUNCIONARIOS.Apellido1, FUNCIONARIOS.Apellido2, FUNCIONARIOS.Fecha_De_Ingreso, FUNCIONARIOS.Direccion, FUNCIONARIOS.Telefono, FUNCIONARIOS.Email, PUESTOS.Nombre_Puesto, DEPARTAMENTOS.Nombre_Departamento, ISNULL(SUM(Dias_Disponibles.Cantidad_Dias),0) AS saldos FROM FUNCIONARIOS INNER JOIN Dias_Disponibles ON FUNCIONARIOS.Cedula = Dias_Disponibles.Cedula INNER JOIN DEPARTAMENTOS ON FUNCIONARIOS.Id_Departamento = DEPARTAMENTOS.Id_Departamento INNER JOIN PUESTOS ON FUNCIONARIOS.Id_Puesto = PUESTOS.Id_Puesto AND DEPARTAMENTOS.Id_Departamento = PUESTOS.Id_Departamento  AND DEPARTAMENTOS.Id_Departamento = @param GROUP BY FUNCIONARIOS.Cedula, FUNCIONARIOS.Nombre, FUNCIONARIOS.Apellido1, FUNCIONARIOS.Apellido2, FUNCIONARIOS.Fecha_De_Ingreso, FUNCIONARIOS.Direccion, FUNCIONARIOS.Telefono, FUNCIONARIOS.Email, PUESTOS.Nombre_Puesto, DEPARTAMENTOS.Nombre_Departamento";
+
+                    SqlCommand cmd = new SqlCommand(query, cnx);
+                    cmd.Parameters.AddWithValue("@param", Convert.ToInt32(Parametro));
+                    SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adaptador.Fill(dt);
+                    return dt;
+                }
+            }catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region "Llenar datagrid2"
+        
+        public DataTable llenar_datagrid2(Int32 Parametro)
+        {
+            try
+            {
+                using (SqlConnection cnx = new SqlConnection(vCadenaConexion))
+                {
+
+                    string query = "SELECT FUNCIONARIOS.Cedula, FUNCIONARIOS.Nombre, FUNCIONARIOS.Apellido1, FUNCIONARIOS.Apellido2, FUNCIONARIOS.Fecha_De_Ingreso, FUNCIONARIOS.Direccion, FUNCIONARIOS.Telefono, FUNCIONARIOS.Email, PUESTOS.Nombre_Puesto, DEPARTAMENTOS.Nombre_Departamento, ISNULL(SUM(Dias_Disponibles.Cantidad_Dias),0) AS saldos FROM FUNCIONARIOS INNER JOIN Dias_Disponibles ON FUNCIONARIOS.Cedula = Dias_Disponibles.Cedula INNER JOIN DEPARTAMENTOS ON FUNCIONARIOS.Id_Departamento = DEPARTAMENTOS.Id_Departamento INNER JOIN PUESTOS ON FUNCIONARIOS.Id_Puesto = PUESTOS.Id_Puesto AND DEPARTAMENTOS.Id_Departamento = PUESTOS.Id_Departamento  AND FUNCIONARIOS.Cedula = @param GROUP BY FUNCIONARIOS.Cedula, FUNCIONARIOS.Nombre, FUNCIONARIOS.Apellido1, FUNCIONARIOS.Apellido2, FUNCIONARIOS.Fecha_De_Ingreso, FUNCIONARIOS.Direccion, FUNCIONARIOS.Telefono, FUNCIONARIOS.Email, PUESTOS.Nombre_Puesto, DEPARTAMENTOS.Nombre_Departamento";
+                    SqlCommand cmd = new SqlCommand(query, cnx);
+                    cmd.Parameters.AddWithValue("@param", Convert.ToInt32(Parametro));
+                    SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adaptador.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         #endregion
     }
