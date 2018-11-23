@@ -28,7 +28,7 @@ CREATE TABLE FUNCIONARIOS(
 	Fecha_De_Ingreso DATE NOT NULL,
 	Direccion VARCHAR(MAX) NOT NULL,
 	Telefono INT NOT NULL,
-	Email VARCHAR(25),
+	Email VARCHAR(50),
 	Fecha_de_Anualidad DATE NOT NULL,
 	Estatus VARCHAR(8) NOT NULL,
 	Anos_Institucion_anterior INT,
@@ -58,6 +58,12 @@ CREATE TABLE Anualidades(
 	Cedula INT NOT NULL,
 	Cantidad_Dias DECIMAL,
 	CONSTRAINT FK_ANU_FUN FOREIGN KEY (Cedula) references FUNCIONARIOS(Cedula)
+);
+
+CREATE TABLE Anos_Institucion_Anterior(
+	Cedula INT NOT NULL,
+	Cantidad_Dias Decimal,
+	CONSTRAINT FK_INS_FUN FOREIGN KEY (Cedula) references FUNCIONARIOS(Cedula)
 );
 
 CREATE TABLE DIAS_DEVOLUCION(

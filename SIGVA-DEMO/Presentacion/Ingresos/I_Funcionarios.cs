@@ -123,6 +123,10 @@ namespace Presentacion
                     {
                         Calcular_dias();
                         Calcular_Anualidad();
+                        if (Rad_Posee.Checked == true)
+                        {
+
+                        }
                         MessageBox.Show("Funcionario Agregado");
                     }
                     else
@@ -154,7 +158,7 @@ namespace Presentacion
                 DateTime fecha_fin = DateTime.Now;
                 if (fecha_Anualidad.Year < fecha_fin.Year)
                 {
-                    while (fecha_Anualidad.Year == fecha_fin.Year)
+                    while (fecha_Anualidad.Year <= fecha_fin.Year)
                     {
                         
                         if(contador<=4)
@@ -173,7 +177,7 @@ namespace Presentacion
                         {
                             Anualidad = Anualidad + 15;
                         }
-                        fecha_Anualidad.AddYears(1);
+                       fecha_Anualidad = fecha_Anualidad.AddYears(1);
                         contador++;
                     }
                 }
