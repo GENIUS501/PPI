@@ -24,14 +24,17 @@ namespace Presentacion
 
         private void AVR_Sessiones_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'SIGVADataSet.Sessiones' Puede moverla o quitarla según sea necesario.
-            this.SessionesTableAdapter.Fill(this.SIGVADataSet.Sessiones);
-          ReportParameter p = new ReportParameter("Usuario",usuario);
-
-           // reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.SetParameters(p);
-            //this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
+            try
+            {
+                // TODO: esta línea de código carga datos en la tabla 'SIGVADataSet.Sessiones' Puede moverla o quitarla según sea necesario.
+                this.SessionesTableAdapter.Fill(this.SIGVADataSet.Sessiones);
+                ReportParameter p = new ReportParameter("Usuario", usuario);
+                reportViewer1.LocalReport.SetParameters(p);
+                this.reportViewer1.RefreshReport();
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error al generar el reporte: "+ex);
+            }
         }
     }
 }

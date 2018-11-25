@@ -30,10 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dat_rango = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dat_rango)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -52,13 +52,13 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 3;
             // 
-            // dataGridView1
+            // dat_rango
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 155);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 4;
+            this.dat_rango.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dat_rango.Location = new System.Drawing.Point(16, 155);
+            this.dat_rango.Name = "dat_rango";
+            this.dat_rango.Size = new System.Drawing.Size(240, 150);
+            this.dat_rango.TabIndex = 4;
             // 
             // button1
             // 
@@ -86,17 +86,17 @@
             this.ClientSize = new System.Drawing.Size(723, 526);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dat_rango);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Rpt_Rango";
             this.Text = "Rpt_Rango";
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.textBox1, 0);
-            this.Controls.SetChildIndex(this.dataGridView1, 0);
+            this.Controls.SetChildIndex(this.dat_rango, 0);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.button2, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dat_rango)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,7 +106,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dat_rango;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }
