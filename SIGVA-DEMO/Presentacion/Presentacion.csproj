@@ -32,10 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,6 +72,12 @@
     </Compile>
     <Compile Include="Accion_de_personal\A_Personal.Designer.cs">
       <DependentUpon>A_Personal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AVR_Sessiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AVR_Sessiones.Designer.cs">
+      <DependentUpon>AVR_Sessiones.cs</DependentUpon>
     </Compile>
     <Compile Include="FormasBase\Listas\frmListaBase.cs">
       <SubType>Form</SubType>
@@ -222,6 +231,16 @@
     <Compile Include="Reportes\Rpt_Rango_Fechas.Designer.cs">
       <DependentUpon>Rpt_Rango_Fechas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rpt_Session_dataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_Session_dataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SIGVADataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIGVADataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SIGVADataSet1Departamentos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -274,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Accion_de_personal\A_Personal.resx">
       <DependentUpon>A_Personal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AVR_Sessiones.resx">
+      <DependentUpon>AVR_Sessiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormasBase\Ingresos\frmIngresos.resx">
       <DependentUpon>frmIngresos.cs</DependentUpon>
@@ -363,6 +385,9 @@
     <EmbeddedResource Include="Reportes\Rpt_Rango_Fechas.resx">
       <DependentUpon>Rpt_Rango_Fechas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Rpt_Sessiones.rdlc" />
+    <None Include="Properties\DataSources\A_Sessiones.datasource" />
+    <None Include="Properties\DataSources\Entidades.Ent_Sessiones.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -372,6 +397,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Rpt_Session_dataset.xsc">
+      <DependentUpon>Rpt_Session_dataset.xsd</DependentUpon>
+    </None>
+    <None Include="Rpt_Session_dataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Rpt_Session_dataset.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Rpt_Session_dataset.xss">
+      <DependentUpon>Rpt_Session_dataset.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSet.xsc">
+      <DependentUpon>SIGVADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SIGVADataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIGVADataSet.xss">
+      <DependentUpon>SIGVADataSet.xsd</DependentUpon>
+    </None>
     <None Include="SIGVADataSet1Departamentos.xsc">
       <DependentUpon>SIGVADataSet1Departamentos.xsd</DependentUpon>
     </None>
@@ -475,6 +522,9 @@
       <Project>{7ad1dd22-10b0-442e-878b-9e9f6b0fb6c7}</Project>
       <Name>Negocios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

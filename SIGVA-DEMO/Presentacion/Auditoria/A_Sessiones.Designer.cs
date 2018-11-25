@@ -28,51 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Txt_Usuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Cmd_Buscar = new System.Windows.Forms.Button();
+            this.Dat_Sessiones = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Btn_Imprimir = new System.Windows.Forms.Button();
-            this.Btn_Salir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Cmd_Imprimir = new System.Windows.Forms.Button();
+            this.Cmd_Salir = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.Dat_Sessiones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // Txt_Usuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(105, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 2;
+            this.Txt_Usuario.Location = new System.Drawing.Point(105, 31);
+            this.Txt_Usuario.Name = "Txt_Usuario";
+            this.Txt_Usuario.Size = new System.Drawing.Size(137, 20);
+            this.Txt_Usuario.TabIndex = 2;
+            this.Txt_Usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Cedula_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(39, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Cedula";
+            this.label1.Text = "Usuario";
             // 
-            // button1
+            // Cmd_Buscar
             // 
-            this.button1.Location = new System.Drawing.Point(288, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Cmd_Buscar.Location = new System.Drawing.Point(288, 28);
+            this.Cmd_Buscar.Name = "Cmd_Buscar";
+            this.Cmd_Buscar.Size = new System.Drawing.Size(75, 23);
+            this.Cmd_Buscar.TabIndex = 4;
+            this.Cmd_Buscar.Text = "Buscar";
+            this.Cmd_Buscar.UseVisualStyleBackColor = true;
+            this.Cmd_Buscar.Click += new System.EventHandler(this.Cmd_Buscar_Click);
             // 
-            // dataGridView1
+            // Dat_Sessiones
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 62);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(412, 150);
-            this.dataGridView1.TabIndex = 5;
+            this.Dat_Sessiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dat_Sessiones.Location = new System.Drawing.Point(22, 62);
+            this.Dat_Sessiones.Name = "Dat_Sessiones";
+            this.Dat_Sessiones.Size = new System.Drawing.Size(412, 150);
+            this.Dat_Sessiones.TabIndex = 5;
             // 
             // pictureBox1
             // 
@@ -86,10 +88,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.Dat_Sessiones);
+            this.groupBox1.Controls.Add(this.Cmd_Buscar);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.Txt_Usuario);
             this.groupBox1.Location = new System.Drawing.Point(16, 82);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(482, 251);
@@ -97,40 +99,43 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bitácora de Inicio de Sesiones";
             // 
-            // Btn_Imprimir
+            // Cmd_Imprimir
             // 
-            this.Btn_Imprimir.Location = new System.Drawing.Point(565, 243);
-            this.Btn_Imprimir.Name = "Btn_Imprimir";
-            this.Btn_Imprimir.Size = new System.Drawing.Size(80, 29);
-            this.Btn_Imprimir.TabIndex = 8;
-            this.Btn_Imprimir.Text = "Imprimir";
-            this.Btn_Imprimir.UseVisualStyleBackColor = true;
+            this.Cmd_Imprimir.Location = new System.Drawing.Point(565, 243);
+            this.Cmd_Imprimir.Name = "Cmd_Imprimir";
+            this.Cmd_Imprimir.Size = new System.Drawing.Size(80, 29);
+            this.Cmd_Imprimir.TabIndex = 8;
+            this.Cmd_Imprimir.Text = "Imprimir";
+            this.Cmd_Imprimir.UseVisualStyleBackColor = true;
+            this.Cmd_Imprimir.Click += new System.EventHandler(this.Cmd_Imprimir_Click);
             // 
-            // Btn_Salir
+            // Cmd_Salir
             // 
-            this.Btn_Salir.Location = new System.Drawing.Point(565, 287);
-            this.Btn_Salir.Name = "Btn_Salir";
-            this.Btn_Salir.Size = new System.Drawing.Size(80, 28);
-            this.Btn_Salir.TabIndex = 9;
-            this.Btn_Salir.Text = "Salir";
-            this.Btn_Salir.UseVisualStyleBackColor = true;
+            this.Cmd_Salir.Location = new System.Drawing.Point(565, 287);
+            this.Cmd_Salir.Name = "Cmd_Salir";
+            this.Cmd_Salir.Size = new System.Drawing.Size(80, 28);
+            this.Cmd_Salir.TabIndex = 9;
+            this.Cmd_Salir.Text = "Salir";
+            this.Cmd_Salir.UseVisualStyleBackColor = true;
+            this.Cmd_Salir.Click += new System.EventHandler(this.Cmd_Salir_Click);
             // 
             // A_Sessiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 362);
-            this.Controls.Add(this.Btn_Salir);
-            this.Controls.Add(this.Btn_Imprimir);
+            this.Controls.Add(this.Cmd_Salir);
+            this.Controls.Add(this.Cmd_Imprimir);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "A_Sessiones";
             this.Text = "A_Sessiones";
+            this.Load += new System.EventHandler(this.A_Sessiones_Load);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
-            this.Controls.SetChildIndex(this.Btn_Imprimir, 0);
-            this.Controls.SetChildIndex(this.Btn_Salir, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Controls.SetChildIndex(this.Cmd_Imprimir, 0);
+            this.Controls.SetChildIndex(this.Cmd_Salir, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.Dat_Sessiones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -140,13 +145,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Txt_Usuario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button Cmd_Buscar;
+        private System.Windows.Forms.DataGridView Dat_Sessiones;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button Btn_Imprimir;
-        private System.Windows.Forms.Button Btn_Salir;
+        private System.Windows.Forms.Button Cmd_Imprimir;
+        private System.Windows.Forms.Button Cmd_Salir;
     }
 }

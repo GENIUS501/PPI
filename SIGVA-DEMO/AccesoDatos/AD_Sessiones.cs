@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Data;
 using Entidades;
+using System.Collections;
 
 namespace AccesoDatos
 {
    public class AD_Sessiones
    {
+       
+       string vCadenaConexion = ConfigurationManager.ConnectionStrings["Presentacion.Properties.Settings.SIGVAConnectionString"].ConnectionString;
        #region "Ingresar"
        public Int32 Ingresar(Ent_Sessiones uRegistro)
         {
@@ -54,6 +59,64 @@ namespace AccesoDatos
            return Respuesta;
        }
         #endregion
+
+       #region "Leer todos"
+       public DataTable Leer()
+       {
+           try
+           {
+               DataTable dtConsulta = new DataTable();
+               Ent_Usuarios vRegistro = new Ent_Usuarios();
+
+               string commandText = "SELECT * FROM [dbo].[Sessiones] ";
+               //string commandText = commandTexta;
+
+               using (SqlConnection connection = new SqlConnection(vCadenaConexion))
+               {
+                   SqlCommand command = new SqlCommand(commandText, connection);
+
+                   SqlDataAdapter DataAdapter = new SqlDataAdapter(command);
+                   DataAdapter.Fill(dtConsulta);
+               }
+
+               return dtConsulta;
+
+           }
+           catch (Exception ex)
+           {
+               throw ex;
+           }
+       }
+       #endregion
+
+       #region "Leer Especifico"
+       public DataTable LeerCodigoLlave(string pCodigo)
+       {
+           try
+           {
+               DataTable dtConsulta = new DataTable();
+               Ent_Usuarios vRegistro = new Ent_Usuarios();
+
+               string commandText = "SELECT * FROM [dbo].[Sessiones] WHERE [Usuario] =  '" + pCodigo.ToString() + "'";
+               //string commandText = commandTexta;
+
+               using (SqlConnection connection = new SqlConnection(vCadenaConexion))
+               {
+                   SqlCommand command = new SqlCommand(commandText, connection);
+
+                   SqlDataAdapter DataAdapter = new SqlDataAdapter(command);
+                   DataAdapter.Fill(dtConsulta);
+               }
+
+               return dtConsulta;
+
+           }
+           catch (Exception ex)
+           {
+               throw ex;
+           }
+       }
+       #endregion
 
        #region "Salir"
        public Int32 Salir(Ent_Sessiones uRegistro)

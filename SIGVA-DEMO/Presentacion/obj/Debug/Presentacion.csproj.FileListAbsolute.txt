@@ -156,6 +156,7 @@ C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presenta
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.A_Sessiones.resources
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.A_Movimientos.resources
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.A_Personal.resources
+C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.AVR_Sessiones.resources
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.frmIngresos.resources
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.frmListaBase.resources
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.frmMantenimiento.resources
@@ -186,3 +187,5 @@ C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presenta
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.Cache
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.exe
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\RdlCompile.cache
+C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Presentacion\obj\Debug\RdlCompile.compiled
