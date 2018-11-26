@@ -167,6 +167,31 @@ namespace AccesoDatos
         }
         #endregion
 
+        #region "Llenar reporte"
+        //SELECT FUNCIONARIOS.Cedula, FUNCIONARIOS.Nombre, FUNCIONARIOS.Apellido1, FUNCIONARIOS.Apellido2, FUNCIONARIOS.Fecha_De_Ingreso, FUNCIONARIOS.Direccion, FUNCIONARIOS.Telefono, FUNCIONARIOS.Email, FUNCIONARIOS.Fecha_de_Anualidad, FUNCIONARIOS.Estatus, FUNCIONARIOS.Anos_Institucion_anterior, PUESTOS.Nombre_Puesto, DEPARTAMENTOS.Nombre_Departamento, SUM(Dias_Disponibles.Cantidad_Dias) AS saldos FROM Dias_Disponibles INNER JOIN FUNCIONARIOS ON Dias_Disponibles.Cedula = FUNCIONARIOS.Cedula INNER JOIN PUESTOS ON FUNCIONARIOS.Id_Puesto = PUESTOS.Id_Puesto INNER JOIN DEPARTAMENTOS ON FUNCIONARIOS.Id_Departamento = DEPARTAMENTOS.Id_Departamento AND PUESTOS.Id_Departamento = DEPARTAMENTOS.Id_Departamento GROUP BY FUNCIONARIOS.Cedula, FUNCIONARIOS.Nombre, FUNCIONARIOS.Apellido1, FUNCIONARIOS.Apellido2, FUNCIONARIOS.Fecha_De_Ingreso, FUNCIONARIOS.Direccion, FUNCIONARIOS.Telefono, FUNCIONARIOS.Email,  FUNCIONARIOS.Fecha_de_Anualidad, FUNCIONARIOS.Estatus, FUNCIONARIOS.Anos_Institucion_anterior, PUESTOS.Nombre_Puesto, DEPARTAMENTOS.Nombre_Departamento HAVING (SUM(Dias_Disponibles.Cantidad_Dias) > @param)
+        public DataTable llenar_datagridreporte(Int32 Parametro)
+        {
+            try
+            {
+                using (SqlConnection cnx = new SqlConnection(vCadenaConexion))
+                {
+
+                    string query = "SELECT FUNCIONARIOS.Cedula, FUNCIONARIOS.Nombre, FUNCIONARIOS.Apellido1, FUNCIONARIOS.Apellido2, FUNCIONARIOS.Fecha_De_Ingreso, FUNCIONARIOS.Direccion, FUNCIONARIOS.Telefono, FUNCIONARIOS.Email, FUNCIONARIOS.Fecha_de_Anualidad, FUNCIONARIOS.Estatus, FUNCIONARIOS.Anos_Institucion_anterior, PUESTOS.Nombre_Puesto, DEPARTAMENTOS.Nombre_Departamento, SUM(Dias_Disponibles.Cantidad_Dias) AS saldos FROM Dias_Disponibles INNER JOIN FUNCIONARIOS ON Dias_Disponibles.Cedula = FUNCIONARIOS.Cedula INNER JOIN PUESTOS ON FUNCIONARIOS.Id_Puesto = PUESTOS.Id_Puesto INNER JOIN DEPARTAMENTOS ON FUNCIONARIOS.Id_Departamento = DEPARTAMENTOS.Id_Departamento AND PUESTOS.Id_Departamento = DEPARTAMENTOS.Id_Departamento GROUP BY FUNCIONARIOS.Cedula, FUNCIONARIOS.Nombre, FUNCIONARIOS.Apellido1, FUNCIONARIOS.Apellido2, FUNCIONARIOS.Fecha_De_Ingreso, FUNCIONARIOS.Direccion, FUNCIONARIOS.Telefono, FUNCIONARIOS.Email,  FUNCIONARIOS.Fecha_de_Anualidad, FUNCIONARIOS.Estatus, FUNCIONARIOS.Anos_Institucion_anterior, PUESTOS.Nombre_Puesto, DEPARTAMENTOS.Nombre_Departamento HAVING (SUM(Dias_Disponibles.Cantidad_Dias) > @param)";
+                    SqlCommand cmd = new SqlCommand(query, cnx);
+                    cmd.Parameters.AddWithValue("@param", Convert.ToInt32(Parametro));
+                    SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adaptador.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
         #region "Eliminar"
         public Int32 Eliminar(Int32 Cedula)
         {

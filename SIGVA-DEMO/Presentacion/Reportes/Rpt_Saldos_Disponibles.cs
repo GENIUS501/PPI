@@ -20,10 +20,16 @@ namespace Presentacion
 
         private void Rpt_Saldos_Disponibles_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'sIGVADataSetdiasreservados.Dias_Reservados' Puede moverla o quitarla según sea necesario.
-            this.dias_ReservadosTableAdapter.Fill(this.sIGVADataSetdiasreservados.Dias_Reservados);
-            // TODO: esta línea de código carga datos en la tabla 'sIGVADataSetDias_Disponibles.Dias_Disponibles' Puede moverla o quitarla según sea necesario.
-            this.dias_DisponiblesTableAdapter.Fill(this.sIGVADataSetDias_Disponibles.Dias_Disponibles);
+            try
+            {
+                // TODO: esta línea de código carga datos en la tabla 'sIGVADataSetdiasreservados.Dias_Reservados' Puede moverla o quitarla según sea necesario.
+                this.dias_ReservadosTableAdapter.Fill(this.sIGVADataSetdiasreservados.Dias_Reservados);
+                // TODO: esta línea de código carga datos en la tabla 'sIGVADataSetDias_Disponibles.Dias_Disponibles' Puede moverla o quitarla según sea necesario.
+                this.dias_DisponiblesTableAdapter.Fill(this.sIGVADataSetDias_Disponibles.Dias_Disponibles);
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos: "+ex);
+            }
 
         }
 

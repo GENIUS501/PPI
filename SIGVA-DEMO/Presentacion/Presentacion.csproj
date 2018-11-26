@@ -73,10 +73,10 @@
     <Compile Include="Accion_de_personal\A_Personal.Designer.cs">
       <DependentUpon>A_Personal.cs</DependentUpon>
     </Compile>
-    <Compile Include="AVR_Sessiones.cs">
+    <Compile Include="Auditoria\AVR_Sessiones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AVR_Sessiones.Designer.cs">
+    <Compile Include="Auditoria\AVR_Sessiones.Designer.cs">
       <DependentUpon>AVR_Sessiones.cs</DependentUpon>
     </Compile>
     <Compile Include="FormasBase\Listas\frmListaBase.cs">
@@ -241,6 +241,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SIGVADataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SIGVADataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIGVADataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SIGVADataSet1Departamentos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -282,6 +287,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SIGVADataSetUsuarios.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\VRrpt_rango.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\VRrpt_rango.Designer.cs">
+      <DependentUpon>VRrpt_rango.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Acerca_de.resx">
       <DependentUpon>Acerca_de.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,7 +305,7 @@
     <EmbeddedResource Include="Accion_de_personal\A_Personal.resx">
       <DependentUpon>A_Personal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AVR_Sessiones.resx">
+    <EmbeddedResource Include="Auditoria\AVR_Sessiones.resx">
       <DependentUpon>AVR_Sessiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormasBase\Ingresos\frmIngresos.resx">
@@ -385,7 +396,11 @@
     <EmbeddedResource Include="Reportes\Rpt_Rango_Fechas.resx">
       <DependentUpon>Rpt_Rango_Fechas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rpt_Sessiones.rdlc" />
+    <EmbeddedResource Include="Auditoria\Rpt_Sessiones.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Rango.rdlc" />
+    <EmbeddedResource Include="Reportes\VRrpt_rango.resx">
+      <DependentUpon>VRrpt_rango.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\A_Sessiones.datasource" />
     <None Include="Properties\DataSources\Entidades.Ent_Sessiones.datasource" />
     <None Include="Properties\Settings.settings">
@@ -418,6 +433,17 @@
     </None>
     <None Include="SIGVADataSet.xss">
       <DependentUpon>SIGVADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSet1.xsc">
+      <DependentUpon>SIGVADataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SIGVADataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIGVADataSet1.xss">
+      <DependentUpon>SIGVADataSet1.xsd</DependentUpon>
     </None>
     <None Include="SIGVADataSet1Departamentos.xsc">
       <DependentUpon>SIGVADataSet1Departamentos.xsd</DependentUpon>

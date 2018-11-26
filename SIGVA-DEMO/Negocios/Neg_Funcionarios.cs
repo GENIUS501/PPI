@@ -108,6 +108,27 @@ namespace Negocios
         }
         #endregion
 
+
+        #region "Llenar datagridreporte"
+        public DataTable Llenar_data_reporte(Int32 Parametro)
+        {
+            DataTable dt = new DataTable();
+            AccesoDatos.AD_Funcionarios IControlador;
+
+            try
+            {
+                IControlador = new AccesoDatos.AD_Funcionarios();
+                dt = IControlador.llenar_datagridreporte(Parametro);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return dt;
+        }
+        #endregion
+
         #region "Eliminar"
         public Int32 Eliminar(Int32 Cedula)
         {
