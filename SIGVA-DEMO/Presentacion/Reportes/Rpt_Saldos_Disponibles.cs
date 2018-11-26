@@ -59,8 +59,55 @@ namespace Presentacion
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            //Generar
+        {//Generar
+            try
+            {
+                if (this.Txt_Cedula.Text != "")
+                {
+                    Efuncionarios = new Ent_Funcionarios();
+                    Nfuncionarios = new Neg_Funcionarios();
+                    Nsaldos = new Neg_Saldos_Disponibles();
+                    Nanualidades = new Neg_Anualidades();
+                    Eanualidades = new Ent_Anualidades();
+                    Edepartamento = new Ent_Departamentos();
+                    Ndepartamento = new Neg_Departamentos();
+                    Epuestos = new Ent_Puestos();
+                    Npuestos = new Neg_Puestos();
+                    Ndias_disponibles = new Neg_Dias_Disponibles();
+                    Ndias_reservados = new Neg_Dias_Reservados();
+                    Eanualidades = Nanualidades.LeerAnualidad(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
+                    this.Txt_Codigo_Reporte.Text = Convert.ToString(Nsaldos.numero_reporte(Convert.ToInt32(this.Txt_Cedula.Text.ToString())) + 1);
+                    Eanualidades = Nanualidades.LeerAnualidad(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
+                    Efuncionarios = Nfuncionarios.LeerCodigoLlave(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
+                    Edepartamento = Ndepartamento.LeerCodigoLlave(Efuncionarios.Id_Departamento);
+                    Epuestos = Npuestos.LeerCodigoLlave(Efuncionarios.Id_Puesto);
+                    this.Txt_Nombre.Text = Efuncionarios.Nombre + Efuncionarios.Apellido1 + Efuncionarios.Apellido2;
+                    this.Txt_Fecha_Ingreso.Text = Efuncionarios.Fecha_De_Ingreso.ToString();
+                    this.Txt_Anualidades.Text = Eanualidades.Cantidad_Dias.ToString();
+                    this.Txt_Puesto.Text = Epuestos.Nombre_Puesto;
+                    this.Txt_Departamento.Text = Edepartamento.Nombre_Departamento;
+                    this.Dat_Dias_Disponibles.DataSource = Ndias_disponibles.Llenardatagrid(Convert.ToInt32(this.Txt_Cedula.Text));
+                    this.Dat_Dias_Reservados.DataSource = Ndias_reservados.Llenardatagrid(Convert.ToInt32(this.Txt_Cedula.Text));
+                    VR_Rpt_Saldos_Disponibles Visor = new VR_Rpt_Saldos_Disponibles();
+                    Visor.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
+                    Visor.Codigo_Reporte = Convert.ToInt32(this.Txt_Codigo_Reporte.Text);
+                    Visor.Anualidades = Convert.ToInt32(this.Txt_Anualidades.Text);
+                    Visor.Nombre = this.Txt_Nombre.Text;
+                    Visor.Departamento = this.Txt_Departamento.Text;
+                    Visor.Puesto = this.Txt_Puesto.Text;
+                    Visor.Fecha_Ingreso = Txt_Fecha_Ingreso.ToString();
+                    Visor.MdiParent = this.MdiParent;
+                    Visor.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Debe digitar la cedula.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
 
         }
 

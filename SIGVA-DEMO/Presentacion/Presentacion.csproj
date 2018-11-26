@@ -236,6 +236,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Rpt_Session_dataset.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Saldos_Disponibles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Saldos_Disponibles.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SIGVADataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -292,6 +297,12 @@
     </Compile>
     <Compile Include="Reportes\VRrpt_rango.Designer.cs">
       <DependentUpon>VRrpt_rango.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VR_Rpt_Saldos_Disponibles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VR_Rpt_Saldos_Disponibles.Designer.cs">
+      <DependentUpon>VR_Rpt_Saldos_Disponibles.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Acerca_de.resx">
       <DependentUpon>Acerca_de.cs</DependentUpon>
@@ -401,6 +412,10 @@
     <EmbeddedResource Include="Reportes\VRrpt_rango.resx">
       <DependentUpon>VRrpt_rango.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Rpt_Saldos_Disponibles.rdlc" />
+    <EmbeddedResource Include="VR_Rpt_Saldos_Disponibles.resx">
+      <DependentUpon>VR_Rpt_Saldos_Disponibles.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\A_Sessiones.datasource" />
     <None Include="Properties\DataSources\Entidades.Ent_Sessiones.datasource" />
     <None Include="Properties\Settings.settings">
@@ -422,6 +437,17 @@
     </None>
     <None Include="Rpt_Session_dataset.xss">
       <DependentUpon>Rpt_Session_dataset.xsd</DependentUpon>
+    </None>
+    <None Include="Saldos_Disponibles.xsc">
+      <DependentUpon>Saldos_Disponibles.xsd</DependentUpon>
+    </None>
+    <None Include="Saldos_Disponibles.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Saldos_Disponibles.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Saldos_Disponibles.xss">
+      <DependentUpon>Saldos_Disponibles.xsd</DependentUpon>
     </None>
     <None Include="SIGVADataSet.xsc">
       <DependentUpon>SIGVADataSet.xsd</DependentUpon>
