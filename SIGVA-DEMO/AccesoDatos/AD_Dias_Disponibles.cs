@@ -98,6 +98,29 @@ namespace AccesoDatos
         }
         #endregion
 
+        #region "Llenar datagrid"
+        public DataTable llenar_datagrid(Int32 Pcodigo)
+        {
+            try
+            {
+                using (SqlConnection cnx = new SqlConnection(vCadenaConexion))
+                {
+
+                    string query = "SELECT * FROM Dias_Disponibles WHERE Cedula = "+Pcodigo;
+                    SqlCommand cmd = new SqlCommand(query, cnx);
+                    SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adaptador.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
         #region "Eliminar"
         public Int32 Eliminar(Int32 Cedula)
         {

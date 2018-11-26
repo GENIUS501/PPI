@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,22 @@ namespace Negocios
 {
    public class Neg_Dias_Reservados
     {
+       #region "Llenar datagrid"
+       public DataTable Llenardatagrid(Int32 Cedula)
+       {
+           AccesoDatos.AD_Dias_Reservados IControlador;
+           try
+           {
+               IControlador = new AccesoDatos.AD_Dias_Reservados();
+               return IControlador.llenar_datagrid(Cedula);
+           }
+           catch (Exception ex)
+           {
+               throw new Exception(ex.Message, ex);
+           }
+       }
+       #endregion
+
        #region "Eliminar"
        public Int32 Eliminar(Int32 Cedula)
        {

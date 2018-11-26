@@ -29,6 +29,22 @@ namespace Negocios
         }
         #endregion
 
+        #region "Leer Anualidad"
+        public Ent_Anualidades LeerAnualidad(Int32 Cedula)
+        {
+            AccesoDatos.AD_Anualidades IControlador;
+            try
+            {
+                IControlador = new AccesoDatos.AD_Anualidades();
+                return IControlador.LeerAnulidad(Cedula);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+        #endregion
+
         #region "Eliminar"
         public Int32 Eliminar(Int32 Cedula)
         {

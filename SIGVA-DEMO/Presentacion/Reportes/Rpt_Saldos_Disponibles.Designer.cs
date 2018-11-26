@@ -28,62 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Txt_Codigo_Reporte = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.sigvaDataSetfun1 = new Presentacion.SIGVADataSetfun();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Txt_Cedula = new System.Windows.Forms.TextBox();
+            this.Cmd_Buscar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Txt_Fecha_Elaboracion = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Txt_Departamento = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Txt_Puesto = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.Txt_Fecha_Ingreso = new System.Windows.Forms.DateTimePicker();
+            this.Txt_Anualidades = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
-            this.sIGVADataSetDias_Disponibles = new Presentacion.SIGVADataSetDias_Disponibles();
-            this.diasDisponiblesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dias_DisponiblesTableAdapter = new Presentacion.SIGVADataSetDias_DisponiblesTableAdapters.Dias_DisponiblesTableAdapter();
-            this.anoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDiasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Dat_Dias_Reservados = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.sIGVADataSetdiasreservados = new Presentacion.SIGVADataSetdiasreservados();
-            this.diasReservadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dias_ReservadosTableAdapter = new Presentacion.SIGVADataSetdiasreservadosTableAdapters.Dias_ReservadosTableAdapter();
-            this.cedulaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaInicialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaFinalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reservadoElDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idReservacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidaddiasDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.sigvaDataSetfun1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetDias_Disponibles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diasDisponiblesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetdiasreservados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diasReservadosBindingSource)).BeginInit();
+            this.Cmd_Generar = new System.Windows.Forms.Button();
+            this.Cmd_Cancelar = new System.Windows.Forms.Button();
+            this.Dat_Dias_Disponibles = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.Dat_Dias_Reservados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dat_Dias_Disponibles)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // Txt_Codigo_Reporte
             // 
-            this.textBox1.Location = new System.Drawing.Point(19, 144);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.Txt_Codigo_Reporte.Location = new System.Drawing.Point(19, 144);
+            this.Txt_Codigo_Reporte.Name = "Txt_Codigo_Reporte";
+            this.Txt_Codigo_Reporte.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Codigo_Reporte.TabIndex = 2;
             // 
             // label1
             // 
@@ -94,11 +71,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Codigo de reporte";
             // 
-            // sigvaDataSetfun1
-            // 
-            this.sigvaDataSetfun1.DataSetName = "SIGVADataSetfun";
-            this.sigvaDataSetfun1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -108,21 +80,22 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Cedula";
             // 
-            // textBox2
+            // Txt_Cedula
             // 
-            this.textBox2.Location = new System.Drawing.Point(16, 72);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.Txt_Cedula.Location = new System.Drawing.Point(16, 72);
+            this.Txt_Cedula.Name = "Txt_Cedula";
+            this.Txt_Cedula.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Cedula.TabIndex = 5;
             // 
-            // button1
+            // Cmd_Buscar
             // 
-            this.button1.Location = new System.Drawing.Point(132, 68);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Cmd_Buscar.Location = new System.Drawing.Point(132, 68);
+            this.Cmd_Buscar.Name = "Cmd_Buscar";
+            this.Cmd_Buscar.Size = new System.Drawing.Size(75, 23);
+            this.Cmd_Buscar.TabIndex = 6;
+            this.Cmd_Buscar.Text = "Buscar";
+            this.Cmd_Buscar.UseVisualStyleBackColor = true;
+            this.Cmd_Buscar.Click += new System.EventHandler(this.Cmd_Buscar_Click);
             // 
             // label3
             // 
@@ -133,12 +106,12 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Fecha de Elaboracion";
             // 
-            // dateTimePicker1
+            // Txt_Fecha_Elaboracion
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(167, 143);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 8;
+            this.Txt_Fecha_Elaboracion.Location = new System.Drawing.Point(167, 143);
+            this.Txt_Fecha_Elaboracion.Name = "Txt_Fecha_Elaboracion";
+            this.Txt_Fecha_Elaboracion.Size = new System.Drawing.Size(200, 20);
+            this.Txt_Fecha_Elaboracion.TabIndex = 8;
             // 
             // label4
             // 
@@ -149,12 +122,12 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Nombre Completo";
             // 
-            // textBox3
+            // Txt_Nombre
             // 
-            this.textBox3.Location = new System.Drawing.Point(22, 213);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(214, 20);
-            this.textBox3.TabIndex = 10;
+            this.Txt_Nombre.Location = new System.Drawing.Point(22, 213);
+            this.Txt_Nombre.Name = "Txt_Nombre";
+            this.Txt_Nombre.Size = new System.Drawing.Size(214, 20);
+            this.Txt_Nombre.TabIndex = 10;
             // 
             // label5
             // 
@@ -165,12 +138,12 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Departamento";
             // 
-            // textBox4
+            // Txt_Departamento
             // 
-            this.textBox4.Location = new System.Drawing.Point(22, 281);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 12;
+            this.Txt_Departamento.Location = new System.Drawing.Point(22, 281);
+            this.Txt_Departamento.Name = "Txt_Departamento";
+            this.Txt_Departamento.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Departamento.TabIndex = 12;
             // 
             // label6
             // 
@@ -181,12 +154,12 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Puesto";
             // 
-            // textBox5
+            // Txt_Puesto
             // 
-            this.textBox5.Location = new System.Drawing.Point(152, 281);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 14;
+            this.Txt_Puesto.Location = new System.Drawing.Point(152, 281);
+            this.Txt_Puesto.Name = "Txt_Puesto";
+            this.Txt_Puesto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Puesto.TabIndex = 14;
             // 
             // label7
             // 
@@ -197,19 +170,19 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Fecha de ingreso";
             // 
-            // dateTimePicker2
+            // Txt_Fecha_Ingreso
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(275, 278);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 16;
+            this.Txt_Fecha_Ingreso.Location = new System.Drawing.Point(275, 278);
+            this.Txt_Fecha_Ingreso.Name = "Txt_Fecha_Ingreso";
+            this.Txt_Fecha_Ingreso.Size = new System.Drawing.Size(200, 20);
+            this.Txt_Fecha_Ingreso.TabIndex = 16;
             // 
-            // textBox6
+            // Txt_Anualidades
             // 
-            this.textBox6.Location = new System.Drawing.Point(22, 329);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 17;
+            this.Txt_Anualidades.Location = new System.Drawing.Point(22, 329);
+            this.Txt_Anualidades.Name = "Txt_Anualidades";
+            this.Txt_Anualidades.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Anualidades.TabIndex = 17;
             // 
             // label8
             // 
@@ -220,20 +193,6 @@
             this.label8.TabIndex = 18;
             this.label8.Text = "Anualidades";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.anoDataGridViewTextBoxColumn,
-            this.cantidadDiasDataGridViewTextBoxColumn,
-            this.cedulaDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.diasDisponiblesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 379);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(230, 104);
-            this.dataGridView1.TabIndex = 19;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -243,55 +202,16 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Dias disponibles";
             // 
-            // sIGVADataSetDias_Disponibles
+            // Dat_Dias_Reservados
             // 
-            this.sIGVADataSetDias_Disponibles.DataSetName = "SIGVADataSetDias_Disponibles";
-            this.sIGVADataSetDias_Disponibles.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // diasDisponiblesBindingSource
-            // 
-            this.diasDisponiblesBindingSource.DataMember = "Dias_Disponibles";
-            this.diasDisponiblesBindingSource.DataSource = this.sIGVADataSetDias_Disponibles;
-            // 
-            // dias_DisponiblesTableAdapter
-            // 
-            this.dias_DisponiblesTableAdapter.ClearBeforeFill = true;
-            // 
-            // anoDataGridViewTextBoxColumn
-            // 
-            this.anoDataGridViewTextBoxColumn.DataPropertyName = "Ano";
-            this.anoDataGridViewTextBoxColumn.HeaderText = "Ano";
-            this.anoDataGridViewTextBoxColumn.Name = "anoDataGridViewTextBoxColumn";
-            // 
-            // cantidadDiasDataGridViewTextBoxColumn
-            // 
-            this.cantidadDiasDataGridViewTextBoxColumn.DataPropertyName = "Cantidad_Dias";
-            this.cantidadDiasDataGridViewTextBoxColumn.HeaderText = "Cantidad_Dias";
-            this.cantidadDiasDataGridViewTextBoxColumn.Name = "cantidadDiasDataGridViewTextBoxColumn";
-            // 
-            // cedulaDataGridViewTextBoxColumn
-            // 
-            this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
-            this.cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
-            this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cedulaDataGridViewTextBoxColumn1,
-            this.fechaInicialDataGridViewTextBoxColumn,
-            this.fechaFinalDataGridViewTextBoxColumn,
-            this.detalleDataGridViewTextBoxColumn,
-            this.reservadoElDataGridViewTextBoxColumn,
-            this.idReservacionDataGridViewTextBoxColumn,
-            this.cantidaddiasDataGridViewTextBoxColumn1});
-            this.dataGridView2.DataSource = this.diasReservadosBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(321, 372);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(214, 111);
-            this.dataGridView2.TabIndex = 21;
+            this.Dat_Dias_Reservados.AllowUserToAddRows = false;
+            this.Dat_Dias_Reservados.AllowUserToDeleteRows = false;
+            this.Dat_Dias_Reservados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dat_Dias_Reservados.Location = new System.Drawing.Point(321, 372);
+            this.Dat_Dias_Reservados.Name = "Dat_Dias_Reservados";
+            this.Dat_Dias_Reservados.ReadOnly = true;
+            this.Dat_Dias_Reservados.Size = new System.Drawing.Size(214, 111);
+            this.Dat_Dias_Reservados.TabIndex = 21;
             // 
             // label10
             // 
@@ -302,143 +222,93 @@
             this.label10.TabIndex = 22;
             this.label10.Text = "Dias disfrutados";
             // 
-            // sIGVADataSetdiasreservados
+            // Cmd_Generar
             // 
-            this.sIGVADataSetdiasreservados.DataSetName = "SIGVADataSetdiasreservados";
-            this.sIGVADataSetdiasreservados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.Cmd_Generar.Location = new System.Drawing.Point(232, 489);
+            this.Cmd_Generar.Name = "Cmd_Generar";
+            this.Cmd_Generar.Size = new System.Drawing.Size(75, 23);
+            this.Cmd_Generar.TabIndex = 23;
+            this.Cmd_Generar.Text = "Generar";
+            this.Cmd_Generar.UseVisualStyleBackColor = true;
+            this.Cmd_Generar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // diasReservadosBindingSource
+            // Cmd_Cancelar
             // 
-            this.diasReservadosBindingSource.DataMember = "Dias_Reservados";
-            this.diasReservadosBindingSource.DataSource = this.sIGVADataSetdiasreservados;
+            this.Cmd_Cancelar.Location = new System.Drawing.Point(388, 489);
+            this.Cmd_Cancelar.Name = "Cmd_Cancelar";
+            this.Cmd_Cancelar.Size = new System.Drawing.Size(75, 23);
+            this.Cmd_Cancelar.TabIndex = 24;
+            this.Cmd_Cancelar.Text = "Cancelar";
+            this.Cmd_Cancelar.UseVisualStyleBackColor = true;
+            this.Cmd_Cancelar.Click += new System.EventHandler(this.button3_Click);
             // 
-            // dias_ReservadosTableAdapter
+            // Dat_Dias_Disponibles
             // 
-            this.dias_ReservadosTableAdapter.ClearBeforeFill = true;
-            // 
-            // cedulaDataGridViewTextBoxColumn1
-            // 
-            this.cedulaDataGridViewTextBoxColumn1.DataPropertyName = "Cedula";
-            this.cedulaDataGridViewTextBoxColumn1.HeaderText = "Cedula";
-            this.cedulaDataGridViewTextBoxColumn1.Name = "cedulaDataGridViewTextBoxColumn1";
-            // 
-            // fechaInicialDataGridViewTextBoxColumn
-            // 
-            this.fechaInicialDataGridViewTextBoxColumn.DataPropertyName = "Fecha_Inicial";
-            this.fechaInicialDataGridViewTextBoxColumn.HeaderText = "Fecha_Inicial";
-            this.fechaInicialDataGridViewTextBoxColumn.Name = "fechaInicialDataGridViewTextBoxColumn";
-            // 
-            // fechaFinalDataGridViewTextBoxColumn
-            // 
-            this.fechaFinalDataGridViewTextBoxColumn.DataPropertyName = "Fecha_Final";
-            this.fechaFinalDataGridViewTextBoxColumn.HeaderText = "Fecha_Final";
-            this.fechaFinalDataGridViewTextBoxColumn.Name = "fechaFinalDataGridViewTextBoxColumn";
-            // 
-            // detalleDataGridViewTextBoxColumn
-            // 
-            this.detalleDataGridViewTextBoxColumn.DataPropertyName = "Detalle";
-            this.detalleDataGridViewTextBoxColumn.HeaderText = "Detalle";
-            this.detalleDataGridViewTextBoxColumn.Name = "detalleDataGridViewTextBoxColumn";
-            // 
-            // reservadoElDataGridViewTextBoxColumn
-            // 
-            this.reservadoElDataGridViewTextBoxColumn.DataPropertyName = "Reservado_El";
-            this.reservadoElDataGridViewTextBoxColumn.HeaderText = "Reservado_El";
-            this.reservadoElDataGridViewTextBoxColumn.Name = "reservadoElDataGridViewTextBoxColumn";
-            // 
-            // idReservacionDataGridViewTextBoxColumn
-            // 
-            this.idReservacionDataGridViewTextBoxColumn.DataPropertyName = "Id_Reservacion";
-            this.idReservacionDataGridViewTextBoxColumn.HeaderText = "Id_Reservacion";
-            this.idReservacionDataGridViewTextBoxColumn.Name = "idReservacionDataGridViewTextBoxColumn";
-            this.idReservacionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cantidaddiasDataGridViewTextBoxColumn1
-            // 
-            this.cantidaddiasDataGridViewTextBoxColumn1.DataPropertyName = "Cantidad_dias";
-            this.cantidaddiasDataGridViewTextBoxColumn1.HeaderText = "Cantidad_dias";
-            this.cantidaddiasDataGridViewTextBoxColumn1.Name = "cantidaddiasDataGridViewTextBoxColumn1";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(232, 489);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Generar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(388, 489);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Dat_Dias_Disponibles.AllowUserToAddRows = false;
+            this.Dat_Dias_Disponibles.AllowUserToDeleteRows = false;
+            this.Dat_Dias_Disponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dat_Dias_Disponibles.Location = new System.Drawing.Point(22, 379);
+            this.Dat_Dias_Disponibles.Name = "Dat_Dias_Disponibles";
+            this.Dat_Dias_Disponibles.ReadOnly = true;
+            this.Dat_Dias_Disponibles.Size = new System.Drawing.Size(230, 104);
+            this.Dat_Dias_Disponibles.TabIndex = 19;
             // 
             // Rpt_Saldos_Disponibles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 526);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Cmd_Cancelar);
+            this.Controls.Add(this.Cmd_Generar);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.Dat_Dias_Reservados);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Dat_Dias_Disponibles);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.Txt_Anualidades);
+            this.Controls.Add(this.Txt_Fecha_Ingreso);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.Txt_Puesto);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.Txt_Departamento);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.Txt_Nombre);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Txt_Fecha_Elaboracion);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.Cmd_Buscar);
+            this.Controls.Add(this.Txt_Cedula);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Txt_Codigo_Reporte);
             this.Name = "Rpt_Saldos_Disponibles";
             this.Text = "Rpt_Saldos_Disponibles";
             this.Load += new System.EventHandler(this.Rpt_Saldos_Disponibles_Load);
-            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.Txt_Codigo_Reporte, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.textBox2, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.Txt_Cedula, 0);
+            this.Controls.SetChildIndex(this.Cmd_Buscar, 0);
             this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.dateTimePicker1, 0);
+            this.Controls.SetChildIndex(this.Txt_Fecha_Elaboracion, 0);
             this.Controls.SetChildIndex(this.label4, 0);
-            this.Controls.SetChildIndex(this.textBox3, 0);
+            this.Controls.SetChildIndex(this.Txt_Nombre, 0);
             this.Controls.SetChildIndex(this.label5, 0);
-            this.Controls.SetChildIndex(this.textBox4, 0);
+            this.Controls.SetChildIndex(this.Txt_Departamento, 0);
             this.Controls.SetChildIndex(this.label6, 0);
-            this.Controls.SetChildIndex(this.textBox5, 0);
+            this.Controls.SetChildIndex(this.Txt_Puesto, 0);
             this.Controls.SetChildIndex(this.label7, 0);
-            this.Controls.SetChildIndex(this.dateTimePicker2, 0);
-            this.Controls.SetChildIndex(this.textBox6, 0);
+            this.Controls.SetChildIndex(this.Txt_Fecha_Ingreso, 0);
+            this.Controls.SetChildIndex(this.Txt_Anualidades, 0);
             this.Controls.SetChildIndex(this.label8, 0);
-            this.Controls.SetChildIndex(this.dataGridView1, 0);
+            this.Controls.SetChildIndex(this.Dat_Dias_Disponibles, 0);
             this.Controls.SetChildIndex(this.label9, 0);
-            this.Controls.SetChildIndex(this.dataGridView2, 0);
+            this.Controls.SetChildIndex(this.Dat_Dias_Reservados, 0);
             this.Controls.SetChildIndex(this.label10, 0);
-            this.Controls.SetChildIndex(this.button2, 0);
-            this.Controls.SetChildIndex(this.button3, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.sigvaDataSetfun1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetDias_Disponibles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diasDisponiblesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetdiasreservados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diasReservadosBindingSource)).EndInit();
+            this.Controls.SetChildIndex(this.Cmd_Generar, 0);
+            this.Controls.SetChildIndex(this.Cmd_Cancelar, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.Dat_Dias_Reservados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dat_Dias_Disponibles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,45 +316,28 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Txt_Codigo_Reporte;
         private System.Windows.Forms.Label label1;
-        private SIGVADataSetfun sigvaDataSetfun1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox Txt_Cedula;
+        private System.Windows.Forms.Button Cmd_Buscar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker Txt_Fecha_Elaboracion;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Txt_Nombre;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Txt_Departamento;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Txt_Puesto;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.DateTimePicker Txt_Fecha_Ingreso;
+        private System.Windows.Forms.TextBox Txt_Anualidades;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label9;
-        private SIGVADataSetDias_Disponibles sIGVADataSetDias_Disponibles;
-        private System.Windows.Forms.BindingSource diasDisponiblesBindingSource;
-        private SIGVADataSetDias_DisponiblesTableAdapters.Dias_DisponiblesTableAdapter dias_DisponiblesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn anoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDiasDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cedulaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView Dat_Dias_Reservados;
         private System.Windows.Forms.Label label10;
-        private SIGVADataSetdiasreservados sIGVADataSetdiasreservados;
-        private System.Windows.Forms.BindingSource diasReservadosBindingSource;
-        private SIGVADataSetdiasreservadosTableAdapters.Dias_ReservadosTableAdapter dias_ReservadosTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cedulaDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicialDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaFinalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detalleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reservadoElDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idReservacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidaddiasDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Cmd_Generar;
+        private System.Windows.Forms.Button Cmd_Cancelar;
+        private System.Windows.Forms.DataGridView Dat_Dias_Disponibles;
     }
 }

@@ -15,7 +15,7 @@ namespace Presentacion
     public partial class Rpt_Rango : Rpt_Base
     {
         #region "Variables"
-        Int32 Cedula;
+        Int32 Cedula = -1;
         string Nombre_Departamento;
         string Nombre_Puesto;
         string Saldo;
@@ -56,14 +56,22 @@ namespace Presentacion
         }
         private void Cmd_Generar_Click(object sender, EventArgs e)
         {
-            VRrpt_rango Visor = new VRrpt_rango();
-            Visor.Id_Departamento = Nombre_Departamento;
-            Visor.Id_Puesto = Nombre_Puesto;
-            Visor.Cedula = Cedula;
-            Visor.Saldo = Saldo;
-            Visor.MdiParent = this.MdiParent;
-            Visor.Show();
-            Rpt_Rango_Load(null, null);
+            if (Cedula != -1)
+            {
+                VRrpt_rango Visor = new VRrpt_rango();
+                Visor.Id_Departamento = Nombre_Departamento;
+                Visor.Id_Puesto = Nombre_Puesto;
+                Visor.Cedula = Cedula;
+                Visor.Saldo = Saldo;
+                Visor.MdiParent = this.MdiParent;
+                Visor.Show();
+                Cedula = -1;
+                Rpt_Rango_Load(null, null);
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar el funcionario del que desea el registro.");
+            }
         }
 
         private void dat_rango_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using Entidades;
+using System.Data;
+using System.Data.SqlClient;
 
 
 namespace AccesoDatos
@@ -33,6 +35,39 @@ namespace AccesoDatos
             }
 
             return FilasAfectadas;
+        }
+        #endregion
+
+        #region "Leer Anualidad"
+        public Ent_Anualidades LeerAnulidad(Int32 pCedula)
+        {
+            try
+            {
+                DataTable dtConsulta = new DataTable();
+                Ent_Anualidades vRegistro = new Ent_Anualidades();
+
+                string commandText = "SELECT [Cantidad_Dias] FROM [dbo].[Anualidades] WHERE [Cedula] =  " + pCedula ;
+                //string commandText = commandTexta;
+
+                using (SqlConnection connection = new SqlConnection(vCadenaConexion))
+                {
+                    SqlCommand command = new SqlCommand(commandText, connection);
+
+                    SqlDataAdapter DataAdapter = new SqlDataAdapter(command);
+                    DataAdapter.Fill(dtConsulta);
+                }
+
+                if (dtConsulta.Rows.Count != 0)
+                {
+                    vRegistro.Cantidad_Dias = Convert.ToDecimal(dtConsulta.Rows[0]["Cantidad_Dias"].ToString());
+                }
+                return vRegistro;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         #endregion
 

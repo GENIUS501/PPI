@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using AccesoDatos;
+using System.Data;
 
 namespace Negocios
 {
@@ -58,6 +59,22 @@ namespace Negocios
             {
                 IControlador = new AccesoDatos.AD_Dias_Disponibles();
                 return IControlador.LeerDia(Cedula,Ano);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+        #endregion
+
+        #region "Llenar datagrid"
+        public DataTable Llenardatagrid(Int32 Cedula)
+        {
+            AccesoDatos.AD_Dias_Disponibles IControlador;
+            try
+            {
+                IControlador = new AccesoDatos.AD_Dias_Disponibles();
+                return IControlador.llenar_datagrid(Cedula);
             }
             catch (Exception ex)
             {
