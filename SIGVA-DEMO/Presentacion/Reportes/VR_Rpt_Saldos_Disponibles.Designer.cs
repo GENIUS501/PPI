@@ -32,19 +32,39 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.Saldos_Disponibles = new Presentacion.Saldos_Disponibles();
             this.Dias_DisponiblesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Dias_DisponiblesTableAdapter = new Presentacion.Saldos_DisponiblesTableAdapters.Dias_DisponiblesTableAdapter();
+            this.Saldos_Disponibles = new Presentacion.Saldos_Disponibles();
             this.Dias_ReservadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Dias_ReservadosTableAdapter = new Presentacion.Saldos_DisponiblesTableAdapters.Dias_ReservadosTableAdapter();
             this.FUNCIONARIOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.Dias_DisponiblesTableAdapter = new Presentacion.Saldos_DisponiblesTableAdapters.Dias_DisponiblesTableAdapter();
+            this.Dias_ReservadosTableAdapter = new Presentacion.Saldos_DisponiblesTableAdapters.Dias_ReservadosTableAdapter();
             this.FUNCIONARIOSTableAdapter = new Presentacion.Saldos_DisponiblesTableAdapters.FUNCIONARIOSTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.Saldos_Disponibles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dias_DisponiblesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Saldos_Disponibles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dias_ReservadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FUNCIONARIOSBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // Dias_DisponiblesBindingSource
+            // 
+            this.Dias_DisponiblesBindingSource.DataMember = "Dias_Disponibles";
+            this.Dias_DisponiblesBindingSource.DataSource = this.Saldos_Disponibles;
+            // 
+            // Saldos_Disponibles
+            // 
+            this.Saldos_Disponibles.DataSetName = "Saldos_Disponibles";
+            this.Saldos_Disponibles.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // Dias_ReservadosBindingSource
+            // 
+            this.Dias_ReservadosBindingSource.DataMember = "Dias_Reservados";
+            this.Dias_ReservadosBindingSource.DataSource = this.Saldos_Disponibles;
+            // 
+            // FUNCIONARIOSBindingSource
+            // 
+            this.FUNCIONARIOSBindingSource.DataMember = "FUNCIONARIOS";
+            this.FUNCIONARIOSBindingSource.DataSource = this.Saldos_Disponibles;
             // 
             // reportViewer1
             // 
@@ -58,39 +78,19 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Rpt_Saldos_Disponibles.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Reportes.Rpt_Saldos_Disponibles.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(735, 505);
             this.reportViewer1.TabIndex = 0;
             // 
-            // Saldos_Disponibles
-            // 
-            this.Saldos_Disponibles.DataSetName = "Saldos_Disponibles";
-            this.Saldos_Disponibles.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // Dias_DisponiblesBindingSource
-            // 
-            this.Dias_DisponiblesBindingSource.DataMember = "Dias_Disponibles";
-            this.Dias_DisponiblesBindingSource.DataSource = this.Saldos_Disponibles;
-            // 
             // Dias_DisponiblesTableAdapter
             // 
             this.Dias_DisponiblesTableAdapter.ClearBeforeFill = true;
             // 
-            // Dias_ReservadosBindingSource
-            // 
-            this.Dias_ReservadosBindingSource.DataMember = "Dias_Reservados";
-            this.Dias_ReservadosBindingSource.DataSource = this.Saldos_Disponibles;
-            // 
             // Dias_ReservadosTableAdapter
             // 
             this.Dias_ReservadosTableAdapter.ClearBeforeFill = true;
-            // 
-            // FUNCIONARIOSBindingSource
-            // 
-            this.FUNCIONARIOSBindingSource.DataMember = "FUNCIONARIOS";
-            this.FUNCIONARIOSBindingSource.DataSource = this.Saldos_Disponibles;
             // 
             // FUNCIONARIOSTableAdapter
             // 
@@ -105,8 +105,8 @@
             this.Name = "VR_Rpt_Saldos_Disponibles";
             this.Text = "VR_Rpt_Saldos_Disponibles";
             this.Load += new System.EventHandler(this.VR_Rpt_Saldos_Disponibles_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Saldos_Disponibles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dias_DisponiblesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Saldos_Disponibles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dias_ReservadosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FUNCIONARIOSBindingSource)).EndInit();
             this.ResumeLayout(false);

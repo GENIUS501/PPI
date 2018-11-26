@@ -30,15 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.SessionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SIGVADataSet = new Presentacion.SIGVADataSet();
             this.Ent_SessionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.SIGVADataSet = new Presentacion.SIGVADataSet();
-            this.SessionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SessionesTableAdapter = new Presentacion.SIGVADataSetTableAdapters.SessionesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.Ent_SessionesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SIGVADataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SessionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SIGVADataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ent_SessionesBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // SessionesBindingSource
+            // 
+            this.SessionesBindingSource.DataMember = "Sessiones";
+            this.SessionesBindingSource.DataSource = this.SIGVADataSet;
+            // 
+            // SIGVADataSet
+            // 
+            this.SIGVADataSet.DataSetName = "SIGVADataSet";
+            this.SIGVADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Ent_SessionesBindingSource
             // 
@@ -50,21 +60,11 @@
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.SessionesBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Rpt_Sessiones.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Auditoria.Rpt_Sessiones.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(777, 534);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // SIGVADataSet
-            // 
-            this.SIGVADataSet.DataSetName = "SIGVADataSet";
-            this.SIGVADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // SessionesBindingSource
-            // 
-            this.SessionesBindingSource.DataMember = "Sessiones";
-            this.SessionesBindingSource.DataSource = this.SIGVADataSet;
             // 
             // SessionesTableAdapter
             // 
@@ -79,9 +79,9 @@
             this.Name = "AVR_Sessiones";
             this.Text = "AVR_Sessiones";
             this.Load += new System.EventHandler(this.AVR_Sessiones_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Ent_SessionesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SIGVADataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SessionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SIGVADataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ent_SessionesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -95,7 +95,7 @@ namespace Presentacion
                     Visor.Nombre = this.Txt_Nombre.Text;
                     Visor.Departamento = this.Txt_Departamento.Text;
                     Visor.Puesto = this.Txt_Puesto.Text;
-                    Visor.Fecha_Ingreso = Txt_Fecha_Ingreso.ToString();
+                    Visor.Fecha_Ingreso = Txt_Fecha_Ingreso.Text.ToString();
                     Visor.MdiParent = this.MdiParent;
                     Visor.Show();
                 }
