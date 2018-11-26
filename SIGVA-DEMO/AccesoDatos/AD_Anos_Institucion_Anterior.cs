@@ -35,6 +35,30 @@ namespace AccesoDatos
         }
         #endregion
 
+        #region "Actualizar"
+        public Int32 Actualizar(Ent_Anos_Institucion_Anterior uRegistro)
+        {
+            Int32 FilasAfectadas = 0;
+
+            try
+            {
+                string sentencia;
+                sentencia = "UPDATE Anos_Institucion_Anterior SET Cantidad_Dias = @Cantidad_Dias WHERE Cedula = @Cedula";
+                Parameter[] parametros = {
+                                         new Parameter("@Cedula",uRegistro.Cedula),
+                                         new Parameter("@Cantidad_Dias",uRegistro.Cantidad_Dias),
+                                      };
+                FilasAfectadas = Database.exectuteNonQuery(sentencia, parametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return FilasAfectadas;
+        }
+        #endregion
+
         #region "Eliminar"
         public Int32 Eliminar(Int32 Cedula)
         {

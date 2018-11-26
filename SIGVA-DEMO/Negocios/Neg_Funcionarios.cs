@@ -32,6 +32,26 @@ namespace Negocios
         }
         #endregion
 
+        #region "Actualizar"
+        public Int32 Actualizar(Ent_Funcionarios Data)
+        {
+            Int32 FilasAfectadas = 0;
+            AccesoDatos.AD_Funcionarios IControlador;
+
+            try
+            {
+                IControlador = new AccesoDatos.AD_Funcionarios();
+                FilasAfectadas = IControlador.Actualizar(Data);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return FilasAfectadas;
+        }
+        #endregion
+
         #region "Leer Especifico"
         public Ent_Funcionarios LeerCodigoLlave(Int32 pCodigo)
         {

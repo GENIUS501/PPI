@@ -29,6 +29,26 @@ namespace Negocios
         }
         #endregion
 
+        #region "Actualizar"
+        public Int32 Actualizar(Ent_Anos_Institucion_Anterior Data)
+        {
+            Int32 FilasAfectadas = 0;
+            AccesoDatos.AD_Anos_Institucion_Anterior IControlador;
+
+            try
+            {
+                IControlador = new AccesoDatos.AD_Anos_Institucion_Anterior();
+                FilasAfectadas = IControlador.Actualizar(Data);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return FilasAfectadas;
+        }
+        #endregion
+
         #region "Eliminar"
         public Int32 Eliminar(Int32 Cedula)
         {

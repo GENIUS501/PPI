@@ -17,6 +17,8 @@ namespace Presentacion
     {
         private string vModo;
         private string vNombreBoton;
+        Neg_Funcionarios Nfuncionarios;
+        Ent_Funcionarios Efuncionarios;
         public M_Funcionarios()
         {
             InitializeComponent();
@@ -41,7 +43,146 @@ namespace Presentacion
         #endregion
         private void M_Funcionarios_Evento_Aceptar(object sender, EventArgs e)
         {
-          
+            try
+            {
+                if (this.Txt_Cedula.Text.Length > 7 && this.Txt_Cedula.Text.Length < 10)
+                {
+                    Int32 Agregar = 0;
+                    Efuncionarios = new Ent_Funcionarios();
+                    Nfuncionarios = new Neg_Funcionarios();
+                    Efuncionarios.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
+                    Efuncionarios.Nombre = this.Txt_Nombre.Text.ToString();
+                    Efuncionarios.Apellido1 = this.Txt_Apellido1.Text.ToString();
+                    Efuncionarios.Apellido2 = this.Txt_Apellido2.Text.ToString();
+                    Efuncionarios.Id_Departamento = Convert.ToInt32(this.Cbo_Departamento.SelectedValue.ToString());
+                    Efuncionarios.Id_Puesto = Convert.ToInt32(this.Cbo_Puesto.SelectedValue.ToString());
+                    Efuncionarios.Direccion = this.Txt_Direccion.Text.ToString();
+                    Efuncionarios.Email = this.Txt_Email.Text.ToString();
+                    Efuncionarios.Telefono = Convert.ToInt32(this.Txt_Telefono.Text.ToString());
+                    Efuncionarios.Fecha_De_Ingreso = Convert.ToDateTime(this.Txt_Fecha_Ingreso.Text);
+                    Efuncionarios.Fecha_de_Anualidad = Convert.ToDateTime(this.Txt_Fecha_Anualidad.Text);
+                    Efuncionarios.Anos_Institucion_anterior = Convert.ToInt32(this.Txt_Anos_Institucion.Text.ToString());
+                    Efuncionarios.Estatus = this.Cbo_Estatus.SelectedValue.ToString();
+                    Agregar = Nfuncionarios.Actualizar(Efuncionarios);
+                    if (Agregar > 0)
+                    {
+                        Calcular_Anualidad();
+                        if (Convert.ToInt32(this.Txt_Anos_Institucion.Text)>0)
+                        {
+                            Calcular_Anteriores();
+                        }
+                        MessageBox.Show("Funcionario Modificado");
+                        this.Close();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al Modificar datos.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Formato de cedula incorrecto");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+        }
+
+        private void Limpiar_Campos()
+        {
+            this.Txt_Cedula.Text = "";
+            this.Txt_Nombre.Text = "";
+            this.Txt_Apellido1.Text = "";
+            this.Txt_Apellido2.Text = "";
+            this.Txt_Direccion.Text = "";
+            this.Txt_Email.Text = "";
+            this.Txt_Fecha_Anualidad.Text = "";
+            this.Txt_Fecha_Ingreso.Text = "";
+            this.Txt_Telefono.Text = "";
+            this.Txt_Anos_Institucion.Text = "";
+            M_Funcionarios_Load(null, null);
+        }
+
+        private void Calcular_Anteriores()
+        {
+            try
+            {
+                int Ejecutar = 0;
+                Ent_Anos_Institucion_Anterior Eano = new Ent_Anos_Institucion_Anterior();
+                Neg_Anos_Institucion_Anterior Nano = new Neg_Anos_Institucion_Anterior();
+                Eano.Cantidad_Dias = Convert.ToInt32(this.Txt_Anos_Institucion.Text.ToString()) * 12;
+                Eano.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
+                Ejecutar = Nano.Actualizar(Eano);
+                if (Ejecutar > 0)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Error al calcular los años anteriores");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex);
+            }
+        }
+        private void Calcular_Anualidad()
+        {
+            try
+            {
+                Ent_Anualidades Eanu = new Ent_Anualidades();
+                Neg_Anualidades Nanu = new Neg_Anualidades();
+                int contador = 1;
+                int Anualidad = 0;
+                int Ejecutar = 0;
+                DateTime fecha_Anualidad;
+                fecha_Anualidad = Convert.ToDateTime(this.Txt_Fecha_Anualidad.Text);
+                DateTime fecha_fin = DateTime.Now;
+                if (fecha_Anualidad.Year < fecha_fin.Year)
+                {
+                    while (fecha_Anualidad.Year <= fecha_fin.Year)
+                    {
+
+                        if (contador <= 4)
+                        {
+                            Anualidad = Anualidad + 3;
+                        }
+                        if (contador == 5)
+                        {
+                            Anualidad = Anualidad + 5;
+                        }
+                        if (contador >= 6 && contador < 10)
+                        {
+                            Anualidad = Anualidad + 7;
+                        }
+                        if (contador >= 10)
+                        {
+                            Anualidad = Anualidad + 15;
+                        }
+                        fecha_Anualidad = fecha_Anualidad.AddYears(1);
+                        contador++;
+                    }
+                }
+                Eanu.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
+                Eanu.Cantidad_Dias = Anualidad;
+                Ejecutar = Nanu.Actualizar(Eanu);
+                if (Ejecutar > 0)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Error al Modificar las anualidades");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
         }
 
         private void M_Funcionarios_Evento_Salir(object sender, EventArgs e)
@@ -73,6 +214,11 @@ namespace Presentacion
                         this.Txt_Fecha_Ingreso.Enabled = false;
                         this.Txt_Fecha_Anualidad.Enabled = false;
                     }
+                if(Modo == "M")
+                {
+                    this.Txt_Cedula.Enabled = false;
+                    this.Txt_Fecha_Ingreso.Enabled = false;
+                }
             }catch(Exception ex)
             {
                 MessageBox.Show("Error al cargar los datos: "+ex);
@@ -134,6 +280,22 @@ namespace Presentacion
             this.Txt_Anos_Institucion.Text = Efuncionarios.Anos_Institucion_anterior.ToString();
             this.Txt_Fecha_Ingreso.Text = Efuncionarios.Fecha_De_Ingreso.ToString();
             this.Txt_Fecha_Anualidad.Text = Efuncionarios.Fecha_de_Anualidad.ToString();
+        }
+
+        private void Txt_Anos_Institucion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textbox_numer(e);
+        }
+        private void textbox_numer(KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+
+            }
+            else
+            {
+                e.Handled = e.KeyChar != (char)Keys.Back;
+            }
         }
 
     }

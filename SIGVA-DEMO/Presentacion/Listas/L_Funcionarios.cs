@@ -44,17 +44,7 @@ namespace Presentacion
         {
             try
             {
-                M_Funcionarios frm = new M_Funcionarios();
-                // m_cliente frm = new m_cliente();
-               //  frm.Modo = "A";
-                 frm.titulo = "Mantenimiento de Funcionarios";
-                 frm.Descripcion = "Agregar Funcionarios";
-                 frm.MostrarEliminar = false;
-                 frm.MostrarModificar = false;
-                 frm.MostrarConsultar = false;
-                 frm.MostrarImprimir = false;
-                 frm.ShowDialog();
-                 L_Funcionarios_Load(null, null);
+                
             }
             catch (Exception ex)
             {
@@ -126,22 +116,25 @@ namespace Presentacion
         {
             try
             {
-                /**if (this.lstDatos.SelectedItems.Count == 0)
+                if (valorPrimerCelda == -1)
                 {
-                    MessageBox.Show("Favor de seleccionar los datos a modificar");
-                    return;
-                }*/
-                M_Funcionarios frm = new M_Funcionarios();
-                frm.Modo = "M";
-                frm.titulo = "Mantenimiento de Funcionarios";
-                frm.Descripcion = "Modificar Funcionarios";
-              //  frm.Codigo = this.lstDatos.SelectedItems[0].Text;
-                frm.MostrarAgregar = false;
-                frm.MostrarEliminar = false;
-                frm.MostrarConsultar = false;
-                frm.MostrarImprimir = false;
-                frm.ShowDialog();
-                L_Funcionarios_Load(null, null);
+                    MessageBox.Show("Favor de Seleccionar el funcionario a Modificar");
+                }
+                else
+                {
+                    M_Funcionarios frm = new M_Funcionarios();
+                    frm.Modo = "M";
+                    frm.titulo = "Mantenimiento de Funcionarios";
+                    frm.Descripcion = "Modificar Funcionarios";
+                    frm.Codigo = valorPrimerCelda;
+                    frm.MostrarAgregar = false;
+                    frm.MostrarEliminar = false;
+                    frm.MostrarConsultar = false;
+                    frm.MostrarImprimir = false;
+                    frm.ShowDialog();
+                    valorPrimerCelda = -1;
+                    L_Funcionarios_Load(null, null);
+                }
             }
             catch (Exception ex)
             {
@@ -155,7 +148,7 @@ namespace Presentacion
             {
                 if (valorPrimerCelda == -1)
                 {
-                    MessageBox.Show("Favor de seleccionar los datos a consultar");
+                    MessageBox.Show("Favor de Seleccionar el funcionario a Consultar");
                     return;
                 }
                 else

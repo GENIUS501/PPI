@@ -49,6 +49,41 @@ namespace AccesoDatos
         }
         #endregion
 
+        #region "Actualizar"
+        public Int32 Actualizar(Ent_Funcionarios uRegistro)
+        {
+            Int32 FilasAfectadas = 0;
+
+            try
+            {
+                string sentencia;
+                sentencia = "UPDATE Funcionarios SET Nombre = @nombre, Apellido1 = @apellido1, Apellido2 = @apellido2, Id_Departamento = @Id_Departamento, Id_Puesto = @Id_Puesto, Direccion = @Direccion, Telefono = @Telefono, Email = @Email, Fecha_de_Anualidad = @Fecha_de_Anualidad, Estatus = @Estatus, Anos_Institucion_anterior = @Anos_Institucion_anterior WHERE Cedula = @cedula";
+                Parameter[] parametros = {
+                                         new Parameter("@cedula",uRegistro.Cedula),
+                                         new Parameter("@nombre",uRegistro.Nombre),
+                                         new Parameter("@apellido1",uRegistro.Apellido1),
+                                         new Parameter("@apellido2",uRegistro.Apellido2),
+                                         new Parameter("@Id_Departamento",uRegistro.Id_Departamento),
+                                         new Parameter("@Id_Puesto",uRegistro.Id_Puesto),
+                                         new Parameter("@Fecha_De_Ingreso",uRegistro.Fecha_De_Ingreso),
+                                         new Parameter("@Direccion",uRegistro.Direccion),
+                                         new Parameter("@Telefono",uRegistro.Telefono),
+                                         new Parameter("@Email",uRegistro.Email),
+                                         new Parameter("@Fecha_de_Anualidad",uRegistro.Fecha_de_Anualidad),
+                                         new Parameter("@Estatus",uRegistro.Estatus),
+                                         new Parameter("@Anos_Institucion_anterior",uRegistro.Anos_Institucion_anterior),
+                                      };
+                FilasAfectadas = Database.exectuteNonQuery(sentencia, parametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return FilasAfectadas;
+        }
+        #endregion
+
         #region "Leer Especifico"
         public Ent_Funcionarios LeerCodigoLlave(Int32 pCodigo)
         {
