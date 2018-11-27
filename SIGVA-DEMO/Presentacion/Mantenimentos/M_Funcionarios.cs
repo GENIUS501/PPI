@@ -198,6 +198,9 @@ namespace Presentacion
                     // TODO: esta línea de código carga datos en la tabla 'sIGVADataSet1Departamentos.DEPARTAMENTOS' Puede moverla o quitarla según sea necesario.
                     this.dEPARTAMENTOSTableAdapter.Fill(this.sIGVADataSet1Departamentos.DEPARTAMENTOS);
                     Leer();
+                    this.Cbo_Departamento.DropDownStyle = ComboBoxStyle.DropDownList;
+                    this.Cbo_Estatus.DropDownStyle = ComboBoxStyle.DropDownList;
+                    this.Cbo_Puesto.DropDownStyle = ComboBoxStyle.DropDownList;
                     if(Modo == "C")
                     {
                         this.Txt_Cedula.Enabled = false;
