@@ -29,6 +29,22 @@ namespace Negocios
         }
         #endregion
 
+        #region "Leer Anos Anterior"
+        public Ent_Anos_Institucion_Anterior LeerAnos_Anterior(Int32 Cedula)
+        {
+            AccesoDatos.AD_Anos_Institucion_Anterior IControlador;
+            try
+            {
+                IControlador = new AccesoDatos.AD_Anos_Institucion_Anterior();
+                return IControlador.LeerAnos_Anterior(Cedula);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+        #endregion
+
         #region "Actualizar"
         public Int32 Actualizar(Ent_Anos_Institucion_Anterior Data)
         {

@@ -362,6 +362,8 @@
             this.Controls.Add(this.Cmd_Buscar);
             this.Controls.Add(this.Txt_Cedula);
             this.Controls.Add(this.lbl_cedula);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "P_Reservar_Dias";
             this.Text = "P_Reservar_Dias";
             this.Load += new System.EventHandler(this.P_Reservar_Dias_Load);

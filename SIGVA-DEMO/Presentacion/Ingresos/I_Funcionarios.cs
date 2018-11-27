@@ -321,6 +321,8 @@ namespace Presentacion
                 // TODO: esta línea de código carga datos en la tabla 'sIGVADataSet1Departamentos.DEPARTAMENTOS' Puede moverla o quitarla según sea necesario.
                 this.dEPARTAMENTOSTableAdapter.Fill(this.sIGVADataSet1Departamentos.DEPARTAMENTOS);
                 LlenarCombo();
+                this.Cbo_Departamento.DropDownStyle = ComboBoxStyle.DropDownList;
+                this.Cbo_Puesto.DropDownStyle = ComboBoxStyle.DropDownList;
                 Rad_noposee.Checked = true;
                 if (Rad_noposee.Checked == true)
                 {

@@ -34,6 +34,7 @@ namespace Presentacion
                    DataTable dt = new DataTable();
                    dt = Nfuncionaros.Llenar_data_grid0();
                    dataGridView1.DataSource = dt;
+                   this.Cbo_Departamentos.DropDownStyle = ComboBoxStyle.DropDownList;
                }
             catch(Exception ex)
                {
