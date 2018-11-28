@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lbl_cedula = new System.Windows.Forms.Label();
-            this.Txt_Cedula = new System.Windows.Forms.TextBox();
             this.Cmd_Buscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,6 +61,7 @@
             this.Cmd_Cancelar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.Txt_Fecha_Ingreso = new System.Windows.Forms.DateTimePicker();
+            this.Txt_Cedula = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Dat_Dias_Disponibles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diasDisponiblesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetDias_Disponibles)).BeginInit();
@@ -78,13 +78,6 @@
             this.lbl_cedula.Size = new System.Drawing.Size(40, 13);
             this.lbl_cedula.TabIndex = 2;
             this.lbl_cedula.Text = "Cedula";
-            // 
-            // Txt_Cedula
-            // 
-            this.Txt_Cedula.Location = new System.Drawing.Point(21, 87);
-            this.Txt_Cedula.Name = "Txt_Cedula";
-            this.Txt_Cedula.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Cedula.TabIndex = 3;
             // 
             // Cmd_Buscar
             // 
@@ -330,11 +323,20 @@
             this.Txt_Fecha_Ingreso.Size = new System.Drawing.Size(200, 20);
             this.Txt_Fecha_Ingreso.TabIndex = 28;
             // 
+            // Txt_Cedula
+            // 
+            this.Txt_Cedula.Location = new System.Drawing.Point(21, 90);
+            this.Txt_Cedula.Mask = "000000000";
+            this.Txt_Cedula.Name = "Txt_Cedula";
+            this.Txt_Cedula.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Cedula.TabIndex = 29;
+            // 
             // P_Reservar_Dias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 524);
+            this.Controls.Add(this.Txt_Cedula);
             this.Controls.Add(this.Txt_Fecha_Ingreso);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.Cmd_Cancelar);
@@ -360,7 +362,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Cmd_Buscar);
-            this.Controls.Add(this.Txt_Cedula);
             this.Controls.Add(this.lbl_cedula);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -368,7 +369,6 @@
             this.Text = "P_Reservar_Dias";
             this.Load += new System.EventHandler(this.P_Reservar_Dias_Load);
             this.Controls.SetChildIndex(this.lbl_cedula, 0);
-            this.Controls.SetChildIndex(this.Txt_Cedula, 0);
             this.Controls.SetChildIndex(this.Cmd_Buscar, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
@@ -394,6 +394,7 @@
             this.Controls.SetChildIndex(this.Cmd_Cancelar, 0);
             this.Controls.SetChildIndex(this.label11, 0);
             this.Controls.SetChildIndex(this.Txt_Fecha_Ingreso, 0);
+            this.Controls.SetChildIndex(this.Txt_Cedula, 0);
             ((System.ComponentModel.ISupportInitialize)(this.Dat_Dias_Disponibles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diasDisponiblesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetDias_Disponibles)).EndInit();
@@ -408,7 +409,6 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_cedula;
-        private System.Windows.Forms.TextBox Txt_Cedula;
         private System.Windows.Forms.Button Cmd_Buscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -440,5 +440,6 @@
         private System.Windows.Forms.Button Cmd_Cancelar;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker Txt_Fecha_Ingreso;
+        private System.Windows.Forms.MaskedTextBox Txt_Cedula;
     }
 }

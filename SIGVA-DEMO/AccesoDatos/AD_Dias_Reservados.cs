@@ -13,6 +13,35 @@ namespace AccesoDatos
     public class AD_Dias_Reservados
     {
         string vCadenaConexion = ConfigurationManager.ConnectionStrings["Presentacion.Properties.Settings.SIGVAConnectionString"].ConnectionString;
+
+        #region "Insertar"
+        public Int32 Insertar(Ent_Dias_Reservados uRegistro)
+        {
+            Int32 FilasAfectadas = 0;
+
+            try
+            {
+                string sentencia;
+                sentencia = "insert into Dias_Reservados (Cedula,Fecha_Inicial,Fecha_Final,Detalle,Reservado_El,Cantidad_dias) values(@Cedula,@Fecha_Inicial,@Fecha_Final,@Detalle,@Reservado_El,@Cantidad_dias)";
+                Parameter[] parametros = {
+                                         new Parameter("@Cedula",uRegistro.Cedula),
+                                         new Parameter("@Fecha_Inicial",uRegistro.Fecha_Inicial),
+                                         new Parameter("@Fecha_Final",uRegistro.Fecha_Final),
+                                         new Parameter("@Detalle",uRegistro.Detalle),
+                                         new Parameter("@Reservado_El",uRegistro.Reservado_El),
+                                         new Parameter("@Cantidad_dias",uRegistro.Cantidad_dias),
+                                      };
+                FilasAfectadas = Database.exectuteNonQuery(sentencia, parametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return FilasAfectadas;
+        }
+        #endregion
+
         #region "Llenar datagrid"
         public DataTable llenar_datagrid(Int32 Pcodigo)
         {

@@ -28,67 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Txt_Numero_Boleta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Txt_Cedula = new System.Windows.Forms.TextBox();
+            this.Txt_Nombre_Completo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Txt_Fecha_Ingreso = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.Txt_Fecha_Accion = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.Txt_Periodos = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.Txt_Saldos = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txt_explicacion = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.Txt_Horario_Propuesto = new System.Windows.Forms.TextBox();
+            this.Txt_Forma_Pago_Propuesto = new System.Windows.Forms.TextBox();
+            this.Txt_Puesto_Propuesto = new System.Windows.Forms.TextBox();
+            this.Txt_Departamento_Propuesto = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.Txt_Programa_Propuesto = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.Txt_Horario_actual = new System.Windows.Forms.TextBox();
+            this.Txt_Forma_de_pago_actual = new System.Windows.Forms.TextBox();
+            this.Txt_Puesto_Actual = new System.Windows.Forms.TextBox();
+            this.Txt_Departamento_Actual = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Txt_Programa_actual = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Txt_Tipo_de_accion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.Txt_Fecha_que_vence = new System.Windows.Forms.DateTimePicker();
+            this.Txt_Fecha_que_rige = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.txt_otros_actual = new System.Windows.Forms.TextBox();
+            this.Txt_Otros_Propuesto = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -100,12 +94,12 @@
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // Txt_Numero_Boleta
             // 
-            this.textBox1.Location = new System.Drawing.Point(673, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.Txt_Numero_Boleta.Location = new System.Drawing.Point(673, 70);
+            this.Txt_Numero_Boleta.Name = "Txt_Numero_Boleta";
+            this.Txt_Numero_Boleta.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Numero_Boleta.TabIndex = 3;
             // 
             // label1
             // 
@@ -116,19 +110,19 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Numero de boleta";
             // 
-            // textBox4
+            // Txt_Cedula
             // 
-            this.textBox4.Location = new System.Drawing.Point(9, 32);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(165, 20);
-            this.textBox4.TabIndex = 7;
+            this.Txt_Cedula.Location = new System.Drawing.Point(9, 32);
+            this.Txt_Cedula.Name = "Txt_Cedula";
+            this.Txt_Cedula.Size = new System.Drawing.Size(165, 20);
+            this.Txt_Cedula.TabIndex = 7;
             // 
-            // textBox2
+            // Txt_Nombre_Completo
             // 
-            this.textBox2.Location = new System.Drawing.Point(180, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(295, 20);
-            this.textBox2.TabIndex = 8;
+            this.Txt_Nombre_Completo.Location = new System.Drawing.Point(180, 32);
+            this.Txt_Nombre_Completo.Name = "Txt_Nombre_Completo";
+            this.Txt_Nombre_Completo.Size = new System.Drawing.Size(295, 20);
+            this.Txt_Nombre_Completo.TabIndex = 8;
             // 
             // label2
             // 
@@ -159,24 +153,24 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.Txt_Fecha_Ingreso);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.Txt_Cedula);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.Txt_Nombre_Completo);
             this.groupBox1.Location = new System.Drawing.Point(15, 19);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(745, 65);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
-            // dateTimePicker1
+            // Txt_Fecha_Ingreso
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(493, 32);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 18;
+            this.Txt_Fecha_Ingreso.Location = new System.Drawing.Point(493, 32);
+            this.Txt_Fecha_Ingreso.Name = "Txt_Fecha_Ingreso";
+            this.Txt_Fecha_Ingreso.Size = new System.Drawing.Size(200, 20);
+            this.Txt_Fecha_Ingreso.TabIndex = 18;
             // 
             // groupBox2
             // 
@@ -196,7 +190,7 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.dateTimePicker4);
+            this.groupBox9.Controls.Add(this.Txt_Fecha_Accion);
             this.groupBox9.Controls.Add(this.label21);
             this.groupBox9.Location = new System.Drawing.Point(15, 614);
             this.groupBox9.Name = "groupBox9";
@@ -204,12 +198,12 @@
             this.groupBox9.TabIndex = 10;
             this.groupBox9.TabStop = false;
             // 
-            // dateTimePicker4
+            // Txt_Fecha_Accion
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(312, 10);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker4.TabIndex = 7;
+            this.Txt_Fecha_Accion.Location = new System.Drawing.Point(312, 10);
+            this.Txt_Fecha_Accion.Name = "Txt_Fecha_Accion";
+            this.Txt_Fecha_Accion.Size = new System.Drawing.Size(200, 20);
+            this.Txt_Fecha_Accion.TabIndex = 7;
             // 
             // label21
             // 
@@ -222,22 +216,22 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.textBox17);
+            this.groupBox8.Controls.Add(this.Txt_Periodos);
             this.groupBox8.Controls.Add(this.label20);
             this.groupBox8.Controls.Add(this.label19);
-            this.groupBox8.Controls.Add(this.textBox16);
+            this.groupBox8.Controls.Add(this.Txt_Saldos);
             this.groupBox8.Location = new System.Drawing.Point(15, 559);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(745, 49);
             this.groupBox8.TabIndex = 20;
             this.groupBox8.TabStop = false;
             // 
-            // textBox17
+            // Txt_Periodos
             // 
-            this.textBox17.Location = new System.Drawing.Point(469, 26);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(263, 20);
-            this.textBox17.TabIndex = 12;
+            this.Txt_Periodos.Location = new System.Drawing.Point(469, 26);
+            this.Txt_Periodos.Name = "Txt_Periodos";
+            this.Txt_Periodos.Size = new System.Drawing.Size(263, 20);
+            this.Txt_Periodos.TabIndex = 12;
             // 
             // label20
             // 
@@ -257,16 +251,16 @@
             this.label19.TabIndex = 10;
             this.label19.Text = "Saldo Vacaciones";
             // 
-            // textBox16
+            // Txt_Saldos
             // 
-            this.textBox16.Location = new System.Drawing.Point(112, 22);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(193, 20);
-            this.textBox16.TabIndex = 9;
+            this.Txt_Saldos.Location = new System.Drawing.Point(112, 22);
+            this.Txt_Saldos.Name = "Txt_Saldos";
+            this.Txt_Saldos.Size = new System.Drawing.Size(193, 20);
+            this.Txt_Saldos.TabIndex = 9;
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.textBox15);
+            this.groupBox7.Controls.Add(this.txt_explicacion);
             this.groupBox7.Location = new System.Drawing.Point(15, 495);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(745, 58);
@@ -274,26 +268,26 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Explicacion";
             // 
-            // textBox15
+            // txt_explicacion
             // 
-            this.textBox15.Location = new System.Drawing.Point(9, 19);
-            this.textBox15.Multiline = true;
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(723, 31);
-            this.textBox15.TabIndex = 9;
+            this.txt_explicacion.Location = new System.Drawing.Point(9, 19);
+            this.txt_explicacion.Multiline = true;
+            this.txt_explicacion.Name = "txt_explicacion";
+            this.txt_explicacion.Size = new System.Drawing.Size(723, 31);
+            this.txt_explicacion.TabIndex = 9;
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.textBox10);
-            this.groupBox6.Controls.Add(this.textBox11);
-            this.groupBox6.Controls.Add(this.textBox12);
-            this.groupBox6.Controls.Add(this.textBox13);
+            this.groupBox6.Controls.Add(this.Txt_Otros_Propuesto);
+            this.groupBox6.Controls.Add(this.Txt_Horario_Propuesto);
+            this.groupBox6.Controls.Add(this.Txt_Forma_Pago_Propuesto);
+            this.groupBox6.Controls.Add(this.Txt_Puesto_Propuesto);
+            this.groupBox6.Controls.Add(this.Txt_Departamento_Propuesto);
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.label15);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.label17);
-            this.groupBox6.Controls.Add(this.listView2);
-            this.groupBox6.Controls.Add(this.textBox14);
+            this.groupBox6.Controls.Add(this.Txt_Programa_Propuesto);
             this.groupBox6.Controls.Add(this.label18);
             this.groupBox6.Location = new System.Drawing.Point(385, 184);
             this.groupBox6.Name = "groupBox6";
@@ -302,33 +296,33 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Estado Propuesto";
             // 
-            // textBox10
+            // Txt_Horario_Propuesto
             // 
-            this.textBox10.Location = new System.Drawing.Point(262, 176);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 10;
+            this.Txt_Horario_Propuesto.Location = new System.Drawing.Point(262, 176);
+            this.Txt_Horario_Propuesto.Name = "Txt_Horario_Propuesto";
+            this.Txt_Horario_Propuesto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Horario_Propuesto.TabIndex = 10;
             // 
-            // textBox11
+            // Txt_Forma_Pago_Propuesto
             // 
-            this.textBox11.Location = new System.Drawing.Point(93, 176);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 9;
+            this.Txt_Forma_Pago_Propuesto.Location = new System.Drawing.Point(93, 176);
+            this.Txt_Forma_Pago_Propuesto.Name = "Txt_Forma_Pago_Propuesto";
+            this.Txt_Forma_Pago_Propuesto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Forma_Pago_Propuesto.TabIndex = 9;
             // 
-            // textBox12
+            // Txt_Puesto_Propuesto
             // 
-            this.textBox12.Location = new System.Drawing.Point(12, 133);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 8;
+            this.Txt_Puesto_Propuesto.Location = new System.Drawing.Point(12, 133);
+            this.Txt_Puesto_Propuesto.Name = "Txt_Puesto_Propuesto";
+            this.Txt_Puesto_Propuesto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Puesto_Propuesto.TabIndex = 8;
             // 
-            // textBox13
+            // Txt_Departamento_Propuesto
             // 
-            this.textBox13.Location = new System.Drawing.Point(12, 84);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 7;
+            this.Txt_Departamento_Propuesto.Location = new System.Drawing.Point(12, 84);
+            this.Txt_Departamento_Propuesto.Name = "Txt_Departamento_Propuesto";
+            this.Txt_Departamento_Propuesto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Departamento_Propuesto.TabIndex = 7;
             // 
             // label14
             // 
@@ -366,24 +360,12 @@
             this.label17.TabIndex = 3;
             this.label17.Text = "Direccion,Departamento o Unidad";
             // 
-            // listView2
+            // Txt_Programa_Propuesto
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listView2.Location = new System.Drawing.Point(12, 200);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(356, 94);
-            this.listView2.TabIndex = 2;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(67, 33);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
-            this.textBox14.TabIndex = 1;
+            this.Txt_Programa_Propuesto.Location = new System.Drawing.Point(67, 33);
+            this.Txt_Programa_Propuesto.Name = "Txt_Programa_Propuesto";
+            this.Txt_Programa_Propuesto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Programa_Propuesto.TabIndex = 1;
             // 
             // label18
             // 
@@ -396,16 +378,16 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox9);
-            this.groupBox5.Controls.Add(this.textBox8);
-            this.groupBox5.Controls.Add(this.textBox7);
-            this.groupBox5.Controls.Add(this.textBox6);
+            this.groupBox5.Controls.Add(this.txt_otros_actual);
+            this.groupBox5.Controls.Add(this.Txt_Horario_actual);
+            this.groupBox5.Controls.Add(this.Txt_Forma_de_pago_actual);
+            this.groupBox5.Controls.Add(this.Txt_Puesto_Actual);
+            this.groupBox5.Controls.Add(this.Txt_Departamento_Actual);
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.label10);
-            this.groupBox5.Controls.Add(this.listView1);
-            this.groupBox5.Controls.Add(this.textBox5);
+            this.groupBox5.Controls.Add(this.Txt_Programa_actual);
             this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Location = new System.Drawing.Point(15, 184);
             this.groupBox5.Name = "groupBox5";
@@ -414,33 +396,33 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Estado Actual";
             // 
-            // textBox9
+            // Txt_Horario_actual
             // 
-            this.textBox9.Location = new System.Drawing.Point(262, 176);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(96, 20);
-            this.textBox9.TabIndex = 10;
+            this.Txt_Horario_actual.Location = new System.Drawing.Point(262, 176);
+            this.Txt_Horario_actual.Name = "Txt_Horario_actual";
+            this.Txt_Horario_actual.Size = new System.Drawing.Size(96, 20);
+            this.Txt_Horario_actual.TabIndex = 10;
             // 
-            // textBox8
+            // Txt_Forma_de_pago_actual
             // 
-            this.textBox8.Location = new System.Drawing.Point(93, 176);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 9;
+            this.Txt_Forma_de_pago_actual.Location = new System.Drawing.Point(93, 176);
+            this.Txt_Forma_de_pago_actual.Name = "Txt_Forma_de_pago_actual";
+            this.Txt_Forma_de_pago_actual.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Forma_de_pago_actual.TabIndex = 9;
             // 
-            // textBox7
+            // Txt_Puesto_Actual
             // 
-            this.textBox7.Location = new System.Drawing.Point(12, 133);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 8;
+            this.Txt_Puesto_Actual.Location = new System.Drawing.Point(12, 133);
+            this.Txt_Puesto_Actual.Name = "Txt_Puesto_Actual";
+            this.Txt_Puesto_Actual.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Puesto_Actual.TabIndex = 8;
             // 
-            // textBox6
+            // Txt_Departamento_Actual
             // 
-            this.textBox6.Location = new System.Drawing.Point(12, 84);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 7;
+            this.Txt_Departamento_Actual.Location = new System.Drawing.Point(12, 84);
+            this.Txt_Departamento_Actual.Name = "Txt_Departamento_Actual";
+            this.Txt_Departamento_Actual.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Departamento_Actual.TabIndex = 7;
             // 
             // label13
             // 
@@ -478,24 +460,12 @@
             this.label10.TabIndex = 3;
             this.label10.Text = "Direccion,Departamento o Unidad";
             // 
-            // listView1
+            // Txt_Programa_actual
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            this.listView1.Location = new System.Drawing.Point(12, 200);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(346, 94);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(67, 33);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 1;
+            this.Txt_Programa_actual.Location = new System.Drawing.Point(67, 33);
+            this.Txt_Programa_actual.Name = "Txt_Programa_actual";
+            this.Txt_Programa_actual.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Programa_actual.TabIndex = 1;
             // 
             // label9
             // 
@@ -508,7 +478,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox3);
+            this.groupBox4.Controls.Add(this.Txt_Tipo_de_accion);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Location = new System.Drawing.Point(15, 140);
             this.groupBox4.Name = "groupBox4";
@@ -516,12 +486,12 @@
             this.groupBox4.TabIndex = 16;
             this.groupBox4.TabStop = false;
             // 
-            // textBox3
+            // Txt_Tipo_de_accion
             // 
-            this.textBox3.Location = new System.Drawing.Point(93, 13);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(596, 20);
-            this.textBox3.TabIndex = 19;
+            this.Txt_Tipo_de_accion.Location = new System.Drawing.Point(93, 13);
+            this.Txt_Tipo_de_accion.Name = "Txt_Tipo_de_accion";
+            this.Txt_Tipo_de_accion.Size = new System.Drawing.Size(596, 20);
+            this.Txt_Tipo_de_accion.TabIndex = 19;
             // 
             // label8
             // 
@@ -534,8 +504,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dateTimePicker3);
-            this.groupBox3.Controls.Add(this.dateTimePicker2);
+            this.groupBox3.Controls.Add(this.Txt_Fecha_que_vence);
+            this.groupBox3.Controls.Add(this.Txt_Fecha_que_rige);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
@@ -545,19 +515,19 @@
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             // 
-            // dateTimePicker3
+            // Txt_Fecha_que_vence
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(475, 17);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker3.TabIndex = 19;
+            this.Txt_Fecha_que_vence.Location = new System.Drawing.Point(475, 17);
+            this.Txt_Fecha_que_vence.Name = "Txt_Fecha_que_vence";
+            this.Txt_Fecha_que_vence.Size = new System.Drawing.Size(200, 20);
+            this.Txt_Fecha_que_vence.TabIndex = 19;
             // 
-            // dateTimePicker2
+            // Txt_Fecha_que_rige
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(105, 17);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 18;
+            this.Txt_Fecha_que_rige.Location = new System.Drawing.Point(105, 17);
+            this.Txt_Fecha_que_rige.Name = "Txt_Fecha_que_rige";
+            this.Txt_Fecha_que_rige.Size = new System.Drawing.Size(200, 20);
+            this.Txt_Fecha_que_rige.TabIndex = 18;
             // 
             // label7
             // 
@@ -605,6 +575,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // txt_otros_actual
+            // 
+            this.txt_otros_actual.Location = new System.Drawing.Point(12, 209);
+            this.txt_otros_actual.Multiline = true;
+            this.txt_otros_actual.Name = "txt_otros_actual";
+            this.txt_otros_actual.Size = new System.Drawing.Size(346, 90);
+            this.txt_otros_actual.TabIndex = 11;
+            // 
+            // Txt_Otros_Propuesto
+            // 
+            this.Txt_Otros_Propuesto.Location = new System.Drawing.Point(6, 209);
+            this.Txt_Otros_Propuesto.Multiline = true;
+            this.Txt_Otros_Propuesto.Name = "Txt_Otros_Propuesto";
+            this.Txt_Otros_Propuesto.Size = new System.Drawing.Size(356, 90);
+            this.Txt_Otros_Propuesto.TabIndex = 12;
+            // 
             // A_Personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -614,10 +600,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Txt_Numero_Boleta);
             this.Name = "A_Personal";
             this.Text = "A_Personal";
-            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.Txt_Numero_Boleta, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
             this.Controls.SetChildIndex(this.button1, 0);
@@ -646,66 +632,60 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Txt_Numero_Boleta;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Txt_Cedula;
+        private System.Windows.Forms.TextBox Txt_Nombre_Completo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker Txt_Fecha_Ingreso;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Txt_Tipo_de_accion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker Txt_Fecha_que_vence;
+        private System.Windows.Forms.DateTimePicker Txt_Fecha_que_rige;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Txt_Programa_actual;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox Txt_Forma_de_pago_actual;
+        private System.Windows.Forms.TextBox Txt_Puesto_Actual;
+        private System.Windows.Forms.TextBox Txt_Departamento_Actual;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox Txt_Horario_actual;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox Txt_Horario_Propuesto;
+        private System.Windows.Forms.TextBox Txt_Forma_Pago_Propuesto;
+        private System.Windows.Forms.TextBox Txt_Puesto_Propuesto;
+        private System.Windows.Forms.TextBox Txt_Departamento_Propuesto;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox Txt_Programa_Propuesto;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txt_explicacion;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox Txt_Periodos;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox Txt_Saldos;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker Txt_Fecha_Accion;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox Txt_Otros_Propuesto;
+        private System.Windows.Forms.TextBox txt_otros_actual;
     }
 }
