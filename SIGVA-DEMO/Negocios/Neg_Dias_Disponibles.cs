@@ -67,6 +67,22 @@ namespace Negocios
         }
         #endregion
 
+        #region "Leer Saldos"
+        public Decimal LeerSaldo(Int32 Cedula)
+        {
+            AccesoDatos.AD_Dias_Disponibles IControlador;
+            try
+            {
+                IControlador = new AccesoDatos.AD_Dias_Disponibles();
+                return IControlador.LeerSaldos(Cedula);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+        #endregion
+
         #region "Llenar datagrid"
         public DataTable Llenardatagrid(Int32 Cedula)
         {

@@ -65,6 +65,40 @@ namespace AccesoDatos
         }
         #endregion
 
+
+        #region "Leer Saldos"
+        public Decimal LeerSaldos(Int32 pCedula)
+        {
+            try
+            {
+                DataTable dtConsulta = new DataTable();
+                Decimal Saldo = 0;
+
+                string commandText = "SELECT ISNULL(SUM(Cantidad_Dias),0) as saldos FROM Dias_Disponibles WHERE Cedula = " + pCedula;
+                //string commandText = commandTexta;
+
+                using (SqlConnection connection = new SqlConnection(vCadenaConexion))
+                {
+                    SqlCommand command = new SqlCommand(commandText, connection);
+
+                    SqlDataAdapter DataAdapter = new SqlDataAdapter(command);
+                    DataAdapter.Fill(dtConsulta);
+                }
+
+                if (dtConsulta.Rows.Count != 0)
+                {
+                    Saldo = Convert.ToDecimal(dtConsulta.Rows[0]["saldos"].ToString());
+                }
+                return Saldo;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
         #region "Leer Dia"
         public Ent_Dias_Disponibles LeerDia(Int32 pCedula,Int32 pAno)
         {
