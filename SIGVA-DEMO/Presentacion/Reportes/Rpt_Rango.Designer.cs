@@ -33,6 +33,7 @@
             this.dat_rango = new System.Windows.Forms.DataGridView();
             this.Cmd_Generar = new System.Windows.Forms.Button();
             this.Cmd_Cancelar = new System.Windows.Forms.Button();
+            this.Cmd_Buscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dat_rango)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,11 +86,22 @@
             this.Cmd_Cancelar.UseVisualStyleBackColor = true;
             this.Cmd_Cancelar.Click += new System.EventHandler(this.button2_Click);
             // 
+            // Cmd_Buscar
+            // 
+            this.Cmd_Buscar.Location = new System.Drawing.Point(123, 101);
+            this.Cmd_Buscar.Name = "Cmd_Buscar";
+            this.Cmd_Buscar.Size = new System.Drawing.Size(75, 23);
+            this.Cmd_Buscar.TabIndex = 7;
+            this.Cmd_Buscar.Text = "Buscar";
+            this.Cmd_Buscar.UseVisualStyleBackColor = true;
+            this.Cmd_Buscar.Click += new System.EventHandler(this.Cmd_Buscar_Click);
+            // 
             // Rpt_Rango
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 526);
+            this.Controls.Add(this.Cmd_Buscar);
             this.Controls.Add(this.Cmd_Cancelar);
             this.Controls.Add(this.Cmd_Generar);
             this.Controls.Add(this.dat_rango);
@@ -103,6 +115,7 @@
             this.Controls.SetChildIndex(this.dat_rango, 0);
             this.Controls.SetChildIndex(this.Cmd_Generar, 0);
             this.Controls.SetChildIndex(this.Cmd_Cancelar, 0);
+            this.Controls.SetChildIndex(this.Cmd_Buscar, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dat_rango)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,5 +129,6 @@
         private System.Windows.Forms.DataGridView dat_rango;
         private System.Windows.Forms.Button Cmd_Generar;
         private System.Windows.Forms.Button Cmd_Cancelar;
+        private System.Windows.Forms.Button Cmd_Buscar;
     }
 }

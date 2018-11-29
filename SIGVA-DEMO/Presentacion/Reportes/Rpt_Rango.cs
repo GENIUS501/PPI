@@ -87,5 +87,10 @@ namespace Presentacion
                 MessageBox.Show("Error: "+ex);
             }
         }
+
+        private void Cmd_Buscar_Click(object sender, EventArgs e)
+        {
+            cargar();
+        }
     }
 }

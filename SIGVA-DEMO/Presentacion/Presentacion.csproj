@@ -79,6 +79,12 @@
     <Compile Include="Auditoria\AVR_Sessiones.Designer.cs">
       <DependentUpon>AVR_Sessiones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Accion_de_personal\AVR_Personal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accion_de_personal\AVR_Personal.Designer.cs">
+      <DependentUpon>AVR_Personal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormasBase\Listas\frmListaBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +310,7 @@
     <Compile Include="Reportes\VR_Rpt_Saldos_Disponibles.Designer.cs">
       <DependentUpon>VR_Rpt_Saldos_Disponibles.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Accion_de_personal\Rpt_Accion_Personal.rdlc" />
     <EmbeddedResource Include="Acerca_de.resx">
       <DependentUpon>Acerca_de.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Auditoria\AVR_Sessiones.resx">
       <DependentUpon>AVR_Sessiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accion_de_personal\AVR_Personal.resx">
+      <DependentUpon>AVR_Personal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormasBase\Ingresos\frmIngresos.resx">
       <DependentUpon>frmIngresos.cs</DependentUpon>
