@@ -21,7 +21,6 @@ namespace Presentacion
         Ent_Departamentos Edepartamento;
         Neg_Departamentos Ndepartamento;
         Neg_Saldos_Disponibles Nsaldos;
-        Ent_Saldos_Disponibles Esaldos;
         Ent_Funcionarios Efuncionarios;
         Neg_Funcionarios Nfuncionarios;
         Ent_Anualidades Eanualidades;

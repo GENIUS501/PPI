@@ -39,6 +39,30 @@ namespace Presentacion
             Visor.Forma_de_pago_actualizar = this.Txt_Forma_de_pago_actual.Text;
             Visor.Hora_actual = this.Txt_Horario_actual.Text;
             Visor.Salario_base_actual = this.Txt_Salario_Base_actual.Text;
+            Visor.Aumentos_actual = this.Txt_Aumentos_Actual.Text;
+            Visor.recargo_actual = this.Txt_Recargo_actual.Text;
+            Visor.Programa_Propuesto = this.Txt_Programa_Propuesto.Text;
+            Visor.Direccion_Propuesto = this.Txt_Departamento_Propuesto.Text;
+            Visor.Clase_de_propuesto = this.Txt_Puesto_Propuesto.Text;
+            Visor.Forma_pago_propuesto = this.Txt_Forma_Pago_Propuesto.Text;
+            Visor.Horario_Propuesto = this.Txt_Horario_Propuesto.Text;
+            Visor.Salario_Base_Propuesto = this.Txt_Salario_Base_Propuesto.Text;
+            Visor.Aumento_Propuesto = this.Txt_Aumento_Propuesto.Text;
+            Visor.Recargo_Propuesto = this.Txt_Recargo_Propuesto.Text;
+            Visor.Prohibicion_actual = this.Txt_Prohibicion_Actual.Text;
+            Visor.Prohibicion_propuesto = this.Txt_Prohibicion_Propuesto.Text;
+            Visor.Sobre_sueldo_actual = this.Txt_Otros_Actual.Text;
+            Visor.Salario_bruto_actual = this.Txt_Salbruto_Actual.Text;
+            Visor.Sobre_sueldo_actual = this.Txt_Otros_Actual.Text;
+            Visor.Sobre_sueldo_Puesto = this.Txt_Otros_Propuesta.Text;
+            Visor.Salario_bruto_propuesto = this.Txt_Salbruto_Propuesto.Text;
+            Visor.Explicacion = this.txt_explicacion.Text;
+            Visor.Saldo_Vacaciones = this.Txt_Saldos.Text;
+            Visor.Periodo_Correspon = this.Txt_Periodos.Text;
+            this.Txt_Fecha_Accion.Text = DateTime.Now.ToString();
+            Visor.Fecha_Accion = Convert.ToDateTime(this.Txt_Fecha_Accion.Text);
+            Visor.MdiParent = this.MdiParent;
+            Visor.Show();
         }
 
     }

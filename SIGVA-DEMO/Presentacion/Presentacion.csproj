@@ -267,6 +267,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SIGVADataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SIGVADataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIGVADataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SIGVADataSetdiasdevueltos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -502,6 +507,17 @@
     </None>
     <None Include="SIGVADataSet2.xss">
       <DependentUpon>SIGVADataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSet3.xsc">
+      <DependentUpon>SIGVADataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SIGVADataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIGVADataSet3.xss">
+      <DependentUpon>SIGVADataSet3.xsd</DependentUpon>
     </None>
     <None Include="SIGVADataSetdiasdevueltos.xsc">
       <DependentUpon>SIGVADataSetdiasdevueltos.xsd</DependentUpon>
