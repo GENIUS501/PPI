@@ -53,7 +53,7 @@ namespace Presentacion
                 LlenarCombo();
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al cargar los datos: "+ex);
+                MessageBox.Show(ex.ToString(),"Error al cargar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -68,7 +68,7 @@ namespace Presentacion
             {
                 if(this.Txt_Nombre.Text.ToString()==""||this.Txt_Apellido1.Text.ToString()==""||this.Txt_Apellido2.Text.ToString()==""||this.Txt_Cedula.Text.ToString()==""||this.Txt_Direccion.Text.ToString()==""||this.Txt_Cedula.Text.ToString()=="")
                 {
-                    MessageBox.Show("Erro faltan campos por llenar");
+                    MessageBox.Show("Error faltan campos por llenar", "Error faltan campos por llenar",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }else
                 {
                     if(Txt_Email.Text.ToString()!="")
@@ -80,11 +80,11 @@ namespace Presentacion
                                 Agregar_funcionario();
                             }else
                             {
-                                MessageBox.Show("Formato de correo incorrecto");
+                                MessageBox.Show("Formato de correo incorrecto", "Formato de correo incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }else
                         {
-                            MessageBox.Show("Formato de correo incorrecto");
+                            MessageBox.Show("Formato de correo incorrecto", "Formato de correo incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
@@ -136,18 +136,18 @@ namespace Presentacion
                         {
                             Calcular_Anteriores();
                         }
-                        MessageBox.Show("Funcionario Agregado");
+                        MessageBox.Show("Funcionario Agregado", "Funcionario Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar_Campos();
                         
                     }
                     else
                     {
-                        MessageBox.Show("Error al agregar datos.");
+                        MessageBox.Show("Error al agregar el funcionario", "Error al agregar el funcionario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Formato de cedula incorrecto");
+                    MessageBox.Show("Formato de cedula incorrecto", "Formato de cedula incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }catch(Exception ex)
             {
@@ -184,11 +184,11 @@ namespace Presentacion
                 }
                 else
                 {
-                    MessageBox.Show("Error al calcular los años anteriores");
+                    MessageBox.Show("Error al calcular los años anteriores", "Error al calcular los años anteriores", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error : " + ex);
+                MessageBox.Show(ex.ToString(), "Error al calcular los años anteriores", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void Calcular_Anualidad()
@@ -237,11 +237,11 @@ namespace Presentacion
                 }
                 else
                 {
-                    MessageBox.Show("Error al agregar las anualidades");
+                    MessageBox.Show("Error al agregar las anualidades", "Error al agregar las anualidades", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error: "+ex);
+                MessageBox.Show("Error al agregar las anualidades", "Error al agregar las anualidades", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void Calcular_dias()
@@ -317,7 +317,7 @@ namespace Presentacion
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error: "+ex);
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -338,7 +338,7 @@ namespace Presentacion
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al cargar los datos: "+ex);
+                MessageBox.Show(ex.ToString(), "Error al cargar los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

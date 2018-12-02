@@ -34,19 +34,27 @@ namespace Presentacion
         {
             try 
             {
-                Ndepartamentos = new Neg_Departamentos();
-                Edepartamentos = new Ent_Departamentos();
-                Edepartamentos.Nombre_Departamento = Txt_Departamento.Text.ToString();
-                Int32 Agregar = 0;
-                Agregar = Ndepartamentos.Insertar(Edepartamentos);
-                if(Agregar>0)
+                if (this.Txt_Departamento.Text != "")
                 {
-                    MessageBox.Show("Departamento agregado exitosamente");
-                    this.Txt_Departamento.Text = "";
-                    I_Departamentos_Load(null, null);
-                }else
+                    Ndepartamentos = new Neg_Departamentos();
+                    Edepartamentos = new Ent_Departamentos();
+                    Edepartamentos.Nombre_Departamento = Txt_Departamento.Text.ToString();
+                    Int32 Agregar = 0;
+                    Agregar = Ndepartamentos.Insertar(Edepartamentos);
+                    if (Agregar > 0)
+                    {
+                        MessageBox.Show("Departamento agregado exitosamente", "Departamento agregado exitosamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Txt_Departamento.Text = "";
+                        I_Departamentos_Load(null, null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar Departamento", "Error al agregar Departamento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
                 {
-                    MessageBox.Show("Error al agregar Departamento");
+                    MessageBox.Show("Error faltan campos por llenar", "Error faltan campos por llenar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }catch (SqlException ex)
             {
@@ -62,8 +70,14 @@ namespace Presentacion
 
         private void I_Departamentos_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'sIGVADataSet1Departamentos.DEPARTAMENTOS' Puede moverla o quitarla según sea necesario.
-            this.dEPARTAMENTOSTableAdapter.Fill(this.sIGVADataSet1Departamentos.DEPARTAMENTOS);
+            try
+            {
+                // TODO: esta línea de código carga datos en la tabla 'sIGVADataSet1Departamentos.DEPARTAMENTOS' Puede moverla o quitarla según sea necesario.
+                this.dEPARTAMENTOSTableAdapter.Fill(this.sIGVADataSet1Departamentos.DEPARTAMENTOS);
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error al cargar los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

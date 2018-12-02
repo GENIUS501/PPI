@@ -84,21 +84,21 @@
             this.Txt_Nombre.Location = new System.Drawing.Point(27, 87);
             this.Txt_Nombre.Name = "Txt_Nombre";
             this.Txt_Nombre.Size = new System.Drawing.Size(121, 20);
-            this.Txt_Nombre.TabIndex = 4;
+            this.Txt_Nombre.TabIndex = 1;
             // 
             // Txt_Apellido1
             // 
             this.Txt_Apellido1.Location = new System.Drawing.Point(184, 87);
             this.Txt_Apellido1.Name = "Txt_Apellido1";
             this.Txt_Apellido1.Size = new System.Drawing.Size(121, 20);
-            this.Txt_Apellido1.TabIndex = 5;
+            this.Txt_Apellido1.TabIndex = 2;
             // 
             // Txt_Apellido2
             // 
             this.Txt_Apellido2.Location = new System.Drawing.Point(348, 87);
             this.Txt_Apellido2.Name = "Txt_Apellido2";
             this.Txt_Apellido2.Size = new System.Drawing.Size(129, 20);
-            this.Txt_Apellido2.TabIndex = 6;
+            this.Txt_Apellido2.TabIndex = 3;
             // 
             // label2
             // 
@@ -135,7 +135,7 @@
             this.Cbo_Departamento.Location = new System.Drawing.Point(27, 144);
             this.Cbo_Departamento.Name = "Cbo_Departamento";
             this.Cbo_Departamento.Size = new System.Drawing.Size(121, 21);
-            this.Cbo_Departamento.TabIndex = 10;
+            this.Cbo_Departamento.TabIndex = 4;
             this.Cbo_Departamento.ValueMember = "Id_Departamento";
             this.Cbo_Departamento.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -155,7 +155,7 @@
             this.Cbo_Puesto.Location = new System.Drawing.Point(184, 144);
             this.Cbo_Puesto.Name = "Cbo_Puesto";
             this.Cbo_Puesto.Size = new System.Drawing.Size(121, 21);
-            this.Cbo_Puesto.TabIndex = 11;
+            this.Cbo_Puesto.TabIndex = 5;
             // 
             // label5
             // 
@@ -181,7 +181,7 @@
             this.Rad_Posee.Location = new System.Drawing.Point(93, 289);
             this.Rad_Posee.Name = "Rad_Posee";
             this.Rad_Posee.Size = new System.Drawing.Size(55, 17);
-            this.Rad_Posee.TabIndex = 14;
+            this.Rad_Posee.TabIndex = 9;
             this.Rad_Posee.TabStop = true;
             this.Rad_Posee.Text = "Posee";
             this.Rad_Posee.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@
             this.Rad_noposee.Location = new System.Drawing.Point(213, 289);
             this.Rad_noposee.Name = "Rad_noposee";
             this.Rad_noposee.Size = new System.Drawing.Size(71, 17);
-            this.Rad_noposee.TabIndex = 15;
+            this.Rad_noposee.TabIndex = 10;
             this.Rad_noposee.TabStop = true;
             this.Rad_noposee.Text = "No posee";
             this.Rad_noposee.UseVisualStyleBackColor = true;
@@ -213,7 +213,7 @@
             this.Txt_Cantidad_Anos.Location = new System.Drawing.Point(31, 325);
             this.Txt_Cantidad_Anos.Name = "Txt_Cantidad_Anos";
             this.Txt_Cantidad_Anos.Size = new System.Drawing.Size(41, 20);
-            this.Txt_Cantidad_Anos.TabIndex = 17;
+            this.Txt_Cantidad_Anos.TabIndex = 11;
             // 
             // label8
             // 
@@ -229,7 +229,7 @@
             this.Txt_Fecha_Ingreso.Location = new System.Drawing.Point(31, 381);
             this.Txt_Fecha_Ingreso.Name = "Txt_Fecha_Ingreso";
             this.Txt_Fecha_Ingreso.Size = new System.Drawing.Size(200, 20);
-            this.Txt_Fecha_Ingreso.TabIndex = 19;
+            this.Txt_Fecha_Ingreso.TabIndex = 12;
             // 
             // label9
             // 
@@ -264,7 +264,7 @@
             this.Txt_Direccion.Multiline = true;
             this.Txt_Direccion.Name = "Txt_Direccion";
             this.Txt_Direccion.Size = new System.Drawing.Size(242, 62);
-            this.Txt_Direccion.TabIndex = 24;
+            this.Txt_Direccion.TabIndex = 8;
             // 
             // label12
             // 
@@ -280,14 +280,14 @@
             this.Txt_Email.Location = new System.Drawing.Point(27, 199);
             this.Txt_Email.Name = "Txt_Email";
             this.Txt_Email.Size = new System.Drawing.Size(169, 20);
-            this.Txt_Email.TabIndex = 26;
+            this.Txt_Email.TabIndex = 7;
             // 
             // Cmd_Agregar
             // 
             this.Cmd_Agregar.Location = new System.Drawing.Point(319, 416);
             this.Cmd_Agregar.Name = "Cmd_Agregar";
             this.Cmd_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.Cmd_Agregar.TabIndex = 27;
+            this.Cmd_Agregar.TabIndex = 14;
             this.Cmd_Agregar.Text = "Agregar";
             this.Cmd_Agregar.UseVisualStyleBackColor = true;
             this.Cmd_Agregar.Click += new System.EventHandler(this.button1_Click);
@@ -297,7 +297,7 @@
             this.Cmd_Cancelar.Location = new System.Drawing.Point(402, 416);
             this.Cmd_Cancelar.Name = "Cmd_Cancelar";
             this.Cmd_Cancelar.Size = new System.Drawing.Size(75, 23);
-            this.Cmd_Cancelar.TabIndex = 28;
+            this.Cmd_Cancelar.TabIndex = 15;
             this.Cmd_Cancelar.Text = "Cancelar";
             this.Cmd_Cancelar.UseVisualStyleBackColor = true;
             this.Cmd_Cancelar.Click += new System.EventHandler(this.button2_Click);
@@ -307,7 +307,7 @@
             this.Txt_Fecha_Anualidad.Location = new System.Drawing.Point(262, 381);
             this.Txt_Fecha_Anualidad.Name = "Txt_Fecha_Anualidad";
             this.Txt_Fecha_Anualidad.Size = new System.Drawing.Size(200, 20);
-            this.Txt_Fecha_Anualidad.TabIndex = 29;
+            this.Txt_Fecha_Anualidad.TabIndex = 13;
             // 
             // label13
             // 
@@ -363,7 +363,7 @@
             this.groupBox1.Location = new System.Drawing.Point(5, 61);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(506, 455);
-            this.groupBox1.TabIndex = 32;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingreso de Funcionarios";
             // 
@@ -373,7 +373,7 @@
             this.Txt_Telefono.Mask = "00000000";
             this.Txt_Telefono.Name = "Txt_Telefono";
             this.Txt_Telefono.Size = new System.Drawing.Size(129, 20);
-            this.Txt_Telefono.TabIndex = 33;
+            this.Txt_Telefono.TabIndex = 6;
             // 
             // Txt_Cedula
             // 
@@ -381,7 +381,7 @@
             this.Txt_Cedula.Mask = "000000000";
             this.Txt_Cedula.Name = "Txt_Cedula";
             this.Txt_Cedula.Size = new System.Drawing.Size(121, 20);
-            this.Txt_Cedula.TabIndex = 32;
+            this.Txt_Cedula.TabIndex = 0;
             // 
             // label14
             // 

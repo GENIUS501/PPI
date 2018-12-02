@@ -15,8 +15,9 @@ namespace Presentacion
 {
     public partial class AVR_Sessiones : Form
     {
-        public ArrayList datos = new ArrayList();
+        #region"Propiedades"
         public string usuario { get; set; }
+        #endregion
         public AVR_Sessiones()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace Presentacion
                 this.reportViewer1.RefreshReport();
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al generar el reporte: "+ex);
+                MessageBox.Show(ex.ToString(),"Error al generar el reporte",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }

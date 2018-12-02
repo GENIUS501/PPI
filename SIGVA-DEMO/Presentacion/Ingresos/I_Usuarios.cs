@@ -69,7 +69,7 @@ namespace Presentacion
         {
             if (Txt_Usuario.Text == ""||Txt_Cedula.Text==""||Txt_Nombre.Text == ""||Txt_Apellido1.Text == ""||Txt_Apellido2.Text == ""||Txt_Clave.Text==""||Txt_Clave1.Text == "")
             {
-                MessageBox.Show("No se ha llenado uno o varios campos");
+                MessageBox.Show("Error faltan campos por llenar", "Error faltan campos por llenar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -100,23 +100,23 @@ namespace Presentacion
                             int ejecutar = Nusuarios.Insertar(Eusuarios);
                             if (ejecutar > 0)
                             {
-                                MessageBox.Show("Datos ingresados satisfactoriamente", "Ingreso de Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Usuario ingresado exitosamente", "Ingreso de Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 LimpiarCampos();
                             }
                             else
                             {
-                                MessageBox.Show("Error al ingresar datos");
+                                MessageBox.Show("Error al ingresar datos", "Error al ingresar datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
 
                         }
                         else
                         {
-                            MessageBox.Show("Las claves no coinciden");
+                            MessageBox.Show("Las claves no coinciden", "Las claves no coinciden", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Formarto de cedula incorrecto");
+                        MessageBox.Show("Formarto de cedula incorrecto", "Formarto de cedula incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }catch( SqlException ex)
@@ -136,8 +136,14 @@ namespace Presentacion
 
         private void I_Usuarios_Load(object sender, EventArgs e)
         {
-            Cbo_Rol.DropDownStyle = ComboBoxStyle.DropDownList;
-            LlenarCombo();
+            try
+            {
+                Cbo_Rol.DropDownStyle = ComboBoxStyle.DropDownList;
+                LlenarCombo();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error all cargar datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

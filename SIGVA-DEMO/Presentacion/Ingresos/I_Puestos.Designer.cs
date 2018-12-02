@@ -41,7 +41,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Dat_Puestos = new System.Windows.Forms.DataGridView();
             this.sIGVADataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-  
             this.dEPARTAMENTOSTableAdapter = new Presentacion.SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).BeginInit();
@@ -74,7 +73,7 @@
             this.Txt_Nombre_Puestos.Location = new System.Drawing.Point(23, 47);
             this.Txt_Nombre_Puestos.Name = "Txt_Nombre_Puestos";
             this.Txt_Nombre_Puestos.Size = new System.Drawing.Size(164, 20);
-            this.Txt_Nombre_Puestos.TabIndex = 4;
+            this.Txt_Nombre_Puestos.TabIndex = 0;
             // 
             // Cbo_Departamento
             // 
@@ -84,7 +83,7 @@
             this.Cbo_Departamento.Location = new System.Drawing.Point(23, 114);
             this.Cbo_Departamento.Name = "Cbo_Departamento";
             this.Cbo_Departamento.Size = new System.Drawing.Size(164, 21);
-            this.Cbo_Departamento.TabIndex = 5;
+            this.Cbo_Departamento.TabIndex = 1;
             this.Cbo_Departamento.ValueMember = "Id_Departamento";
             // 
             // dEPARTAMENTOSBindingSource
@@ -102,7 +101,7 @@
             this.Cmd_Agregar.Location = new System.Drawing.Point(192, 350);
             this.Cmd_Agregar.Name = "Cmd_Agregar";
             this.Cmd_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.Cmd_Agregar.TabIndex = 6;
+            this.Cmd_Agregar.TabIndex = 2;
             this.Cmd_Agregar.Text = "Aceptar";
             this.Cmd_Agregar.UseVisualStyleBackColor = true;
             this.Cmd_Agregar.Click += new System.EventHandler(this.Cmd_Agregar_Click);
@@ -112,7 +111,7 @@
             this.Cmd_Cancelar.Location = new System.Drawing.Point(289, 350);
             this.Cmd_Cancelar.Name = "Cmd_Cancelar";
             this.Cmd_Cancelar.Size = new System.Drawing.Size(75, 23);
-            this.Cmd_Cancelar.TabIndex = 7;
+            this.Cmd_Cancelar.TabIndex = 3;
             this.Cmd_Cancelar.Text = "Cancelar";
             this.Cmd_Cancelar.UseVisualStyleBackColor = true;
             this.Cmd_Cancelar.Click += new System.EventHandler(this.button2_Click);

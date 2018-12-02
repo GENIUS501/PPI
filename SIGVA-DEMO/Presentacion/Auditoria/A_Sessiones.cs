@@ -29,7 +29,7 @@ namespace Presentacion
                 Dat_Sessiones.DataSource = Nsessiones.Leer();
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al cargar los datos: "+ex);
+                MessageBox.Show(ex.ToString(),"Error al cargar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -48,7 +48,7 @@ namespace Presentacion
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al buscar: "+ex);
+                MessageBox.Show(ex.ToString(),"Error al buscar",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -63,17 +63,23 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al buscar: " + ex);
+                MessageBox.Show(ex.ToString(), "Error al buscar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void Cmd_Imprimir_Click(object sender, EventArgs e)
         {
-            Nsessiones = new Neg_Sessiones();
-            AVR_Sessiones Visor = new AVR_Sessiones();
-            Visor.usuario = this.Txt_Usuario.Text;
-            Visor.MdiParent = this.MdiParent;
-            Visor.Show();
+            try
+            {
+                Nsessiones = new Neg_Sessiones();
+                AVR_Sessiones Visor = new AVR_Sessiones();
+                Visor.usuario = this.Txt_Usuario.Text;
+                Visor.MdiParent = this.MdiParent;
+                Visor.Show();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error al cargar el reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

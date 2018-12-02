@@ -34,16 +34,16 @@
             this.Btn_Agregar = new System.Windows.Forms.Button();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sIGVADataSet1Departamentos = new Presentacion.SIGVADataSet1Departamentos();
-            this.sIGVADataSet1DepartamentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dEPARTAMENTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dEPARTAMENTOSTableAdapter = new Presentacion.SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter();
             this.idDepartamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDepartamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dEPARTAMENTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sIGVADataSet1DepartamentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sIGVADataSet1Departamentos = new Presentacion.SIGVADataSet1Departamentos();
+            this.dEPARTAMENTOSTableAdapter = new Presentacion.SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1DepartamentosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1DepartamentosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -52,7 +52,7 @@
             this.label1.Location = new System.Drawing.Point(12, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 13);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Nombre del departamento";
             // 
             // Txt_Departamento
@@ -60,14 +60,14 @@
             this.Txt_Departamento.Location = new System.Drawing.Point(15, 91);
             this.Txt_Departamento.Name = "Txt_Departamento";
             this.Txt_Departamento.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Departamento.TabIndex = 3;
+            this.Txt_Departamento.TabIndex = 1;
             // 
             // Btn_Agregar
             // 
             this.Btn_Agregar.Location = new System.Drawing.Point(242, 438);
             this.Btn_Agregar.Name = "Btn_Agregar";
             this.Btn_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Agregar.TabIndex = 4;
+            this.Btn_Agregar.TabIndex = 2;
             this.Btn_Agregar.Text = "Agregar";
             this.Btn_Agregar.UseVisualStyleBackColor = true;
             this.Btn_Agregar.Click += new System.EventHandler(this.Btn_Agregar_Click);
@@ -77,7 +77,7 @@
             this.Btn_Cancelar.Location = new System.Drawing.Point(385, 438);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Cancelar.TabIndex = 5;
+            this.Btn_Cancelar.TabIndex = 3;
             this.Btn_Cancelar.Text = "Cancelar";
             this.Btn_Cancelar.UseVisualStyleBackColor = true;
             this.Btn_Cancelar.Click += new System.EventHandler(this.button2_Click);
@@ -98,25 +98,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(244, 150);
             this.dataGridView1.TabIndex = 6;
             // 
-            // sIGVADataSet1Departamentos
-            // 
-            this.sIGVADataSet1Departamentos.DataSetName = "SIGVADataSet1Departamentos";
-            this.sIGVADataSet1Departamentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sIGVADataSet1DepartamentosBindingSource
-            // 
-            this.sIGVADataSet1DepartamentosBindingSource.DataSource = this.sIGVADataSet1Departamentos;
-            this.sIGVADataSet1DepartamentosBindingSource.Position = 0;
-            // 
-            // dEPARTAMENTOSBindingSource
-            // 
-            this.dEPARTAMENTOSBindingSource.DataMember = "DEPARTAMENTOS";
-            this.dEPARTAMENTOSBindingSource.DataSource = this.sIGVADataSet1DepartamentosBindingSource;
-            // 
-            // dEPARTAMENTOSTableAdapter
-            // 
-            this.dEPARTAMENTOSTableAdapter.ClearBeforeFill = true;
-            // 
             // idDepartamentoDataGridViewTextBoxColumn
             // 
             this.idDepartamentoDataGridViewTextBoxColumn.DataPropertyName = "Id_Departamento";
@@ -130,6 +111,25 @@
             this.nombreDepartamentoDataGridViewTextBoxColumn.HeaderText = "Nombre_Departamento";
             this.nombreDepartamentoDataGridViewTextBoxColumn.Name = "nombreDepartamentoDataGridViewTextBoxColumn";
             this.nombreDepartamentoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dEPARTAMENTOSBindingSource
+            // 
+            this.dEPARTAMENTOSBindingSource.DataMember = "DEPARTAMENTOS";
+            this.dEPARTAMENTOSBindingSource.DataSource = this.sIGVADataSet1DepartamentosBindingSource;
+            // 
+            // sIGVADataSet1DepartamentosBindingSource
+            // 
+            this.sIGVADataSet1DepartamentosBindingSource.DataSource = this.sIGVADataSet1Departamentos;
+            this.sIGVADataSet1DepartamentosBindingSource.Position = 0;
+            // 
+            // sIGVADataSet1Departamentos
+            // 
+            this.sIGVADataSet1Departamentos.DataSetName = "SIGVADataSet1Departamentos";
+            this.sIGVADataSet1Departamentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dEPARTAMENTOSTableAdapter
+            // 
+            this.dEPARTAMENTOSTableAdapter.ClearBeforeFill = true;
             // 
             // I_Departamentos
             // 
@@ -150,9 +150,9 @@
             this.Controls.SetChildIndex(this.Btn_Cancelar, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1DepartamentosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1DepartamentosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

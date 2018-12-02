@@ -44,7 +44,7 @@ namespace Presentacion
                 Cbo_Departamento.DropDownStyle = ComboBoxStyle.DropDownList; 
             }catch(Exception ex)
             {
-                MessageBox.Show("Error: "+ex);
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -52,21 +52,28 @@ namespace Presentacion
         {
             try
             {
-                Int32 Agregar = 0;
-                Npuestos = new Neg_Puestos();
-                Epuestos = new Ent_Puestos();
-                Epuestos.Id_Departamento = Convert.ToInt32 (this.Cbo_Departamento.SelectedValue.ToString());
-                Epuestos.Nombre_Puesto = this.Txt_Nombre_Puestos.Text.ToString();
-                Agregar = Npuestos.Insertar(Epuestos);
-                if(Agregar >0)
+                if (this.Txt_Nombre_Puestos.Text != "")
                 {
-                    MessageBox.Show("Puesto Agregado");
-                    this.Txt_Nombre_Puestos.Text = "";
-                    this.Cbo_Departamento.SelectedValue = 1;
-                    I_Puestos_Load(null,null);
+                    Int32 Agregar = 0;
+                    Npuestos = new Neg_Puestos();
+                    Epuestos = new Ent_Puestos();
+                    Epuestos.Id_Departamento = Convert.ToInt32(this.Cbo_Departamento.SelectedValue.ToString());
+                    Epuestos.Nombre_Puesto = this.Txt_Nombre_Puestos.Text.ToString();
+                    Agregar = Npuestos.Insertar(Epuestos);
+                    if (Agregar > 0)
+                    {
+                        MessageBox.Show("Puesto Agregado");
+                        this.Txt_Nombre_Puestos.Text = "";
+                        this.Cbo_Departamento.SelectedValue = 1;
+                        I_Puestos_Load(null, null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar puesto", "Error al agregar puesto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }else
                 {
-                    MessageBox.Show("Error al agregar puesto");
+                    MessageBox.Show("Error faltan campos por llenar", "Error faltan campos por llenar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }catch(SqlException ex)
             {

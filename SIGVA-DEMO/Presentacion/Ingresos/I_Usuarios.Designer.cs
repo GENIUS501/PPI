@@ -57,7 +57,7 @@
             this.Txt_Usuario.Location = new System.Drawing.Point(27, 143);
             this.Txt_Usuario.Name = "Txt_Usuario";
             this.Txt_Usuario.Size = new System.Drawing.Size(124, 20);
-            this.Txt_Usuario.TabIndex = 2;
+            this.Txt_Usuario.TabIndex = 4;
             // 
             // label1
             // 
@@ -73,21 +73,21 @@
             this.Txt_Apellido2.Location = new System.Drawing.Point(291, 95);
             this.Txt_Apellido2.Name = "Txt_Apellido2";
             this.Txt_Apellido2.Size = new System.Drawing.Size(117, 20);
-            this.Txt_Apellido2.TabIndex = 5;
+            this.Txt_Apellido2.TabIndex = 3;
             // 
             // Txt_Apellido1
             // 
             this.Txt_Apellido1.Location = new System.Drawing.Point(160, 95);
             this.Txt_Apellido1.Name = "Txt_Apellido1";
             this.Txt_Apellido1.Size = new System.Drawing.Size(117, 20);
-            this.Txt_Apellido1.TabIndex = 6;
+            this.Txt_Apellido1.TabIndex = 2;
             // 
             // Txt_Nombre
             // 
             this.Txt_Nombre.Location = new System.Drawing.Point(24, 95);
             this.Txt_Nombre.Name = "Txt_Nombre";
             this.Txt_Nombre.Size = new System.Drawing.Size(127, 20);
-            this.Txt_Nombre.TabIndex = 7;
+            this.Txt_Nombre.TabIndex = 1;
             // 
             // label2
             // 
@@ -131,7 +131,7 @@
             this.Txt_Clave.Name = "Txt_Clave";
             this.Txt_Clave.PasswordChar = '*';
             this.Txt_Clave.Size = new System.Drawing.Size(124, 20);
-            this.Txt_Clave.TabIndex = 12;
+            this.Txt_Clave.TabIndex = 5;
             // 
             // label6
             // 
@@ -148,7 +148,7 @@
             this.Txt_Clave1.Name = "Txt_Clave1";
             this.Txt_Clave1.PasswordChar = '*';
             this.Txt_Clave1.Size = new System.Drawing.Size(117, 20);
-            this.Txt_Clave1.TabIndex = 14;
+            this.Txt_Clave1.TabIndex = 6;
             // 
             // label7
             // 
@@ -165,7 +165,7 @@
             this.Cbo_Rol.Location = new System.Drawing.Point(27, 251);
             this.Cbo_Rol.Name = "Cbo_Rol";
             this.Cbo_Rol.Size = new System.Drawing.Size(121, 21);
-            this.Cbo_Rol.TabIndex = 16;
+            this.Cbo_Rol.TabIndex = 7;
             // 
             // label8
             // 
@@ -181,7 +181,7 @@
             this.Cmd_Agregar.Location = new System.Drawing.Point(234, 284);
             this.Cmd_Agregar.Name = "Cmd_Agregar";
             this.Cmd_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.Cmd_Agregar.TabIndex = 18;
+            this.Cmd_Agregar.TabIndex = 8;
             this.Cmd_Agregar.Text = "Aceptar";
             this.Cmd_Agregar.UseVisualStyleBackColor = true;
             this.Cmd_Agregar.Click += new System.EventHandler(this.Cmd_Agregar_Click);
@@ -191,7 +191,7 @@
             this.Cmd_Cancelar.Location = new System.Drawing.Point(343, 284);
             this.Cmd_Cancelar.Name = "Cmd_Cancelar";
             this.Cmd_Cancelar.Size = new System.Drawing.Size(75, 23);
-            this.Cmd_Cancelar.TabIndex = 19;
+            this.Cmd_Cancelar.TabIndex = 9;
             this.Cmd_Cancelar.Text = "Cancelar";
             this.Cmd_Cancelar.UseVisualStyleBackColor = true;
             this.Cmd_Cancelar.Click += new System.EventHandler(this.button2_Click);
@@ -239,7 +239,7 @@
             this.Txt_Cedula.Mask = "000000000";
             this.Txt_Cedula.Name = "Txt_Cedula";
             this.Txt_Cedula.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Cedula.TabIndex = 20;
+            this.Txt_Cedula.TabIndex = 0;
             // 
             // I_Usuarios
             // 
