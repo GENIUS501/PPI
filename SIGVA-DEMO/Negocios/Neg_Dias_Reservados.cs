@@ -31,6 +31,22 @@ namespace Negocios
        }
        #endregion
 
+       #region "Llenar datagrid reporte"
+       public DataTable Llenardatagridreporte(DateTime Fecha_Ini,DateTime Fecha_Fin)
+       {
+           AccesoDatos.AD_Dias_Reservados IControlador;
+           try
+           {
+               IControlador = new AccesoDatos.AD_Dias_Reservados();
+               return IControlador.llenar_datagrid_reporte(Fecha_Ini,Fecha_Fin);
+           }
+           catch (Exception ex)
+           {
+               throw new Exception(ex.Message, ex);
+           }
+       }
+       #endregion
+
        #region "Llenar datagrid"
        public DataTable Llenardatagrid(Int32 Cedula)
        {

@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Neg_Anos_Institucion_Anterior.cs" />
     <Compile Include="Neg_Anualidades.cs" />
+    <Compile Include="Neg_Bitacora.cs" />
     <Compile Include="Neg_Departamentos.cs" />
     <Compile Include="Neg_Dias_Devolucion.cs" />
     <Compile Include="Neg_Dias_Disponibles.cs" />

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Entidades;
 using Negocios;
 using Presentacion;
+using System.Globalization;
 
 namespace Presentacion
 {
@@ -91,188 +92,209 @@ namespace Presentacion
         }
         private void llenar()
         {
-            Efuncionarios = new Ent_Funcionarios();
-            Nfuncionarios = new Neg_Funcionarios();
-            Ndias_disponibles = new Neg_Dias_Disponibles();
-            Ndias_reservados = new Neg_Dias_Reservados();
-            Nanualidades = new Neg_Anualidades();
-            Eanualidades = new Ent_Anualidades();
-            Eanualidades = Nanualidades.LeerAnualidad(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
-            Eanualidades = Nanualidades.LeerAnualidad(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
-            Efuncionarios = Nfuncionarios.LeerCodigoLlave(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
-            if (Efuncionarios.Cedula > 0)
+            try
             {
-                this.Txt_Nombre.Text = Efuncionarios.Nombre;
-                this.Txt_Apellido1.Text = Efuncionarios.Apellido1;
-                this.Txt_Apellido2.Text = Efuncionarios.Apellido2;
-                this.Txt_Telefono.Text = Efuncionarios.Telefono.ToString();
-                this.Txt_Fecha_Ingreso.Text = Efuncionarios.Fecha_De_Ingreso.ToString();
-                this.Dat_Dias_Disponibles.DataSource = Ndias_disponibles.Llenardatagrid(Convert.ToInt32(this.Txt_Cedula.Text));
-                this.Dat_Dias_Reservados.DataSource = Ndias_reservados.Llenardatagrid(Convert.ToInt32(this.Txt_Cedula.Text));
-            }
-            else
+                Efuncionarios = new Ent_Funcionarios();
+                Nfuncionarios = new Neg_Funcionarios();
+                Ndias_disponibles = new Neg_Dias_Disponibles();
+                Ndias_reservados = new Neg_Dias_Reservados();
+                Nanualidades = new Neg_Anualidades();
+                Eanualidades = new Ent_Anualidades();
+                Eanualidades = Nanualidades.LeerAnualidad(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
+                Eanualidades = Nanualidades.LeerAnualidad(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
+                Efuncionarios = Nfuncionarios.LeerCodigoLlave(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
+                if (Efuncionarios.Cedula > 0)
+                {
+                    this.Txt_Nombre.Text = Efuncionarios.Nombre;
+                    this.Txt_Apellido1.Text = Efuncionarios.Apellido1;
+                    this.Txt_Apellido2.Text = Efuncionarios.Apellido2;
+                    this.Txt_Telefono.Text = Efuncionarios.Telefono.ToString();
+                    this.Txt_Fecha_Ingreso.Text = Efuncionarios.Fecha_De_Ingreso.ToString();
+                    this.Dat_Dias_Disponibles.DataSource = Ndias_disponibles.Llenardatagrid(Convert.ToInt32(this.Txt_Cedula.Text));
+                    this.Dat_Dias_Reservados.DataSource = Ndias_reservados.Llenardatagrid(Convert.ToInt32(this.Txt_Cedula.Text));
+                }
+                else
+                {
+                    MessageBox.Show("Error funcionario no existe");
+                }
+            }catch(Exception ex)
             {
-                MessageBox.Show("Error funcionario no existe");
+                MessageBox.Show("Error:", ex.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void llenar2()
         {
-            Efuncionarios = new Ent_Funcionarios();
-            Nfuncionarios = new Neg_Funcionarios();
-            Ndias_disponibles = new Neg_Dias_Disponibles();
-            Ndias_reservados = new Neg_Dias_Reservados();
-            Nanualidades = new Neg_Anualidades();
-            Eanualidades = new Ent_Anualidades();
-            Eanualidades = Nanualidades.LeerAnualidad(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
-            Eanualidades = Nanualidades.LeerAnualidad(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
-            Efuncionarios = Nfuncionarios.LeerCodigoLlave(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
-            if (Efuncionarios.Cedula > 0)
+            try
             {
-                this.Txt_Nombre.Text = Efuncionarios.Nombre;
-                this.Txt_Apellido1.Text = Efuncionarios.Apellido1;
-                this.Txt_Apellido2.Text = Efuncionarios.Apellido2;
-                this.Txt_Telefono.Text = Efuncionarios.Telefono.ToString();
-                this.Txt_Fecha_Ingreso.Text = Efuncionarios.Fecha_De_Ingreso.ToString();
-                this.Dat_Dias_Disponibles.DataSource = Ndias_disponibles.Llenardatagrid(Convert.ToInt32(this.Txt_Cedula.Text));
-                this.Dat_Dias_Reservados.DataSource = Ndias_reservados.Llenardatagrid(Convert.ToInt32(this.Txt_Cedula.Text));
-                if(this.Txt_Cantidad_Dias.Text!="")
+                Efuncionarios = new Ent_Funcionarios();
+                Nfuncionarios = new Neg_Funcionarios();
+                Ndias_disponibles = new Neg_Dias_Disponibles();
+                Ndias_reservados = new Neg_Dias_Reservados();
+                Nanualidades = new Neg_Anualidades();
+                Eanualidades = new Ent_Anualidades();
+                Eanualidades = Nanualidades.LeerAnualidad(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
+                Eanualidades = Nanualidades.LeerAnualidad(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
+                Efuncionarios = Nfuncionarios.LeerCodigoLlave(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
+                if (Efuncionarios.Cedula > 0)
                 {
-                    calcular();
-                }else{
-                    MessageBox.Show("Debe indicar cuantos dias desea disfrutar");
-                }
+                    this.Txt_Nombre.Text = Efuncionarios.Nombre;
+                    this.Txt_Apellido1.Text = Efuncionarios.Apellido1;
+                    this.Txt_Apellido2.Text = Efuncionarios.Apellido2;
+                    this.Txt_Telefono.Text = Efuncionarios.Telefono.ToString();
+                    this.Txt_Fecha_Ingreso.Text = Efuncionarios.Fecha_De_Ingreso.ToString();
+                    this.Dat_Dias_Disponibles.DataSource = Ndias_disponibles.Llenardatagrid(Convert.ToInt32(this.Txt_Cedula.Text));
+                    this.Dat_Dias_Reservados.DataSource = Ndias_reservados.Llenardatagrid(Convert.ToInt32(this.Txt_Cedula.Text));
+                    if (this.Txt_Cantidad_Dias.Text != "")
+                    {
+                        calcular();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe indicar cuantos dias desea disfrutar");
+                    }
 
-            }
-            else
+                }
+                else
+                {
+                    MessageBox.Show("Error funcionario no existe");
+                }
+            }catch (Exception ex)
             {
-                MessageBox.Show("Error funcionario no existe");
+                MessageBox.Show("Error:", ex.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void calcular()
         {
-                    Edias_reservados = new Ent_Dias_Reservados();
-                    Ndias_reservados = new Neg_Dias_Reservados();
-                    Nanualidades = new Neg_Anualidades();
-                    Eanualidades = new Ent_Anualidades();
-                    Nanos = new Neg_Anos_Institucion_Anterior();
-                    Eanos = new Ent_Anos_Institucion_Anterior();
-                    Ndias_disponibles = new Neg_Dias_Disponibles();
-                    Edias_disponibles = new Ent_Dias_Disponibles();
-                    Eanualidades = Nanualidades.LeerAnualidad(Convert.ToInt32(this.Txt_Cedula.Text));
-                    Eanos = Nanos.LeerAnos_Anterior(Convert.ToInt32(this.Txt_Cedula.Text));
-                    Decimal Saldosa = Ndias_disponibles.LeerSaldo(Convert.ToInt32(this.Txt_Cedula.Text));
-                    Decimal Anos_Anterior = Eanos.Cantidad_Dias;
-                    Decimal Anualidades = Eanualidades.Cantidad_Dias;
-                    Decimal Saldos = Anos_Anterior + Anualidades + Saldosa;
-                    Decimal Cantidad_dias = Convert.ToDecimal(this.Txt_Cantidad_Dias.Text);
-                    if (Cantidad_dias <= Saldos)
+            try
+            {
+                Edias_reservados = new Ent_Dias_Reservados();
+                Ndias_reservados = new Neg_Dias_Reservados();
+                Nanualidades = new Neg_Anualidades();
+                Eanualidades = new Ent_Anualidades();
+                Nanos = new Neg_Anos_Institucion_Anterior();
+                Eanos = new Ent_Anos_Institucion_Anterior();
+                Ndias_disponibles = new Neg_Dias_Disponibles();
+                Edias_disponibles = new Ent_Dias_Disponibles();
+                Eanualidades = Nanualidades.LeerAnualidad(Convert.ToInt32(this.Txt_Cedula.Text));
+                Eanos = Nanos.LeerAnos_Anterior(Convert.ToInt32(this.Txt_Cedula.Text));
+                Double Saldosa = Convert.ToDouble(Ndias_disponibles.LeerSaldo(Convert.ToInt32(this.Txt_Cedula.Text)));
+                Double Anos_Anterior = Convert.ToDouble(Eanos.Cantidad_Dias);
+                Double Anualidades = Convert.ToDouble(Eanualidades.Cantidad_Dias);
+                Double Saldos = Anos_Anterior + Anualidades + Saldosa;
+                Double Cantidad_dias = Convert.ToDouble(this.Txt_Cantidad_Dias.Text.ToString());
+                if (Cantidad_dias <= Saldos)
+                {
+                    Double res = 0;
+                    res = Cantidad_dias;
+                    Int32 Var = Dat_Dias_Disponibles.Rows.Count;
+                    if (Saldosa == 0)
                     {
-                        Decimal res = 0;
-                        res = Cantidad_dias;
-                        Int32 Var = Dat_Dias_Disponibles.Rows.Count;
-                        if (Saldosa == 0)
-                        {
 
-                        }
-                        else
+                    }
+                    else
+                    {
+                        for (int i = 0; i < Dat_Dias_Disponibles.Rows.Count; i++)
                         {
-                            for (int i = 0; i < Dat_Dias_Disponibles.Rows.Count; i++)
+                            if (res <= Convert.ToDouble(Dat_Dias_Disponibles.Rows[i].Cells[1].Value) && res != 0)
                             {
-                                if (res <= Convert.ToDecimal(Dat_Dias_Disponibles.Rows[i].Cells[1].Value) && res != 0)
-                                {
-                                    Dat_Dias_Disponibles.Rows[i].Cells[2].Value = Convert.ToString(Convert.ToDecimal(Dat_Dias_Disponibles.Rows[i].Cells[1].Value.ToString()) - Cantidad_dias);
+                                //Dat_Dias_Disponibles.Rows[i].Cells[2].Value = Convert.ToString(Convert.ToDouble(Dat_Dias_Disponibles.Rows[i].Cells[1].Value.ToString()) - Cantidad_dias);
 
-                                    Edias_disponibles.Ano = Convert.ToInt32(Dat_Dias_Disponibles.Rows[i].Cells[0].Value.ToString());
-                                    Edias_disponibles.Cantidad_Dias = Convert.ToDecimal(Dat_Dias_Disponibles.Rows[i].Cells[1].Value.ToString()) - res;
-                                    Edias_disponibles.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
-                                    Ndias_disponibles.Actualizar(Edias_disponibles);
-                                    res = 0;
-                                }
-                                else
+                                Edias_disponibles.Ano = Convert.ToInt32(Dat_Dias_Disponibles.Rows[i].Cells[0].Value.ToString());
+                                Edias_disponibles.Cantidad_Dias = Convert.ToDecimal(Convert.ToDouble(Dat_Dias_Disponibles.Rows[i].Cells[1].Value.ToString()) - res);
+                                Edias_disponibles.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
+                                Ndias_disponibles.Actualizar(Edias_disponibles);
+                                res = 0;
+                            }
+                            else
+                            {
+                                if (res >= Convert.ToDouble(Dat_Dias_Disponibles.Rows[i].Cells[1].Value.ToString()) && res != 0)
                                 {
-                                    if (res >= Convert.ToDecimal(Dat_Dias_Disponibles.Rows[i].Cells[1].Value.ToString()) && res != 0)
+
+
+                                    if (res == 0)
                                     {
 
+                                    }
+                                    if (res < 0)
+                                    {
 
-                                        if (res == 0)
-                                        {
-
-                                        }
-                                        if (res < 0)
-                                        {
-
-                                        }
-                                        if (res > 0)
-                                        {
-                                            res = res - Convert.ToDecimal(Dat_Dias_Disponibles.Rows[i].Cells[1].Value.ToString());
-                                            Edias_disponibles.Ano = Convert.ToInt32(Dat_Dias_Disponibles.Rows[i].Cells[0].Value.ToString());
-                                            Edias_disponibles.Cantidad_Dias = Convert.ToDecimal(Dat_Dias_Disponibles.Rows[i].Cells[1].Value.ToString()) - Convert.ToDecimal(Dat_Dias_Disponibles.Rows[i].Cells[1].Value.ToString());
-                                            Edias_disponibles.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
-                                            Ndias_disponibles.Actualizar(Edias_disponibles);
-                                        }
+                                    }
+                                    if (res > 0)
+                                    {
+                                        res = res - Convert.ToDouble(Dat_Dias_Disponibles.Rows[i].Cells[1].Value.ToString());
+                                        Edias_disponibles.Ano = Convert.ToInt32(Dat_Dias_Disponibles.Rows[i].Cells[0].Value.ToString());
+                                        Edias_disponibles.Cantidad_Dias = Convert.ToDecimal(Convert.ToDouble(Dat_Dias_Disponibles.Rows[i].Cells[1].Value.ToString()) - Convert.ToDouble(Dat_Dias_Disponibles.Rows[i].Cells[1].Value.ToString()));
+                                        Edias_disponibles.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
+                                        Ndias_disponibles.Actualizar(Edias_disponibles);
                                     }
                                 }
                             }
                         }
+                    }
+                    if (res > 0)
+                    {
+                        if (res >= Anualidades)
+                        {
+                            res = res - Anualidades;
+                            Eanualidades.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
+                            Eanualidades.Cantidad_Dias = 0;
+                            Nanualidades.Actualizar(Eanualidades);
+                        }
+                        else if (res < Anualidades)
+                        {
+                            Anualidades = Anualidades - res;
+                            Eanualidades.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
+                            Eanualidades.Cantidad_Dias = Convert.ToDecimal(Anualidades);
+                            Nanualidades.Actualizar(Eanualidades);
+                            res = 0;
+                        }
+
                         if (res > 0)
                         {
-                            if (res >= Anualidades)
+                            if (res > Anos_Anterior)
                             {
-                                res = res - Anualidades;
-                                Eanualidades.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
-                                Eanualidades.Cantidad_Dias = 0;
-                                Nanualidades.Actualizar(Eanualidades);
+                                res = res - Anos_Anterior;
+                                Eanos.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
+                                Eanos.Cantidad_Dias = 0;
+                                Nanos.Actualizar(Eanos);
                             }
-                            else if (res < Anualidades)
+                            else if (res < Anos_Anterior)
                             {
-                                Anualidades = Anualidades - res;
-                                Eanualidades.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
-                                Eanualidades.Cantidad_Dias = Anualidades;
-                                Nanualidades.Actualizar(Eanualidades);
-                                res = 0;
+                                Anos_Anterior = Anos_Anterior - res;
+                                Eanos.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
+                                Eanos.Cantidad_Dias = Convert.ToDecimal(Anos_Anterior);
+                                Nanos.Actualizar(Eanos);
                             }
-
-                            if (res > 0)
-                            {
-                                if (res > Anos_Anterior)
-                                {
-                                    res = res - Anos_Anterior;
-                                    Eanos.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
-                                    Eanos.Cantidad_Dias = 0;
-                                    Nanos.Actualizar(Eanos);
-                                }
-                                else if (res < Anos_Anterior)
-                                {
-                                    Anos_Anterior = Anos_Anterior - res;
-                                    Eanos.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
-                                    Eanos.Cantidad_Dias = Anos_Anterior;
-                                    Nanos.Actualizar(Eanos);
-                                }
-                            }
-
                         }
 
-                        Edias_reservados.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
-                        Edias_reservados.Fecha_Inicial = Convert.ToDateTime(this.Txt_Fecha_Inicial.Text);
-                        Edias_reservados.Fecha_Final =Convert.ToDateTime(this.Txt_Fecha_Final.Text);
-                        Edias_reservados.Detalle = this.Txt_Detalle.Text;
-                        Edias_reservados.Reservado_El = DateTime.Now;
-                        Edias_reservados.Cantidad_dias = Convert.ToDecimal(this.Txt_Cantidad_Dias.Text);
-                        Int32 Ejecutar = Ndias_reservados.Insertar(Edias_reservados);
-                        if(Ejecutar>0)
-                        {
-                            MessageBox.Show("Dias reservados correctamente","Dias reservados correctamente",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                            A_Personal frm = new A_Personal();
-                            frm.MdiParent = this.MdiParent;
-                            frm.Show();
-                            limpiarcampos();
-                        }
                     }
-                    else
+
+                    Edias_reservados.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
+                    Edias_reservados.Fecha_Inicial = Convert.ToDateTime(this.Txt_Fecha_Inicial.Text);
+                    Edias_reservados.Fecha_Final = Convert.ToDateTime(this.Txt_Fecha_Final.Text);
+                    Edias_reservados.Detalle = this.Txt_Detalle.Text;
+                    Edias_reservados.Reservado_El = DateTime.Now;
+                    Edias_reservados.Cantidad_dias = Convert.ToDecimal(Convert.ToDouble(this.Txt_Cantidad_Dias.Text));
+                    Int32 Ejecutar = Ndias_reservados.Insertar(Edias_reservados);
+                    if (Ejecutar > 0)
                     {
-                        MessageBox.Show("No posee suficientes dias");
+                        MessageBox.Show("Dias reservados correctamente", "Dias reservados correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        A_Personal frm = new A_Personal();
+                        frm.MdiParent = this.MdiParent;
+                        frm.Show();
+                        limpiarcampos();
                     }
                 }
+                else
+                {
+                    MessageBox.Show("No posee suficientes dias");
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Error:", ex.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+                }
+
             private void limpiarcampos()
             {
                 P_Reservar_Dias_Load(null, null);
@@ -288,6 +310,23 @@ namespace Presentacion
                 this.Txt_Fecha_Inicial.Text = "";
                 this.Dat_Dias_Disponibles.DataSource = "";
                 this.Dat_Dias_Reservados.DataSource = "";
+            }
+
+            private void Txt_Cantidad_Dias_KeyPress(object sender, KeyPressEventArgs e)
+            {
+                CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
+
+                if (char.IsNumber(e.KeyChar) ||
+
+                    e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator
+
+                    )
+
+                    e.Handled = false;
+
+                else
+
+                    e.Handled = true;
             }
         }
     }

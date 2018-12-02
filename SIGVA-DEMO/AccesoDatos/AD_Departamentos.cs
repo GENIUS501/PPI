@@ -29,7 +29,7 @@ namespace AccesoDatos
                                       };
                 FilasAfectadas = Database.exectuteNonQuery(sentencia, parametros);
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 throw ex;
             }

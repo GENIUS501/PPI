@@ -42,6 +42,29 @@ namespace AccesoDatos
         }
         #endregion
 
+        #region "Reporte"
+        public DataTable llenar_datagrid_reporte(DateTime Fecha_ini,DateTime Fecha_Fin)
+        {
+            try
+            {
+                using (SqlConnection cnx = new SqlConnection(vCadenaConexion))
+                {
+
+                    string query = "SELECT * FROM Dias_Reservados Where Reservado_El BETWEEN '"+Fecha_ini+"' AND '"+Fecha_Fin+"'";
+                    SqlCommand cmd = new SqlCommand(query, cnx);
+                    SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adaptador.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
         #region "Llenar datagrid"
         public DataTable llenar_datagrid(Int32 Pcodigo)
         {

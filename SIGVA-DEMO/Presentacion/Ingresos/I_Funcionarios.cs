@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Presentacion;
 using Entidades;
 using Negocios;
+using System.Data.SqlClient;
 
 namespace Presentacion
 {
@@ -91,9 +92,15 @@ namespace Presentacion
                         Agregar_funcionario();
                     }
                 }
-            }catch(Exception ex)
+            }catch(SqlException ex)
             {
-                MessageBox.Show("Error: " + ex);
+                if (ex.Number == 2627)
+                {
+                    MessageBox.Show("El funcionario: " + this.Txt_Nombre.Text + this.Txt_Apellido1.Text + this.Txt_Apellido2.Text + " ya existe.", "El funcionario ya existe.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }else
+                {
+                    MessageBox.Show(ex.ToString(),"Error al agregar datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
             }
         }
         private void Agregar_funcionario()

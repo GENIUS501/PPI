@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AccesoDatos;
 using Entidades;
+using System.Data.SqlClient;
 
 namespace Negocios
 {
@@ -21,9 +22,9 @@ namespace Negocios
                IControlador = new AccesoDatos.AD_Departamentos();
                FilasAfectadas = IControlador.Insertar(Data);
            }
-           catch (Exception ex)
+           catch (SqlException ex)
            {
-               throw new Exception(ex.Message, ex);
+               throw ex;
            }
 
            return FilasAfectadas;

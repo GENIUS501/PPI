@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Presentacion;
 using Negocios;
 using Entidades;
+using System.Data.SqlClient;
 
 namespace Presentacion
 {
@@ -47,9 +48,15 @@ namespace Presentacion
                 {
                     MessageBox.Show("Error al agregar Departamento");
                 }
-            }catch (Exception ex)
+            }catch (SqlException ex)
             {
-                MessageBox.Show("Error al agregar Departamento: "+ex);
+                if (ex.Number == 2627)
+                {
+                    MessageBox.Show("El departamento: "+this.Txt_Departamento.Text+" ya existe.","El departamento ya existe",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }else
+                {
+                    MessageBox.Show(ex.ToString(), "Error al agregar el departamento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }          
         }
 

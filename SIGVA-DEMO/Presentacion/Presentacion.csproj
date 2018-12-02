@@ -298,6 +298,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SIGVADataSetfun.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SIGVADataSetrpt_rango.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIGVADataSetrpt_rango.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SIGVADataSetUsuarios.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -315,10 +320,28 @@
     <Compile Include="Reportes\VR_Rpt_Saldos_Disponibles.Designer.cs">
       <DependentUpon>VR_Rpt_Saldos_Disponibles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\VR_Rpt_Rango_Fechas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\VR_Rpt_Rango_Fechas.Designer.cs">
+      <DependentUpon>VR_Rpt_Rango_Fechas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIGVADataSet_Bitacora.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIGVADataSet_Bitacora.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Auditoria\VR_A_Movimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auditoria\VR_A_Movimientos.Designer.cs">
+      <DependentUpon>VR_A_Movimientos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Accion_de_personal\Rpt_Accion_Personal.rdlc" />
     <EmbeddedResource Include="Acerca_de.resx">
       <DependentUpon>Acerca_de.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Auditoria\A_Movimientos.rdlc" />
     <EmbeddedResource Include="Auditoria\A_Sessiones.resx">
       <DependentUpon>A_Sessiones.cs</DependentUpon>
     </EmbeddedResource>
@@ -416,6 +439,7 @@
     <EmbeddedResource Include="Reportes\Rpt_Rango.resx">
       <DependentUpon>Rpt_Rango.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rpt_Rango_Fechas.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Saldos_Disponibles.resx">
       <DependentUpon>Rpt_Saldos_Disponibles.cs</DependentUpon>
     </EmbeddedResource>
@@ -430,6 +454,12 @@
     <EmbeddedResource Include="Reportes\Rpt_Saldos_Disponibles.rdlc" />
     <EmbeddedResource Include="Reportes\VR_Rpt_Saldos_Disponibles.resx">
       <DependentUpon>VR_Rpt_Saldos_Disponibles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\VR_Rpt_Rango_Fechas.resx">
+      <DependentUpon>VR_Rpt_Rango_Fechas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auditoria\VR_A_Movimientos.resx">
+      <DependentUpon>VR_A_Movimientos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\A_Sessiones.datasource" />
     <None Include="Properties\DataSources\Entidades.Ent_Sessiones.datasource" />
@@ -563,6 +593,17 @@
     <None Include="SIGVADataSetfun.xss">
       <DependentUpon>SIGVADataSetfun.xsd</DependentUpon>
     </None>
+    <None Include="SIGVADataSetrpt_rango.xsc">
+      <DependentUpon>SIGVADataSetrpt_rango.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSetrpt_rango.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SIGVADataSetrpt_rango.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIGVADataSetrpt_rango.xss">
+      <DependentUpon>SIGVADataSetrpt_rango.xsd</DependentUpon>
+    </None>
     <None Include="SIGVADataSetUsuarios.xsc">
       <DependentUpon>SIGVADataSetUsuarios.xsd</DependentUpon>
     </None>
@@ -573,6 +614,17 @@
     </None>
     <None Include="SIGVADataSetUsuarios.xss">
       <DependentUpon>SIGVADataSetUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSet_Bitacora.xsc">
+      <DependentUpon>SIGVADataSet_Bitacora.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSet_Bitacora.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SIGVADataSet_Bitacora.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIGVADataSet_Bitacora.xss">
+      <DependentUpon>SIGVADataSet_Bitacora.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

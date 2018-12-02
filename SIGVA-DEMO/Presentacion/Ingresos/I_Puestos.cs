@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Presentacion;
 using Negocios;
 using Entidades;
+using System.Data.SqlClient;
 
 namespace Presentacion
 {
@@ -65,11 +66,18 @@ namespace Presentacion
                     I_Puestos_Load(null,null);
                 }else
                 {
-                    MessageBox.Show("Error al agregar datos");
+                    MessageBox.Show("Error al agregar puesto");
                 }
-            }catch(Exception ex)
+            }catch(SqlException ex)
             {
-                MessageBox.Show("Error al agregar datos: " + ex);
+                if(ex.Number == 2627)
+                {
+                    MessageBox.Show("El Puesto: " + this.Txt_Nombre_Puestos + " ya existe", "Puesto ya existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }else
+                {
+                    MessageBox.Show(ex.ToString(), "Error al agregar puesto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
             }
         }
     }

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AD_Anos_Institucion_Anterior.cs" />
     <Compile Include="AD_Anualidades.cs" />
+    <Compile Include="AD_Bitacora.cs" />
     <Compile Include="AD_Departamentos.cs" />
     <Compile Include="AD_Dias_Devolucion.cs" />
     <Compile Include="AD_Dias_Disponibles.cs" />

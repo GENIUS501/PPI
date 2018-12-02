@@ -5,13 +5,13 @@ GO
 
 CREATE TABLE DEPARTAMENTOS(
 	Id_Departamento INT IDENTITY(1,1) PRIMARY KEY  NOT NULL,
-	Nombre_Departamento VARCHAR(25) NOT NULL,
+	Nombre_Departamento VARCHAR(50) NOT NULL,
 	CONSTRAINT AK_Nombre_Departamento UNIQUE(Nombre_Departamento)   
 );
 
 CREATE TABLE PUESTOS(
 	Id_Puesto INT IDENTITY(1,1)  NOT NULL,
-	Nombre_Puesto VARCHAR(25)  NOT NULL,
+	Nombre_Puesto VARCHAR(50)  NOT NULL,
 	Id_Departamento INT NOT NULL,
 	PRIMARY KEY (Nombre_Puesto,Id_Departamento),
 	CONSTRAINT AK_Id_Puesto UNIQUE(Id_Puesto),
@@ -28,7 +28,7 @@ CREATE TABLE FUNCIONARIOS(
 	Fecha_De_Ingreso DATE NOT NULL,
 	Direccion VARCHAR(MAX) NOT NULL,
 	Telefono INT NOT NULL,
-	Email VARCHAR(50),
+	Email VARCHAR(MAX),
 	Fecha_de_Anualidad DATE NOT NULL,
 	Estatus VARCHAR(8) NOT NULL,
 	Anos_Institucion_anterior INT,
@@ -38,7 +38,7 @@ CREATE TABLE FUNCIONARIOS(
 
 CREATE TABLE Dias_Disponibles(
 	Ano INT  NOT NULL,
-	Cantidad_Dias DECIMAL NOT NULL,
+	Cantidad_Dias FLOAT NOT NULL,
 	Cedula INT NOT NULL,
 	CONSTRAINT FK_DIA_FUN FOREIGN KEY (Cedula) references FUNCIONARIOS(Cedula)
 );
@@ -50,7 +50,7 @@ CREATE TABLE Dias_Reservados(
 	Detalle	VARCHAR(MAX) ,
 	Reservado_El	DATETIME NOT NULL,
 	Id_Reservacion	INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	Cantidad_dias	Decimal NOT NULL,
+	Cantidad_dias	FLOAT NOT NULL,
 	CONSTRAINT FK_RES_FUN FOREIGN KEY (Cedula) references FUNCIONARIOS(Cedula)
 );
 

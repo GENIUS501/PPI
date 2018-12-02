@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Presentacion;
 using Entidades;
 using Negocios;
+using System.Data.SqlClient;
 
 namespace Presentacion
 {
@@ -118,9 +119,17 @@ namespace Presentacion
                         MessageBox.Show("Formarto de cedula incorrecto");
                     }
 
-                }catch(Exception ex)
+                }catch( SqlException ex)
                 {
-                    MessageBox.Show("Error al agregar : " + ex);
+                    if (ex.Number == 2627)
+                    {
+                        MessageBox.Show("El Usuario: "+this.Txt_Nombre.Text+" ya existe.", "El Usuario ya existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show(ex.ToString(),"Error al agregar usuario",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
+                    
                 }
             }
         }
