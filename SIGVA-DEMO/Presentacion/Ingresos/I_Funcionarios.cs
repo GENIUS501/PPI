@@ -241,7 +241,7 @@ namespace Presentacion
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al agregar las anualidades", "Error al agregar las anualidades", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), "Error al agregar las anualidades", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void Calcular_dias()

@@ -30,7 +30,7 @@ namespace Presentacion
                  this.dEPARTAMENTOSTableAdapter.Fill(this.sIGVADataSet1Departamentos.DEPARTAMENTOS);
             }
             catch (Exception ex) {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(), "Error al cargar los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }  
 
         }
@@ -41,7 +41,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(), "Error ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -54,7 +54,7 @@ namespace Presentacion
                 {
                     if (valorPrimerCelda == -1)
                     {
-                        MessageBox.Show("Favor de seleccionar los datos a eliminar");
+                        MessageBox.Show("Favor de seleccionar los datos a eliminar", "Favor de seleccionar los datos a eliminar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     else
@@ -64,19 +64,19 @@ namespace Presentacion
                         Eliminar = Ndepartamentos.Eliminar(valorPrimerCelda);
                         if (Eliminar > 0)
                         {
-                            MessageBox.Show("Departamento Eliminado exitosamente");
+                            MessageBox.Show("Departamento Eliminado exitosamente", "Departamento Eliminado exitosamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             valorPrimerCelda = -1;
                             L_Departamentos_Load(null, null);
                         }
                         else
                         {
-                            MessageBox.Show("Error al eliminar los datos: ");
+                            MessageBox.Show("Error al eliminar los datos", "Error al eliminar los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al eliminar los datos: "+ex);
+                MessageBox.Show(ex.ToString(), "Error al eliminar los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -91,7 +91,7 @@ namespace Presentacion
             {
                 if (valorPrimerCelda == -1)
                 {
-                    MessageBox.Show("Favor de seleccionar los datos a modificar");
+                    MessageBox.Show("Favor de seleccionar los datos a modificar", "Favor de seleccionar los datos a modificar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }else
                 {
@@ -112,7 +112,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(), "Error al modificar los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -122,7 +122,7 @@ namespace Presentacion
             {
                  if (valorPrimerCelda == -1)
                  {
-                     MessageBox.Show("Favor de seleccionar los datos a consultar");
+                     MessageBox.Show("Favor de seleccionar los datos a consultar", "Favor de seleccionar los datos a consultar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                      return;
                  }
                  else
@@ -145,7 +145,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(), "Error al consultar los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -157,7 +157,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex);
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

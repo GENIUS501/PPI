@@ -30,23 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.Txt_Cedula = new System.Windows.Forms.TextBox();
+            this.Cmd_Buscar = new System.Windows.Forms.Button();
+            this.Txt_Fecha_Ingreso = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Txt_Telefono = new System.Windows.Forms.TextBox();
+            this.Txt_Apellido2 = new System.Windows.Forms.TextBox();
+            this.Txt_Apellido1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.Txt_Numero_Boleta = new System.Windows.Forms.TextBox();
+            this.Txt_Cantidad_Dias = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.Txt_Detalle = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.anoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,28 +100,28 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Cedula";
             // 
-            // textBox1
+            // Txt_Cedula
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.Txt_Cedula.Location = new System.Drawing.Point(15, 82);
+            this.Txt_Cedula.Name = "Txt_Cedula";
+            this.Txt_Cedula.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Cedula.TabIndex = 3;
             // 
-            // button1
+            // Cmd_Buscar
             // 
-            this.button1.Location = new System.Drawing.Point(122, 78);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Cmd_Buscar.Location = new System.Drawing.Point(122, 78);
+            this.Cmd_Buscar.Name = "Cmd_Buscar";
+            this.Cmd_Buscar.Size = new System.Drawing.Size(75, 23);
+            this.Cmd_Buscar.TabIndex = 4;
+            this.Cmd_Buscar.Text = "Buscar";
+            this.Cmd_Buscar.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker3
+            // Txt_Fecha_Ingreso
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(486, 143);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker3.TabIndex = 38;
+            this.Txt_Fecha_Ingreso.Location = new System.Drawing.Point(486, 143);
+            this.Txt_Fecha_Ingreso.Name = "Txt_Fecha_Ingreso";
+            this.Txt_Fecha_Ingreso.Size = new System.Drawing.Size(200, 20);
+            this.Txt_Fecha_Ingreso.TabIndex = 38;
             // 
             // label11
             // 
@@ -132,26 +132,26 @@
             this.label11.TabIndex = 37;
             this.label11.Text = "Fecha de cumplimiento de vacaciones";
             // 
-            // textBox4
+            // Txt_Telefono
             // 
-            this.textBox4.Location = new System.Drawing.Point(370, 143);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 36;
+            this.Txt_Telefono.Location = new System.Drawing.Point(370, 143);
+            this.Txt_Telefono.Name = "Txt_Telefono";
+            this.Txt_Telefono.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Telefono.TabIndex = 36;
             // 
-            // textBox3
+            // Txt_Apellido2
             // 
-            this.textBox3.Location = new System.Drawing.Point(250, 143);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 35;
+            this.Txt_Apellido2.Location = new System.Drawing.Point(250, 143);
+            this.Txt_Apellido2.Name = "Txt_Apellido2";
+            this.Txt_Apellido2.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Apellido2.TabIndex = 35;
             // 
-            // textBox2
+            // Txt_Apellido1
             // 
-            this.textBox2.Location = new System.Drawing.Point(135, 143);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 34;
+            this.Txt_Apellido1.Location = new System.Drawing.Point(135, 143);
+            this.Txt_Apellido1.Name = "Txt_Apellido1";
+            this.Txt_Apellido1.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Apellido1.TabIndex = 34;
             // 
             // label5
             // 
@@ -162,12 +162,12 @@
             this.label5.TabIndex = 33;
             this.label5.Text = "Telefono";
             // 
-            // textBox5
+            // Txt_Nombre
             // 
-            this.textBox5.Location = new System.Drawing.Point(17, 144);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 32;
+            this.Txt_Nombre.Location = new System.Drawing.Point(17, 144);
+            this.Txt_Nombre.Name = "Txt_Nombre";
+            this.Txt_Nombre.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Nombre.TabIndex = 32;
             // 
             // label3
             // 
@@ -205,19 +205,19 @@
             this.label6.TabIndex = 39;
             this.label6.Text = "Numero de boleta";
             // 
-            // textBox6
+            // Txt_Numero_Boleta
             // 
-            this.textBox6.Location = new System.Drawing.Point(17, 209);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 40;
+            this.Txt_Numero_Boleta.Location = new System.Drawing.Point(17, 209);
+            this.Txt_Numero_Boleta.Name = "Txt_Numero_Boleta";
+            this.Txt_Numero_Boleta.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Numero_Boleta.TabIndex = 40;
             // 
-            // textBox7
+            // Txt_Cantidad_Dias
             // 
-            this.textBox7.Location = new System.Drawing.Point(135, 208);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 41;
+            this.Txt_Cantidad_Dias.Location = new System.Drawing.Point(135, 208);
+            this.Txt_Cantidad_Dias.Name = "Txt_Cantidad_Dias";
+            this.Txt_Cantidad_Dias.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Cantidad_Dias.TabIndex = 41;
             // 
             // label7
             // 
@@ -228,13 +228,13 @@
             this.label7.TabIndex = 42;
             this.label7.Text = "Cantidad de dias a devolver";
             // 
-            // textBox8
+            // Txt_Detalle
             // 
-            this.textBox8.Location = new System.Drawing.Point(293, 208);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(123, 41);
-            this.textBox8.TabIndex = 43;
+            this.Txt_Detalle.Location = new System.Drawing.Point(293, 208);
+            this.Txt_Detalle.Multiline = true;
+            this.Txt_Detalle.Name = "Txt_Detalle";
+            this.Txt_Detalle.Size = new System.Drawing.Size(123, 41);
+            this.Txt_Detalle.TabIndex = 43;
             // 
             // label8
             // 
@@ -469,45 +469,45 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.Txt_Detalle);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.Txt_Cantidad_Dias);
+            this.Controls.Add(this.Txt_Numero_Boleta);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker3);
+            this.Controls.Add(this.Txt_Fecha_Ingreso);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.Txt_Telefono);
+            this.Controls.Add(this.Txt_Apellido2);
+            this.Controls.Add(this.Txt_Apellido1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.Txt_Nombre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Cmd_Buscar);
+            this.Controls.Add(this.Txt_Cedula);
             this.Controls.Add(this.label1);
             this.Name = "P_Devlover_Dias";
             this.Text = "Devolucion de Dias";
             this.Load += new System.EventHandler(this.P_Devlover_Dias_Load);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.textBox1, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.Txt_Cedula, 0);
+            this.Controls.SetChildIndex(this.Cmd_Buscar, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.textBox5, 0);
+            this.Controls.SetChildIndex(this.Txt_Nombre, 0);
             this.Controls.SetChildIndex(this.label5, 0);
-            this.Controls.SetChildIndex(this.textBox2, 0);
-            this.Controls.SetChildIndex(this.textBox3, 0);
-            this.Controls.SetChildIndex(this.textBox4, 0);
+            this.Controls.SetChildIndex(this.Txt_Apellido1, 0);
+            this.Controls.SetChildIndex(this.Txt_Apellido2, 0);
+            this.Controls.SetChildIndex(this.Txt_Telefono, 0);
             this.Controls.SetChildIndex(this.label11, 0);
-            this.Controls.SetChildIndex(this.dateTimePicker3, 0);
+            this.Controls.SetChildIndex(this.Txt_Fecha_Ingreso, 0);
             this.Controls.SetChildIndex(this.label6, 0);
-            this.Controls.SetChildIndex(this.textBox6, 0);
-            this.Controls.SetChildIndex(this.textBox7, 0);
+            this.Controls.SetChildIndex(this.Txt_Numero_Boleta, 0);
+            this.Controls.SetChildIndex(this.Txt_Cantidad_Dias, 0);
             this.Controls.SetChildIndex(this.label7, 0);
-            this.Controls.SetChildIndex(this.textBox8, 0);
+            this.Controls.SetChildIndex(this.Txt_Detalle, 0);
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.dataGridView2, 0);
@@ -532,23 +532,23 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.TextBox Txt_Cedula;
+        private System.Windows.Forms.Button Cmd_Buscar;
+        private System.Windows.Forms.DateTimePicker Txt_Fecha_Ingreso;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Txt_Telefono;
+        private System.Windows.Forms.TextBox Txt_Apellido2;
+        private System.Windows.Forms.TextBox Txt_Apellido1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox Txt_Nombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox Txt_Numero_Boleta;
+        private System.Windows.Forms.TextBox Txt_Cantidad_Dias;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox Txt_Detalle;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource sIGVADataSetDiasDisponiblesBindingSource;

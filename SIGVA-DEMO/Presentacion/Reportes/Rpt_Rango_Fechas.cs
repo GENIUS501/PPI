@@ -17,7 +17,7 @@ namespace Presentacion
     {
         #region "Variables"
         Neg_Dias_Reservados Ndias_Reservados;
-        Ent_Dias_Reservados Edias_Reservados;
+        //Ent_Dias_Reservados Edias_Reservados;
         #endregion
         public Rpt_Rango_Fechas()
         {

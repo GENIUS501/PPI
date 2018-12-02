@@ -56,13 +56,13 @@ CREATE TABLE Dias_Reservados(
 
 CREATE TABLE Anualidades(
 	Cedula INT NOT NULL,
-	Cantidad_Dias DECIMAL,
+	Cantidad_Dias FLOAT,
 	CONSTRAINT FK_ANU_FUN FOREIGN KEY (Cedula) references FUNCIONARIOS(Cedula)
 );
 
 CREATE TABLE Anos_Institucion_Anterior(
 	Cedula INT NOT NULL,
-	Cantidad_Dias Decimal,
+	Cantidad_Dias FLOAT,
 	CONSTRAINT FK_INS_FUN FOREIGN KEY (Cedula) references FUNCIONARIOS(Cedula)
 );
 
@@ -70,7 +70,7 @@ CREATE TABLE DIAS_DEVOLUCION(
 	Id_Devolucion	INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	Fecha_de_devolucion	DATE NOT NULL,
 	Detalle	VARCHAR(MAX),
-	Cantidad_dias	DECIMAL NOT NULL,
+	Cantidad_dias	FLOAT NOT NULL,
 	Id_Reservacion	INT NOT NULL,
 	Cedula 	INT NOT NULL,
 	CONSTRAINT FK_DEV_FUN FOREIGN KEY (Cedula) references FUNCIONARIOS(Cedula),
@@ -88,7 +88,7 @@ CREATE TABLE Saldos_Disponibles(
 CREATE TABLE Disponibles_Saldos(
 	Codigo_reporte	INT PRIMARY KEY NOT NULL,
 	Ano	INT NOT NULL,
-	Cantidad_dias DECIMAL NOT NULL,
+	Cantidad_dias FLOAT NOT NULL,
 	Cedula	INT NOT NULL,
 	CONSTRAINT FK_DIS_SAL FOREIGN KEY (Codigo_reporte) references Saldos_Disponibles(Codigo_de_reporte),
 	CONSTRAINT FK_DIS_FUN FOREIGN KEY (Cedula) references FUNCIONARIOS(Cedula),

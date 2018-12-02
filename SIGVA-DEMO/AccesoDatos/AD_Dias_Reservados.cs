@@ -42,6 +42,47 @@ namespace AccesoDatos
         }
         #endregion
 
+        #region "Leer especifico"
+       public Ent_Dias_Reservados LeerCodigoLlave(Int32 pCodigo)
+        {
+            try
+            {
+                DataTable dtConsulta = new DataTable();
+                Ent_Dias_Reservados vRegistro = new Ent_Dias_Reservados();
+
+                string commandText = "SELECT [Cedula],[Fecha_Inicial],[Fecha_Final],[Detalle],[Reservado_El],[Id_Reservacion],[Cantidad_dias] FROM [dbo].[Dias_Reservados] WHERE [Id_Reservacion] =  " + pCodigo;
+                //string commandText = commandTexta;
+
+                using (SqlConnection connection = new SqlConnection(vCadenaConexion))
+                {
+                    SqlCommand command = new SqlCommand(commandText, connection);
+
+                    SqlDataAdapter DataAdapter = new SqlDataAdapter(command);
+                    DataAdapter.Fill(dtConsulta);
+                }
+
+                if (dtConsulta.Rows.Count != 0)
+                {
+                    vRegistro.Cedula = Convert.ToInt32 (dtConsulta.Rows[0]["Cedula"]);
+                    vRegistro.Fecha_Inicial = Convert.ToDateTime(dtConsulta.Rows[0]["Fecha_Inicial"].ToString());
+                    vRegistro.Fecha_Final = Convert.ToDateTime(dtConsulta.Rows[0]["Fecha_Final"].ToString());
+                    vRegistro.Detalle = dtConsulta.Rows[0]["Detalle"].ToString();
+                    vRegistro.Reservado_El = Convert.ToDateTime(dtConsulta.Rows[0]["Reservado_El"].ToString());
+                    vRegistro.Id_Reservacion =Convert.ToInt32(dtConsulta.Rows[0]["Id_Reservacion"].ToString());
+                    vRegistro.Cantidad_dias = Convert.ToDecimal(dtConsulta.Rows[0]["Cantidad_dias"]);
+                }
+
+
+                return vRegistro;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
         #region "Reporte"
         public DataTable llenar_datagrid_reporte(DateTime Fecha_ini,DateTime Fecha_Fin)
         {

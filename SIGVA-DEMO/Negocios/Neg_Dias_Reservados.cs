@@ -31,6 +31,22 @@ namespace Negocios
        }
        #endregion
 
+       #region "Leer Especifico"
+       public Ent_Dias_Reservados LeerCodigoLlave(Int32 pCodigo)
+       {
+           AccesoDatos.AD_Dias_Reservados IControlador;
+           try
+           {
+               IControlador = new AccesoDatos.AD_Dias_Reservados();
+               return IControlador.LeerCodigoLlave(pCodigo);
+           }
+           catch (Exception ex)
+           {
+               throw new Exception(ex.Message, ex);
+           }
+       }
+       #endregion
+
        #region "Llenar datagrid reporte"
        public DataTable Llenardatagridreporte(DateTime Fecha_Ini,DateTime Fecha_Fin)
        {

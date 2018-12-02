@@ -42,6 +42,7 @@ namespace AccesoDatos
                 return FilasAfectadas;
         }
         #endregion
+
         #region "Actualizar"
         public Int32 Actualizar(Ent_Usuarios uRegistro)
         {
@@ -70,6 +71,7 @@ namespace AccesoDatos
                 return FilasAfectadas;
         }
         #endregion
+
         #region "Leer Especifico"
         public Ent_Usuarios LeerCodigoLlave(string pCodigo)
         {
@@ -110,6 +112,7 @@ namespace AccesoDatos
             }
         }
         #endregion
+
         #region "Login"
         public  Ent_Usuarios Login(string usera, string pass)
         {
@@ -135,6 +138,7 @@ namespace AccesoDatos
             return user;
         }
         #endregion
+
         #region "Eliminar"
         public  Int32 Eliminar(string user)
         {

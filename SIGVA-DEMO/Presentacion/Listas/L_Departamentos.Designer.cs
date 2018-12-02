@@ -51,7 +51,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(6, 84);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(244, 239);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // idDepartamentoDataGridViewTextBoxColumn
