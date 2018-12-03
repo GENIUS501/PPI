@@ -45,11 +45,16 @@
             this.Cmd_Imprimir = new System.Windows.Forms.Button();
             this.Btn_Salir = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.sIGVADataSet_Bitacora = new Presentacion.SIGVADataSet_Bitacora();
+            this.bitacoraBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bitacoraTableAdapter1 = new Presentacion.SIGVADataSet_BitacoraTableAdapters.BitacoraTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.Dat_Bitacora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bitacoraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet_Bitacora)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bitacoraBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // Txt_Usuario
@@ -81,6 +86,8 @@
             // 
             // Dat_Bitacora
             // 
+            this.Dat_Bitacora.AllowUserToAddRows = false;
+            this.Dat_Bitacora.AllowUserToDeleteRows = false;
             this.Dat_Bitacora.AutoGenerateColumns = false;
             this.Dat_Bitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dat_Bitacora.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -89,9 +96,10 @@
             this.fechaHoraDataGridViewTextBoxColumn,
             this.tablaDataGridViewTextBoxColumn,
             this.usuarioDataGridViewTextBoxColumn});
-            this.Dat_Bitacora.DataSource = this.bitacoraBindingSource;
+            this.Dat_Bitacora.DataSource = this.bitacoraBindingSource1;
             this.Dat_Bitacora.Location = new System.Drawing.Point(17, 68);
             this.Dat_Bitacora.Name = "Dat_Bitacora";
+            this.Dat_Bitacora.ReadOnly = true;
             this.Dat_Bitacora.Size = new System.Drawing.Size(542, 150);
             this.Dat_Bitacora.TabIndex = 5;
             // 
@@ -107,24 +115,28 @@
             this.accionDataGridViewTextBoxColumn.DataPropertyName = "Accion";
             this.accionDataGridViewTextBoxColumn.HeaderText = "Accion";
             this.accionDataGridViewTextBoxColumn.Name = "accionDataGridViewTextBoxColumn";
+            this.accionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fechaHoraDataGridViewTextBoxColumn
             // 
             this.fechaHoraDataGridViewTextBoxColumn.DataPropertyName = "Fecha_Hora";
             this.fechaHoraDataGridViewTextBoxColumn.HeaderText = "Fecha_Hora";
             this.fechaHoraDataGridViewTextBoxColumn.Name = "fechaHoraDataGridViewTextBoxColumn";
+            this.fechaHoraDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tablaDataGridViewTextBoxColumn
             // 
             this.tablaDataGridViewTextBoxColumn.DataPropertyName = "Tabla";
             this.tablaDataGridViewTextBoxColumn.HeaderText = "Tabla";
             this.tablaDataGridViewTextBoxColumn.Name = "tablaDataGridViewTextBoxColumn";
+            this.tablaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // usuarioDataGridViewTextBoxColumn
             // 
             this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
             this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
             this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bitacoraBindingSource
             // 
@@ -184,6 +196,20 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // sIGVADataSet_Bitacora
+            // 
+            this.sIGVADataSet_Bitacora.DataSetName = "SIGVADataSet_Bitacora";
+            this.sIGVADataSet_Bitacora.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bitacoraBindingSource1
+            // 
+            this.bitacoraBindingSource1.DataMember = "Bitacora";
+            this.bitacoraBindingSource1.DataSource = this.sIGVADataSet_Bitacora;
+            // 
+            // bitacoraTableAdapter1
+            // 
+            this.bitacoraTableAdapter1.ClearBeforeFill = true;
+            // 
             // A_Movimientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,6 +232,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet_Bitacora)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bitacoraBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -228,5 +256,8 @@
         private System.Windows.Forms.Button Cmd_Imprimir;
         private System.Windows.Forms.Button Btn_Salir;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private SIGVADataSet_Bitacora sIGVADataSet_Bitacora;
+        private System.Windows.Forms.BindingSource bitacoraBindingSource1;
+        private SIGVADataSet_BitacoraTableAdapters.BitacoraTableAdapter bitacoraTableAdapter1;
     }
 }

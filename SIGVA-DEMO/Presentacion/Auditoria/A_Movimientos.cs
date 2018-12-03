@@ -24,6 +24,8 @@ namespace Presentacion
 
         private void A_Movimientos_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'sIGVADataSet_Bitacora.Bitacora' Puede moverla o quitarla según sea necesario.
+            this.bitacoraTableAdapter1.Fill(this.sIGVADataSet_Bitacora.Bitacora);
             try
             {
                 // TODO: esta línea de código carga datos en la tabla 'sIGVADataSet2.Bitacora' Puede moverla o quitarla según sea necesario.
