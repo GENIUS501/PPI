@@ -65,6 +65,40 @@ namespace AccesoDatos
         }
         #endregion
 
+        #region "Consulta especial"
+               public Ent_Dias_Disponibles Leerespecial(Int32 pCedula)
+        {
+            try
+            {
+                DataTable dtConsulta = new DataTable();
+                Ent_Dias_Disponibles vRegistro = new Ent_Dias_Disponibles();
+
+                string commandText = "SELECT TOP (1) Ano,Cantidad_Dias,Cedula  FROM Dias_Disponibles WHERE Cantidad_Dias<12 and Cedula = "+pCedula+" ORDER BY Ano ASC";
+                //string commandText = commandTexta;
+
+                using (SqlConnection connection = new SqlConnection(vCadenaConexion))
+                {
+                    SqlCommand command = new SqlCommand(commandText, connection);
+
+                    SqlDataAdapter DataAdapter = new SqlDataAdapter(command);
+                    DataAdapter.Fill(dtConsulta);
+                }
+
+                if (dtConsulta.Rows.Count != 0)
+                {
+                    vRegistro.Cedula = Convert.ToInt32(dtConsulta.Rows[0]["Cedula"].ToString());
+                    vRegistro.Cantidad_Dias = Convert.ToDecimal(dtConsulta.Rows[0]["Cantidad_Dias"].ToString());
+                    vRegistro.Ano = Convert.ToInt32(dtConsulta.Rows[0]["Ano"].ToString());
+                }
+                return vRegistro;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
 
         #region "Leer Saldos"
         public Decimal LeerSaldos(Int32 pCedula)

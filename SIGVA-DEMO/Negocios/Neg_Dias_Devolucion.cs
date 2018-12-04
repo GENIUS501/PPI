@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using AccesoDatos;
+using System.Data;
 
 namespace Negocios
 {
@@ -29,6 +30,22 @@ namespace Negocios
             return FilasAfectadas;
         }
         #endregion
+
+        #region "Llenar Datagrid"
+      public DataTable Llenardatagrid(Int32 Cedula)
+       {
+           AccesoDatos.AD_Dias_Devolucion IControlador;
+           try
+           {
+               IControlador = new AccesoDatos.AD_Dias_Devolucion();
+               return IControlador.llenar_datagrid(Cedula);
+           }
+           catch (Exception ex)
+           {
+               throw new Exception(ex.Message, ex);
+           }
+       }
+       #endregion
 
         #region "Eliminar"
         public Int32 Eliminar(Int32 Cedula)

@@ -18,6 +18,15 @@ namespace Presentacion
         #region "Variables"
         Neg_Funcionarios Nfuncionarios;
         Ent_Funcionarios Efuncionarios;
+        Neg_Dias_Devolucion Ndias_devolucion;
+        Neg_Dias_Disponibles Ndias_disponibles;
+        Neg_Dias_Reservados Ndias_reservados;
+        Ent_Dias_Reservados Edias_reservados;
+        Ent_Dias_Disponibles Edias_Disponibles;
+        Neg_Anualidades Nanualidades;
+        Ent_Anualidades Eanualidades;
+        Neg_Anos_Institucion_Anterior Nanos;
+        Ent_Anos_Institucion_Anterior Eanos;
 
         #endregion
         public P_Devlover_Dias()
@@ -29,14 +38,16 @@ namespace Presentacion
         {
             try
             {
-                
+                this.Txt_Telefono.Enabled = false;
+                this.Txt_Nombre.Enabled = false;
+                this.Txt_Apellido1.Enabled = false;
+                this.Txt_Apellido2.Enabled = false;
+                this.Txt_Fecha_Ingreso.Enabled = false;
             }
             catch (Exception ex) 
             {
                 MessageBox.Show(ex.ToString());
             }
-
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -48,27 +59,143 @@ namespace Presentacion
         {
             try
             {
-                if(this.Txt_Cedula.Text!="")
+                Buscar();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error al buscar datos del funcionario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void Buscar()
+        {
+            if (this.Txt_Cedula.Text != "")
+            {
+                if (this.Txt_Cedula.Text.Length > 7 && this.Txt_Cedula.Text.Length < 10)
                 {
-                    if (this.Txt_Cedula.Text.Length > 7 && this.Txt_Cedula.Text.Length < 10)
+                    Efuncionarios = new Ent_Funcionarios();
+                    Nfuncionarios = new Neg_Funcionarios();
+                    Ndias_devolucion = new Neg_Dias_Devolucion();
+                    Ndias_disponibles = new Neg_Dias_Disponibles();
+                    Ndias_reservados = new Neg_Dias_Reservados();
+                    Efuncionarios = Nfuncionarios.LeerCodigoLlave(Convert.ToInt32(this.Txt_Cedula.Text));
+                    if (Efuncionarios.Cedula > 0)
                     {
-                        Efuncionarios = new Ent_Funcionarios();
-                        Nfuncionarios = new Neg_Funcionarios();
-                        Efuncionarios = Nfuncionarios.LeerCodigoLlave(Convert.ToInt32(this.Txt_Cedula.Text));
                         this.Txt_Nombre.Text = Efuncionarios.Nombre;
                         this.Txt_Apellido1.Text = Efuncionarios.Apellido1;
+                        this.Txt_Apellido2.Text = Efuncionarios.Apellido2;
+                        this.Txt_Fecha_Ingreso.Text = Efuncionarios.Fecha_De_Ingreso.ToString();
+                        this.Txt_Telefono.Text = Efuncionarios.Telefono.ToString();
+                        this.Dat_Dias_Devolucion.DataSource = Ndias_devolucion.Llenardatagrid(Convert.ToInt32(this.Txt_Cedula.Text));
+                        this.Dat_Dias_Disponibles.DataSource = Ndias_disponibles.Llenardatagrid(Convert.ToInt32(this.Txt_Cedula.Text));
+                        this.Dat_Dias_Reservados.DataSource = Ndias_reservados.Llenardatagrid(Convert.ToInt32(this.Txt_Cedula.Text));
                     }else
                     {
-                        MessageBox.Show("Error en formato de cedula", "Error en formato de cedula", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Funcionario no encontrado", "Funcionario no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error debe digitar la cedula", "Error debe digitar la cedula", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error en formato de cedula", "Error en formato de cedula", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Error debe digitar la cedula", "Error debe digitar la cedula", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Dat_Dias_Reservados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                this.Txt_Numero_Boleta.Text = Dat_Dias_Reservados.Rows[e.RowIndex].Cells[5].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private void Cmd_Devolver_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Buscar();
+                Devolver();
             }catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error al buscar datos del funcionario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), "Error al devolver dias", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Devolver()
+        {
+            Edias_reservados = new Ent_Dias_Reservados();
+            try
+            {
+                if (this.Txt_Cantidad_Dias.Text != "")
+                {
+                    if (this.Txt_Numero_Boleta.Text != "")
+                    {
+                        Edias_reservados = Ndias_reservados.LeerCodigoLlave(Convert.ToInt32(this.Txt_Numero_Boleta.Text));
+                        if (Edias_reservados.Id_Reservacion != 0)
+                        {
+                            if(Convert.ToDouble(Edias_reservados.Cantidad_dias)>=Convert.ToDouble(this.Txt_Cantidad_Dias.Text))
+                            {
+                                Calcular();
+                            }else
+                            {
+                                MessageBox.Show("La cantidad de dias digitados es mayor a los que posee la boleta", "La cantidad de dias digitados es mayor a los que posee la boleta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Boleta no existe", "Boleta no existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error debe indicar el numero de boleta", "Error debe indicar el numero de boleta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error debe indicar la cantidad de dias a devolver", "Error debe indicar la cantidad de dias a devolver", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error al devolver dias", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Calcular()
+        {
+            Edias_Disponibles = new Ent_Dias_Disponibles();
+            Eanualidades = new Ent_Anualidades();
+            Nanualidades = new Neg_Anualidades();
+            Eanos = new Ent_Anos_Institucion_Anterior();
+            Nanos = new Neg_Anos_Institucion_Anterior();
+            Ndias_disponibles = new Neg_Dias_Disponibles();
+            Double Cantidad_dias = Convert.ToDouble(this.Txt_Cantidad_Dias.Text);
+            for (int i = 0; Cantidad_dias <= 0;i++ )
+            {
+                Edias_Disponibles = Ndias_disponibles.Leerespecial(Convert.ToInt32(this.Txt_Cedula.Text));
+                if(Edias_Disponibles.Cedula!=0)
+                {
+                    Edias_Disponibles = Ndias_disponibles.Leerespecial(Convert.ToInt32(this.Txt_Cedula.Text));
+                    for(int e=0;Edias_Disponibles.Cantidad_Dias>=12;e++)
+                    {
+                       Edias_Disponibles.Cantidad_Dias = Edias_Disponibles.Cantidad_Dias+0,1;
+                    }
+                }
+                else
+                {
+                    Eanualidades = Nanualidades.LeerAnualidad(Convert.ToInt32(this.Txt_Cedula.Text));
+                    Eanualidades.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
+                    Eanualidades.Cantidad_Dias = Convert.ToDecimal(Convert.ToDouble(Eanualidades.Cantidad_Dias) + Cantidad_dias);
+                    Nanualidades.Actualizar(Eanualidades);
+                    Cantidad_dias = Cantidad_dias - Cantidad_dias;
+                }
             }
         }
     }

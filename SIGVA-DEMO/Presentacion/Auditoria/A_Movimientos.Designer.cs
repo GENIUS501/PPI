@@ -164,7 +164,7 @@
             this.groupBox1.Size = new System.Drawing.Size(588, 243);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Bitácora de Movimientos  por Cédula de Usuario";
+            this.groupBox1.Text = "Bitácora de Movimientos  por Nombre de Usuario";
             // 
             // Cmd_Imprimir
             // 

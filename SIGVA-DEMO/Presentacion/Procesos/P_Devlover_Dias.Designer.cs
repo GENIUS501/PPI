@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.Txt_Cedula = new System.Windows.Forms.TextBox();
             this.Cmd_Buscar = new System.Windows.Forms.Button();
             this.Txt_Fecha_Ingreso = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
@@ -63,6 +62,10 @@
             this.dIAS_DEVOLUCIONTableAdapter = new Presentacion.SIGVADataSetdiasdevueltosTableAdapters.DIAS_DEVOLUCIONTableAdapter();
             this.Cmd_Devolver = new System.Windows.Forms.Button();
             this.Cmd_Cancelar = new System.Windows.Forms.Button();
+            this.Txt_Cedula = new System.Windows.Forms.MaskedTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Dat_Dias_Disponibles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diasDisponiblesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetDiasDisponiblesBindingSource)).BeginInit();
@@ -83,13 +86,6 @@
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Cedula";
-            // 
-            // Txt_Cedula
-            // 
-            this.Txt_Cedula.Location = new System.Drawing.Point(15, 82);
-            this.Txt_Cedula.Name = "Txt_Cedula";
-            this.Txt_Cedula.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Cedula.TabIndex = 3;
             // 
             // Cmd_Buscar
             // 
@@ -270,6 +266,7 @@
             this.Dat_Dias_Reservados.ReadOnly = true;
             this.Dat_Dias_Reservados.Size = new System.Drawing.Size(442, 72);
             this.Dat_Dias_Reservados.TabIndex = 46;
+            this.Dat_Dias_Reservados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dat_Dias_Reservados_CellClick);
             // 
             // diasReservadosBindingSource
             // 
@@ -318,6 +315,7 @@
             this.Cmd_Devolver.TabIndex = 49;
             this.Cmd_Devolver.Text = "Devolver";
             this.Cmd_Devolver.UseVisualStyleBackColor = true;
+            this.Cmd_Devolver.Click += new System.EventHandler(this.Cmd_Devolver_Click);
             // 
             // Cmd_Cancelar
             // 
@@ -329,11 +327,50 @@
             this.Cmd_Cancelar.UseVisualStyleBackColor = true;
             this.Cmd_Cancelar.Click += new System.EventHandler(this.button4_Click);
             // 
+            // Txt_Cedula
+            // 
+            this.Txt_Cedula.Location = new System.Drawing.Point(17, 81);
+            this.Txt_Cedula.Mask = "0000000000";
+            this.Txt_Cedula.Name = "Txt_Cedula";
+            this.Txt_Cedula.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Cedula.TabIndex = 51;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(380, 348);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 13);
+            this.label9.TabIndex = 52;
+            this.label9.Text = "Dias Disponibles";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(17, 348);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 13);
+            this.label10.TabIndex = 53;
+            this.label10.Text = "Dias Devueltos";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(17, 250);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(84, 13);
+            this.label12.TabIndex = 54;
+            this.label12.Text = "Dias Disfrutados";
+            // 
             // P_Devlover_Dias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 490);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.Txt_Cedula);
             this.Controls.Add(this.Cmd_Cancelar);
             this.Controls.Add(this.Cmd_Devolver);
             this.Controls.Add(this.Dat_Dias_Devolucion);
@@ -356,13 +393,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Cmd_Buscar);
-            this.Controls.Add(this.Txt_Cedula);
             this.Controls.Add(this.label1);
             this.Name = "P_Devlover_Dias";
             this.Text = "Devolucion de Dias";
             this.Load += new System.EventHandler(this.P_Devlover_Dias_Load);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.Txt_Cedula, 0);
             this.Controls.SetChildIndex(this.Cmd_Buscar, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label2, 0);
@@ -385,6 +420,10 @@
             this.Controls.SetChildIndex(this.Dat_Dias_Devolucion, 0);
             this.Controls.SetChildIndex(this.Cmd_Devolver, 0);
             this.Controls.SetChildIndex(this.Cmd_Cancelar, 0);
+            this.Controls.SetChildIndex(this.Txt_Cedula, 0);
+            this.Controls.SetChildIndex(this.label9, 0);
+            this.Controls.SetChildIndex(this.label10, 0);
+            this.Controls.SetChildIndex(this.label12, 0);
             ((System.ComponentModel.ISupportInitialize)(this.Dat_Dias_Disponibles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diasDisponiblesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetDiasDisponiblesBindingSource)).EndInit();
@@ -403,7 +442,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Txt_Cedula;
         private System.Windows.Forms.Button Cmd_Buscar;
         private System.Windows.Forms.DateTimePicker Txt_Fecha_Ingreso;
         private System.Windows.Forms.Label label11;
@@ -436,5 +474,9 @@
         private SIGVADataSetdiasdevueltosTableAdapters.DIAS_DEVOLUCIONTableAdapter dIAS_DEVOLUCIONTableAdapter;
         private System.Windows.Forms.Button Cmd_Devolver;
         private System.Windows.Forms.Button Cmd_Cancelar;
+        private System.Windows.Forms.MaskedTextBox Txt_Cedula;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
     }
 }

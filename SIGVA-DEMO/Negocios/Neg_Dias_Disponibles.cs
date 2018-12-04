@@ -51,6 +51,22 @@ namespace Negocios
         }
         #endregion
 
+        #region "Leer especial"
+        public Ent_Dias_Disponibles Leerespecial(Int32 Cedula)
+        {
+            AccesoDatos.AD_Dias_Disponibles IControlador;
+            try
+            {
+                IControlador = new AccesoDatos.AD_Dias_Disponibles();
+                return IControlador.Leerespecial(Cedula);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+        #endregion
+
         #region "Leer Dia"
         public Ent_Dias_Disponibles LeerDia(Int32 Cedula, Int32 Ano)
         {
