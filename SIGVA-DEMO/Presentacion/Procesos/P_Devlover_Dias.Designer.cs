@@ -199,6 +199,7 @@
             this.Txt_Cantidad_Dias.Name = "Txt_Cantidad_Dias";
             this.Txt_Cantidad_Dias.Size = new System.Drawing.Size(100, 20);
             this.Txt_Cantidad_Dias.TabIndex = 41;
+            this.Txt_Cantidad_Dias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Cantidad_Dias_KeyPress);
             // 
             // label7
             // 

@@ -7,12 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocios;
+using Entidades;
 using Presentacion;
 
 namespace Presentacion
 {
     public partial class A_Personal : frmAccionpersonal
     {
+        #region "Variables"
+        Neg_Anos_Institucion_Anterior Nanos;
+        Ent_Anos_Institucion_Anterior Eanos;
+        Neg_Anualidades Nanualidades;
+        Ent_Anualidades Eanulidades;
+        Neg_Dias_Disponibles Ndias;
+        Ent_Dias_Disponibles Edias;
+        #endregion
+
+        #region "Propiedades"
+        public string Modo { get; set; }
+        #endregion
         public A_Personal()
         {
             InitializeComponent();
@@ -27,6 +41,31 @@ namespace Presentacion
         {
             try
             {
+                if(Modo == "L")
+                {
+                    if (this.Txt_Cedula.Text != "")
+                    {
+                        Eanos = new Ent_Anos_Institucion_Anterior();
+                        Nanos = new Neg_Anos_Institucion_Anterior();
+                        Eanulidades = new Ent_Anualidades();
+                        Nanualidades = new Neg_Anualidades();
+                        Edias = new Ent_Dias_Disponibles();
+                        Ndias = new Neg_Dias_Disponibles();
+                        Eanos.Cantidad_Dias = 0;
+                        Eanos.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
+                        Nanos.Actualizar(Eanos);
+                        Eanulidades.Cantidad_Dias = 0;
+                        Eanulidades.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
+                        Nanualidades.Actualizar(Eanulidades);
+                        Edias.Cantidad_Dias = 0;
+                        Edias.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
+                        Ndias.Actualizar2(Edias);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error debe digitar la cedula para liquidar el funcionario", "Error debe digitar la cedula", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
                 AVR_Personal Visor = new AVR_Personal();
                 Visor.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
                 Visor.Numero_Boleta = this.Txt_Numero_Boleta.Text.ToString();

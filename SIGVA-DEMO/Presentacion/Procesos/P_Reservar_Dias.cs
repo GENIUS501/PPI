@@ -281,6 +281,7 @@ namespace Presentacion
                         MessageBox.Show("Dias reservados correctamente", "Dias reservados correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         A_Personal frm = new A_Personal();
                         frm.MdiParent = this.MdiParent;
+                        frm.Modo = "M";
                         frm.Show();
                         limpiarcampos();
                     }

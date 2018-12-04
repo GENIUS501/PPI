@@ -294,6 +294,7 @@ namespace Principal
         private void liquidacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             A_Personal A = new A_Personal();
+            A.Modo = "L";
             A.titulo = "Accion de Personal";
             A.Descripcion = "SIGVA";
             A.MdiParent = this;

@@ -31,6 +31,26 @@ namespace Negocios
         }
         #endregion
 
+        #region "Actualizar2"
+        public Int32 Actualizar2(Ent_Dias_Disponibles Data)
+        {
+            Int32 FilasAfectadas = 0;
+            AccesoDatos.AD_Dias_Disponibles IControlador;
+
+            try
+            {
+                IControlador = new AccesoDatos.AD_Dias_Disponibles();
+                FilasAfectadas = IControlador.Actualizar2(Data);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return FilasAfectadas;
+        }
+        #endregion
+
         #region "Actualizar"
         public Int32 Actualizar(Ent_Dias_Disponibles Data)
         {

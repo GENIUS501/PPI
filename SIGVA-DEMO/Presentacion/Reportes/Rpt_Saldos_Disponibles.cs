@@ -27,6 +27,7 @@ namespace Presentacion
         Neg_Anualidades Nanualidades;
         Neg_Dias_Disponibles Ndias_disponibles;
         Neg_Dias_Reservados Ndias_reservados;
+        Ent_Saldos_Disponibles Esaldos;
         #endregion
         public Rpt_Saldos_Disponibles()
         {
@@ -66,6 +67,7 @@ namespace Presentacion
                     Efuncionarios = new Ent_Funcionarios();
                     Nfuncionarios = new Neg_Funcionarios();
                     Nsaldos = new Neg_Saldos_Disponibles();
+                    Esaldos = new Ent_Saldos_Disponibles();
                     Nanualidades = new Neg_Anualidades();
                     Eanualidades = new Ent_Anualidades();
                     Edepartamento = new Ent_Departamentos();
@@ -87,16 +89,26 @@ namespace Presentacion
                     this.Txt_Departamento.Text = Edepartamento.Nombre_Departamento;
                     this.Dat_Dias_Disponibles.DataSource = Ndias_disponibles.Llenardatagrid(Convert.ToInt32(this.Txt_Cedula.Text));
                     this.Dat_Dias_Reservados.DataSource = Ndias_reservados.Llenardatagrid(Convert.ToInt32(this.Txt_Cedula.Text));
-                    VR_Rpt_Saldos_Disponibles Visor = new VR_Rpt_Saldos_Disponibles();
-                    Visor.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
-                    Visor.Codigo_Reporte = Convert.ToInt32(this.Txt_Codigo_Reporte.Text);
-                    Visor.Anualidades = Convert.ToInt32(this.Txt_Anualidades.Text);
-                    Visor.Nombre = this.Txt_Nombre.Text;
-                    Visor.Departamento = this.Txt_Departamento.Text;
-                    Visor.Puesto = this.Txt_Puesto.Text;
-                    Visor.Fecha_Ingreso = Txt_Fecha_Ingreso.Text.ToString();
-                    Visor.MdiParent = this.MdiParent;
-                    Visor.Show();
+                    Esaldos.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
+                    Esaldos.Fecha_Elaboracion = DateTime.Now;
+                    Esaldos.Anualidades = Convert.ToInt32(this.Txt_Anualidades.Text);
+                    Int32 Ejecutar = Nsaldos.Insertar(Esaldos);
+                    if (Ejecutar > 0)
+                    {
+                        VR_Rpt_Saldos_Disponibles Visor = new VR_Rpt_Saldos_Disponibles();
+                        Visor.Cedula = Convert.ToInt32(this.Txt_Cedula.Text);
+                        Visor.Codigo_Reporte = Convert.ToInt32(this.Txt_Codigo_Reporte.Text);
+                        Visor.Anualidades = Convert.ToInt32(this.Txt_Anualidades.Text);
+                        Visor.Nombre = this.Txt_Nombre.Text;
+                        Visor.Departamento = this.Txt_Departamento.Text;
+                        Visor.Puesto = this.Txt_Puesto.Text;
+                        Visor.Fecha_Ingreso = Txt_Fecha_Ingreso.Text.ToString();
+                        Visor.MdiParent = this.MdiParent;
+                        Visor.Show();
+                    }else
+                    {
+                        MessageBox.Show("Error al guardar el reporte intentelo de nuevo", "Error al guardar el reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {

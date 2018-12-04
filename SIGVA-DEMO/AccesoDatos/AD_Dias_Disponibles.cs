@@ -39,6 +39,32 @@ namespace AccesoDatos
         }
         #endregion
 
+        #region "Actualizar2"
+        public Int32 Actualizar2(Ent_Dias_Disponibles uRegistro)
+        {
+            Int32 FilasAfectadas = 0;
+
+            try
+            {
+                string sentencia;
+                sentencia = "UPDATE Dias_Disponibles SET Cantidad_Dias = @Cantidad_Dias WHERE [Cedula] = @Cedula";
+                Parameter[] parametros = {
+                                        // new Parameter("@cedula",uRegistro.Cedula),
+                                         new Parameter("@Cantidad_Dias",uRegistro.Cantidad_Dias),
+                                         new Parameter("@Cedula",uRegistro.Cedula),
+                                         new Parameter("@Ano",uRegistro.Ano),
+                                      };
+                FilasAfectadas = Database.exectuteNonQuery(sentencia, parametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return FilasAfectadas;
+        }
+        #endregion
+
         #region "Actualizar"
         public Int32 Actualizar(Ent_Dias_Disponibles uRegistro)
         {

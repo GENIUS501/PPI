@@ -10,6 +10,26 @@ namespace Negocios
 {
    public class Neg_Saldos_Disponibles
    {
+       #region "Insertar"
+       public Int32 Insertar(Ent_Saldos_Disponibles Data)
+       {
+           Int32 FilasAfectadas = 0;
+           AccesoDatos.AD_Saldos_Disponibles IControlador;
+
+           try
+           {
+               IControlador = new AccesoDatos.AD_Saldos_Disponibles();
+               FilasAfectadas = IControlador.Insertar(Data);
+           }
+           catch (Exception ex)
+           {
+               throw new Exception(ex.Message, ex);
+           }
+
+           return FilasAfectadas;
+       }
+       #endregion
+
        #region "Numero de reporte"
        public Int32 numero_reporte(Int32 pCodigo)
        {
@@ -25,6 +45,7 @@ namespace Negocios
            }
        }
        #endregion
+       
        #region "Eliminar"
        public Int32 Eliminar(Int32 Cedula)
        {

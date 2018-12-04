@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Presentacion;
 using Negocios;
 using Entidades;
+using System.Globalization;
 
 namespace Presentacion
 {
@@ -133,6 +134,7 @@ namespace Presentacion
                 MessageBox.Show("Dias devueltos exitosamente", "Dias devueltos exitosamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Limpiarcampos();
                 A_Personal frm = new A_Personal();
+                frm.Modo = "M";
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
             }catch(Exception ex)
@@ -263,6 +265,20 @@ namespace Presentacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error al devolver dias", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Txt_Cantidad_Dias_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
+
+            if (char.IsNumber(e.KeyChar) || e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }
