@@ -31,7 +31,7 @@ namespace Presentacion
                Entrar();
            }catch(Exception ex)
            {
-               MessageBox.Show("Error al ingresar al sistema: " + ex);
+               MessageBox.Show(ex.ToString(),"Error al ingresar al sistema",MessageBoxButtons.OK,MessageBoxIcon.Error);
            }
 
         }
@@ -54,7 +54,7 @@ namespace Presentacion
                 Ingreso = Nsessiones.Ingresar(Esessiones);
                 if (Ingreso > 0)
                 {
-                    MessageBox.Show("Bienvenido: "+Euser.Nombre+" "+Euser.Apellido1+" "+Euser.Apellido2);
+                    MessageBox.Show("Bienvenido: "+Euser.Nombre+" "+Euser.Apellido1+" "+Euser.Apellido2,"Inicio de session correcto",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     MenuPrincipal Ingresos = new MenuPrincipal();
                     Ingresos.Rol = Euser.Rol;
                     Ingresos.Id_session = Ingreso;
@@ -63,12 +63,12 @@ namespace Presentacion
                 }
                 else
                 {
-                    MessageBox.Show("Error desconocido");
+                    MessageBox.Show("Error desconocido", "Error desconocido",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Usuario o Clave invalido");
+                MessageBox.Show("Usuario o Clave invalido","Error al iniciar session",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

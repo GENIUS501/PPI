@@ -135,6 +135,8 @@ namespace Presentacion
                 Limpiarcampos();
                 A_Personal frm = new A_Personal();
                 frm.Modo = "M";
+                frm.titulo = "Accion de Personal";
+                frm.Descripcion = "Accion de Personal";
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
             }catch(Exception ex)

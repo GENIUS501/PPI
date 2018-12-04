@@ -526,8 +526,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox42</rd:DefaultName>
-        <Top>6.1437cm</Top>
-        <Left>10.50078cm</Left>
+        <Top>8.12189cm</Top>
+        <Left>0.60537cm</Left>
         <Height>0.6cm</Height>
         <Width>3.19611cm</Width>
         <ZIndex>17</ZIndex>
@@ -1210,8 +1210,8 @@
             </FilterValues>
           </Filter>
         </Filters>
-        <Top>6.84953cm</Top>
-        <Left>10.50078cm</Left>
+        <Top>8.82772cm</Top>
+        <Left>0.60537cm</Left>
         <Height>1.2cm</Height>
         <Width>15.64855cm</Width>
         <ZIndex>19</ZIndex>
@@ -1225,7 +1225,7 @@
     <Height>3.94792in</Height>
     <Style />
   </Body>
-  <Width>10.29501in</Width>
+  <Width>9.6596in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

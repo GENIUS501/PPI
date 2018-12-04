@@ -282,6 +282,8 @@ namespace Presentacion
                         A_Personal frm = new A_Personal();
                         frm.MdiParent = this.MdiParent;
                         frm.Modo = "M";
+                        frm.titulo = "Accion de Personal";
+                        frm.Descripcion = "Accion de Personal";
                         frm.Show();
                         limpiarcampos();
                     }

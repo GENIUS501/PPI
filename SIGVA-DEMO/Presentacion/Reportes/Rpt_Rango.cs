@@ -39,6 +39,7 @@ namespace Presentacion
         {
             try
             {
+                textbox_numer(e);
                 if ((int)e.KeyChar == (int)Keys.Enter)
                 {
                     cargar();
@@ -46,6 +47,18 @@ namespace Presentacion
             }catch(Exception ex)
             {
                 MessageBox.Show("Error al cargar los datos: "+ex);
+            }
+        }
+
+        private void textbox_numer(KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+
+            }
+            else
+            {
+                e.Handled = e.KeyChar != (char)Keys.Back;
             }
         }
 

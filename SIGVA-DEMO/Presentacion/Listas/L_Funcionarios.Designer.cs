@@ -38,9 +38,9 @@
             this.fUNCIONARIOSTableAdapter1 = new Presentacion.SIGVADataSetfunTableAdapters.FUNCIONARIOSTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dEPARTAMENTOSTableAdapter = new Presentacion.SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter();
-            this.Txt_Cedula = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Cmd_Buscar = new System.Windows.Forms.Button();
+            this.Txt_Cedula = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetfun)).BeginInit();
@@ -109,14 +109,6 @@
             // 
             this.dEPARTAMENTOSTableAdapter.ClearBeforeFill = true;
             // 
-            // Txt_Cedula
-            // 
-            this.Txt_Cedula.Location = new System.Drawing.Point(12, 121);
-            this.Txt_Cedula.Name = "Txt_Cedula";
-            this.Txt_Cedula.Size = new System.Drawing.Size(121, 20);
-            this.Txt_Cedula.TabIndex = 9;
-            this.Txt_Cedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Cedula_KeyPress);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -136,14 +128,22 @@
             this.Cmd_Buscar.UseVisualStyleBackColor = true;
             this.Cmd_Buscar.Click += new System.EventHandler(this.Cmd_Buscar_Click);
             // 
+            // Txt_Cedula
+            // 
+            this.Txt_Cedula.Location = new System.Drawing.Point(15, 121);
+            this.Txt_Cedula.Mask = "0000000000";
+            this.Txt_Cedula.Name = "Txt_Cedula";
+            this.Txt_Cedula.Size = new System.Drawing.Size(118, 20);
+            this.Txt_Cedula.TabIndex = 12;
+            // 
             // L_Funcionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 348);
+            this.Controls.Add(this.Txt_Cedula);
             this.Controls.Add(this.Cmd_Buscar);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.Txt_Cedula);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Cbo_Departamentos);
             this.Controls.Add(this.label2);
@@ -158,9 +158,9 @@
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.Cbo_Departamentos, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
-            this.Controls.SetChildIndex(this.Txt_Cedula, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.Cmd_Buscar, 0);
+            this.Controls.SetChildIndex(this.Txt_Cedula, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetfun)).EndInit();
@@ -182,8 +182,8 @@
         private SIGVADataSet1Departamentos sIGVADataSet1Departamentos;
         private System.Windows.Forms.BindingSource dEPARTAMENTOSBindingSource;
         private SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter dEPARTAMENTOSTableAdapter;
-        private System.Windows.Forms.TextBox Txt_Cedula;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Cmd_Buscar;
+        private System.Windows.Forms.MaskedTextBox Txt_Cedula;
     }
 }
