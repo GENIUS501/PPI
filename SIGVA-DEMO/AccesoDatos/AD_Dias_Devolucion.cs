@@ -21,12 +21,12 @@ namespace AccesoDatos
             try
             {
                 string sentencia;
-                sentencia = "insert into DIAS_DEVOLUCION (Fecha_de_devolucion,Detalle,Cantidad_dias,Id_Resevacion,Cedula) values(@Fecha_de_devolucion,@Detalle,@Cantidad_dias,@Id_Resevacion,@Cedula)";
+                sentencia = "insert into DIAS_DEVOLUCION (Fecha_de_devolucion,Detalle,Cantidad_dias,Id_Reservacion,Cedula) values(@Fecha_de_devolucion,@Detalle,@Cantidad_dias,@Id_Reservacion,@Cedula)";
                 Parameter[] parametros = {
                                          new Parameter("@Fecha_de_devolucion",uRegistro.Fecha_de_devolucion),
                                          new Parameter("@Detalle",uRegistro.Detalle),
                                          new Parameter("@Cantidad_dias",uRegistro.Cantidad_dias),
-                                         new Parameter("@Id_Resevacion",uRegistro.Id_Reservacion),
+                                         new Parameter("@Id_Reservacion",uRegistro.Id_Reservacion),
                                          new Parameter("@Cedula",uRegistro.Cedula),
                                       };
                 FilasAfectadas = Database.exectuteNonQuery(sentencia, parametros);

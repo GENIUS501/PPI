@@ -87,8 +87,8 @@ namespace Presentacion
                         Eliminaranualidades = Nanualidades.Eliminar(valorPrimerCelda);
                         Eliminaranos_institucion = Nanos_institucion.Eliminar(valorPrimerCelda);
                         Eliminardias_disponibles = Ndias_disponibles.Eliminar(valorPrimerCelda);
-                        Eliminardias_reservados = Ndias_reservados.Eliminar(valorPrimerCelda);
                         Eliminardias_devolucion = Ndias_devolucion.Eliminar(valorPrimerCelda);
+                        Eliminardias_reservados = Ndias_reservados.Eliminar(valorPrimerCelda);
                         Eliminarfuncionarios = Nfuncionarios.Eliminar(valorPrimerCelda);
                         if(Eliminarfuncionarios>0)
                         {

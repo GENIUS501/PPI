@@ -42,8 +42,33 @@ namespace AccesoDatos
         }
         #endregion
 
+        #region "Devolucion"
+        public Int32 Devolucion(Ent_Dias_Reservados uRegistro)
+        {
+            Int32 FilasAfectadas = 0;
+
+            try
+            {
+                string sentencia;
+                sentencia = "UPDATE Dias_Reservados SET Cantidad_dias = @Cantidad_dias WHERE [Id_Reservacion] = @Id_Reservacion";
+                Parameter[] parametros = {
+                                        // new Parameter("@cedula",uRegistro.Cedula),
+                                         new Parameter("@Cantidad_dias",uRegistro.Cantidad_dias),
+                                         new Parameter("@Id_Reservacion",uRegistro.Id_Reservacion),
+                                      };
+                FilasAfectadas = Database.exectuteNonQuery(sentencia, parametros);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return FilasAfectadas;
+        }
+        #endregion
+
         #region "Leer especifico"
-       public Ent_Dias_Reservados LeerCodigoLlave(Int32 pCodigo)
+        public Ent_Dias_Reservados LeerCodigoLlave(Int32 pCodigo)
         {
             try
             {

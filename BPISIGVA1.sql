@@ -152,28 +152,28 @@ else
 END
 --- Anos_Institucion_Anterior
 
-CREATE TRIGGER [dbo].[Anos_Istitucion_Anterior_Bitacora]
-       ON [dbo].[Anos_Institucion_Anterior]
-AFTER INSERT,UPDATE,DELETE
-AS
-BEGIN
+--Drop TRIGGER [dbo].[Anos_Istitucion_Anterior_Bitacora]
+--       ON [dbo].[Anos_Institucion_Anterior]
+--AFTER INSERT,UPDATE,DELETE
+--AS
+--BEGIN
  
-       DECLARE @Usuario VARCHAR(25) = (select MAX(usuario) from Usuarios);
+--       DECLARE @Usuario VARCHAR(25) = (select MAX(usuario) from Usuarios);
  
  
-IF EXISTS(SELECT*FROM INSERTED)
+--IF EXISTS(SELECT*FROM INSERTED)
 
-  IF EXISTS(SELECT*FROM deleted)
+--  IF EXISTS(SELECT*FROM deleted)
 
-    INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Actualizo',getdate(),'Anos_Institucion_Anterior',@Usuario);
+--    INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Actualizo',getdate(),'Anos_Institucion_Anterior',@Usuario);
 
-  else                              
+--  else                              
 
-	INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Ingreso',getdate(),'Anos_Institucion_Anterior',@Usuario);
+--	INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Ingreso',getdate(),'Anos_Institucion_Anterior',@Usuario);
 
-else                                
-	INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Borro',getdate(),'Anos_Institucion_Anterior',@Usuario);
-END
+--else                                
+--	INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Borro',getdate(),'Anos_Institucion_Anterior',@Usuario);
+--END
 
 --- Anualidades
 
@@ -300,28 +300,28 @@ END
 
 --Disponibles_Saldos
 
-CREATE TRIGGER [dbo].[Disponibles_Saldos_Bitacora]
-       ON [dbo].[Disponibles_Saldos]
-AFTER INSERT,UPDATE,DELETE
-AS
-BEGIN
+--CREATE TRIGGER [dbo].[Disponibles_Saldos_Bitacora]
+--       ON [dbo].[Disponibles_Saldos]
+--AFTER INSERT,UPDATE,DELETE
+--AS
+--BEGIN
  
-       DECLARE @Usuario VARCHAR(25) = (select MAX(usuario) from Usuarios);
+--       DECLARE @Usuario VARCHAR(25) = (select MAX(usuario) from Usuarios);
  
  
-IF EXISTS(SELECT*FROM INSERTED)
+--IF EXISTS(SELECT*FROM INSERTED)
 
-  IF EXISTS(SELECT*FROM deleted)
+--  IF EXISTS(SELECT*FROM deleted)
 
-    INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Actualizo',getdate(),'Disponibles_Saldos',@Usuario);
+--    INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Actualizo',getdate(),'Disponibles_Saldos',@Usuario);
 
-  else                              
+--  else                              
 
-	INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Ingreso',getdate(),'Disponibles_Saldos',@Usuario);
+--	INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Ingreso',getdate(),'Disponibles_Saldos',@Usuario);
 
-else                                
-	INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Borro',getdate(),'Disponibles_Saldos',@Usuario);
-END
+--else                                
+--	INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Borro',getdate(),'Disponibles_Saldos',@Usuario);
+--END
 
 --Funcionarios
 
@@ -374,25 +374,25 @@ END
 
 --Saldos_Disponibles
 
-CREATE TRIGGER [dbo].[Saldos_Disponibles_Bitacora]
-       ON [dbo].[Saldos_Disponibles]
-AFTER INSERT,UPDATE,DELETE
-AS
-BEGIN
+--CREATE TRIGGER [dbo].[Saldos_Disponibles_Bitacora]
+--       ON [dbo].[Saldos_Disponibles]
+--AFTER INSERT,UPDATE,DELETE
+--AS
+--BEGIN
  
-       DECLARE @Usuario VARCHAR(25) = (select MAX(usuario) from Usuarios);
+--       DECLARE @Usuario VARCHAR(25) = (select MAX(usuario) from Usuarios);
  
  
-IF EXISTS(SELECT*FROM INSERTED)
+--IF EXISTS(SELECT*FROM INSERTED)
 
-  IF EXISTS(SELECT*FROM deleted)
+--  IF EXISTS(SELECT*FROM deleted)
 
-    INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Actualizo',getdate(),'Saldos_Disponibles',@Usuario);
+--    INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Actualizo',getdate(),'Saldos_Disponibles',@Usuario);
 
-  else                              
+--  else                              
 
-	INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Ingreso',getdate(),'Saldos_Disponibles',@Usuario);
+--	INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Ingreso',getdate(),'Saldos_Disponibles',@Usuario);
 
-else                                
-	INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Borro',getdate(),'Saldos_Disponibles',@Usuario);
-END
+--else                                
+--	INSERT INTO Bitacora (Accion,Fecha_Hora,Tabla,Usuario) VALUES('Borro',getdate(),'Saldos_Disponibles',@Usuario);
+--END

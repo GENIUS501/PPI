@@ -231,10 +231,10 @@
             this.Dat_Dias_Disponibles.AllowUserToAddRows = false;
             this.Dat_Dias_Disponibles.AllowUserToDeleteRows = false;
             this.Dat_Dias_Disponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dat_Dias_Disponibles.Location = new System.Drawing.Point(380, 362);
+            this.Dat_Dias_Disponibles.Location = new System.Drawing.Point(372, 390);
             this.Dat_Dias_Disponibles.Name = "Dat_Dias_Disponibles";
             this.Dat_Dias_Disponibles.ReadOnly = true;
-            this.Dat_Dias_Disponibles.Size = new System.Drawing.Size(344, 66);
+            this.Dat_Dias_Disponibles.Size = new System.Drawing.Size(344, 89);
             this.Dat_Dias_Disponibles.TabIndex = 45;
             // 
             // diasDisponiblesBindingSource
@@ -264,7 +264,7 @@
             this.Dat_Dias_Reservados.Location = new System.Drawing.Point(15, 269);
             this.Dat_Dias_Reservados.Name = "Dat_Dias_Reservados";
             this.Dat_Dias_Reservados.ReadOnly = true;
-            this.Dat_Dias_Reservados.Size = new System.Drawing.Size(442, 72);
+            this.Dat_Dias_Reservados.Size = new System.Drawing.Size(442, 91);
             this.Dat_Dias_Reservados.TabIndex = 46;
             this.Dat_Dias_Reservados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dat_Dias_Reservados_CellClick);
             // 
@@ -287,10 +287,10 @@
             this.Dat_Dias_Devolucion.AllowUserToAddRows = false;
             this.Dat_Dias_Devolucion.AllowUserToDeleteRows = false;
             this.Dat_Dias_Devolucion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dat_Dias_Devolucion.Location = new System.Drawing.Point(17, 362);
+            this.Dat_Dias_Devolucion.Location = new System.Drawing.Point(9, 390);
             this.Dat_Dias_Devolucion.Name = "Dat_Dias_Devolucion";
             this.Dat_Dias_Devolucion.ReadOnly = true;
-            this.Dat_Dias_Devolucion.Size = new System.Drawing.Size(341, 69);
+            this.Dat_Dias_Devolucion.Size = new System.Drawing.Size(341, 90);
             this.Dat_Dias_Devolucion.TabIndex = 47;
             // 
             // dIASDEVOLUCIONBindingSource
@@ -309,7 +309,7 @@
             // 
             // Cmd_Devolver
             // 
-            this.Cmd_Devolver.Location = new System.Drawing.Point(250, 455);
+            this.Cmd_Devolver.Location = new System.Drawing.Point(250, 486);
             this.Cmd_Devolver.Name = "Cmd_Devolver";
             this.Cmd_Devolver.Size = new System.Drawing.Size(75, 23);
             this.Cmd_Devolver.TabIndex = 49;
@@ -319,7 +319,7 @@
             // 
             // Cmd_Cancelar
             // 
-            this.Cmd_Cancelar.Location = new System.Drawing.Point(380, 454);
+            this.Cmd_Cancelar.Location = new System.Drawing.Point(380, 485);
             this.Cmd_Cancelar.Name = "Cmd_Cancelar";
             this.Cmd_Cancelar.Size = new System.Drawing.Size(75, 23);
             this.Cmd_Cancelar.TabIndex = 50;
@@ -338,7 +338,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(380, 348);
+            this.label9.Location = new System.Drawing.Point(372, 376);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(85, 13);
             this.label9.TabIndex = 52;
@@ -347,7 +347,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(17, 348);
+            this.label10.Location = new System.Drawing.Point(9, 376);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(79, 13);
             this.label10.TabIndex = 53;
@@ -366,7 +366,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 490);
+            this.ClientSize = new System.Drawing.Size(724, 521);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);

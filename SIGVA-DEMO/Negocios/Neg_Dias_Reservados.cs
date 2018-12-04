@@ -31,6 +31,26 @@ namespace Negocios
        }
        #endregion
 
+       #region "Devolucion"
+       public Int32 Devolucion(Ent_Dias_Reservados Data)
+       {
+           Int32 FilasAfectadas = 0;
+           AccesoDatos.AD_Dias_Reservados IControlador;
+
+           try
+           {
+               IControlador = new AccesoDatos.AD_Dias_Reservados();
+               FilasAfectadas = IControlador.Devolucion(Data);
+           }
+           catch (Exception ex)
+           {
+               throw new Exception(ex.Message, ex);
+           }
+
+           return FilasAfectadas;
+       }
+       #endregion
+
        #region "Leer Especifico"
        public Ent_Dias_Reservados LeerCodigoLlave(Int32 pCodigo)
        {

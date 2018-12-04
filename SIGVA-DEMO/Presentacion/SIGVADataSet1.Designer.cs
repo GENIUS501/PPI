@@ -4108,6 +4108,11 @@ SELECT Id_Departamento, Nombre_Departamento FROM DEPARTAMENTOS WHERE (Id_Departa
                 }
             }
         }
+
+        internal void Fill(SIGVADataSetDD.Dias_DisponiblesDataTable dias_DisponiblesDataTable)
+        {
+            throw new System.NotImplementedException();
+        }
     }
     
     /// <summary>

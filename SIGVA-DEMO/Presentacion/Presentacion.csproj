@@ -85,6 +85,11 @@
     <Compile Include="Accion_de_personal\AVR_Personal.Designer.cs">
       <DependentUpon>AVR_Personal.cs</DependentUpon>
     </Compile>
+    <Compile Include="DTRESERVADOS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTRESERVADOS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormasBase\Listas\frmListaBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,12 +224,6 @@
     <Compile Include="FormasBase\Reportes\Rpt_Base.Designer.cs">
       <DependentUpon>Rpt_Base.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Rpt_Saldos_Disponibles.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\Rpt_Saldos_Disponibles.Designer.cs">
-      <DependentUpon>Rpt_Saldos_Disponibles.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\Rpt_Rango.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +235,30 @@
     </Compile>
     <Compile Include="Reportes\Rpt_Rango_Fechas.Designer.cs">
       <DependentUpon>Rpt_Rango_Fechas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Rpt_Saldos_Disponibles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Rpt_Saldos_Disponibles.Designer.cs">
+      <DependentUpon>Rpt_Saldos_Disponibles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\VRrpt_rango.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\VRrpt_rango.Designer.cs">
+      <DependentUpon>VRrpt_rango.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\VR_Rpt_Rango_Fechas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\VR_Rpt_Rango_Fechas.Designer.cs">
+      <DependentUpon>VR_Rpt_Rango_Fechas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\VR_Rpt_Saldos_Disponibles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\VR_Rpt_Saldos_Disponibles.Designer.cs">
+      <DependentUpon>VR_Rpt_Saldos_Disponibles.cs</DependentUpon>
     </Compile>
     <Compile Include="Rpt_Session_dataset.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -272,6 +295,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SIGVADataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SIGVADataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIGVADataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SIGVADataSetAnualidades.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIGVADataSetAnualidades.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SIGVADataSetDD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIGVADataSetDD.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SIGVADataSetdiasdevueltos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -307,24 +345,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SIGVADataSetUsuarios.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\VRrpt_rango.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\VRrpt_rango.Designer.cs">
-      <DependentUpon>VRrpt_rango.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\VR_Rpt_Saldos_Disponibles.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\VR_Rpt_Saldos_Disponibles.Designer.cs">
-      <DependentUpon>VR_Rpt_Saldos_Disponibles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\VR_Rpt_Rango_Fechas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\VR_Rpt_Rango_Fechas.Designer.cs">
-      <DependentUpon>VR_Rpt_Rango_Fechas.cs</DependentUpon>
     </Compile>
     <Compile Include="SIGVADataSet_Bitacora.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -436,31 +456,42 @@
     <EmbeddedResource Include="FormasBase\Reportes\Rpt_Base.resx">
       <DependentUpon>Rpt_Base.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Auditoria\Rpt_Sessiones.rdlc" />
+    <EmbeddedResource Include="Auditoria\VR_A_Movimientos.resx">
+      <DependentUpon>VR_A_Movimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rpt_Rango.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Rango.resx">
       <DependentUpon>Rpt_Rango.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rpt_Rango_Fechas.rdlc" />
-    <EmbeddedResource Include="Reportes\Rpt_Saldos_Disponibles.resx">
-      <DependentUpon>Rpt_Saldos_Disponibles.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rpt_Rango_Fechas.resx">
       <DependentUpon>Rpt_Rango_Fechas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Auditoria\Rpt_Sessiones.rdlc" />
-    <EmbeddedResource Include="Reportes\Rpt_Rango.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Saldos_Disponibles.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Saldos_Disponibles.resx">
+      <DependentUpon>Rpt_Saldos_Disponibles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\VRrpt_rango.resx">
       <DependentUpon>VRrpt_rango.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Rpt_Saldos_Disponibles.rdlc" />
-    <EmbeddedResource Include="Reportes\VR_Rpt_Saldos_Disponibles.resx">
-      <DependentUpon>VR_Rpt_Saldos_Disponibles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\VR_Rpt_Rango_Fechas.resx">
       <DependentUpon>VR_Rpt_Rango_Fechas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Auditoria\VR_A_Movimientos.resx">
-      <DependentUpon>VR_A_Movimientos.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\VR_Rpt_Saldos_Disponibles.resx">
+      <DependentUpon>VR_Rpt_Saldos_Disponibles.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DTRESERVADOS.xsc">
+      <DependentUpon>DTRESERVADOS.xsd</DependentUpon>
+    </None>
+    <None Include="DTRESERVADOS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTRESERVADOS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DTRESERVADOS.xss">
+      <DependentUpon>DTRESERVADOS.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\A_Sessiones.datasource" />
     <None Include="Properties\DataSources\Entidades.Ent_Sessiones.datasource" />
     <None Include="Properties\Settings.settings">
@@ -548,6 +579,39 @@
     </None>
     <None Include="SIGVADataSet3.xss">
       <DependentUpon>SIGVADataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSet4.xsc">
+      <DependentUpon>SIGVADataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SIGVADataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIGVADataSet4.xss">
+      <DependentUpon>SIGVADataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSetAnualidades.xsc">
+      <DependentUpon>SIGVADataSetAnualidades.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSetAnualidades.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SIGVADataSetAnualidades.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIGVADataSetAnualidades.xss">
+      <DependentUpon>SIGVADataSetAnualidades.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSetDD.xsc">
+      <DependentUpon>SIGVADataSetDD.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSetDD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SIGVADataSetDD.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIGVADataSetDD.xss">
+      <DependentUpon>SIGVADataSetDD.xsd</DependentUpon>
     </None>
     <None Include="SIGVADataSetdiasdevueltos.xsc">
       <DependentUpon>SIGVADataSetdiasdevueltos.xsd</DependentUpon>

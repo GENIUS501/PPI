@@ -316,17 +316,14 @@ namespace Presentacion
             {
                 CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
 
-                if (char.IsNumber(e.KeyChar) ||
-
-                    e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator
-
-                    )
-
+                if (char.IsNumber(e.KeyChar) || e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator)
+                {
                     e.Handled = false;
-
+                }
                 else
-
+                {
                     e.Handled = true;
+                }
             }
         }
     }

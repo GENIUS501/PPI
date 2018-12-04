@@ -73,7 +73,7 @@ namespace AccesoDatos
                 DataTable dtConsulta = new DataTable();
                 Ent_Dias_Disponibles vRegistro = new Ent_Dias_Disponibles();
 
-                string commandText = "SELECT TOP (1) Ano,Cantidad_Dias,Cedula  FROM Dias_Disponibles WHERE Cantidad_Dias<12 and Cedula = "+pCedula+" ORDER BY Ano ASC";
+                string commandText = "SELECT TOP (1) Ano,Cantidad_Dias,Cedula  FROM Dias_Disponibles WHERE Cantidad_Dias<12 and Cedula = " + pCedula + " ORDER BY Cantidad_Dias ASC";
                 //string commandText = commandTexta;
 
                 using (SqlConnection connection = new SqlConnection(vCadenaConexion))
@@ -174,7 +174,7 @@ namespace AccesoDatos
                 using (SqlConnection cnx = new SqlConnection(vCadenaConexion))
                 {
 
-                    string query = "SELECT * FROM Dias_Disponibles WHERE Cedula = "+Pcodigo;
+                    string query = "SELECT * FROM Dias_Disponibles WHERE Cedula = " + Pcodigo + "ORDER BY Ano ASC";
                     SqlCommand cmd = new SqlCommand(query, cnx);
                     SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
