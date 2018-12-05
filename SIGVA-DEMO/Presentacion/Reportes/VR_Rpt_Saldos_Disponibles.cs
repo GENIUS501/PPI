@@ -50,7 +50,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar los datos: " + ex);
+                MessageBox.Show(ex.ToString(),"Error al cargar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }

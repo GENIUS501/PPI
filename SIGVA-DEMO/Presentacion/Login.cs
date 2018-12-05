@@ -81,7 +81,7 @@ namespace Presentacion
                     Entrar();
                 }catch(Exception ex)
                 {
-                    MessageBox.Show("Error al ingresar al sistema: " + ex);
+                    MessageBox.Show(ex.ToString(),"Error al ingresar al sistema",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                 
             }
