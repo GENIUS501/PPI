@@ -337,6 +337,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(726, 524);
             this.Controls.Add(this.Txt_Cedula);
             this.Controls.Add(this.Txt_Fecha_Ingreso);
@@ -367,7 +368,6 @@
             this.Controls.Add(this.lbl_cedula);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "P_Reservar_Dias";
             this.Text = "Reserva de dias";
             this.Load += new System.EventHandler(this.P_Reservar_Dias_Load);

@@ -54,7 +54,7 @@
             this.lbl_version.AutoSize = true;
             this.lbl_version.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.lbl_version.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_version.Location = new System.Drawing.Point(704, 30);
+            this.lbl_version.Location = new System.Drawing.Point(695, 30);
             this.lbl_version.Name = "lbl_version";
             this.lbl_version.Size = new System.Drawing.Size(84, 13);
             this.lbl_version.TabIndex = 11;
@@ -65,7 +65,7 @@
             this.lbl_marca.AutoSize = true;
             this.lbl_marca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.lbl_marca.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lbl_marca.Location = new System.Drawing.Point(675, 0);
+            this.lbl_marca.Location = new System.Drawing.Point(663, 0);
             this.lbl_marca.Name = "lbl_marca";
             this.lbl_marca.Size = new System.Drawing.Size(116, 13);
             this.lbl_marca.TabIndex = 10;

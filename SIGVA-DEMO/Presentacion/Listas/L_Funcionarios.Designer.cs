@@ -141,6 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(874, 348);
             this.Controls.Add(this.Txt_Cedula);
             this.Controls.Add(this.Cmd_Buscar);
@@ -149,6 +150,7 @@
             this.Controls.Add(this.Cbo_Departamentos);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "L_Funcionarios";
             this.Text = "Lista de funcionarios";
             this.Evento_Agregar += new System.EventHandler(this.L_Funcionarios_Evento_Agregar);

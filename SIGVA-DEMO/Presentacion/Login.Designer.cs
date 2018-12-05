@@ -144,6 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(284, 347);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox1);
@@ -151,6 +152,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
             this.Text = "Ingreso";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

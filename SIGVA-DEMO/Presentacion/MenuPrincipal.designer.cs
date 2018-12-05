@@ -284,6 +284,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
+            this.MaximizeBox = false;
             this.Name = "MenuPrincipal";
             this.Text = "MenuPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

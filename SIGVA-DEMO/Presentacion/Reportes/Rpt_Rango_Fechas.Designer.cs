@@ -127,6 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(723, 526);
             this.Controls.Add(this.Cmd_Buscar);
             this.Controls.Add(this.Cmd_Cancelar);
@@ -138,6 +139,7 @@
             this.Controls.Add(this.Txt_Fecha_Ini);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Rpt_Rango_Fechas";
             this.Text = "Reporte de rango de fechas";
             this.Controls.SetChildIndex(this.label1, 0);

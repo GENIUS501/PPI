@@ -259,6 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(723, 526);
             this.Controls.Add(this.Txt_Cedula);
             this.Controls.Add(this.Cmd_Cancelar);
@@ -284,6 +285,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Txt_Codigo_Reporte);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Rpt_Saldos_Disponibles";
             this.Text = "Reporte de Saldos Disponibles";
             this.Load += new System.EventHandler(this.Rpt_Saldos_Disponibles_Load);

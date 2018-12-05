@@ -113,6 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(723, 317);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -121,6 +122,7 @@
             this.Controls.Add(this.Txt_Nombre_Puesto);
             this.Controls.Add(this.Txt_Id_Puesto);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "M_Puestos";
             this.Text = "M_Puestos";
             this.Evento_Aceptar += new System.EventHandler(this.M_Puestos_Evento_Aceptar);

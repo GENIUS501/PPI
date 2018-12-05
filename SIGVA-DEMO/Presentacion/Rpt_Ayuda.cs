@@ -19,15 +19,25 @@ namespace Presentacion
 
         private void Rpt_Ayuda_Load(object sender, EventArgs e)
         {
-            string path = System.IO.Path.GetDirectoryName(
-      System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-            MessageBox.Show(path);
-            linkLabel1.Links.Add(0,0,path+"/ayuda.pdf");
+            try
+            {
+                string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                linkLabel1.Links.Add(0, 0, path + "/ayuda.pdf");
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString(),"Error al cargar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start(e.Link.LinkData.ToString());
+            try
+            {
+                System.Diagnostics.Process.Start(e.Link.LinkData.ToString());
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error al cargar el pdf", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
