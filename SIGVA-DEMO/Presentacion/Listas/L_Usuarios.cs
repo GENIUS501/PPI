@@ -35,7 +35,7 @@ namespace Presentacion
             }
             catch (Exception ex) 
             { 
-                MessageBox.Show(ex.ToString()); 
+                MessageBox.Show(ex.ToString(),"Error al cargar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error); 
             }
 
         }
@@ -53,29 +53,35 @@ namespace Presentacion
 
         private void L_cliente_Evento_Borrar(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Realmente desea eliminar el Usuario", "Eliminar el Usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dr == DialogResult.Yes)
+            try
             {
-                if (valorPrimerCelda == null)
+                DialogResult dr = MessageBox.Show("Realmente desea eliminar el Usuario", "Eliminar el Usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dr == DialogResult.Yes)
                 {
-                    MessageBox.Show("Favor de seleccionar los datos a Eliminar");
-                    return;
-                }
-                else
-                {
-                    Nusuarios = new Neg_Usuarios();
-                    Int32 Filasafectadas = 0;
-                    Filasafectadas = Nusuarios.Eliminar(valorPrimerCelda);
-                    if (Filasafectadas > 0)
+                    if (valorPrimerCelda == null)
                     {
-                        L_cliente_Load(null, null);
-                        MessageBox.Show("Datos eliminados exitosamente", "Eliminacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Favor de seleccionar los datos a Eliminar", "Error al eliminar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
                     else
                     {
-                        MessageBox.Show("Error al Eliminar datos");
+                        Nusuarios = new Neg_Usuarios();
+                        Int32 Filasafectadas = 0;
+                        Filasafectadas = Nusuarios.Eliminar(valorPrimerCelda);
+                        if (Filasafectadas > 0)
+                        {
+                            L_cliente_Load(null, null);
+                            MessageBox.Show("Datos eliminados exitosamente", "Eliminacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al Eliminar datos", "Error al Eliminar los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString(),"Error al eliminar",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -90,7 +96,7 @@ namespace Presentacion
             {
                 if (valorPrimerCelda == null)
                 {
-                    MessageBox.Show("Favor de seleccionar los datos a modificar");
+                    MessageBox.Show("Favor de seleccionar los datos a modificar","Error al modificar",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     return;
                 }
                 else
@@ -111,7 +117,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(),"Error al modificar",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -120,7 +126,7 @@ namespace Presentacion
             try{
                if (valorPrimerCelda == null)
                 {
-                    MessageBox.Show("Favor de seleccionar los datos a consultar");
+                    MessageBox.Show("Favor de seleccionar los datos a consultar","Error al consultar",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     return;
                 }
                else 
@@ -143,7 +149,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(),"Error al consutar",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

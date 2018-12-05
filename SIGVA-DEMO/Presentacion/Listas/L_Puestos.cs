@@ -34,7 +34,7 @@ namespace Presentacion
             }
             catch (Exception ex) 
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(),"Error al cargar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
         private void L_Puestos_Evento_Agregar(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace Presentacion
                 {
                     if (valorPrimerCelda == -1)
                     {
-                        MessageBox.Show("Favor de seleccionar los datos a eliminar");
+                        MessageBox.Show("Favor de seleccionar los datos a eliminar", "Favor de seleccionar los datos a eliminar",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
                     else
                     {
@@ -67,7 +67,7 @@ namespace Presentacion
                         Eliminar = Npuestos.Eliminar(valorPrimerCelda);
                         if (Eliminar > 0)
                         {
-                            MessageBox.Show("Datos eliminados exitosamente");
+                            MessageBox.Show("Puesto eliminado exitosamente","Datos eliminados exitosamente",MessageBoxButtons.OK,MessageBoxIcon.Information);
                             valorPrimerCelda = -1;
                             L_Puestos_Load(null, null);
                         }
@@ -75,7 +75,7 @@ namespace Presentacion
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al eliminar: "+ex);
+                MessageBox.Show(ex.ToString(),"Error al eliminar",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -90,7 +90,7 @@ namespace Presentacion
             {
                 if (valorPrimerCelda == -1)
                 {
-                    MessageBox.Show("Favor de seleccionar los datos a modificar");
+                    MessageBox.Show("Favor de seleccionar los datos a modificar", "Favor de seleccionar los datos a modificar",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     return;
                 }
                 else
@@ -111,7 +111,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(),"Error al modificar",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -121,7 +121,7 @@ namespace Presentacion
             {
                  if (valorPrimerCelda == -1)
                  {
-                     MessageBox.Show("Favor de seleccionar los datos a consultar");
+                     MessageBox.Show("Favor de seleccionar los datos a consultar", "Favor de seleccionar los datos a consultar",MessageBoxButtons.OK,MessageBoxIcon.Error);
                      return;
                  }else
                  {
@@ -141,7 +141,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(),"Error al modificar",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -153,7 +153,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex);
+                MessageBox.Show(ex.ToString(),"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }

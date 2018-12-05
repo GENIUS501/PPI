@@ -271,6 +271,7 @@ namespace Presentacion
                 if (fechaInicio < fechaFinal)
                 {
                     fecha_trabajo = fechaInicio;
+                    fecha_trabajo = fecha_trabajo.AddMonths(1);
                     while ( fecha_trabajo <= fechaFinal)
                     {
                         int Ano = 0;

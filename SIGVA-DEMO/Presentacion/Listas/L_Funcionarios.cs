@@ -38,7 +38,7 @@ namespace Presentacion
                }
             catch(Exception ex)
                {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show(ex.ToString(),"Error al cargar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
                }
         }
         private void L_Funcionarios_Evento_Agregar(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace Presentacion
             {
                 if (valorPrimerCelda == -1)
                 {
-                    MessageBox.Show("Favor de Seleccionar el funcionario que desea eliminar");
+                    MessageBox.Show("Favor de Seleccionar el funcionario que desea eliminar","Error al eliminar",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -92,19 +92,19 @@ namespace Presentacion
                         Eliminarfuncionarios = Nfuncionarios.Eliminar(valorPrimerCelda);
                         if(Eliminarfuncionarios>0)
                         {
-                            MessageBox.Show("Funcionario eliminado exitosamente");
+                            MessageBox.Show("Funcionario eliminado exitosamente", "Funcionario eliminado exitosamente",MessageBoxButtons.OK,MessageBoxIcon.Information);
                             L_Funcionarios_Load(null, null);
                         }
                         else
                         {
-                            MessageBox.Show("Error al eliminar el funcionarios");
+                            MessageBox.Show("Error al eliminar el funcionarios", "Error al eliminar el funcionarios",MessageBoxButtons.OK,MessageBoxIcon.Error);
                             L_Funcionarios_Load(null, null);
                         }
                     }
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al eliminar datos: "+ex);
+                MessageBox.Show(ex.ToString(), "Error al eliminar datos: ",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -119,7 +119,7 @@ namespace Presentacion
             {
                 if (valorPrimerCelda == -1)
                 {
-                    MessageBox.Show("Favor de Seleccionar el funcionario a Modificar");
+                    MessageBox.Show("Favor de Seleccionar el funcionario a Modificar","Error al modificar");
                 }
                 else
                 {
@@ -139,7 +139,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(),"Error al modificar",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -149,7 +149,7 @@ namespace Presentacion
             {
                 if (valorPrimerCelda == -1)
                 {
-                    MessageBox.Show("Favor de Seleccionar el funcionario a Consultar");
+                    MessageBox.Show("Favor de Seleccionar el funcionario a Consultar","Error al consultar",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     return;
                 }
                 else
@@ -199,7 +199,7 @@ namespace Presentacion
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al buscar los datos: "+ex);
+                MessageBox.Show(ex.ToString(),"Error al buscar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -211,7 +211,7 @@ namespace Presentacion
                 dataGridView1.DataSource = Nfuncionarios.Llenar_data_grid2(Convert.ToInt32(this.Txt_Cedula.Text.ToString()));
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al buscar los datos: " + ex);
+                MessageBox.Show(ex.ToString(), "Error al buscar los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -228,7 +228,7 @@ namespace Presentacion
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al buscar los datos: "+ex);
+                MessageBox.Show(ex.ToString(),"Error al buscar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
