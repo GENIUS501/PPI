@@ -312,5 +312,12 @@ namespace Principal
             salida = Nsessiones.Salir(Esessiones);
             Application.Exit();
         }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Rpt_Ayuda ay = new Rpt_Ayuda();
+            ay.MdiParent = MdiParent;
+            ay.Show();
+        }
     }
 }

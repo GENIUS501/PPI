@@ -260,6 +260,12 @@
     <Compile Include="Reportes\VR_Rpt_Saldos_Disponibles.Designer.cs">
       <DependentUpon>VR_Rpt_Saldos_Disponibles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rpt_Ayuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rpt_Ayuda.Designer.cs">
+      <DependentUpon>Rpt_Ayuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rpt_Session_dataset.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -480,6 +486,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\VR_Rpt_Saldos_Disponibles.resx">
       <DependentUpon>VR_Rpt_Saldos_Disponibles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt_Ayuda.resx">
+      <DependentUpon>Rpt_Ayuda.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DTRESERVADOS.xsc">
       <DependentUpon>DTRESERVADOS.xsd</DependentUpon>
