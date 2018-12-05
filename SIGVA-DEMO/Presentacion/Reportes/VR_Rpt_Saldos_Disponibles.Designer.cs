@@ -32,6 +32,7 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VR_Rpt_Saldos_Disponibles));
             this.Dias_DisponiblesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Saldos_Disponibles = new Presentacion.Saldos_Disponibles();
             this.Dias_ReservadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -102,8 +103,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(735, 505);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VR_Rpt_Saldos_Disponibles";
-            this.Text = "VR_Rpt_Saldos_Disponibles";
+            this.Text = "Reporte de saldos disponibles";
             this.Load += new System.EventHandler(this.VR_Rpt_Saldos_Disponibles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dias_DisponiblesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Saldos_Disponibles)).EndInit();
