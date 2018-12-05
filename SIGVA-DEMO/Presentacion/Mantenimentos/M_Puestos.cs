@@ -59,7 +59,7 @@ namespace Presentacion
                     Actualizar = Npuestos.Actualizar(Epuestos);
                     if (Actualizar > 0)
                     {
-                        MessageBox.Show("Datos actualizados correctamente","Datos actualizados correctamente",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        MessageBox.Show("Datos actualizados correctamente","Datos actualizados correctamente",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         this.Close();
                     }
                     else

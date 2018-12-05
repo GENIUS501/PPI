@@ -62,7 +62,7 @@ namespace Presentacion
                     Agregar = Npuestos.Insertar(Epuestos);
                     if (Agregar > 0)
                     {
-                        MessageBox.Show("Puesto Agregado");
+                        MessageBox.Show("Puesto Agregado", "Puesto Agregado",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         this.Txt_Nombre_Puestos.Text = "";
                         this.Cbo_Departamento.SelectedValue = 1;
                         I_Puestos_Load(null, null);
