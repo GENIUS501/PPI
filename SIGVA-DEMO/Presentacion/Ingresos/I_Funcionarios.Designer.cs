@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(I_Funcionarios));
             this.label1 = new System.Windows.Forms.Label();
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Txt_Apellido1 = new System.Windows.Forms.TextBox();
@@ -404,6 +405,7 @@
             this.ClientSize = new System.Drawing.Size(720, 528);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "I_Funcionarios";
             this.Text = "Ingresar Funcionarios";
             this.Load += new System.EventHandler(this.I_Funcionarios_Load);
