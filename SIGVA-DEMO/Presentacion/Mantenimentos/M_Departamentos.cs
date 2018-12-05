@@ -58,12 +58,12 @@ namespace Presentacion
                     Actualizar = Ndepartamentos.Actualizar(Edepartamentos);
                     if (Actualizar > 0)
                     {
-                        MessageBox.Show("Datos Actualizados");
+                        MessageBox.Show("Datos Actualizados", "Datos Actualizados",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Error al actualizar los datos");
+                        MessageBox.Show("Error al actualizar los datos", "Error al actualizar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
                 }
                 if (Modo == "C")
@@ -72,7 +72,7 @@ namespace Presentacion
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al actualizar los datos: " + ex);
+                MessageBox.Show(ex.ToString(),"Error al actualizar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
         private void M_Departamento_Evento_Salir(object sender, EventArgs e)
@@ -82,15 +82,21 @@ namespace Presentacion
 
         private void M_Departamentos_Load(object sender, EventArgs e)
         {
-            Leer();
-            if(Modo =="C")
+            try
             {
-                this.Txt_Id_Departamento.Enabled = false;
-                this.Txt_Nombre_Departamento.Enabled = false;
-            }
-            if(Modo == "M")
+                Leer();
+                if (Modo == "C")
+                {
+                    this.Txt_Id_Departamento.Enabled = false;
+                    this.Txt_Nombre_Departamento.Enabled = false;
+                }
+                if (Modo == "M")
+                {
+                    this.Txt_Id_Departamento.Enabled = false;
+                }
+            }catch(Exception ex)
             {
-                this.Txt_Id_Departamento.Enabled = false;
+                MessageBox.Show(ex.ToString(), "Error al cargar los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -105,7 +111,7 @@ namespace Presentacion
                 this.Txt_Nombre_Departamento.Text = Edepartamentos.Nombre_Departamento.ToString();
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al cargar los datos: "+ex);
+                MessageBox.Show(ex.ToString(),"Error al cargar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
         }

@@ -71,7 +71,7 @@ namespace Presentacion
         {
             if (Txt_Cedula.Text == "" || Txt_Nombre.Text == "" || Txt_Apellido1.Text == "" || Txt_Apellido2.Text == "" || Txt_Clave.Text == "")
             {
-                MessageBox.Show("No se ha llenado uno o varios campos");
+                MessageBox.Show("No se ha llenado uno o varios campos","No se ha llenado uno o varios campos",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {
@@ -105,14 +105,14 @@ namespace Presentacion
                                 this.Close();
                             }else
                             {
-                                MessageBox.Show("Error al Modificar datos");
+                                MessageBox.Show("Error al Modificar datos", "Error al Modificar datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
                             }
                         break;
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error"+ex);
+                    MessageBox.Show(ex.ToString(),"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
         }
@@ -123,25 +123,31 @@ namespace Presentacion
 
         private void M_Usuarios_Load(object sender, EventArgs e)
         {
-            Cbo_Rol.DropDownStyle = ComboBoxStyle.DropDownList;
-            LlenarCombo();
-            if (Modo == "M")
+            try
             {
-                this.Txt_Cedula.Enabled = false;
-                this.Txt_Usuario.Enabled = false;
-            }
-            if (Modo == "C")
+                Cbo_Rol.DropDownStyle = ComboBoxStyle.DropDownList;
+                LlenarCombo();
+                if (Modo == "M")
+                {
+                    this.Txt_Cedula.Enabled = false;
+                    this.Txt_Usuario.Enabled = false;
+                }
+                if (Modo == "C")
+                {
+                    this.Txt_Cedula.Enabled = false;
+                    this.Txt_Usuario.Enabled = false;
+                    this.Txt_Nombre.Enabled = false;
+                    this.Txt_Cedula.Enabled = false;
+                    this.Txt_Apellido1.Enabled = false;
+                    this.Txt_Apellido2.Enabled = false;
+                    this.Txt_Clave.Enabled = false;
+                    this.Cbo_Rol.Enabled = false;
+                }
+                Leer();
+            }catch(Exception ex)
             {
-                this.Txt_Cedula.Enabled = false;
-                this.Txt_Usuario.Enabled = false;
-                this.Txt_Nombre.Enabled = false;
-                this.Txt_Cedula.Enabled = false;
-                this.Txt_Apellido1.Enabled = false;
-                this.Txt_Apellido2.Enabled = false;
-                this.Txt_Clave.Enabled = false;
-                this.Cbo_Rol.Enabled = false;
+                MessageBox.Show(ex.ToString(), "Error al cargar los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            Leer();
         }
         private void Leer()
         {
@@ -169,7 +175,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: "+ex);
+                throw ex;
             }
         }
     }

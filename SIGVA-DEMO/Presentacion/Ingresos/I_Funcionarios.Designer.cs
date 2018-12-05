@@ -214,6 +214,7 @@
             this.Txt_Cantidad_Anos.Name = "Txt_Cantidad_Anos";
             this.Txt_Cantidad_Anos.Size = new System.Drawing.Size(41, 20);
             this.Txt_Cantidad_Anos.TabIndex = 11;
+            this.Txt_Cantidad_Anos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Cantidad_Anos_KeyPress);
             // 
             // label8
             // 

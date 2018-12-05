@@ -71,23 +71,23 @@ namespace Presentacion
                         {
                             Calcular_Anteriores();
                         }
-                        MessageBox.Show("Funcionario Modificado");
+                        MessageBox.Show("Funcionario Modificado","Funcionario Modificado",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         this.Close();
 
                     }
                     else
                     {
-                        MessageBox.Show("Error al Modificar datos.");
+                        MessageBox.Show("Error al Modificar datos.", "Error al Modificar datos.",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Formato de cedula incorrecto");
+                    MessageBox.Show("Formato de cedula incorrecto", "Formato de cedula incorrecto",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex);
+                MessageBox.Show(ex.ToString(),"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -122,12 +122,12 @@ namespace Presentacion
                 }
                 else
                 {
-                    MessageBox.Show("Error al calcular los años anteriores");
+                    MessageBox.Show("Error al calcular los años anteriores", "Error al calcular los años anteriores",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error : " + ex);
+                MessageBox.Show(ex.ToString(),"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
         private void Calcular_Anualidad()
@@ -181,7 +181,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex);
+                MessageBox.Show(ex.ToString(),"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -224,7 +224,7 @@ namespace Presentacion
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al cargar los datos: "+ex);
+                MessageBox.Show(ex.ToString(),"Error al cargar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -266,23 +266,29 @@ namespace Presentacion
         }
         private void Leer()
         {
-            Ent_Funcionarios Efuncionarios = new Ent_Funcionarios();
-            Neg_Funcionarios Nfuncionarios = new Neg_Funcionarios();
-            Efuncionarios = Nfuncionarios.LeerCodigoLlave(Codigo);
-            this.Txt_Cedula.Text = Efuncionarios.Cedula.ToString();
-            this.Txt_Nombre.Text = Efuncionarios.Nombre;
-            this.Txt_Apellido1.Text = Efuncionarios.Apellido1;
-            this.Txt_Apellido2.Text = Efuncionarios.Apellido2;
-            this.Txt_Email.Text = Efuncionarios.Email;
-            this.Txt_Direccion.Text = Efuncionarios.Direccion;
-            this.Txt_Telefono.Text = Efuncionarios.Telefono.ToString();
-            this.Cbo_Departamento.SelectedValue = Efuncionarios.Id_Departamento;
-            LlenarCombo();
-            this.Cbo_Puesto.SelectedValue = Efuncionarios.Id_Puesto;
-            this.Cbo_Estatus.SelectedValue = Efuncionarios.Estatus;
-            this.Txt_Anos_Institucion.Text = Efuncionarios.Anos_Institucion_anterior.ToString();
-            this.Txt_Fecha_Ingreso.Text = Efuncionarios.Fecha_De_Ingreso.ToString();
-            this.Txt_Fecha_Anualidad.Text = Efuncionarios.Fecha_de_Anualidad.ToString();
+            try
+            {
+                Ent_Funcionarios Efuncionarios = new Ent_Funcionarios();
+                Neg_Funcionarios Nfuncionarios = new Neg_Funcionarios();
+                Efuncionarios = Nfuncionarios.LeerCodigoLlave(Codigo);
+                this.Txt_Cedula.Text = Efuncionarios.Cedula.ToString();
+                this.Txt_Nombre.Text = Efuncionarios.Nombre;
+                this.Txt_Apellido1.Text = Efuncionarios.Apellido1;
+                this.Txt_Apellido2.Text = Efuncionarios.Apellido2;
+                this.Txt_Email.Text = Efuncionarios.Email;
+                this.Txt_Direccion.Text = Efuncionarios.Direccion;
+                this.Txt_Telefono.Text = Efuncionarios.Telefono.ToString();
+                this.Cbo_Departamento.SelectedValue = Efuncionarios.Id_Departamento;
+                LlenarCombo();
+                this.Cbo_Puesto.SelectedValue = Efuncionarios.Id_Puesto;
+                this.Cbo_Estatus.SelectedValue = Efuncionarios.Estatus;
+                this.Txt_Anos_Institucion.Text = Efuncionarios.Anos_Institucion_anterior.ToString();
+                this.Txt_Fecha_Ingreso.Text = Efuncionarios.Fecha_De_Ingreso.ToString();
+                this.Txt_Fecha_Anualidad.Text = Efuncionarios.Fecha_de_Anualidad.ToString();
+            }catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void Txt_Anos_Institucion_KeyPress(object sender, KeyPressEventArgs e)

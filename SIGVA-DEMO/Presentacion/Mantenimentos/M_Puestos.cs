@@ -59,12 +59,12 @@ namespace Presentacion
                     Actualizar = Npuestos.Actualizar(Epuestos);
                     if (Actualizar > 0)
                     {
-                        MessageBox.Show("Datos actualizados correctamente");
+                        MessageBox.Show("Datos actualizados correctamente","Datos actualizados correctamente",MessageBoxButtons.OK,MessageBoxIcon.Error);
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Error al actualizar los datos");
+                        MessageBox.Show("Error al actualizar los datos", "Error al actualizar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
                 }
                 if(Modo == "C")
@@ -73,7 +73,7 @@ namespace Presentacion
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al actualizar los datos: "+ex);
+                MessageBox.Show(ex.ToString(),"Error al actualizar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
         private void M_Puestos_Evento_Salir(object sender, EventArgs e)
@@ -101,7 +101,7 @@ namespace Presentacion
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al Cargar los datos: " + ex);
+                MessageBox.Show(ex.ToString(),"Error al Cargar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -118,7 +118,7 @@ namespace Presentacion
 
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al Cargar los datos: " + ex);
+                throw ex;
             }
         }
     }

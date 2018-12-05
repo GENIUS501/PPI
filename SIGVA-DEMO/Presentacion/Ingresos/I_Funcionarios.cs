@@ -356,5 +356,22 @@ namespace Presentacion
             this.Rad_Posee.Checked = true;
             Txt_Cantidad_Anos.Enabled = true;
         }
+
+        private void textbox_numer(KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+
+            }
+            else
+            {
+                e.Handled = e.KeyChar != (char)Keys.Back;
+            }
+        }
+
+        private void Txt_Cantidad_Anos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textbox_numer(e);
+        }
     }
 }
