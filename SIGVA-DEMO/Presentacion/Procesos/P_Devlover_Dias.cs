@@ -274,7 +274,7 @@ namespace Presentacion
         {
             CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
 
-            if (char.IsNumber(e.KeyChar) || e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator)
+            if (char.IsNumber(e.KeyChar) || e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator || char.IsControl(e.KeyChar))
             {
                 e.Handled = false;
             }
@@ -282,6 +282,22 @@ namespace Presentacion
             {
                 e.Handled = true;
             }
+        }
+        private void textbox_numer(KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+
+            }
+            else
+            {
+                e.Handled = e.KeyChar != (char)Keys.Back;
+            }
+        }
+
+        private void Txt_Numero_Boleta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textbox_numer(e);
         }
     }
 }

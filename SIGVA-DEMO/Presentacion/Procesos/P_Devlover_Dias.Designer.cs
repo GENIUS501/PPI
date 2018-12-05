@@ -192,6 +192,7 @@
             this.Txt_Numero_Boleta.Name = "Txt_Numero_Boleta";
             this.Txt_Numero_Boleta.Size = new System.Drawing.Size(100, 20);
             this.Txt_Numero_Boleta.TabIndex = 40;
+            this.Txt_Numero_Boleta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Numero_Boleta_KeyPress);
             // 
             // Txt_Cantidad_Dias
             // 

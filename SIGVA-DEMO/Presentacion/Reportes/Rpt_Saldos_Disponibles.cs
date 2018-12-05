@@ -48,7 +48,7 @@ namespace Presentacion
                 this.Txt_Fecha_Ingreso.Enabled = false;
             }catch(Exception ex)
             {
-                MessageBox.Show("Error al cargar los datos: "+ex);
+                MessageBox.Show(ex.ToString(),"Error al cargar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
         }
@@ -112,12 +112,12 @@ namespace Presentacion
                 }
                 else
                 {
-                    MessageBox.Show("Debe digitar la cedula.");
+                    MessageBox.Show("Debe digitar la cedula.", "Debe digitar la cedula",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex);
+                MessageBox.Show(ex.ToString(),"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
         }
@@ -155,11 +155,11 @@ namespace Presentacion
                 }
                 else
                 {
-                    MessageBox.Show("Debe digitar la cedula.");
+                    MessageBox.Show("Debe digitar la cedula.", "Debe digitar la cedula",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Error: "+ex);
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

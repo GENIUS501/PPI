@@ -45,7 +45,7 @@ namespace Presentacion
             }
             catch (Exception ex) 
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(), "Error al cargar los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -67,7 +67,7 @@ namespace Presentacion
                    
             }catch(Exception ex)
             {
-                MessageBox.Show("Error: "+ex);
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         
         }
@@ -82,12 +82,12 @@ namespace Presentacion
                 }
                 else
                 {
-                    MessageBox.Show("Debe digitar la cedula.");
+                    MessageBox.Show("Debe digitar la cedula.", "Debe digitar la cedula",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex);
+                MessageBox.Show(ex.ToString(),"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
         private void llenar()
@@ -115,7 +115,7 @@ namespace Presentacion
                 }
                 else
                 {
-                    MessageBox.Show("Error funcionario no existe");
+                    MessageBox.Show("Error funcionario no existe", "Error funcionario no existe",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }catch(Exception ex)
             {
@@ -150,13 +150,13 @@ namespace Presentacion
                     }
                     else
                     {
-                        MessageBox.Show("Debe indicar cuantos dias desea disfrutar");
+                        MessageBox.Show("Debe indicar cuantos dias desea disfrutar", "Debe indicar cuantos dias desea disfrutar",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("Error funcionario no existe");
+                    MessageBox.Show("Error funcionario no existe", "Error funcionario no existe",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }catch (Exception ex)
             {
@@ -290,7 +290,7 @@ namespace Presentacion
                 }
                 else
                 {
-                    MessageBox.Show("No posee suficientes dias");
+                    MessageBox.Show("No posee suficientes dias", "No posee suficientes dias",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }catch (Exception ex)
             {
@@ -319,7 +319,7 @@ namespace Presentacion
             {
                 CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
 
-                if (char.IsNumber(e.KeyChar) || e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator)
+                if (char.IsNumber(e.KeyChar) || e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator || char.IsControl(e.KeyChar))
                 {
                     e.Handled = false;
                 }

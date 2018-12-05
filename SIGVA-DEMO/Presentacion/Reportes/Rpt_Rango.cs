@@ -83,7 +83,7 @@ namespace Presentacion
             }
             else
             {
-                MessageBox.Show("Debe seleccionar el funcionario del que desea el registro.");
+                MessageBox.Show("Debe seleccionar el funcionario del que desea el registro.", "Debe seleccionar el funcionario del que desea el registro.",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -97,13 +97,19 @@ namespace Presentacion
                 Saldo = dat_rango.Rows[e.RowIndex].Cells[13].Value.ToString();
             }catch(Exception ex)
             {
-                MessageBox.Show("Error: "+ex);
+                MessageBox.Show(ex.ToString(),"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
         private void Cmd_Buscar_Click(object sender, EventArgs e)
         {
-            cargar();
+            try
+            {
+                cargar();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString(),"Error al cargar los datos",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
     }
 }
