@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(A_Movimientos));
             this.Txt_Usuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Cmd_Buscar = new System.Windows.Forms.Button();
@@ -38,6 +39,8 @@
             this.fechaHoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tablaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bitacoraBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sIGVADataSet_Bitacora = new Presentacion.SIGVADataSet_Bitacora();
             this.bitacoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sIGVADataSet2 = new Presentacion.SIGVADataSet2();
             this.bitacoraTableAdapter = new Presentacion.SIGVADataSet2TableAdapters.BitacoraTableAdapter();
@@ -45,16 +48,14 @@
             this.Cmd_Imprimir = new System.Windows.Forms.Button();
             this.Btn_Salir = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.sIGVADataSet_Bitacora = new Presentacion.SIGVADataSet_Bitacora();
-            this.bitacoraBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bitacoraTableAdapter1 = new Presentacion.SIGVADataSet_BitacoraTableAdapters.BitacoraTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.Dat_Bitacora)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bitacoraBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet_Bitacora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bitacoraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet_Bitacora)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bitacoraBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // Txt_Usuario
@@ -138,6 +139,16 @@
             this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
             this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // bitacoraBindingSource1
+            // 
+            this.bitacoraBindingSource1.DataMember = "Bitacora";
+            this.bitacoraBindingSource1.DataSource = this.sIGVADataSet_Bitacora;
+            // 
+            // sIGVADataSet_Bitacora
+            // 
+            this.sIGVADataSet_Bitacora.DataSetName = "SIGVADataSet_Bitacora";
+            this.sIGVADataSet_Bitacora.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // bitacoraBindingSource
             // 
             this.bitacoraBindingSource.DataMember = "Bitacora";
@@ -196,16 +207,6 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // sIGVADataSet_Bitacora
-            // 
-            this.sIGVADataSet_Bitacora.DataSetName = "SIGVADataSet_Bitacora";
-            this.sIGVADataSet_Bitacora.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bitacoraBindingSource1
-            // 
-            this.bitacoraBindingSource1.DataMember = "Bitacora";
-            this.bitacoraBindingSource1.DataSource = this.sIGVADataSet_Bitacora;
-            // 
             // bitacoraTableAdapter1
             // 
             this.bitacoraTableAdapter1.ClearBeforeFill = true;
@@ -219,21 +220,22 @@
             this.Controls.Add(this.Btn_Salir);
             this.Controls.Add(this.Cmd_Imprimir);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "A_Movimientos";
-            this.Text = "A_Movimientos";
+            this.Text = "Movimientos";
             this.Load += new System.EventHandler(this.A_Movimientos_Load);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.Cmd_Imprimir, 0);
             this.Controls.SetChildIndex(this.Btn_Salir, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.Dat_Bitacora)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bitacoraBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet_Bitacora)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bitacoraBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet_Bitacora)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bitacoraBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

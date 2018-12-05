@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(I_Usuarios));
             this.Txt_Usuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Txt_Apellido2 = new System.Windows.Forms.TextBox();
@@ -248,8 +249,9 @@
             this.ClientSize = new System.Drawing.Size(717, 432);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "I_Usuarios";
-            this.Text = "I_Usuarios";
+            this.Text = "Ingreso de Usuarios";
             this.Load += new System.EventHandler(this.I_Usuarios_Load);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);

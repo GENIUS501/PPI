@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(M_Departamentos));
             this.Txt_Id_Departamento = new System.Windows.Forms.TextBox();
             this.Txt_Nombre_Departamento = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -100,6 +101,7 @@
             this.ClientSize = new System.Drawing.Size(719, 323);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "M_Departamentos";
             this.Text = "M_Departamentos";
             this.Evento_Aceptar += new System.EventHandler(this.M_Departamento_Evento_Aceptar);

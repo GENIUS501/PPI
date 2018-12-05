@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P_Reservar_Dias));
             this.lbl_cedula = new System.Windows.Forms.Label();
             this.Cmd_Buscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -364,10 +365,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Cmd_Buscar);
             this.Controls.Add(this.lbl_cedula);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "P_Reservar_Dias";
-            this.Text = "P_Reservar_Dias";
+            this.Text = "Reserva de dias";
             this.Load += new System.EventHandler(this.P_Reservar_Dias_Load);
             this.Controls.SetChildIndex(this.lbl_cedula, 0);
             this.Controls.SetChildIndex(this.Cmd_Buscar, 0);

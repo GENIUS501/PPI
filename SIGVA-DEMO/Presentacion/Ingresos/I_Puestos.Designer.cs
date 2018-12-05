@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(I_Puestos));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Txt_Nombre_Puestos = new System.Windows.Forms.TextBox();
@@ -164,6 +165,7 @@
             this.ClientSize = new System.Drawing.Size(720, 509);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "I_Puestos";
             this.Text = "I_Puestos";
             this.Load += new System.EventHandler(this.I_Puestos_Load);

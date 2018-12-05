@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AVR_Sessiones));
             this.SessionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SIGVADataSet = new Presentacion.SIGVADataSet();
             this.Ent_SessionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -57,9 +58,9 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.SessionesBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.SessionesBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Auditoria.Rpt_Sessiones.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -76,8 +77,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 534);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AVR_Sessiones";
-            this.Text = "AVR_Sessiones";
+            this.Text = "Reporte Sessiones";
             this.Load += new System.EventHandler(this.AVR_Sessiones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SessionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SIGVADataSet)).EndInit();

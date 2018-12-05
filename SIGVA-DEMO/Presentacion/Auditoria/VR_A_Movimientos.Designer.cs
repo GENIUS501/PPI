@@ -29,36 +29,37 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.SIGVADataSet_Bitacora = new Presentacion.SIGVADataSet_Bitacora();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VR_A_Movimientos));
             this.BitacoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SIGVADataSet_Bitacora = new Presentacion.SIGVADataSet_Bitacora();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.BitacoraTableAdapter = new Presentacion.SIGVADataSet_BitacoraTableAdapters.BitacoraTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.SIGVADataSet_Bitacora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BitacoraBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SIGVADataSet_Bitacora)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // BitacoraBindingSource
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSetRpt_Movimientos";
-            reportDataSource1.Value = this.BitacoraBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Auditoria.A_Movimientos.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(887, 478);
-            this.reportViewer1.TabIndex = 0;
+            this.BitacoraBindingSource.DataMember = "Bitacora";
+            this.BitacoraBindingSource.DataSource = this.SIGVADataSet_Bitacora;
             // 
             // SIGVADataSet_Bitacora
             // 
             this.SIGVADataSet_Bitacora.DataSetName = "SIGVADataSet_Bitacora";
             this.SIGVADataSet_Bitacora.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // BitacoraBindingSource
+            // reportViewer1
             // 
-            this.BitacoraBindingSource.DataMember = "Bitacora";
-            this.BitacoraBindingSource.DataSource = this.SIGVADataSet_Bitacora;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource2.Name = "DataSetRpt_Movimientos";
+            reportDataSource2.Value = this.BitacoraBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Auditoria.A_Movimientos.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(887, 478);
+            this.reportViewer1.TabIndex = 0;
             // 
             // BitacoraTableAdapter
             // 
@@ -70,11 +71,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 478);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VR_A_Movimientos";
-            this.Text = "VR_A_Movimientos";
+            this.Text = "Reporte Movimientos";
             this.Load += new System.EventHandler(this.VR_A_Movimientos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.SIGVADataSet_Bitacora)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BitacoraBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SIGVADataSet_Bitacora)).EndInit();
             this.ResumeLayout(false);
 
         }

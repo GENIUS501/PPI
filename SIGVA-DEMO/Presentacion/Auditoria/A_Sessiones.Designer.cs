@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(A_Sessiones));
             this.Txt_Usuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Cmd_Buscar = new System.Windows.Forms.Button();
@@ -128,8 +129,9 @@
             this.Controls.Add(this.Cmd_Imprimir);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "A_Sessiones";
-            this.Text = "A_Sessiones";
+            this.Text = "Sessiones";
             this.Load += new System.EventHandler(this.A_Sessiones_Load);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(L_Funcionarios));
             this.label2 = new System.Windows.Forms.Label();
             this.Cbo_Departamentos = new System.Windows.Forms.ComboBox();
             this.dEPARTAMENTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -147,6 +148,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Cbo_Departamentos);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "L_Funcionarios";
             this.Text = "Lista de funcionarios";
             this.Evento_Agregar += new System.EventHandler(this.L_Funcionarios_Evento_Agregar);

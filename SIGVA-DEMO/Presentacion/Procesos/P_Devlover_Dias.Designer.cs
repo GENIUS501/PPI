@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P_Devlover_Dias));
             this.label1 = new System.Windows.Forms.Label();
             this.Cmd_Buscar = new System.Windows.Forms.Button();
             this.Txt_Fecha_Ingreso = new System.Windows.Forms.DateTimePicker();
@@ -396,6 +397,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Cmd_Buscar);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "P_Devlover_Dias";
             this.Text = "Devolucion de Dias";
             this.Load += new System.EventHandler(this.P_Devlover_Dias_Load);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Rpt_Rango_Fechas));
             this.label1 = new System.Windows.Forms.Label();
             this.Txt_Fecha_Ini = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -136,8 +137,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Txt_Fecha_Ini);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Rpt_Rango_Fechas";
-            this.Text = "Rpt_Rango_Fechas";
+            this.Text = "Reporte de rango de fechas";
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.Txt_Fecha_Ini, 0);
             this.Controls.SetChildIndex(this.label2, 0);

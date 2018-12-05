@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Rpt_Saldos_Disponibles));
             this.Txt_Codigo_Reporte = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -282,8 +283,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Txt_Codigo_Reporte);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Rpt_Saldos_Disponibles";
-            this.Text = "Rpt_Saldos_Disponibles";
+            this.Text = "Reporte de Saldos Disponibles";
             this.Load += new System.EventHandler(this.Rpt_Saldos_Disponibles_Load);
             this.Controls.SetChildIndex(this.Txt_Codigo_Reporte, 0);
             this.Controls.SetChildIndex(this.label1, 0);

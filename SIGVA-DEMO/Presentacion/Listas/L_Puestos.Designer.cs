@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(L_Puestos));
             this.sIGVADataSetPuestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Dat_Puestos = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSetPuestosBindingSource)).BeginInit();
@@ -53,6 +54,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 348);
             this.Controls.Add(this.Dat_Puestos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "L_Puestos";
             this.Text = "Lista de puestos";
             this.Evento_Agregar += new System.EventHandler(this.L_Puestos_Evento_Agregar);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Rpt_Rango));
             this.label1 = new System.Windows.Forms.Label();
             this.Txt_Cant_Dias = new System.Windows.Forms.TextBox();
             this.dat_rango = new System.Windows.Forms.DataGridView();
@@ -107,8 +108,9 @@
             this.Controls.Add(this.dat_rango);
             this.Controls.Add(this.Txt_Cant_Dias);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Rpt_Rango";
-            this.Text = "Rpt_Rango";
+            this.Text = "Reporte de cantidad  de dias superior al dado";
             this.Load += new System.EventHandler(this.Rpt_Rango_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.Txt_Cant_Dias, 0);

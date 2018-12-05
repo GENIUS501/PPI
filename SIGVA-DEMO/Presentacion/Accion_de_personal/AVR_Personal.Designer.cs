@@ -30,13 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.SIGVADataSet3 = new Presentacion.SIGVADataSet3();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AVR_Personal));
             this.AnualidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SIGVADataSet3 = new Presentacion.SIGVADataSet3();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.AnualidadesTableAdapter = new Presentacion.SIGVADataSet3TableAdapters.AnualidadesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.SIGVADataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AnualidadesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SIGVADataSet3)).BeginInit();
             this.SuspendLayout();
+            // 
+            // AnualidadesBindingSource
+            // 
+            this.AnualidadesBindingSource.DataMember = "Anualidades";
+            this.AnualidadesBindingSource.DataSource = this.SIGVADataSet3;
+            // 
+            // SIGVADataSet3
+            // 
+            this.SIGVADataSet3.DataSetName = "SIGVADataSet3";
+            this.SIGVADataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -50,16 +61,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(832, 560);
             this.reportViewer1.TabIndex = 0;
             // 
-            // SIGVADataSet3
-            // 
-            this.SIGVADataSet3.DataSetName = "SIGVADataSet3";
-            this.SIGVADataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // AnualidadesBindingSource
-            // 
-            this.AnualidadesBindingSource.DataMember = "Anualidades";
-            this.AnualidadesBindingSource.DataSource = this.SIGVADataSet3;
-            // 
             // AnualidadesTableAdapter
             // 
             this.AnualidadesTableAdapter.ClearBeforeFill = true;
@@ -70,11 +71,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 560);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AVR_Personal";
-            this.Text = "AVR_Personal";
+            this.Text = "Reporte de Accion de Personal";
             this.Load += new System.EventHandler(this.AVR_Personal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.SIGVADataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AnualidadesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SIGVADataSet3)).EndInit();
             this.ResumeLayout(false);
 
         }

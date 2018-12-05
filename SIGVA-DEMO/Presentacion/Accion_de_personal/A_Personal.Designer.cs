@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(A_Personal));
             this.Txt_Numero_Boleta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Txt_Cedula = new System.Windows.Forms.TextBox();
@@ -49,6 +50,18 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.txt_explicacion = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Txt_Otros_Propuesta = new System.Windows.Forms.TextBox();
+            this.Txt_Prohibicion_Propuesto = new System.Windows.Forms.TextBox();
+            this.Txt_Recargo_Propuesto = new System.Windows.Forms.TextBox();
+            this.Txt_Aumento_Propuesto = new System.Windows.Forms.TextBox();
+            this.Txt_Salbruto_Propuesto = new System.Windows.Forms.TextBox();
+            this.Txt_Salario_Base_Propuesto = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.Txt_Horario_Propuesto = new System.Windows.Forms.TextBox();
             this.Txt_Forma_Pago_Propuesto = new System.Windows.Forms.TextBox();
             this.Txt_Puesto_Propuesto = new System.Windows.Forms.TextBox();
@@ -60,6 +73,17 @@
             this.Txt_Programa_Propuesto = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.Txt_Salbruto_Actual = new System.Windows.Forms.TextBox();
+            this.Txt_Otros_Actual = new System.Windows.Forms.TextBox();
+            this.Txt_Prohibicion_Actual = new System.Windows.Forms.TextBox();
+            this.Txt_Recargo_actual = new System.Windows.Forms.TextBox();
+            this.Txt_Aumentos_Actual = new System.Windows.Forms.TextBox();
+            this.Txt_Salario_Base_actual = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.Txt_Horario_actual = new System.Windows.Forms.TextBox();
             this.Txt_Forma_de_pago_actual = new System.Windows.Forms.TextBox();
@@ -82,29 +106,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Cmd_Generar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.Txt_Salario_Base_actual = new System.Windows.Forms.TextBox();
-            this.Txt_Aumentos_Actual = new System.Windows.Forms.TextBox();
-            this.Txt_Recargo_actual = new System.Windows.Forms.TextBox();
-            this.Txt_Prohibicion_Actual = new System.Windows.Forms.TextBox();
-            this.Txt_Otros_Actual = new System.Windows.Forms.TextBox();
-            this.Txt_Salbruto_Actual = new System.Windows.Forms.TextBox();
-            this.Txt_Salario_Base_Propuesto = new System.Windows.Forms.TextBox();
-            this.Txt_Salbruto_Propuesto = new System.Windows.Forms.TextBox();
-            this.Txt_Aumento_Propuesto = new System.Windows.Forms.TextBox();
-            this.Txt_Recargo_Propuesto = new System.Windows.Forms.TextBox();
-            this.Txt_Prohibicion_Propuesto = new System.Windows.Forms.TextBox();
-            this.Txt_Otros_Propuesta = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -329,6 +330,102 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Estado Propuesto";
             // 
+            // Txt_Otros_Propuesta
+            // 
+            this.Txt_Otros_Propuesta.Location = new System.Drawing.Point(108, 249);
+            this.Txt_Otros_Propuesta.Name = "Txt_Otros_Propuesta";
+            this.Txt_Otros_Propuesta.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Otros_Propuesta.TabIndex = 21;
+            // 
+            // Txt_Prohibicion_Propuesto
+            // 
+            this.Txt_Prohibicion_Propuesto.Location = new System.Drawing.Point(75, 223);
+            this.Txt_Prohibicion_Propuesto.Name = "Txt_Prohibicion_Propuesto";
+            this.Txt_Prohibicion_Propuesto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Prohibicion_Propuesto.TabIndex = 27;
+            // 
+            // Txt_Recargo_Propuesto
+            // 
+            this.Txt_Recargo_Propuesto.Location = new System.Drawing.Point(131, 200);
+            this.Txt_Recargo_Propuesto.Name = "Txt_Recargo_Propuesto";
+            this.Txt_Recargo_Propuesto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Recargo_Propuesto.TabIndex = 26;
+            // 
+            // Txt_Aumento_Propuesto
+            // 
+            this.Txt_Aumento_Propuesto.Location = new System.Drawing.Point(108, 178);
+            this.Txt_Aumento_Propuesto.Name = "Txt_Aumento_Propuesto";
+            this.Txt_Aumento_Propuesto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Aumento_Propuesto.TabIndex = 25;
+            // 
+            // Txt_Salbruto_Propuesto
+            // 
+            this.Txt_Salbruto_Propuesto.Location = new System.Drawing.Point(79, 273);
+            this.Txt_Salbruto_Propuesto.Name = "Txt_Salbruto_Propuesto";
+            this.Txt_Salbruto_Propuesto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Salbruto_Propuesto.TabIndex = 24;
+            // 
+            // Txt_Salario_Base_Propuesto
+            // 
+            this.Txt_Salario_Base_Propuesto.Location = new System.Drawing.Point(127, 152);
+            this.Txt_Salario_Base_Propuesto.Name = "Txt_Salario_Base_Propuesto";
+            this.Txt_Salario_Base_Propuesto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Salario_Base_Propuesto.TabIndex = 23;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(9, 280);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(70, 13);
+            this.label28.TabIndex = 22;
+            this.label28.Text = "Salario Bruto:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(12, 254);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(100, 13);
+            this.label29.TabIndex = 21;
+            this.label29.Text = "Otros sobresueldos:";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(12, 230);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(62, 13);
+            this.label30.TabIndex = 20;
+            this.label30.Text = "Prohibicion:";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(9, 208);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(115, 13);
+            this.label31.TabIndex = 19;
+            this.label31.Text = "Recargo de funciones:";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(9, 184);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(97, 13);
+            this.label32.TabIndex = 18;
+            this.label32.Text = "Aumentos anuales:";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(9, 160);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(111, 13);
+            this.label33.TabIndex = 17;
+            this.label33.Text = "Salario base Mensual:";
+            // 
             // Txt_Horario_Propuesto
             // 
             this.Txt_Horario_Propuesto.Location = new System.Drawing.Point(264, 127);
@@ -439,6 +536,93 @@
             this.groupBox5.TabIndex = 17;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Estado Actual";
+            // 
+            // Txt_Salbruto_Actual
+            // 
+            this.Txt_Salbruto_Actual.Location = new System.Drawing.Point(92, 273);
+            this.Txt_Salbruto_Actual.Name = "Txt_Salbruto_Actual";
+            this.Txt_Salbruto_Actual.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Salbruto_Actual.TabIndex = 22;
+            // 
+            // Txt_Otros_Actual
+            // 
+            this.Txt_Otros_Actual.Location = new System.Drawing.Point(112, 251);
+            this.Txt_Otros_Actual.Name = "Txt_Otros_Actual";
+            this.Txt_Otros_Actual.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Otros_Actual.TabIndex = 21;
+            // 
+            // Txt_Prohibicion_Actual
+            // 
+            this.Txt_Prohibicion_Actual.Location = new System.Drawing.Point(81, 227);
+            this.Txt_Prohibicion_Actual.Name = "Txt_Prohibicion_Actual";
+            this.Txt_Prohibicion_Actual.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Prohibicion_Actual.TabIndex = 20;
+            // 
+            // Txt_Recargo_actual
+            // 
+            this.Txt_Recargo_actual.Location = new System.Drawing.Point(135, 200);
+            this.Txt_Recargo_actual.Name = "Txt_Recargo_actual";
+            this.Txt_Recargo_actual.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Recargo_actual.TabIndex = 19;
+            // 
+            // Txt_Aumentos_Actual
+            // 
+            this.Txt_Aumentos_Actual.Location = new System.Drawing.Point(117, 176);
+            this.Txt_Aumentos_Actual.Name = "Txt_Aumentos_Actual";
+            this.Txt_Aumentos_Actual.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Aumentos_Actual.TabIndex = 18;
+            // 
+            // Txt_Salario_Base_actual
+            // 
+            this.Txt_Salario_Base_actual.Location = new System.Drawing.Point(130, 153);
+            this.Txt_Salario_Base_actual.Name = "Txt_Salario_Base_actual";
+            this.Txt_Salario_Base_actual.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Salario_Base_actual.TabIndex = 17;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(16, 273);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(70, 13);
+            this.label27.TabIndex = 16;
+            this.label27.Text = "Salario Bruto:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(16, 254);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(100, 13);
+            this.label26.TabIndex = 15;
+            this.label26.Text = "Otros sobresueldos:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(16, 230);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(62, 13);
+            this.label25.TabIndex = 14;
+            this.label25.Text = "Prohibicion:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(13, 208);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(115, 13);
+            this.label24.TabIndex = 13;
+            this.label24.Text = "Recargo de funciones:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(13, 184);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(97, 13);
+            this.label23.TabIndex = 12;
+            this.label23.Text = "Aumentos anuales:";
             // 
             // label22
             // 
@@ -629,189 +813,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(13, 184);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(97, 13);
-            this.label23.TabIndex = 12;
-            this.label23.Text = "Aumentos anuales:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(13, 208);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(115, 13);
-            this.label24.TabIndex = 13;
-            this.label24.Text = "Recargo de funciones:";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(16, 230);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(62, 13);
-            this.label25.TabIndex = 14;
-            this.label25.Text = "Prohibicion:";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(16, 254);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(100, 13);
-            this.label26.TabIndex = 15;
-            this.label26.Text = "Otros sobresueldos:";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(16, 273);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(70, 13);
-            this.label27.TabIndex = 16;
-            this.label27.Text = "Salario Bruto:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(9, 280);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(70, 13);
-            this.label28.TabIndex = 22;
-            this.label28.Text = "Salario Bruto:";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(12, 254);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(100, 13);
-            this.label29.TabIndex = 21;
-            this.label29.Text = "Otros sobresueldos:";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(12, 230);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(62, 13);
-            this.label30.TabIndex = 20;
-            this.label30.Text = "Prohibicion:";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(9, 208);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(115, 13);
-            this.label31.TabIndex = 19;
-            this.label31.Text = "Recargo de funciones:";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(9, 184);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(97, 13);
-            this.label32.TabIndex = 18;
-            this.label32.Text = "Aumentos anuales:";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(9, 160);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(111, 13);
-            this.label33.TabIndex = 17;
-            this.label33.Text = "Salario base Mensual:";
-            // 
-            // Txt_Salario_Base_actual
-            // 
-            this.Txt_Salario_Base_actual.Location = new System.Drawing.Point(130, 153);
-            this.Txt_Salario_Base_actual.Name = "Txt_Salario_Base_actual";
-            this.Txt_Salario_Base_actual.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Salario_Base_actual.TabIndex = 17;
-            // 
-            // Txt_Aumentos_Actual
-            // 
-            this.Txt_Aumentos_Actual.Location = new System.Drawing.Point(117, 176);
-            this.Txt_Aumentos_Actual.Name = "Txt_Aumentos_Actual";
-            this.Txt_Aumentos_Actual.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Aumentos_Actual.TabIndex = 18;
-            // 
-            // Txt_Recargo_actual
-            // 
-            this.Txt_Recargo_actual.Location = new System.Drawing.Point(135, 200);
-            this.Txt_Recargo_actual.Name = "Txt_Recargo_actual";
-            this.Txt_Recargo_actual.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Recargo_actual.TabIndex = 19;
-            // 
-            // Txt_Prohibicion_Actual
-            // 
-            this.Txt_Prohibicion_Actual.Location = new System.Drawing.Point(81, 227);
-            this.Txt_Prohibicion_Actual.Name = "Txt_Prohibicion_Actual";
-            this.Txt_Prohibicion_Actual.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Prohibicion_Actual.TabIndex = 20;
-            // 
-            // Txt_Otros_Actual
-            // 
-            this.Txt_Otros_Actual.Location = new System.Drawing.Point(112, 251);
-            this.Txt_Otros_Actual.Name = "Txt_Otros_Actual";
-            this.Txt_Otros_Actual.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Otros_Actual.TabIndex = 21;
-            // 
-            // Txt_Salbruto_Actual
-            // 
-            this.Txt_Salbruto_Actual.Location = new System.Drawing.Point(92, 273);
-            this.Txt_Salbruto_Actual.Name = "Txt_Salbruto_Actual";
-            this.Txt_Salbruto_Actual.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Salbruto_Actual.TabIndex = 22;
-            // 
-            // Txt_Salario_Base_Propuesto
-            // 
-            this.Txt_Salario_Base_Propuesto.Location = new System.Drawing.Point(127, 152);
-            this.Txt_Salario_Base_Propuesto.Name = "Txt_Salario_Base_Propuesto";
-            this.Txt_Salario_Base_Propuesto.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Salario_Base_Propuesto.TabIndex = 23;
-            // 
-            // Txt_Salbruto_Propuesto
-            // 
-            this.Txt_Salbruto_Propuesto.Location = new System.Drawing.Point(79, 273);
-            this.Txt_Salbruto_Propuesto.Name = "Txt_Salbruto_Propuesto";
-            this.Txt_Salbruto_Propuesto.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Salbruto_Propuesto.TabIndex = 24;
-            // 
-            // Txt_Aumento_Propuesto
-            // 
-            this.Txt_Aumento_Propuesto.Location = new System.Drawing.Point(108, 178);
-            this.Txt_Aumento_Propuesto.Name = "Txt_Aumento_Propuesto";
-            this.Txt_Aumento_Propuesto.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Aumento_Propuesto.TabIndex = 25;
-            // 
-            // Txt_Recargo_Propuesto
-            // 
-            this.Txt_Recargo_Propuesto.Location = new System.Drawing.Point(131, 200);
-            this.Txt_Recargo_Propuesto.Name = "Txt_Recargo_Propuesto";
-            this.Txt_Recargo_Propuesto.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Recargo_Propuesto.TabIndex = 26;
-            // 
-            // Txt_Prohibicion_Propuesto
-            // 
-            this.Txt_Prohibicion_Propuesto.Location = new System.Drawing.Point(75, 223);
-            this.Txt_Prohibicion_Propuesto.Name = "Txt_Prohibicion_Propuesto";
-            this.Txt_Prohibicion_Propuesto.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Prohibicion_Propuesto.TabIndex = 27;
-            // 
-            // Txt_Otros_Propuesta
-            // 
-            this.Txt_Otros_Propuesta.Location = new System.Drawing.Point(108, 249);
-            this.Txt_Otros_Propuesta.Name = "Txt_Otros_Propuesta";
-            this.Txt_Otros_Propuesta.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Otros_Propuesta.TabIndex = 21;
-            // 
             // A_Personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -822,8 +823,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Txt_Numero_Boleta);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "A_Personal";
-            this.Text = "A_Personal";
+            this.Text = "Accion de Personal";
             this.Controls.SetChildIndex(this.Txt_Numero_Boleta, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);

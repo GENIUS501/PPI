@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(M_Puestos));
             this.Txt_Id_Puesto = new System.Windows.Forms.TextBox();
             this.Txt_Nombre_Puesto = new System.Windows.Forms.TextBox();
             this.Cbo_Departamento = new System.Windows.Forms.ComboBox();
+            this.dEPARTAMENTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sIGVADataSet1Departamentos = new Presentacion.SIGVADataSet1Departamentos();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.sIGVADataSet1Departamentos = new Presentacion.SIGVADataSet1Departamentos();
-            this.dEPARTAMENTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dEPARTAMENTOSTableAdapter = new Presentacion.SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).BeginInit();
             this.SuspendLayout();
             // 
             // Txt_Id_Puesto
@@ -66,6 +67,16 @@
             this.Cbo_Departamento.Size = new System.Drawing.Size(121, 21);
             this.Cbo_Departamento.TabIndex = 4;
             this.Cbo_Departamento.ValueMember = "Id_Departamento";
+            // 
+            // dEPARTAMENTOSBindingSource
+            // 
+            this.dEPARTAMENTOSBindingSource.DataMember = "DEPARTAMENTOS";
+            this.dEPARTAMENTOSBindingSource.DataSource = this.sIGVADataSet1Departamentos;
+            // 
+            // sIGVADataSet1Departamentos
+            // 
+            this.sIGVADataSet1Departamentos.DataSetName = "SIGVADataSet1Departamentos";
+            this.sIGVADataSet1Departamentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -94,16 +105,6 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Departamento";
             // 
-            // sIGVADataSet1Departamentos
-            // 
-            this.sIGVADataSet1Departamentos.DataSetName = "SIGVADataSet1Departamentos";
-            this.sIGVADataSet1Departamentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dEPARTAMENTOSBindingSource
-            // 
-            this.dEPARTAMENTOSBindingSource.DataMember = "DEPARTAMENTOS";
-            this.dEPARTAMENTOSBindingSource.DataSource = this.sIGVADataSet1Departamentos;
-            // 
             // dEPARTAMENTOSTableAdapter
             // 
             this.dEPARTAMENTOSTableAdapter.ClearBeforeFill = true;
@@ -119,6 +120,7 @@
             this.Controls.Add(this.Cbo_Departamento);
             this.Controls.Add(this.Txt_Nombre_Puesto);
             this.Controls.Add(this.Txt_Id_Puesto);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "M_Puestos";
             this.Text = "M_Puestos";
             this.Evento_Aceptar += new System.EventHandler(this.M_Puestos_Evento_Aceptar);
@@ -130,8 +132,8 @@
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.label3, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet1Departamentos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
