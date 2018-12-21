@@ -1,7 +1,8 @@
 USE SIGVA
-GO
+GO   ---83408807
 CREATE PROCEDURE Agregar_Dias
 AS
+BEGIN
 --Declarado
 DECLARE @Cedula INT,
 @Ano INT,
@@ -21,17 +22,18 @@ FETCH cursor1 INTO @Cedula,@Ano,@Cantidad_Dias
 
 WHILE(@@FETCH_STATUS=0)
 BEGIN
-SET @Cantidad_Dias = (@Cantidad_Dias+0.034)
+
 SET @Ano_actual = (Select year(getdate()))
 SET @Ano_trabajo = (@Ano_actual-1)
-IF @Ano = @Ano_actual 
+IF @Ano >= @Ano_actual AND @Cantidad_Dias<12
 BEGIN
+SET @Cantidad_Dias = (@Cantidad_Dias+0.034)
 UPDATE Dias_Disponibles SET	Cantidad_Dias=@Cantidad_Dias WHERE Ano = @Ano AND Cedula = @Cedula
 END 
-ELSE IF @Ano = @Ano_trabajo
+ELSE
 BEGIN
-SET @Ano = (@Ano+1)
-INSERT INTO Dias_Disponibles(Ano,Cantidad_Dias,Cedula) VALUES(@Ano,0.033,@Cedula)
+	SET @Ano = (@Ano_actual+1)
+	INSERT INTO Dias_Disponibles(Ano,Cantidad_Dias,Cedula) VALUES(@Ano,0.034,@Cedula)
 END
 FETCH cursor1 INTO @Cedula,@Ano,@Cantidad_Dias
 END
@@ -41,6 +43,7 @@ END
 CLOSE cursor1
 ----Destruir
 DEALLOCATE cursor1
+END
 go
 
 SELECT * FROM Dias_Disponibles

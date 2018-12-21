@@ -1,0 +1,4 @@
+C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO - copia\Entidades\bin\Release\Entidades.dll
+C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO - copia\Entidades\bin\Release\Entidades.pdb
+C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO - copia\Entidades\obj\Release\Entidades.dll
+C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO - copia\Entidades\obj\Release\Entidades.pdb

@@ -40,6 +40,7 @@ CREATE TABLE Dias_Disponibles(
 	Ano INT  NOT NULL,
 	Cantidad_Dias FLOAT NOT NULL,
 	Cedula INT NOT NULL,
+	PRIMARY KEY(Ano,Cedula),
 	CONSTRAINT FK_DIA_FUN FOREIGN KEY (Cedula) references FUNCIONARIOS(Cedula)
 );
 
