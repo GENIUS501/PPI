@@ -7,6 +7,7 @@ BEGIN
 DECLARE @Cedula INT,
 @Ano INT,
 @Cantidad_Dias FLOAT,
+@Entro INT = 0,
 @Ano_actual INT,
 @Ano_trabajo INT
 
@@ -29,12 +30,17 @@ IF @Ano >= @Ano_actual AND @Cantidad_Dias<12
 BEGIN
 SET @Cantidad_Dias = (@Cantidad_Dias+0.034)
 UPDATE Dias_Disponibles SET	Cantidad_Dias=@Cantidad_Dias WHERE Ano = @Ano AND Cedula = @Cedula
+SET @Entro=1;
 END 
 ELSE
 BEGIN
-	SET @Ano = (@Ano_actual+1)
-	INSERT INTO Dias_Disponibles(Ano,Cantidad_Dias,Cedula) VALUES(@Ano,0.034,@Cedula)
+	IF @Ano <= @Ano_actual AND @Cantidad_Dias>=12 AND @Entro!=1
+		BEGIN
+		SET @Ano = (@Ano_actual+1)
+		INSERT INTO Dias_Disponibles(Ano,Cantidad_Dias,Cedula) VALUES(@Ano,0.034,@Cedula);
+		END
 END
+SET @Entro = 0;
 FETCH cursor1 INTO @Cedula,@Ano,@Cantidad_Dias
 END
 ------Navegar
@@ -44,7 +50,6 @@ CLOSE cursor1
 ----Destruir
 DEALLOCATE cursor1
 END
-go
 
 SELECT * FROM Dias_Disponibles
 

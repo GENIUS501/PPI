@@ -77,7 +77,14 @@ namespace Presentacion
                         {
                             if(Txt_Email.Text.Contains(".com"))
                             {
-                                Agregar_funcionario();
+                                if (Convert.ToDateTime(this.Txt_Fecha_Ingreso.Text) > DateTime.Now)
+                                {
+                                    MessageBox.Show("Error fecha superior al dia de hoy", "Error al agregar Funcionario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    Agregar_funcionario();
+                                }
                             }else
                             {
                                 MessageBox.Show("Formato de correo incorrecto", "Formato de correo incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -89,7 +96,14 @@ namespace Presentacion
                     }
                     else
                     {
-                        Agregar_funcionario();
+                        if (Convert.ToDateTime(this.Txt_Fecha_Ingreso.Text) > DateTime.Now)
+                        {
+                            MessageBox.Show("Error fecha superior al dia de hoy", "Error al agregar Funcionario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            Agregar_funcionario();
+                        }
                     }
                 }
             }catch(SqlException ex)
@@ -272,6 +286,23 @@ namespace Presentacion
                 {
                     fecha_trabajo = fechaInicio;
                     fecha_trabajo = fecha_trabajo.AddMonths(1);
+                    if(fecha_trabajo > fechaFinal)
+                    {
+                        Edias.Ano = DateTime.Now.Year;
+                        Edias.Cantidad_Dias = 0;
+                        Edias.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
+                        Ejecutar = Ndias.Insertar(Edias);
+                        if (Ejecutar > 0)
+                        {
+
+                            // fecha_trabajo = fecha_trabajo.AddMonths(1);
+                            //  fecha_trabajo.AddYears(1);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al agregar los dias calculados");
+                        }
+                    }
                     while ( fecha_trabajo <= fechaFinal)
                     {
                         int Ano = 0;
@@ -314,6 +345,11 @@ namespace Presentacion
                             }
                         }
                     }
+                }
+                else
+                {
+                    //MessageBox.Show("Error fecha superior al dia de hoy", "Error al agregar usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw new System.ArgumentException("Error fecha superior al dia de hoy", "Error al agregar funcionario");
                 }
             }
             catch(Exception ex)

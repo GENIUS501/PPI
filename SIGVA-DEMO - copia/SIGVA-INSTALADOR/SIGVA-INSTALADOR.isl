@@ -1892,7 +1892,7 @@
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>accesodatos.dll</td><td>AccesoDatos.dll</td><td>ACCESO~1.DLL|AccesoDatos.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO - copia\Presentacion\bin\Release\AccesoDatos.dll</td><td>1</td><td/></row>
-		<row><td>ayuda.pdf</td><td>ISX_DEFAULTCOMPONENT</td><td>ayuda.pdf</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO - copia\Presentacion\bin\Debug\ayuda.pdf</td><td>1</td><td/></row>
+		<row><td>ayuda.pdf</td><td>ISX_DEFAULTCOMPONENT</td><td>ayuda.pdf</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO - copia\ayuda.pdf</td><td>1</td><td/></row>
 		<row><td>entidades.dll</td><td>Entidades.dll</td><td>ENTIDA~1.DLL|Entidades.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO - copia\Presentacion\bin\Release\Entidades.dll</td><td>1</td><td/></row>
 		<row><td>negocios.dll</td><td>Negocios.dll</td><td>Negocios.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO - copia\Presentacion\bin\Release\Negocios.dll</td><td>1</td><td/></row>
 		<row><td>presentacion.exe</td><td>Presentacion.exe</td><td>PRESEN~1.EXE|Presentacion.exe</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO - copia\Presentacion\bin\Release\Presentacion.exe</td><td>1</td><td/></row>
@@ -3987,7 +3987,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{69DE82C4-0782-4857-922F-238B1FED4507}</td></row>
 		<row><td>ISUSSignature</td><td>{F4248F3B-787C-46D5-A8AB-D4A3AA23AEB2}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewISToday</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>

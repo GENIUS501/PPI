@@ -316,7 +316,7 @@ namespace Principal
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Rpt_Ayuda ay = new Rpt_Ayuda();
-            ay.MdiParent = MdiParent;
+            ay.MdiParent = this;
             ay.Show();
         }
     }

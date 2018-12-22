@@ -7,3 +7,7 @@ C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Entidades\bin\Debug\Entidades.p
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Entidades\obj\Debug\Entidades.dll
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Entidades\obj\Debug\Entidades.pdb
 C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO - copia\Entidades\bin\Debug\Entidades.dll
+C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO - copia\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO - copia\Entidades\obj\Debug\Entidades.dll
+C:\Users\Gollo\Desktop\SIGVA-DEMO\PPI\SIGVA-DEMO - copia\Entidades\obj\Debug\Entidades.pdb
