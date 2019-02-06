@@ -200,13 +200,20 @@ namespace Principal
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Neg_Sessiones Nsessiones = new Neg_Sessiones();
-            Ent_Sessiones Esessiones = new Ent_Sessiones();
-            Int32 salida = 0;
-            Esessiones.Id_Session = Id_session;
-            Esessiones.Salida = DateTime.Now;
-            salida = Nsessiones.Salir(Esessiones);
-            Application.Exit();
+            try
+            {
+                Neg_Sessiones Nsessiones = new Neg_Sessiones();
+                Ent_Sessiones Esessiones = new Ent_Sessiones();
+                Int32 salida = 0;
+                Esessiones.Id_Session = Id_session;
+                Esessiones.Salida = DateTime.Now;
+                salida = Nsessiones.Salir(Esessiones);
+                Application.Exit();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error al salir de la aplicacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void reintegrarDiasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -304,13 +311,19 @@ namespace Principal
 
         private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Neg_Sessiones Nsessiones = new Neg_Sessiones();
-            Ent_Sessiones Esessiones = new Ent_Sessiones();
-            Int32 salida = 0;
-            Esessiones.Id_Session = Id_session;
-            Esessiones.Salida = DateTime.Now;
-            salida = Nsessiones.Salir(Esessiones);
-            Application.Exit();
+        	try{
+	        	Neg_Sessiones Nsessiones = new Neg_Sessiones();
+	            Ent_Sessiones Esessiones = new Ent_Sessiones();
+	            Int32 salida = 0;
+	            Esessiones.Id_Session = Id_session;
+	            Esessiones.Salida = DateTime.Now;
+	            salida = Nsessiones.Salir(Esessiones);
+	            Application.Exit();
+        	}catch(Exception ex)
+        	{
+        		MessageBox.Show(ex.ToString(),"Error al salir de la aplicacion",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)

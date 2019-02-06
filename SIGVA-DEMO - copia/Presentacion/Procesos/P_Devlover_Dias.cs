@@ -132,9 +132,10 @@ namespace Presentacion
                 Buscar();
                 Devolver();
                 MessageBox.Show("Dias devueltos exitosamente", "Dias devueltos exitosamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Limpiarcampos();
                 A_Personal frm = new A_Personal();
-                frm.Modo = "M";
+                frm.Modo = "D";
+                frm.Cedula = Convert.ToInt32(this.Txt_Cedula.Text.ToString());
+                Limpiarcampos();
                 frm.titulo = "Accion de Personal";
                 frm.Descripcion = "Accion de Personal";
                 frm.MdiParent = this.MdiParent;

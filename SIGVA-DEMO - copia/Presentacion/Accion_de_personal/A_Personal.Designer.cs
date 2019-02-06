@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(A_Personal));
             this.Txt_Numero_Boleta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,6 +51,8 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.txt_explicacion = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Cbo_Puesto_Propuesto = new System.Windows.Forms.ComboBox();
+            this.Cbo_Departamento_Propuesto = new System.Windows.Forms.ComboBox();
             this.Txt_Otros_Propuesta = new System.Windows.Forms.TextBox();
             this.Txt_Prohibicion_Propuesto = new System.Windows.Forms.TextBox();
             this.Txt_Recargo_Propuesto = new System.Windows.Forms.TextBox();
@@ -64,8 +67,6 @@
             this.label33 = new System.Windows.Forms.Label();
             this.Txt_Horario_Propuesto = new System.Windows.Forms.TextBox();
             this.Txt_Forma_Pago_Propuesto = new System.Windows.Forms.TextBox();
-            this.Txt_Puesto_Propuesto = new System.Windows.Forms.TextBox();
-            this.Txt_Departamento_Propuesto = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -73,6 +74,8 @@
             this.Txt_Programa_Propuesto = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.Cbo_Puesto_Actual = new System.Windows.Forms.ComboBox();
+            this.Cbo_Departamento_Actual = new System.Windows.Forms.ComboBox();
             this.Txt_Salbruto_Actual = new System.Windows.Forms.TextBox();
             this.Txt_Otros_Actual = new System.Windows.Forms.TextBox();
             this.Txt_Prohibicion_Actual = new System.Windows.Forms.TextBox();
@@ -87,8 +90,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.Txt_Horario_actual = new System.Windows.Forms.TextBox();
             this.Txt_Forma_de_pago_actual = new System.Windows.Forms.TextBox();
-            this.Txt_Puesto_Actual = new System.Windows.Forms.TextBox();
-            this.Txt_Departamento_Actual = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -106,6 +107,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Cmd_Generar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.sIGVADataSet5 = new Presentacion.SIGVADataSet5();
+            this.dEPARTAMENTOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dEPARTAMENTOSTableAdapter2 = new Presentacion.SIGVADataSet5TableAdapters.DEPARTAMENTOSTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -115,6 +119,8 @@
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Txt_Numero_Boleta
@@ -301,6 +307,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.Cbo_Puesto_Propuesto);
+            this.groupBox6.Controls.Add(this.Cbo_Departamento_Propuesto);
             this.groupBox6.Controls.Add(this.Txt_Otros_Propuesta);
             this.groupBox6.Controls.Add(this.Txt_Prohibicion_Propuesto);
             this.groupBox6.Controls.Add(this.Txt_Recargo_Propuesto);
@@ -315,8 +323,6 @@
             this.groupBox6.Controls.Add(this.label33);
             this.groupBox6.Controls.Add(this.Txt_Horario_Propuesto);
             this.groupBox6.Controls.Add(this.Txt_Forma_Pago_Propuesto);
-            this.groupBox6.Controls.Add(this.Txt_Puesto_Propuesto);
-            this.groupBox6.Controls.Add(this.Txt_Departamento_Propuesto);
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.label15);
             this.groupBox6.Controls.Add(this.label16);
@@ -330,37 +336,56 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Estado Propuesto";
             // 
+            // Cbo_Puesto_Propuesto
+            // 
+            this.Cbo_Puesto_Propuesto.FormattingEnabled = true;
+            this.Cbo_Puesto_Propuesto.Location = new System.Drawing.Point(12, 103);
+            this.Cbo_Puesto_Propuesto.Name = "Cbo_Puesto_Propuesto";
+            this.Cbo_Puesto_Propuesto.Size = new System.Drawing.Size(121, 21);
+            this.Cbo_Puesto_Propuesto.TabIndex = 29;
+            // 
+            // Cbo_Departamento_Propuesto
+            // 
+            this.Cbo_Departamento_Propuesto.DataSource = this.dEPARTAMENTOSBindingSource;
+            this.Cbo_Departamento_Propuesto.DisplayMember = "Nombre_Departamento";
+            this.Cbo_Departamento_Propuesto.FormattingEnabled = true;
+            this.Cbo_Departamento_Propuesto.Location = new System.Drawing.Point(12, 64);
+            this.Cbo_Departamento_Propuesto.Name = "Cbo_Departamento_Propuesto";
+            this.Cbo_Departamento_Propuesto.Size = new System.Drawing.Size(121, 21);
+            this.Cbo_Departamento_Propuesto.TabIndex = 28;
+            this.Cbo_Departamento_Propuesto.ValueMember = "Id_Departamento";
+            // 
             // Txt_Otros_Propuesta
             // 
-            this.Txt_Otros_Propuesta.Location = new System.Drawing.Point(108, 249);
+            this.Txt_Otros_Propuesta.Location = new System.Drawing.Point(127, 249);
             this.Txt_Otros_Propuesta.Name = "Txt_Otros_Propuesta";
             this.Txt_Otros_Propuesta.Size = new System.Drawing.Size(100, 20);
             this.Txt_Otros_Propuesta.TabIndex = 21;
             // 
             // Txt_Prohibicion_Propuesto
             // 
-            this.Txt_Prohibicion_Propuesto.Location = new System.Drawing.Point(75, 223);
+            this.Txt_Prohibicion_Propuesto.Location = new System.Drawing.Point(127, 223);
             this.Txt_Prohibicion_Propuesto.Name = "Txt_Prohibicion_Propuesto";
             this.Txt_Prohibicion_Propuesto.Size = new System.Drawing.Size(100, 20);
             this.Txt_Prohibicion_Propuesto.TabIndex = 27;
             // 
             // Txt_Recargo_Propuesto
             // 
-            this.Txt_Recargo_Propuesto.Location = new System.Drawing.Point(131, 200);
+            this.Txt_Recargo_Propuesto.Location = new System.Drawing.Point(127, 201);
             this.Txt_Recargo_Propuesto.Name = "Txt_Recargo_Propuesto";
             this.Txt_Recargo_Propuesto.Size = new System.Drawing.Size(100, 20);
             this.Txt_Recargo_Propuesto.TabIndex = 26;
             // 
             // Txt_Aumento_Propuesto
             // 
-            this.Txt_Aumento_Propuesto.Location = new System.Drawing.Point(108, 178);
+            this.Txt_Aumento_Propuesto.Location = new System.Drawing.Point(127, 178);
             this.Txt_Aumento_Propuesto.Name = "Txt_Aumento_Propuesto";
             this.Txt_Aumento_Propuesto.Size = new System.Drawing.Size(100, 20);
             this.Txt_Aumento_Propuesto.TabIndex = 25;
             // 
             // Txt_Salbruto_Propuesto
             // 
-            this.Txt_Salbruto_Propuesto.Location = new System.Drawing.Point(79, 273);
+            this.Txt_Salbruto_Propuesto.Location = new System.Drawing.Point(127, 273);
             this.Txt_Salbruto_Propuesto.Name = "Txt_Salbruto_Propuesto";
             this.Txt_Salbruto_Propuesto.Size = new System.Drawing.Size(100, 20);
             this.Txt_Salbruto_Propuesto.TabIndex = 24;
@@ -428,36 +453,22 @@
             // 
             // Txt_Horario_Propuesto
             // 
-            this.Txt_Horario_Propuesto.Location = new System.Drawing.Point(264, 127);
+            this.Txt_Horario_Propuesto.Location = new System.Drawing.Point(280, 127);
             this.Txt_Horario_Propuesto.Name = "Txt_Horario_Propuesto";
-            this.Txt_Horario_Propuesto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Horario_Propuesto.Size = new System.Drawing.Size(59, 20);
             this.Txt_Horario_Propuesto.TabIndex = 10;
             // 
             // Txt_Forma_Pago_Propuesto
             // 
-            this.Txt_Forma_Pago_Propuesto.Location = new System.Drawing.Point(95, 127);
+            this.Txt_Forma_Pago_Propuesto.Location = new System.Drawing.Point(127, 127);
             this.Txt_Forma_Pago_Propuesto.Name = "Txt_Forma_Pago_Propuesto";
             this.Txt_Forma_Pago_Propuesto.Size = new System.Drawing.Size(100, 20);
             this.Txt_Forma_Pago_Propuesto.TabIndex = 9;
             // 
-            // Txt_Puesto_Propuesto
-            // 
-            this.Txt_Puesto_Propuesto.Location = new System.Drawing.Point(12, 103);
-            this.Txt_Puesto_Propuesto.Name = "Txt_Puesto_Propuesto";
-            this.Txt_Puesto_Propuesto.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Puesto_Propuesto.TabIndex = 8;
-            // 
-            // Txt_Departamento_Propuesto
-            // 
-            this.Txt_Departamento_Propuesto.Location = new System.Drawing.Point(12, 64);
-            this.Txt_Departamento_Propuesto.Name = "Txt_Departamento_Propuesto";
-            this.Txt_Departamento_Propuesto.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Departamento_Propuesto.TabIndex = 7;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(217, 130);
+            this.label14.Location = new System.Drawing.Point(233, 130);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(44, 13);
             this.label14.TabIndex = 6;
@@ -508,6 +519,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.Cbo_Puesto_Actual);
+            this.groupBox5.Controls.Add(this.Cbo_Departamento_Actual);
             this.groupBox5.Controls.Add(this.Txt_Salbruto_Actual);
             this.groupBox5.Controls.Add(this.Txt_Otros_Actual);
             this.groupBox5.Controls.Add(this.Txt_Prohibicion_Actual);
@@ -522,8 +535,6 @@
             this.groupBox5.Controls.Add(this.label22);
             this.groupBox5.Controls.Add(this.Txt_Horario_actual);
             this.groupBox5.Controls.Add(this.Txt_Forma_de_pago_actual);
-            this.groupBox5.Controls.Add(this.Txt_Puesto_Actual);
-            this.groupBox5.Controls.Add(this.Txt_Departamento_Actual);
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.label11);
@@ -537,37 +548,56 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Estado Actual";
             // 
+            // Cbo_Puesto_Actual
+            // 
+            this.Cbo_Puesto_Actual.FormattingEnabled = true;
+            this.Cbo_Puesto_Actual.Location = new System.Drawing.Point(9, 98);
+            this.Cbo_Puesto_Actual.Name = "Cbo_Puesto_Actual";
+            this.Cbo_Puesto_Actual.Size = new System.Drawing.Size(121, 21);
+            this.Cbo_Puesto_Actual.TabIndex = 24;
+            // 
+            // Cbo_Departamento_Actual
+            // 
+            this.Cbo_Departamento_Actual.DataSource = this.dEPARTAMENTOSBindingSource;
+            this.Cbo_Departamento_Actual.DisplayMember = "Nombre_Departamento";
+            this.Cbo_Departamento_Actual.FormattingEnabled = true;
+            this.Cbo_Departamento_Actual.Location = new System.Drawing.Point(9, 61);
+            this.Cbo_Departamento_Actual.Name = "Cbo_Departamento_Actual";
+            this.Cbo_Departamento_Actual.Size = new System.Drawing.Size(121, 21);
+            this.Cbo_Departamento_Actual.TabIndex = 23;
+            this.Cbo_Departamento_Actual.ValueMember = "Id_Departamento";
+            // 
             // Txt_Salbruto_Actual
             // 
-            this.Txt_Salbruto_Actual.Location = new System.Drawing.Point(92, 273);
+            this.Txt_Salbruto_Actual.Location = new System.Drawing.Point(130, 273);
             this.Txt_Salbruto_Actual.Name = "Txt_Salbruto_Actual";
             this.Txt_Salbruto_Actual.Size = new System.Drawing.Size(100, 20);
             this.Txt_Salbruto_Actual.TabIndex = 22;
             // 
             // Txt_Otros_Actual
             // 
-            this.Txt_Otros_Actual.Location = new System.Drawing.Point(112, 251);
+            this.Txt_Otros_Actual.Location = new System.Drawing.Point(130, 251);
             this.Txt_Otros_Actual.Name = "Txt_Otros_Actual";
             this.Txt_Otros_Actual.Size = new System.Drawing.Size(100, 20);
             this.Txt_Otros_Actual.TabIndex = 21;
             // 
             // Txt_Prohibicion_Actual
             // 
-            this.Txt_Prohibicion_Actual.Location = new System.Drawing.Point(81, 227);
+            this.Txt_Prohibicion_Actual.Location = new System.Drawing.Point(130, 227);
             this.Txt_Prohibicion_Actual.Name = "Txt_Prohibicion_Actual";
             this.Txt_Prohibicion_Actual.Size = new System.Drawing.Size(100, 20);
             this.Txt_Prohibicion_Actual.TabIndex = 20;
             // 
             // Txt_Recargo_actual
             // 
-            this.Txt_Recargo_actual.Location = new System.Drawing.Point(135, 200);
+            this.Txt_Recargo_actual.Location = new System.Drawing.Point(130, 205);
             this.Txt_Recargo_actual.Name = "Txt_Recargo_actual";
             this.Txt_Recargo_actual.Size = new System.Drawing.Size(100, 20);
             this.Txt_Recargo_actual.TabIndex = 19;
             // 
             // Txt_Aumentos_Actual
             // 
-            this.Txt_Aumentos_Actual.Location = new System.Drawing.Point(117, 176);
+            this.Txt_Aumentos_Actual.Location = new System.Drawing.Point(130, 177);
             this.Txt_Aumentos_Actual.Name = "Txt_Aumentos_Actual";
             this.Txt_Aumentos_Actual.Size = new System.Drawing.Size(100, 20);
             this.Txt_Aumentos_Actual.TabIndex = 18;
@@ -635,36 +665,22 @@
             // 
             // Txt_Horario_actual
             // 
-            this.Txt_Horario_actual.Location = new System.Drawing.Point(259, 125);
+            this.Txt_Horario_actual.Location = new System.Drawing.Point(285, 125);
             this.Txt_Horario_actual.Name = "Txt_Horario_actual";
-            this.Txt_Horario_actual.Size = new System.Drawing.Size(96, 20);
+            this.Txt_Horario_actual.Size = new System.Drawing.Size(56, 20);
             this.Txt_Horario_actual.TabIndex = 10;
             // 
             // Txt_Forma_de_pago_actual
             // 
-            this.Txt_Forma_de_pago_actual.Location = new System.Drawing.Point(90, 125);
+            this.Txt_Forma_de_pago_actual.Location = new System.Drawing.Point(130, 125);
             this.Txt_Forma_de_pago_actual.Name = "Txt_Forma_de_pago_actual";
             this.Txt_Forma_de_pago_actual.Size = new System.Drawing.Size(100, 20);
             this.Txt_Forma_de_pago_actual.TabIndex = 9;
             // 
-            // Txt_Puesto_Actual
-            // 
-            this.Txt_Puesto_Actual.Location = new System.Drawing.Point(9, 101);
-            this.Txt_Puesto_Actual.Name = "Txt_Puesto_Actual";
-            this.Txt_Puesto_Actual.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Puesto_Actual.TabIndex = 8;
-            // 
-            // Txt_Departamento_Actual
-            // 
-            this.Txt_Departamento_Actual.Location = new System.Drawing.Point(9, 52);
-            this.Txt_Departamento_Actual.Name = "Txt_Departamento_Actual";
-            this.Txt_Departamento_Actual.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Departamento_Actual.TabIndex = 7;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(212, 128);
+            this.label13.Location = new System.Drawing.Point(238, 128);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(44, 13);
             this.label13.TabIndex = 6;
@@ -673,7 +689,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 128);
+            this.label12.Location = new System.Drawing.Point(13, 128);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 13);
             this.label12.TabIndex = 5;
@@ -691,7 +707,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 36);
+            this.label10.Location = new System.Drawing.Point(6, 45);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(168, 13);
             this.label10.TabIndex = 3;
@@ -813,6 +829,20 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // sIGVADataSet5
+            // 
+            this.sIGVADataSet5.DataSetName = "SIGVADataSet5";
+            this.sIGVADataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dEPARTAMENTOSBindingSource
+            // 
+            this.dEPARTAMENTOSBindingSource.DataMember = "DEPARTAMENTOS";
+            this.dEPARTAMENTOSBindingSource.DataSource = this.sIGVADataSet5;
+            // 
+            // dEPARTAMENTOSTableAdapter2
+            // 
+            this.dEPARTAMENTOSTableAdapter2.ClearBeforeFill = true;
+            // 
             // A_Personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -828,6 +858,7 @@
             this.MinimizeBox = false;
             this.Name = "A_Personal";
             this.Text = "Accion de Personal";
+            this.Load += new System.EventHandler(this.A_Personal_Load);
             this.Controls.SetChildIndex(this.Txt_Numero_Boleta, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
@@ -850,6 +881,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sIGVADataSet5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dEPARTAMENTOSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -880,8 +913,6 @@
         private System.Windows.Forms.TextBox Txt_Programa_actual;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox Txt_Forma_de_pago_actual;
-        private System.Windows.Forms.TextBox Txt_Puesto_Actual;
-        private System.Windows.Forms.TextBox Txt_Departamento_Actual;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -890,8 +921,6 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox Txt_Horario_Propuesto;
         private System.Windows.Forms.TextBox Txt_Forma_Pago_Propuesto;
-        private System.Windows.Forms.TextBox Txt_Puesto_Propuesto;
-        private System.Windows.Forms.TextBox Txt_Departamento_Propuesto;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
@@ -934,5 +963,16 @@
         private System.Windows.Forms.TextBox Txt_Prohibicion_Propuesto;
         private System.Windows.Forms.TextBox Txt_Recargo_Propuesto;
         private System.Windows.Forms.TextBox Txt_Aumento_Propuesto;
+        private System.Windows.Forms.ComboBox Cbo_Puesto_Propuesto;
+        private System.Windows.Forms.ComboBox Cbo_Departamento_Propuesto;
+        private System.Windows.Forms.ComboBox Cbo_Puesto_Actual;
+        private System.Windows.Forms.ComboBox Cbo_Departamento_Actual;
+        private SIGVADataSet1Departamentos sIGVADataSet1Departamentos;
+        private SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter dEPARTAMENTOSTableAdapter;
+        private SIGVADataSet1Departamentos sIGVADataSet1Departamentos1;
+        private SIGVADataSet1DepartamentosTableAdapters.DEPARTAMENTOSTableAdapter dEPARTAMENTOSTableAdapter1;
+        private SIGVADataSet5 sIGVADataSet5;
+        private System.Windows.Forms.BindingSource dEPARTAMENTOSBindingSource;
+        private SIGVADataSet5TableAdapters.DEPARTAMENTOSTableAdapter dEPARTAMENTOSTableAdapter2;
     }
 }

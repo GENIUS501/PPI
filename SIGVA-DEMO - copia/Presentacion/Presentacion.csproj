@@ -306,6 +306,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SIGVADataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SIGVADataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIGVADataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SIGVADataSetAnualidades.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -599,6 +604,17 @@
     </None>
     <None Include="SIGVADataSet4.xss">
       <DependentUpon>SIGVADataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSet5.xsc">
+      <DependentUpon>SIGVADataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="SIGVADataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SIGVADataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIGVADataSet5.xss">
+      <DependentUpon>SIGVADataSet5.xsd</DependentUpon>
     </None>
     <None Include="SIGVADataSetAnualidades.xsc">
       <DependentUpon>SIGVADataSetAnualidades.xsd</DependentUpon>

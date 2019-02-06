@@ -22,10 +22,15 @@ namespace Presentacion
         Ent_Anualidades Eanulidades;
         Neg_Dias_Disponibles Ndias;
         Ent_Dias_Disponibles Edias;
+        Ent_Funcionarios Efuncionarios;
+        Neg_Funcionarios Nfuncionarios;
+        Neg_Puestos Npuestos;
+        DataTable Dt;
         #endregion
 
         #region "Propiedades"
         public string Modo { get; set; }
+        public int Cedula { get; set; }
         #endregion
         public A_Personal()
         {
@@ -75,16 +80,16 @@ namespace Presentacion
                 Visor.Fecha_Vence = Convert.ToDateTime(this.Txt_Fecha_que_vence.Text);
                 Visor.Tipo_Accion = this.Txt_Tipo_de_accion.Text;
                 Visor.Programa_actual = this.Txt_Programa_actual.Text;
-                Visor.Direccion_actual = this.Txt_Departamento_Actual.Text;
-                Visor.Clase_de_Puesto_actual = this.Txt_Puesto_Actual.Text;
+                Visor.Direccion_actual = this.Cbo_Departamento_Actual.Text;
+                Visor.Clase_de_Puesto_actual = this.Cbo_Puesto_Actual.Text;
                 Visor.Forma_de_pago_actualizar = this.Txt_Forma_de_pago_actual.Text;
                 Visor.Hora_actual = this.Txt_Horario_actual.Text;
                 Visor.Salario_base_actual = this.Txt_Salario_Base_actual.Text;
                 Visor.Aumentos_actual = this.Txt_Aumentos_Actual.Text;
                 Visor.recargo_actual = this.Txt_Recargo_actual.Text;
                 Visor.Programa_Propuesto = this.Txt_Programa_Propuesto.Text;
-                Visor.Direccion_Propuesto = this.Txt_Departamento_Propuesto.Text;
-                Visor.Clase_de_propuesto = this.Txt_Puesto_Propuesto.Text;
+                Visor.Direccion_Propuesto = this.Cbo_Departamento_Propuesto.Text;
+                Visor.Clase_de_propuesto = this.Cbo_Puesto_Propuesto.Text;
                 Visor.Forma_pago_propuesto = this.Txt_Forma_Pago_Propuesto.Text;
                 Visor.Horario_Propuesto = this.Txt_Horario_Propuesto.Text;
                 Visor.Salario_Base_Propuesto = this.Txt_Salario_Base_Propuesto.Text;
@@ -110,5 +115,48 @@ namespace Presentacion
             }
         }
 
+        private void A_Personal_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'sIGVADataSet5.DEPARTAMENTOS' Puede moverla o quitarla según sea necesario.
+            this.dEPARTAMENTOSTableAdapter2.Fill(this.sIGVADataSet5.DEPARTAMENTOS);
+
+            if (this.Modo == "D")
+            {
+                Cargar();
+                this.Txt_Tipo_de_accion.Text = "Devolucion de dias de vacaciones";
+            }
+        }
+        private void LlenarPuesto()
+        {
+            try
+            {
+                Npuestos = new Neg_Puestos();
+                Dt = new DataTable();
+                Dt = Npuestos.Llenarcombobox(Convert.ToInt32(Cbo_Departamento_Actual.SelectedValue.ToString()));
+                Cbo_Puesto_Actual.DataSource = Dt;
+                Cbo_Puesto_Propuesto.DataSource = Dt;
+                Cbo_Puesto_Actual.DisplayMember = "Nombre_Puesto";
+                Cbo_Puesto_Propuesto.DisplayMember = "Nombre_Puesto";
+                Cbo_Puesto_Actual.ValueMember = "Id_Puesto";
+                Cbo_Puesto_Propuesto.ValueMember = "Id_Puesto";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex);
+            }
+        }
+        private void Cargar()
+        {
+            Efuncionarios = new Ent_Funcionarios();
+            Nfuncionarios = new Neg_Funcionarios();
+            Efuncionarios = Nfuncionarios.LeerCodigoLlave(Cedula);
+            this.Txt_Cedula.Text = Cedula.ToString();
+            this.Txt_Nombre_Completo.Text = Efuncionarios.Nombre + " " + Efuncionarios.Apellido1 + " " + Efuncionarios.Apellido2;
+            this.Txt_Fecha_Ingreso.Text = Efuncionarios.Fecha_De_Ingreso.ToString();
+            this.Cbo_Departamento_Actual.SelectedValue = Convert.ToInt32(Efuncionarios.Id_Departamento);
+            this.Cbo_Departamento_Propuesto.SelectedValue = Convert.ToInt32(Efuncionarios.Id_Departamento);
+            LlenarPuesto();
+            this.Cbo_Puesto_Actual.SelectedValue = Convert.ToInt32(Efuncionarios.Id_Puesto);
+        }
     }
 }
